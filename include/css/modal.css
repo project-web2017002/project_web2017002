@@ -1,0 +1,13 @@
+@media (min-width: 768px) {
+    #moda {
+        width: 350px;
+        margin: 9% auto;
+    }
+}
+.smalltext{
+    font-size: 11px;
+    color: #333;
+    line-height: 17px;
+    margin:auto 0;
+    text-align: center;
+}

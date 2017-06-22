@@ -1,0 +1,72 @@
+html,body{
+    margin: 0;
+    padding: 0;
+}
+.removeableheadbar{
+    background: #fff;
+    margin-bottom: 0;
+    height:29px;
+    padding: 5px 0 4px;
+    border-bottom: none;
+    font-size: 100%;
+}
+.removed{
+    height: 20px;
+    margin: 0;
+    padding: 0;
+}
+.extrapadding{
+    -webkit-padding-start: 15px;
+}
+.extrapadding>li{
+    margin-right: 20px;
+}
+.extrapadding>li>a{
+    text-decoration: none;
+}
+.headbar{
+    background: #fafafa;
+    height: 63px;
+    padding: 8px 0;
+    border-top: none;
+}
+.defineminwidth{
+    max-height: 200px;
+    min-width: 200px;
+    max-width: 200px;
+    overflow-y: scroll;
+    line-height: 30px;
+}
+.defineminwidth>li{
+    border-bottom: 1px solid #f3f3f3;
+    padding-left: 15px;
+    cursor: pointer;
+}
+.defineminwidth>li:hover{
+    background-color: #f3f3f3;
+}
+#btnPostAd:hover{
+    background-color: #f0ad4e;
+    border-color: #eea236;
+}
+.positionModalbtn{
+    cursor: pointer;
+}
+@media (min-width: 768px) {
+    .fixwidth {
+        width: 86.73%;
+        margin-left: 7%;
+    }
+    #mainvalue {
+        padding-top: 8px;
+        padding-bottom: 18px;
+    }
+    #btnPostAd{
+        padding-top: 8px;
+        padding-bottom: 8px;
+        font-weight: bolder;
+    }
+    .positionModalbtn{
+        padding: 15px;
+    }
+}

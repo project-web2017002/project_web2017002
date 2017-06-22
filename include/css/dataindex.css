@@ -1,0 +1,14 @@
+.dataindex-main{
+    margin-top: 63px;
+    height:auto;
+}
+.leftsidebar{
+    background: #ffffff;
+}
+@media (min-width: 768px){
+    .dataindex-main{
+        width: 87%;
+        margin-left: 7%;
+        box-shadow: 2px 2px 5px black;
+    }
+}
