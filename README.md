@@ -8,7 +8,7 @@ Web Project
 * footer links are working (like privacy policy etc, but pages are empty as data is required)
 * footer is changed and is reponsive
 * side bar is created, displaying dummy categories
-* whole project created is functional and responsive till data
+* whole project created is functional and responsive till date
 * & many more edits and new pages
 
 22-6-2017
