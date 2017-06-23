@@ -2,6 +2,11 @@ html,body{
     margin: 0;
     padding: 0;
 }
+.row
+{
+    margin-left: 0;
+    margin-right: 0;
+}
 .removeableheadbar{
     background: #fff;
     margin-bottom: 0;
@@ -25,8 +30,7 @@ html,body{
     text-decoration: none;
 }
 .headbar{
-    background: #fafafa;
-    height: 63px;
+    background: #fff;
     padding: 8px 0;
     border-top: none;
 }
@@ -53,6 +57,9 @@ html,body{
     cursor: pointer;
 }
 @media (min-width: 768px) {
+    .headbar{
+        height:63px;
+    }
     .fixwidth {
         width: 86.73%;
         margin-left: 7%;

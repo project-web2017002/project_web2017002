@@ -2,17 +2,16 @@
     <li class="dropdown">
         <a class="dropdown-toggle" data-toggle="dropdown" id="cityvalue" href="#">Select City
             <span class="glyphicon glyphicon-chevron-down"></span></a>
-        <ul class="dropdown-menu defineminwidth">
-            <li onclick="changename(this.innerHTML)">All Categories</li>
-            <li onclick="changename(this.innerHTML)">Category 1</li>
-            <li onclick="changename(this.innerHTML)">Category 2</li>
-            <li onclick="changename(this.innerHTML)">Category 3</li>
-            <li onclick="changename(this.innerHTML)">Category 4</li>
-            <li onclick="changename(this.innerHTML)">Category 5</li>
-            <li onclick="changename(this.innerHTML)">Category 6</li>
-            <li onclick="changename(this.innerHTML)">Category 7</li>
-            <li onclick="changename(this.innerHTML)">Category 8</li>
-            <li onclick="changename(this.innerHTML)">Category 9</li>
+        <ul class="dropdown-menu defineminwidth" id="city">
+            <script>
+                var addon = document.getElementById("city");
+                var cities = ['All Cities','Ahmedabad','Bangalore','Chandigarh','Chennai','Coimbtore',
+                'Delhi','Gurgaon','Hyderabad','Jaipur','Kochi','Kolkata','Lakhnow',
+                'Mumbai','Pune','Trivandrum'];
+                for(var a=0;a<cities.length;a++){
+                    addon.innerHTML += '<li onclick="changename(this.innerHTML)">' + cities[a] + '</li>';
+                }
+            </script>
         </ul>
     </li>
 </ul>

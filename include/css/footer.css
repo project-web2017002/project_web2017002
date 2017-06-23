@@ -2,7 +2,7 @@ footer{
     margin-top:10px;
 }
 .container{
-    background-color: #fafafa;
+    background-color: #fff;
     width: 100%;
     box-shadow: 1px 1px 5px #888888;
     padding: 15px 0;
@@ -30,7 +30,7 @@ footer{
 .poster{
     background-color: #eee;
     margin-bottom: 20px;
-    height: 58px;
+    height: auto;
     padding: 10px;
 }
 .poster>p{
@@ -47,6 +47,7 @@ footer{
 }
 .footer-lists{
     list-style: none;
+    margin-left:-50px;
 }
 .footer-lists>li{
     margin-bottom: 3px;
@@ -56,6 +57,7 @@ footer{
     text-decoration: none;
     color: #888888;
     font-size: 13px;
+    text-align: left;
 }
 .inlinelistbottomone{
     margin: 4px 0;

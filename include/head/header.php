@@ -19,24 +19,29 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#"><img src="" alt="website logo"></a>
+                <a class="navbar-brand" href="//localhost/optimus"><img src="" alt="website logo"></a>
             </div>
             <div class="collapse navbar-collapse" id="myNavbar">
-                <?php
-                require("city.php");
-                ?>
-                <form class="navbar-form navbar-left">
-                    <ul class="nav navbar-nav">
+                <ul class="nav navbar-nav navbar-left">
+                    <li><?php
+                    require("city.php");
+                    ?></li>
+                    <li class="positionModalbtn" data-toggle="modal" data-target="#myModal"><span class="glyphicon glyphicon-user"></span> Login/Signup</li>
+                    <li><a id="btnPostAd" href="#" class="btn btn-warning navbar-btn" title="Post Free Ad">Post Free Ad</a></li>
+                </ul>
+
+                <form class="navbar-form navbar-right">
+                    <!--<ul class="nav navbar-nav">
                         <li class="dropdown">
                             <a class="dropdown-toggle" data-toggle="dropdown" id="mainvalue" href="#">All Categories
                                 <span class="glyphicon glyphicon-chevron-down"></span></a>
                             <ul class="dropdown-menu defineminwidth">
                                 <?php
-                                require("category.php");
-                                ?>
+/*                                require("category.php");
+                                */?>
                             </ul>
                         </li>
-                    </ul>
+                    </ul>-->
                     <div class="input-group">
                         <input type="text" class="form-control" placeholder="Search Products and brands" data-toggle="modal" data-target="#searchModal">
                         <div class="input-group-btn">
@@ -44,10 +49,7 @@
                         </div>
                     </div>
                 </form>
-                <ul class="nav navbar-nav navbar-right">
-                    <li class="positionModalbtn" data-toggle="modal" data-target="#myModal"><span class="glyphicon glyphicon-user"></span> Login/Signup</li>
-                    <li><a id="btnPostAd" href="#" class="btn btn-warning navbar-btn" title="Post Free Ad">Post Free Ad</a></li>
-                </ul>
+
             </div>
         </div>
     </nav>
