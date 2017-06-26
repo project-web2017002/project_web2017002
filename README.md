@@ -1,6 +1,24 @@
 # project_web2017002
 Web Project
 ==============================================
+26-6-2017
+
+* Front end for Sidebars has been changed
+* two databases Created(expalined)
+  * Verified_user
+    * user_id,user_name,user_login_id,usr_password
+  * Policy_agreement
+    * counter,user_id,above_18,TnC
+* Signup form is working
+* Signup is done through AJAX and JQUery
+* MySQL database is used
+* UI changed for forms i.e. login/signup forms
+* space for advertisement has been provided below categories sidebar and in rightsidebar too
+* fix working issues of links
+* several javascript and css bugs fixed
+* fix layout bug for responsive layouts.
+* few little changes made too.
+
 23-6-2017
 
 * UI is changed
