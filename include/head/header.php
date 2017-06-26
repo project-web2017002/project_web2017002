@@ -19,7 +19,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="//localhost/optimus"><img src="" alt="website logo"></a>
+                <a class="navbar-brand" href="//localhost/optimus/"><img src="" alt="website logo"></a>
             </div>
             <div class="collapse navbar-collapse" id="myNavbar">
                 <ul class="nav navbar-nav navbar-left">
@@ -31,19 +31,8 @@
                 </ul>
 
                 <form class="navbar-form navbar-right">
-                    <!--<ul class="nav navbar-nav">
-                        <li class="dropdown">
-                            <a class="dropdown-toggle" data-toggle="dropdown" id="mainvalue" href="#">All Categories
-                                <span class="glyphicon glyphicon-chevron-down"></span></a>
-                            <ul class="dropdown-menu defineminwidth">
-                                <?php
-/*                                require("category.php");
-                                */?>
-                            </ul>
-                        </li>
-                    </ul>-->
                     <div class="input-group">
-                        <input type="text" class="form-control" placeholder="Search Products and brands" data-toggle="modal" data-target="#searchModal">
+                        <input type="text" class="form-control col-xs-12" placeholder="Search Products and brands">
                         <div class="input-group-btn">
                             <button class="btn" type="submit"><span class="glyphicon glyphicon-search"></span></button>
                         </div>

@@ -1,8 +1,9 @@
 @media (min-width: 768px) {
-    #moda {
-        width: 350px;
-        margin: 9% auto;
+    .navbar-form .input-group>.form-control {
+        width: 400px;
     }
+}
+@media (min-width: 1200px){
 }
 .smalltext{
     font-size: 11px;

@@ -4,15 +4,11 @@
 }
 #CategoryMenu{
     box-shadow: 1px 1px 5px black;
-    max-height: 570px;
-    overflow-y: scroll;
     position: relative;
     z-index:10;
 }
 #mainWindow{
-    min-height: 800px;
-    margin-top:15px;
-    max-width: 830px;
+    margin-top: 10px;
 }
 .functional{
     font-weight: 400;
@@ -41,6 +37,10 @@
 .carousel-control{
     opacity:1;
 }
+.padmar
+{
+    margin: 10px 0;
+}
 @media (min-width: 768px){
     .dataindex-main{
         width: 87%;
@@ -54,7 +54,5 @@
     }
 }
 @media (min-width: 1200px){
-    #mainWindow{
-        margin-left: 330px;
-    }
+
 }
