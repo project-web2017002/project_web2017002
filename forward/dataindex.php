@@ -1,4 +1,5 @@
-<div class="container-fluid">
+<div class="container-fluid mainBar-fluid">
+    <div class="row extra"></div>
     <div class="row dataindex-main">
         <div class="col-lg-3 leftsidebar" id="CategoryMenu">
             <div class="row">

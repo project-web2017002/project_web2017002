@@ -1,5 +1,6 @@
 <?php
     require("essential/db/db.php");
+    require("essential/ses/session.php");
 ?>
 <!DOCTYPE html>
 <html>
@@ -25,7 +26,7 @@
     //header
         include("include/head/header.php");
         ?>
-    <div class="container-fluid">
+    <div class="container-fluid mainBar-fluid">
         <?php
         //maincontent
         require("forward/dataindex.php");

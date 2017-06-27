@@ -1,6 +1,11 @@
-html,body{
+html{
     margin: 0;
     padding: 0;
+}
+body{
+    margin: 0;
+    padding-top: 63px;
+    display: none;
 }
 .row
 {
@@ -35,10 +40,6 @@ html,body{
     border-top: none;
 }
 .defineminwidth{
-    max-height: 200px;
-    min-width: 200px;
-    max-width: 200px;
-    overflow-y: scroll;
     line-height: 30px;
 }
 .defineminwidth>li{
@@ -55,15 +56,12 @@ html,body{
 }
 .positionModalbtn{
     cursor: pointer;
+    padding: 15px;
+}
+.positionadbtn{
+    padding: 0 15px;
 }
 @media (min-width: 768px) {
-    .headbar{
-        height:63px;
-    }
-    .fixwidth {
-        width: 86.73%;
-        margin-left: 7%;
-    }
     #mainvalue {
         padding-top: 8px;
         padding-bottom: 18px;
@@ -72,8 +70,5 @@ html,body{
         padding-top: 8px;
         padding-bottom: 8px;
         font-weight: bolder;
-    }
-    .positionModalbtn{
-        padding: 15px;
     }
 }

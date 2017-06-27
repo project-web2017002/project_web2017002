@@ -35,6 +35,13 @@ values ('$name','$user_login_id','$enc_pass')");
 ($user_id_obt,$legal,$agreed)");
                 if($agreement_insert){
                     echo "Success";
+                    $statusquery=mysqli_query($con,"insert into status (user_id,status) values ($fetched_login_id,1)");
+                    if($statusquery){
+                        session_start();
+                        $_SESSION['login_id'] = $user_id_obt;
+                    }else{
+                        $err="Some error! ".mysqli_error($con);
+                    }
                 }else{
                     $err="Some error! ".mysqli_error($con);
                 }

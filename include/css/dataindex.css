@@ -1,14 +1,28 @@
 .dataindex-main{
-    margin-top: 63px;
     height:auto;
+    margin-top:10px;
+    position: relative;
+}
+.mainBar-fluid{
+    padding:0;
+}
+.extra{
+    background: url(https://us.letgo.com/assets-29/bundles/site/img/intersticial-bg.png);
+    background-size: contain;
+    background-repeat: repeat-x;
+    min-height: 100px;
+}
+.centered-images{
+    text-align: -webkit-center;
+    background-size: cover;
 }
 #CategoryMenu{
-    box-shadow: 1px 1px 5px black;
     position: relative;
     z-index:10;
 }
 #mainWindow{
     margin-top: 10px;
+    display: none;
 }
 .functional{
     font-weight: 400;
@@ -17,9 +31,6 @@
 }
 .functional:hover{
     border-left:2px solid #eea236;
-}
-.leftsidebar{
-    background: #ffffff;
 }
 .lg{
     width: 50px;
@@ -41,18 +52,14 @@
 {
     margin: 10px 0;
 }
+.adjustedForm{
+    margin-left:0;
+    margin-right: 0;
+}
 @media (min-width: 768px){
-    .dataindex-main{
-        width: 87%;
-        margin-left: 7%;
-        box-shadow: 2px 2px 5px black;
-    }
     .carousel-control .glyphicon-chevron-left,
     .carousel-control .glyphicon-chevron-right, .carousel-control .icon-next, .carousel-control .icon-prev{
         width: auto;
         font-size: 20px;
     }
-}
-@media (min-width: 1200px){
-
 }

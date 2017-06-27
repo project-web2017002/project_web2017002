@@ -7,11 +7,14 @@ footer{
     box-shadow: 1px 1px 5px #888888;
     padding: 15px 0;
 }
+.parent-inlinelistbottomone{
+    padding: 9px 0;
+}
 .inlinelist{
     list-style: none;
     display: inline-block;
     text-transform: capitalize;
-    padding: 5px 3px 5px 0;
+    padding: 5px 0;
 }
 .inlinelist>a{
     color: rgba(8,9,8,0.69);
@@ -19,6 +22,7 @@ footer{
     margin-right: 14px;
     font-size: 14px;
     float:left;
+    padding: 0 7px;
 }
 .footer-info{
     font-size: 12px;
@@ -29,7 +33,6 @@ footer{
 }
 .poster{
     background-color: #eee;
-    margin-bottom: 20px;
     height: auto;
     padding: 10px;
 }
@@ -47,7 +50,6 @@ footer{
 }
 .footer-lists{
     list-style: none;
-    margin-left:-50px;
 }
 .footer-lists>li{
     margin-bottom: 3px;
@@ -57,14 +59,11 @@ footer{
     text-decoration: none;
     color: #888888;
     font-size: 13px;
-    text-align: left;
 }
 .inlinelistbottomone{
     margin: 4px 0;
     border-bottom: 0 none;
-    padding-bottom: 0;
     width: 100%;
-    margin-left: 39px;
     text-align: left;
     float: left;
     vertical-align: baseline;
@@ -93,10 +92,4 @@ footer{
 .inlinelistbottomone>a:hover{
     background-color: black;
     color: white;
-}
-@media (min-width: 768px){
-    .size{
-        width: 87%;
-        margin-left: 7%;
-    }
 }

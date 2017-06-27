@@ -8,11 +8,37 @@ $("#signup").click(function() {
         type: "POST",
         url: "//localhost/optimus/forward/signup/send.php",
         data: "username=" + username+ "&pass=" + pass +"&content="+content+"&verify_terms="+verify_terms+"&verify_age="+verify_age,
+        beforeSend: function(){
+            $("#signup").prop('disabled',true);
+        },
         success: function(data) {
             alert("success");
+            window.location.reload(true);
+        },
+        error: function(data){
+            alert("Form didn't submit!");
         }
     });
-    return false;
+});
+
+$("#login").click(function(){
+    var login_id = $("#loginContent").val();
+    var login_pass = $("#loginPass").val();
+    $.ajax({
+        type:"post",
+        url:"//localhost/optimus/forward/login/send.php",
+        data:"login_id="+login_id+"&login_pass="+login_pass,
+        beforeSend: function(){
+            $("#login").prop('disabled',true);
+        },
+        success: function(data) {
+            alert("success");
+            window.location.reload(true);
+        },
+        error: function(data){
+            alert("Form didn't submit!");
+        }
+    });
 });
 
 $(function() {
@@ -27,6 +53,22 @@ $(function() {
             $('#signup').attr('disabled');
         } else {
             $('#signup').removeAttr('disabled');
+        }
+    });
+});
+
+$(function() {
+    $('#loginForm input').keyup(function() {
+        var empty = false;
+        $('#loginForm input').each(function() {
+            if ($(this).val() == '') {
+                empty = true;
+            }
+        });
+        if (empty) {
+            $('#login').attr('disabled');
+        } else {
+            $('#login').removeAttr('disabled');
         }
     });
 });

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 26, 2017 at 02:42 PM
+-- Generation Time: Jun 27, 2017 at 01:42 PM
 -- Server version: 5.7.14
 -- PHP Version: 5.6.25
 
@@ -33,6 +33,32 @@ CREATE TABLE `policy_agreement` (
   `TnC` int(2) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `policy_agreement`
+--
+
+INSERT INTO `policy_agreement` (`counter`, `user_id`, `above_18`, `TnC`) VALUES
+(1, 1, 1, 1);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `status`
+--
+
+CREATE TABLE `status` (
+  `no` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `status` int(2) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `status`
+--
+
+INSERT INTO `status` (`no`, `user_id`, `status`) VALUES
+(1, 1, 0);
+
 -- --------------------------------------------------------
 
 --
@@ -47,6 +73,13 @@ CREATE TABLE `verified_user` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
+-- Dumping data for table `verified_user`
+--
+
+INSERT INTO `verified_user` (`user_id`, `user_name`, `user_login_id`, `user_password`) VALUES
+(1, 'akash', 'ak@gmail.com', '$2y$15$QICfp39r4IT7abMHbndtl.nMPGNWR9zsaySQKYTfLp3wVPKcSh5Ly');
+
+--
 -- Indexes for dumped tables
 --
 
@@ -55,6 +88,13 @@ CREATE TABLE `verified_user` (
 --
 ALTER TABLE `policy_agreement`
   ADD PRIMARY KEY (`counter`),
+  ADD KEY `user_id` (`user_id`);
+
+--
+-- Indexes for table `status`
+--
+ALTER TABLE `status`
+  ADD PRIMARY KEY (`no`),
   ADD KEY `user_id` (`user_id`);
 
 --
@@ -71,12 +111,17 @@ ALTER TABLE `verified_user`
 -- AUTO_INCREMENT for table `policy_agreement`
 --
 ALTER TABLE `policy_agreement`
-  MODIFY `counter` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `counter` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+--
+-- AUTO_INCREMENT for table `status`
+--
+ALTER TABLE `status`
+  MODIFY `no` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT for table `verified_user`
 --
 ALTER TABLE `verified_user`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- Constraints for dumped tables
 --
@@ -86,6 +131,12 @@ ALTER TABLE `verified_user`
 --
 ALTER TABLE `policy_agreement`
   ADD CONSTRAINT `policy_agreement_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `verified_user` (`user_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `status`
+--
+ALTER TABLE `status`
+  ADD CONSTRAINT `status_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `verified_user` (`user_id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
