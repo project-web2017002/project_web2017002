@@ -1,6 +1,24 @@
 # project_web2017002
 Web Project
 ==============================================
+27-6-2017
+
+* UI changes
+* new database created
+  * status
+    * no, user_id, status
+* position, margins fixed
+* now users can signup and login too
+* sessions has been created for login users
+* logout facility
+* Post Free Ad button is working
+* front end changes(bootstrap)
+* jQuery applied for loading animations
+* indicators and next,previous buttons are removed from carousel
+* mobile friendly UI
+* several css bugs fixed
+* more small changes too.
+
 26-6-2017
 
 * Front end for Sidebars has been changed
