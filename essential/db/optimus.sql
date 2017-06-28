@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 27, 2017 at 01:42 PM
+-- Generation Time: Jun 28, 2017 at 02:07 PM
 -- Server version: 5.7.14
 -- PHP Version: 5.6.25
 
@@ -43,6 +43,20 @@ INSERT INTO `policy_agreement` (`counter`, `user_id`, `above_18`, `TnC`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `realadmin`
+--
+
+CREATE TABLE `realadmin` (
+  `admin_id` int(11) NOT NULL,
+  `admin_name` varchar(200) NOT NULL,
+  `admin_email` varchar(30) NOT NULL,
+  `admin_contact` varchar(11) NOT NULL,
+  `admin_password` varchar(200) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `status`
 --
 
@@ -69,6 +83,7 @@ CREATE TABLE `verified_user` (
   `user_id` int(11) NOT NULL,
   `user_name` varchar(200) NOT NULL,
   `user_login_id` varchar(30) NOT NULL,
+  `user_contact` varchar(11) NOT NULL,
   `user_password` varchar(200) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -76,8 +91,8 @@ CREATE TABLE `verified_user` (
 -- Dumping data for table `verified_user`
 --
 
-INSERT INTO `verified_user` (`user_id`, `user_name`, `user_login_id`, `user_password`) VALUES
-(1, 'akash', 'ak@gmail.com', '$2y$15$QICfp39r4IT7abMHbndtl.nMPGNWR9zsaySQKYTfLp3wVPKcSh5Ly');
+INSERT INTO `verified_user` (`user_id`, `user_name`, `user_login_id`, `user_contact`, `user_password`) VALUES
+(1, 'Akash Chouhan', 'ak@gmail.com', '8968336242', '$2y$15$xlEeqyR62jB.9anM2358Ou9cKd5XGO60JScgkU8pt0Ye7GYzr4ahi');
 
 --
 -- Indexes for dumped tables
@@ -89,6 +104,12 @@ INSERT INTO `verified_user` (`user_id`, `user_name`, `user_login_id`, `user_pass
 ALTER TABLE `policy_agreement`
   ADD PRIMARY KEY (`counter`),
   ADD KEY `user_id` (`user_id`);
+
+--
+-- Indexes for table `realadmin`
+--
+ALTER TABLE `realadmin`
+  ADD PRIMARY KEY (`admin_id`);
 
 --
 -- Indexes for table `status`
@@ -112,6 +133,11 @@ ALTER TABLE `verified_user`
 --
 ALTER TABLE `policy_agreement`
   MODIFY `counter` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+--
+-- AUTO_INCREMENT for table `realadmin`
+--
+ALTER TABLE `realadmin`
+  MODIFY `admin_id` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `status`
 --
