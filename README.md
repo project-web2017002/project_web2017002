@@ -1,6 +1,22 @@
 # project_web2017002
 Web Project
 ==============================================
+28-6-2017
+
+* new database field added in Verified_user database
+  * user_contact
+* Login/Signup/Session workings Changed
+* Profile Page added
+* data can be edited from profile page
+* small UI changes
+* Footer links are now working fine and modals are working fine from everywhere
+* Admin work started
+  * admin database created named as realadmin
+    * admin_id, admin_name, admin_email, admin_contact, admin_password
+* Admin page created for login (just UI, Will be workable from tomorrow)
+* JavaScript/PHP/CSS bugs fixes for back-end working
+* admin page can be accessed from RealAdministrator Foolder
+
 27-6-2017
 
 * UI changes
