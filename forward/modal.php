@@ -4,7 +4,8 @@ error_reporting(0);
 include("login/login.php");
 include("signup/signup.php");
 include("postFreeAD/adBlockModal.php");
-include("essential/ses/logoutmodal.php");
+include("login/logoutmodal.php");
+include("profile/edit.php");
 ?>
 <div id="myModal" class="modal fade" role="dialog">
     <div class="modal-dialog" id="moda">

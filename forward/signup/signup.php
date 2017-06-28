@@ -14,7 +14,10 @@
                         title="Username contains only alphabets">
                     </div>
                     <div class="form-group">
-                        <input type="text" name="content" id="content" class="form-control" placeholder="Enter Mobile Number/Email" required>
+                        <input type="email" name="content" id="content" class="form-control" placeholder="Enter Email" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="contant" id="contant" class="form-control" placeholder="Enter Mobile Number" required pattern="[789][0-9]{9}">
                     </div>
                     <div class="form-group">
                         <input type="password" name="pass" id="pass" class="form-control" placeholder="Enter Password" required pattern=".{6,8}"
@@ -24,7 +27,8 @@
                         <input type="checkbox" name="verify_terms" id="verify_terms" value="terms_agree" checked required> I agree to terms and conditions<br>
                         <input type="checkbox" name="verify_age" id="verify_age" value="age_agree" checked required> I am above 18
                     </div>
-                    <button type="submit" name="signup" id="signup" class="btn btn-danger" disabled="disabled" style="width: 100%; background-color: #e40046; color: white;">Continue</button>
+                    <input type="submit" id="hidn" value="Continue" class="btn btn-danger" style="width: 100%; background-color: #e40046; color: white;">
+                    <button type="submit" name="signup" id="signup" class="btn btn-danger hidden" style="width: 100%; background-color: #e40046; color: white;">Continue</button>
                 </form>
                 <br><br>
                 <div class="row smalltext">or Signup using (not working)</div>

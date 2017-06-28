@@ -10,7 +10,8 @@
     background: url(https://us.letgo.com/assets-29/bundles/site/img/intersticial-bg.png);
     background-size: contain;
     background-repeat: repeat-x;
-    min-height: 100px;
+    min-height: 20px;
+    max-height: 20px;
 }
 .centered-images{
     text-align: -webkit-center;
@@ -58,7 +59,7 @@
 }
 @media (min-width: 768px){
     .carousel-control .glyphicon-chevron-left,
-    .carousel-control .glyphicon-chevron-right, .carousel-control .icon-next, .carousel-control .icon-prev{
+    .carousel-control .glyphicon-chevron-right, .carousel-control .icon-next, .carousel-control .icon-prev {
         width: auto;
         font-size: 20px;
     }

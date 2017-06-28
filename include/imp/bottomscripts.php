@@ -1,0 +1,3 @@
+<script src="//localhost/optimus/include/js/angular.js"></script>
+<script src="//localhost/optimus/include/js/index.js"></script>
+<script src="//localhost/optimus/include/js/ajax.js"></script>

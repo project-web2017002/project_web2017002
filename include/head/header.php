@@ -42,16 +42,24 @@ error_reporting(0);
                     <?php
                     if($id==''){
                         ?>
-                        <li class="positionModalbtn" data-toggle="modal" data-target="#myModal"><span class="glyphicon glyphicon-user"></span> Login/Signup</li>
+                        <li class="positionModalbtn" data-toggle="modal" data-target="#myModal">
+                            <span class="glyphicon glyphicon-user"></span> Login/Signup
+                        </li>
                         <?php
                     }
                     else{
                         ?>
-                        <li class="positionModalbtn" data-toggle="modal" data-target="#logoutModal"><span class="glyphicon glyphicon-user"></span> Logout</li>
+                        <li class="dropdown">
+                            <?php
+                            require("user.php");
+                            ?>
+                        </li>
                         <?php
                     }
                     ?>
-                    <li class="positionadbtn" data-toggle="modal" data-target="#postModal"><a id="btnPostAd" href="#" class="btn btn-warning navbar-btn" title="Post Free Ad">Post Free Ad</a></li>
+                    <li class="positionadbtn" data-toggle="modal" data-target="#postModal">
+                        <a id="btnPostAd" href="#" class="btn btn-warning navbar-btn" title="Post Free Ad">Post Free Ad</a>
+                    </li>
                 </ul>
             </div>
         </div>

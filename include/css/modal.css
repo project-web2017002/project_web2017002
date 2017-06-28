@@ -12,3 +12,11 @@
     margin:auto 0;
     text-align: center;
 }
+
+.rgt-pull{
+    text-align: right;
+}
+
+.pull-lft{
+    text-align: left;
+}
