@@ -1,10 +1,33 @@
 # project_web2017002
 Web Project
 ==============================================
+29-6-2017
+
+* Admin can do following things:
+  * View All users
+  * View Active Users
+  * Remove a user
+  * Add new admin
+  * View All admins
+  * View active Admins
+  * remove an admin
+  * how many orders
+  * how many products
+  * login/logout
+* new databases added
+  * admin_status
+  * orders
+  * order_status
+  * listed_products
+* animate.css library has been used in admin windows for animations
+* Admin can be best viewed on Desktops/laptops
+* Admin can edit his/her own information
+* Session is working fine in Admin
+* Different UI for admin
+
 28-6-2017
 
 * new database field added in Verified_user database
-  * user_contact
 * Login/Signup/Session workings Changed
 * Profile Page added
 * data can be edited from profile page
@@ -12,7 +35,6 @@ Web Project
 * Footer links are now working fine and modals are working fine from everywhere
 * Admin work started
   * admin database created named as realadmin
-    * admin_id, admin_name, admin_email, admin_contact, admin_password
 * Admin page created for login (just UI, Will be workable from tomorrow)
 * JavaScript/PHP/CSS bugs fixes for back-end working
 * admin page can be accessed from RealAdministrator Foolder
@@ -22,7 +44,6 @@ Web Project
 * UI changes
 * new database created
   * status
-    * no, user_id, status
 * position, margins fixed
 * now users can signup and login too
 * sessions has been created for login users
@@ -40,9 +61,7 @@ Web Project
 * Front end for Sidebars has been changed
 * two databases Created(expalined)
   * Verified_user
-    * user_id,user_name,user_login_id,usr_password
   * Policy_agreement
-    * counter,user_id,above_18,TnC
 * Signup form is working
 * Signup is done through AJAX and JQUery
 * MySQL database is used
