@@ -1,4 +1,4 @@
 <?php
 error_reporting(0);
 session_start();
-$id = $_SESSION['admin_login_id'];
+$aid = $_SESSION['admin_login_id'];

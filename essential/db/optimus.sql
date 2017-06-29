@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 28, 2017 at 02:07 PM
+-- Generation Time: Jun 29, 2017 at 01:51 PM
 -- Server version: 5.7.14
 -- PHP Version: 5.6.25
 
@@ -19,6 +19,63 @@ SET time_zone = "+00:00";
 --
 -- Database: `optimus`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `admin_status`
+--
+
+CREATE TABLE `admin_status` (
+  `num` int(11) NOT NULL,
+  `admin_id` int(11) NOT NULL,
+  `status` int(2) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `admin_status`
+--
+
+INSERT INTO `admin_status` (`num`, `admin_id`, `status`) VALUES
+(1, 1, 1),
+(2, 2, 0);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `listed_products`
+--
+
+CREATE TABLE `listed_products` (
+  `product_id` int(11) NOT NULL,
+  `product_title` varchar(300) NOT NULL,
+  `pro_description_file` varchar(3000) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `orders`
+--
+
+CREATE TABLE `orders` (
+  `order_counter` int(11) NOT NULL,
+  `unique_order_number` varchar(30) NOT NULL,
+  `order_by` int(11) NOT NULL,
+  `product_id` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `order_status`
+--
+
+CREATE TABLE `order_status` (
+  `counter` int(11) NOT NULL,
+  `unique_order_number` varchar(30) NOT NULL,
+  `status` varchar(300) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -52,7 +109,15 @@ CREATE TABLE `realadmin` (
   `admin_email` varchar(30) NOT NULL,
   `admin_contact` varchar(11) NOT NULL,
   `admin_password` varchar(200) NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `realadmin`
+--
+
+INSERT INTO `realadmin` (`admin_id`, `admin_name`, `admin_email`, `admin_contact`, `admin_password`) VALUES
+(1, 'Admin1', 'admin1@gmail.com', '1234567890', '$2y$10$8PGvL9vJnVnLBwAFl7TiFed4eZKkbu2Lp6zPj4nW8wyVwafEXQT/O'),
+(2, 'Admin2', 'admin2@gmail.com', '0123456789', '$2y$10$spWtDhkwo3V9eJ91KDK/zOwgoLjXpOaHRSghwFV/F1smH37Wat8/W');
 
 -- --------------------------------------------------------
 
@@ -99,6 +164,34 @@ INSERT INTO `verified_user` (`user_id`, `user_name`, `user_login_id`, `user_cont
 --
 
 --
+-- Indexes for table `admin_status`
+--
+ALTER TABLE `admin_status`
+  ADD PRIMARY KEY (`num`),
+  ADD KEY `admin_id` (`admin_id`);
+
+--
+-- Indexes for table `listed_products`
+--
+ALTER TABLE `listed_products`
+  ADD PRIMARY KEY (`product_id`);
+
+--
+-- Indexes for table `orders`
+--
+ALTER TABLE `orders`
+  ADD PRIMARY KEY (`order_counter`),
+  ADD UNIQUE KEY `unique_order_number` (`unique_order_number`),
+  ADD KEY `order_by` (`order_by`),
+  ADD KEY `product_id` (`product_id`);
+
+--
+-- Indexes for table `order_status`
+--
+ALTER TABLE `order_status`
+  ADD KEY `unique_order_number` (`unique_order_number`);
+
+--
 -- Indexes for table `policy_agreement`
 --
 ALTER TABLE `policy_agreement`
@@ -129,6 +222,21 @@ ALTER TABLE `verified_user`
 --
 
 --
+-- AUTO_INCREMENT for table `admin_status`
+--
+ALTER TABLE `admin_status`
+  MODIFY `num` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+--
+-- AUTO_INCREMENT for table `listed_products`
+--
+ALTER TABLE `listed_products`
+  MODIFY `product_id` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT for table `orders`
+--
+ALTER TABLE `orders`
+  MODIFY `order_counter` int(11) NOT NULL AUTO_INCREMENT;
+--
 -- AUTO_INCREMENT for table `policy_agreement`
 --
 ALTER TABLE `policy_agreement`
@@ -137,7 +245,7 @@ ALTER TABLE `policy_agreement`
 -- AUTO_INCREMENT for table `realadmin`
 --
 ALTER TABLE `realadmin`
-  MODIFY `admin_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `admin_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT for table `status`
 --
@@ -153,16 +261,35 @@ ALTER TABLE `verified_user`
 --
 
 --
+-- Constraints for table `admin_status`
+--
+ALTER TABLE `admin_status`
+  ADD CONSTRAINT `admin_status_ibfk_1` FOREIGN KEY (`admin_id`) REFERENCES `realadmin` (`admin_id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+--
+-- Constraints for table `orders`
+--
+ALTER TABLE `orders`
+  ADD CONSTRAINT `orders_ibfk_1` FOREIGN KEY (`order_by`) REFERENCES `verified_user` (`user_id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `orders_ibfk_2` FOREIGN KEY (`product_id`) REFERENCES `listed_products` (`product_id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+--
+-- Constraints for table `order_status`
+--
+ALTER TABLE `order_status`
+  ADD CONSTRAINT `order_status_ibfk_1` FOREIGN KEY (`unique_order_number`) REFERENCES `orders` (`unique_order_number`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+--
 -- Constraints for table `policy_agreement`
 --
 ALTER TABLE `policy_agreement`
-  ADD CONSTRAINT `policy_agreement_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `verified_user` (`user_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `policy_agreement_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `verified_user` (`user_id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
 -- Constraints for table `status`
 --
 ALTER TABLE `status`
-  ADD CONSTRAINT `status_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `verified_user` (`user_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `status_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `verified_user` (`user_id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

@@ -16,8 +16,8 @@ require("essential/session/session.php");
 <body>
 <?php
     //login/signup modal
-    require("forward/modal.php");
-    if($id==''){
+    require("forward/modal/modal.php");
+    if($aid==''){
         include("forward/login/move.php");
     }else{
         //header

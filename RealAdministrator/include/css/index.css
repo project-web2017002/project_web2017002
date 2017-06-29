@@ -28,6 +28,26 @@ body{
 #positioned{
     margin-top:25%;
 }
+.circular{
+    border:2px solid rgba(255,186,169,0.27);
+    border-radius: 50%;
+}
+
+.three{
+    animation-duration: 1s;
+    -webkit-animation-duration: 1s;
+    -moz-animation-duration: 1s;
+}
+
+.four{
+    animation-duration: 2s;
+    animation-delay: 1s;
+    -webkit-animation-duration: 2s;
+    -webkit-animation-delay: 1s;
+    -moz-animation-duration: 2s;
+    -moz-animation-delay: 1s;
+}
+
 @media(min-width: 768px){
     #positioned{
         margin-top:150px;
