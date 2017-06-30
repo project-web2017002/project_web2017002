@@ -2,7 +2,7 @@
 require("../../../essential/db/db.php");
 require("../../../essential/session/session.php");
 
-$secret_id=$_POST['secretId'];
+$secret_id = $_POST['secretId'];
 
 $deleteuser_query=mysqli_query($con,"delete from realadmin where admin_id=$secret_id");
 if($deleteuser_query){

@@ -69,6 +69,7 @@ $("#remove").click(function(){
             $("#j-k-l").addClass('hidden');
         },
         success: function(data) {
+            alert("User Removed Successfully");
             window.location.reload(true);
         },
         error: function(data){
@@ -87,6 +88,7 @@ $("#removead").click(function(){
             $("#a-b-c").addClass('hidden');
         },
         success: function(data) {
+            alert("Admin Removed Successfully");
             window.location.reload(true);
         },
         error: function(data){

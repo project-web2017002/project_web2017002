@@ -1,16 +1,7 @@
 $(function(){
     $('#Admin-form').addClass('animated zoomIn');
-});
-
-$(function(){
     $('.adminBar-fluid .two').addClass('animated zoomInRight');
-});
-
-$(function(){
     $('.three').addClass('animated zoomIn');
-});
-
-$(function(){
     $('.four').addClass('animated zoomIn');
 });
 

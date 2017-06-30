@@ -1,6 +1,8 @@
 <?php
     require("essential/db/db.php");
     require("essential/ses/session.php");
+    $categoryid = $_GET['categoryId'];
+    $city = $_GET['city'];
 ?>
 <!DOCTYPE html>
 <html>

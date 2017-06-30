@@ -10,7 +10,7 @@
             <div class="modal-body">
                 <form id="newSignupform" method="post" autocomplete="off">
                     <div class="form-group">
-                        <input type="text" name="adminname" id="adminname" class="form-control" placeholder="Enter Admin Name" required pattern="[a-zA-Z]{3,}"
+                        <input type="text" name="adminname" id="adminname" class="form-control" placeholder="Enter Admin Name" required pattern="[a-zA-Z0-9]{3,}"
                                title="Username contains only alphabets">
                     </div>
                     <div class="form-group">
