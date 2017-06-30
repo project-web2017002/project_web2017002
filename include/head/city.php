@@ -8,7 +8,7 @@
             'Delhi','Gurgaon','Hyderabad','Jaipur','Kochi','Kolkata','Lakhnow',
             'Mumbai','Pune','Trivandrum'];
         for(var a=0;a<cities.length;a++){
-            addon.innerHTML += '<li><a href="#" onclick="changename(this.innerHTML)"><span class="fa fa-map-marker"> ' + cities[a] + ' </span></a></li>';
+            addon.innerHTML += '<li><a href="?city='+ cities[a] +'" onclick="changename(this.innerHTML)"><span class="fa fa-map-marker"> ' + cities[a] + ' </span></a></li>';
         }
     </script>
 </ul>

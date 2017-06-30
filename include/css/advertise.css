@@ -1,0 +1,27 @@
+.leftadv{
+    background: #fff;
+    color:#004;
+    border-right:1px solid #f0f0f0;
+    width: 100%;
+    height:auto;
+}
+.rightadv{
+    background: rgba(255,187,168,0.09);
+    color:#004;
+    border-left:1px solid #f0f0f0;
+    width: 100%;
+    height:auto;
+}
+#middleadv{
+    display: none;
+}
+#bottomadv{
+    display: none;
+}
+.page-header{
+    padding: 5px 0;
+    margin: 0 auto;
+}
+#companytab, #freeadvtab, #paidadvtab, #servicetitletab{
+    display: none;
+}

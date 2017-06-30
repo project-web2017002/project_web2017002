@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 29, 2017 at 01:51 PM
+-- Generation Time: Jun 30, 2017 at 01:57 PM
 -- Server version: 5.7.14
 -- PHP Version: 5.6.25
 
@@ -37,8 +37,23 @@ CREATE TABLE `admin_status` (
 --
 
 INSERT INTO `admin_status` (`num`, `admin_id`, `status`) VALUES
-(1, 1, 1),
+(1, 1, 0),
 (2, 2, 0);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `advertisement`
+--
+
+CREATE TABLE `advertisement` (
+  `advt_id` int(11) NOT NULL,
+  `advt_type` varchar(100) NOT NULL,
+  `advt_cat` varchar(10) NOT NULL,
+  `advt_user_type` varchar(40) NOT NULL,
+  `advt_consumer_id` int(11) NOT NULL,
+  `advt_file` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -95,7 +110,8 @@ CREATE TABLE `policy_agreement` (
 --
 
 INSERT INTO `policy_agreement` (`counter`, `user_id`, `above_18`, `TnC`) VALUES
-(1, 1, 1, 1);
+(1, 1, 1, 1),
+(2, 2, 1, 1);
 
 -- --------------------------------------------------------
 
@@ -136,7 +152,8 @@ CREATE TABLE `status` (
 --
 
 INSERT INTO `status` (`no`, `user_id`, `status`) VALUES
-(1, 1, 0);
+(1, 1, 0),
+(2, 2, 0);
 
 -- --------------------------------------------------------
 
@@ -157,7 +174,8 @@ CREATE TABLE `verified_user` (
 --
 
 INSERT INTO `verified_user` (`user_id`, `user_name`, `user_login_id`, `user_contact`, `user_password`) VALUES
-(1, 'Akash Chouhan', 'ak@gmail.com', '8968336242', '$2y$15$xlEeqyR62jB.9anM2358Ou9cKd5XGO60JScgkU8pt0Ye7GYzr4ahi');
+(1, 'Akash Chouhan', 'ak@gmail.com', '8968336242', '$2y$15$xlEeqyR62jB.9anM2358Ou9cKd5XGO60JScgkU8pt0Ye7GYzr4ahi'),
+(2, 'test', 'test@gmail.com', '7894561236', '$2y$15$CaOVGwVk3DAYuSds4UDv/.ckClKJbgdsCPDqjqUYLpxjNdAh7ADW6');
 
 --
 -- Indexes for dumped tables
@@ -169,6 +187,12 @@ INSERT INTO `verified_user` (`user_id`, `user_name`, `user_login_id`, `user_cont
 ALTER TABLE `admin_status`
   ADD PRIMARY KEY (`num`),
   ADD KEY `admin_id` (`admin_id`);
+
+--
+-- Indexes for table `advertisement`
+--
+ALTER TABLE `advertisement`
+  ADD PRIMARY KEY (`advt_id`);
 
 --
 -- Indexes for table `listed_products`
@@ -225,7 +249,12 @@ ALTER TABLE `verified_user`
 -- AUTO_INCREMENT for table `admin_status`
 --
 ALTER TABLE `admin_status`
-  MODIFY `num` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `num` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+--
+-- AUTO_INCREMENT for table `advertisement`
+--
+ALTER TABLE `advertisement`
+  MODIFY `advt_id` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `listed_products`
 --
@@ -240,22 +269,22 @@ ALTER TABLE `orders`
 -- AUTO_INCREMENT for table `policy_agreement`
 --
 ALTER TABLE `policy_agreement`
-  MODIFY `counter` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `counter` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT for table `realadmin`
 --
 ALTER TABLE `realadmin`
-  MODIFY `admin_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `admin_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT for table `status`
 --
 ALTER TABLE `status`
-  MODIFY `no` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `no` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT for table `verified_user`
 --
 ALTER TABLE `verified_user`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- Constraints for dumped tables
 --
@@ -264,32 +293,32 @@ ALTER TABLE `verified_user`
 -- Constraints for table `admin_status`
 --
 ALTER TABLE `admin_status`
-  ADD CONSTRAINT `admin_status_ibfk_1` FOREIGN KEY (`admin_id`) REFERENCES `realadmin` (`admin_id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+  ADD CONSTRAINT `admin_status_ibfk_1` FOREIGN KEY (`admin_id`) REFERENCES `realadmin` (`admin_id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `orders`
 --
 ALTER TABLE `orders`
-  ADD CONSTRAINT `orders_ibfk_1` FOREIGN KEY (`order_by`) REFERENCES `verified_user` (`user_id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  ADD CONSTRAINT `orders_ibfk_2` FOREIGN KEY (`product_id`) REFERENCES `listed_products` (`product_id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+  ADD CONSTRAINT `orders_ibfk_1` FOREIGN KEY (`order_by`) REFERENCES `verified_user` (`user_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `orders_ibfk_2` FOREIGN KEY (`product_id`) REFERENCES `listed_products` (`product_id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `order_status`
 --
 ALTER TABLE `order_status`
-  ADD CONSTRAINT `order_status_ibfk_1` FOREIGN KEY (`unique_order_number`) REFERENCES `orders` (`unique_order_number`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+  ADD CONSTRAINT `order_status_ibfk_1` FOREIGN KEY (`unique_order_number`) REFERENCES `orders` (`unique_order_number`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `policy_agreement`
 --
 ALTER TABLE `policy_agreement`
-  ADD CONSTRAINT `policy_agreement_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `verified_user` (`user_id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+  ADD CONSTRAINT `policy_agreement_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `verified_user` (`user_id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `status`
 --
 ALTER TABLE `status`
-  ADD CONSTRAINT `status_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `verified_user` (`user_id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+  ADD CONSTRAINT `status_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `verified_user` (`user_id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
