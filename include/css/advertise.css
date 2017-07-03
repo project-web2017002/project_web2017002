@@ -12,16 +12,23 @@
     width: 100%;
     height:auto;
 }
-#middleadv{
-    display: none;
-}
-#bottomadv{
-    display: none;
-}
 .page-header{
     padding: 5px 0;
     margin: 0 auto;
 }
-#companytab, #freeadvtab, #paidadvtab, #servicetitletab{
+.extrabtn{
+    text-align: center;
+    border-radius: 50%;
+}
+@media(min-width: 1200px) {
+    .extrabtn {
+        margin-left: 30%;
+        background: rgba(234,49,125,0.82);
+    }
+}
+#bottomadv, #middleadv, #companytab, #freeadvtab, #paidadvtab, #servicetitletab, #sellhometab, #buyhometab, #renthometab, #ownselltab, #flatselltab, #landselltab,
+#landbuytab, #flatbuytab, #flatrenttab, #homerenttab, #sellcartab, #sellbiketab, #otherEducationtab, #management-event-tab,
+#live-event-tab, #OtherEventServiceTab, #usedmobiletab, #electronicsothertab, #usedelectronicstab, #furnituretab, #salontab,
+#kidstab, #sportstab, #fashiontab, #otherhomenlifetab, #usedhomelifetab{
     display: none;
 }

@@ -10,10 +10,10 @@ if($ctid==''){
 <?php
         require("topforms/servicesform.php");
     }
-    elseif ($ctid==10002){
+    elseif ($ctid==10002 || $ctid == 10012){
         ?>
         <div class="page-header">
-            <h4><strong style="text-align: center; text-transform: capitalize">Homes</strong></h4>
+            <h4><strong style="text-align: center; text-transform: capitalize">Homes Or Real Estate</strong></h4>
         </div>
         <?php
         require("topforms/homeform.php");
@@ -50,7 +50,7 @@ if($ctid==''){
         <?php
         require("topforms/educationform.php");
     }
-    elseif ($ctid==10007){
+    elseif ($ctid==10007 || $ctid == 10016){
         ?>
         <div class="page-header">
             <h4><strong style="text-align: center; text-transform: capitalize">Mobiles & Tablets</strong></h4>

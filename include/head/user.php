@@ -15,6 +15,11 @@ $user_contact=$name_array[3];
         </a>
     </li>
     <li>
+        <a href="//localhost/optimus/forward/cart/" id="shopping-cart-btn">
+            <span class="fa fa-shopping-cart"></span> My Cart
+        </a>
+    </li>
+    <li>
         <a href="#" data-toggle="modal" data-target="#logoutModal">
             <span class="glyphicon glyphicon-log-out"></span> Logout
         </a>

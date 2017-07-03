@@ -1,3 +1,4 @@
+//Services Form
 $("#submitservicesForm").click(function(){
     var category_id=$("#adv_cat").val();
     var service_type=$("#ser-type").val();
@@ -23,4 +24,56 @@ $("#submitservicesForm").click(function(){
 
     alert(category_id + " " + service_type + " " + service_fees + " " + service_name + " " + user_name + " " + user_email + " " +
     user_type + " " + company_name + " " + company_email + " " + advt_type);
+});
+
+//Bike Form
+$("#submitbikeForm").click(function(){
+});
+
+//Car Form
+$("#submitcarForm").click(function(){
+});
+
+//Education Form
+$("#submiteducationForm").click(function(){
+});
+
+//Home & Real estate Form
+$("#submithomeForm").click(function(){
+});
+
+//Jobs Form
+$("#submitJobForm").click(function(){
+});
+
+//Mobile & Tablets Form
+$("#submitmobilesForm").click(function(){
+});
+
+//Electronics & appliances Form
+$("#submitelectronicsForm").click(function(){
+});
+
+//Furniture & decoration Form
+$("#submithomelifestyleForm").click(function(){
+});
+
+//Pets Form
+$("#submitpetsForm").click(function(){
+});
+
+//Community Form
+$("#submitcommunitylForm").click(function(){
+});
+
+//Entertainment Form
+$("#submitentertainmentForm").click(function(){
+});
+
+//Events Form
+$("#submiteventForm").click(function(){
+});
+
+//Matrimonial Form
+$("#submitmatrimonialForm").click(function(){
 });

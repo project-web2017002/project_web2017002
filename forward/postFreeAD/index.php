@@ -1,6 +1,7 @@
 <?php
 error_reporting(0);
 require("../../essential/db/db.php");
+require("../../essential/ses/session.php");
 $ctid = $_GET['ctId'];
 ?>
 <!DOCTYPE html>
@@ -23,31 +24,49 @@ include("../../include/head/header.php");
 ?>
 <div class="container">
     <!-- main Content -->
-    <div class="dataindex-main" style="text-align: center;">
-        <div class="page-header">
-            <h4><strong style="text-align: center; text-transform: capitalize">post your free ad here</strong></h4>
-        </div>
-        <div class="row">
-            <div class="col-md-1 col-sm-12">
-                <!--empty-->
-            </div>
-
-            <div class="col-md-2 col-sm-12">
-                <?php
-                require("components/leftindex.php");
-                ?>
-            </div>
-            <div class="col-md-8 col-sm-12">
-                <?php
-                require("components/rightindex.php");
-                ?>
-            </div>
-
-            <div class="col-md-1 col-sm-12">
-                <!--empty-->
+    <?php
+    if($id==""){
+        ?>
+        <div class="container">
+            <div class="row">
+                <div class="jumbotron">
+                    <div class="jumbotron" data-toggle="modal" data-target="#myModal">
+                        <h1 style="text-align: center; color: #e40046;">Login/Signup To Post an Ad</h1>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
+        <?php
+    }else {
+        ?>
+        <div class="dataindex-main" style="text-align: center;">
+            <div class="page-header">
+                <h4><strong style="text-align: center; text-transform: capitalize">post your free ad here</strong></h4>
+            </div>
+            <div class="row">
+                <div class="col-md-1 col-sm-12">
+                    <!--empty-->
+                </div>
+
+                <div class="col-md-2 col-sm-12">
+                    <?php
+                    require("components/leftindex.php");
+                    ?>
+                </div>
+                <div class="col-md-8 col-sm-12">
+                    <?php
+                    require("components/rightindex.php");
+                    ?>
+                </div>
+
+                <div class="col-md-1 col-sm-12">
+                    <!--empty-->
+                </div>
+            </div>
+        </div>
+        <?php
+    }
+    ?>
 </div>
 <?php
 //footer
