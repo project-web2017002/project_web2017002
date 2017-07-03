@@ -1,6 +1,15 @@
 # project_web2017002
 Web Project
 ==============================================
+03-7-2017
+
+* All post forms are created(UI)
+* Small changes are made in categories window
+* Total 9 post ad form created with Jquery added
+* services forms returns form data
+* Instamojo integrated using test account
+* instamojo can be accessed from optimus/forward/src/pay.php
+
 29-6-2017
 
 * Admin can do following things:
