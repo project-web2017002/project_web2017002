@@ -1,6 +1,15 @@
 # project_web2017002
 Web Project
 ==============================================
+04-7-2017
+
+* Instamojo is working perfect with real cards too
+* small UI changes
+* data of all forms are collected at one common place
+* some validations are applied (few left)
+* forms are made responsive
+* unusable files removed and folders too
+
 03-7-2017
 
 * All post forms are created(UI)
