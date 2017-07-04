@@ -97,7 +97,7 @@
                     <td>
                         <div class="input-group">
                             <span class="input-group-addon"><i class="glyphicon glyphicon-phone-alt"></i></span>
-                            <input type="text" name="car-user-contact" id="car-user-contact" placeholder="Enter Contact Number" class="form-control">
+                            <input type="text" name="event-user-contact" id="event-user-contact" placeholder="Enter Contact Number" class="form-control">
                         </div>
                     </td>
 

@@ -1,21 +1,18 @@
 <?php
-
 include("instamojo.php");
-
-$api = new Instamojo\Instamojo('d883725d0649590e6b97f907ca8a861f', '1c79820a17606392de6b594eacef4cf7',
-    'https://test.instamojo.com/api/1.1/');
+$api = new Instamojo\Instamojo('10da1d38ede2ebb62c0ba3b0bbbc8879', '276e14557b76c0e503bd7ce4f3cc2c4f');
 
 try {
     $response = $api->paymentRequestCreate(array(
-        'purpose' => 'Testing product',
-        'amount' => '2500',
-        'phone' => '9999999999',
-        'buyer_name' => 'Kattappa',
+        'purpose' => 'Test Pay',
+        'amount' => '10',
+        'phone' => '8968336242',
+        'buyer_name' => 'Akash',
         'redirect_url' => 'http://localhost/optimus/forward/src/thanks.php',
         'send_email' => true,
         'webhook' => '',
         'send_sms' => true,
-        'email' => 'kattappa@bahubali.com',
+        'email' => 'akashverma141997@gmail.com',
         'allow_repeated_payments' => false
     ));
     $pay_url = $response['longurl'];
@@ -25,5 +22,4 @@ try {
 catch (Exception $e) {
     print('Error: ' . $e->getMessage());
 }
-
 ?>
