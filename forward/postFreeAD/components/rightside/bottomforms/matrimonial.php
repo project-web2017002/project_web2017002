@@ -6,8 +6,11 @@
             <table class="table">
 
                 <tr>
-                    <td colspan="2">
+                    <td>
                         <input type="hidden" value="<?php echo $ctid ?>" name="adv_cat" id="adv_cat">
+                    </td>
+                    <td>
+                        <input type="hidden" value="<?php echo $id ?>" name="user_id" id="user_id">
                     </td>
                 </tr>
 
@@ -27,11 +30,13 @@
                 </tr>
 
                 <tr>
-                    <td colspan="2">
+                    <td>
+                        <input type="text" name="user-name" id="user-name" placeholder="Enter user Name" class="form-control">
+                    </td>
+                    <td>
                         You can avail this feature Through Our Support Team, Fill the above form and our team will get to you Shortly.
                     </td>
                 </tr>
-
 
                 <tr>
                     <td colspan="2">

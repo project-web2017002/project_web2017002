@@ -6,8 +6,11 @@
             <table class="table">
 
                 <tr>
-                    <td colspan="2">
+                    <td>
                         <input type="hidden" value="<?php echo $ctid ?>" name="adv_cat" id="adv_cat">
+                    </td>
+                    <td>
+                        <input type="hidden" value="<?php echo $id ?>" name="user_id" id="user_id">
                     </td>
                 </tr>
 
@@ -77,15 +80,16 @@
 
                 <tr>
                     <td>
-                        <div class="input-group">
-                            <span class="input-group-addon"><i class="glyphicon glyphicon-phone-alt"></i></span>
-                            <input type="text" name="mobile-user-contact" id="mobile-user-contact" placeholder="Enter Contact Number" class="form-control">
-                        </div>
+                        <input type="text" name="user-name" id="user-name" placeholder="Enter user Name" class="form-control">
                     </td>
                     <td>
                         <div class="input-group">
                             <span class="input-group-addon"><i class="fa fa-at"></i></span>
                             <input type="email" name="user-email" id="user-email" required placeholder="Enter Email" class="form-control">
+                        </div>
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-phone-alt"></i></span>
+                            <input type="text" name="mobile-user-contact" id="mobile-user-contact" placeholder="Enter Contact Number" class="form-control">
                         </div>
                     </td>
                 </tr>

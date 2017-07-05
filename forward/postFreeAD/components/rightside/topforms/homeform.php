@@ -6,8 +6,11 @@
             <table class="table">
 
                 <tr>
-                    <td colspan="2">
+                    <td>
                         <input type="hidden" value="<?php echo $ctid ?>" name="adv_cat" id="adv_cat">
+                    </td>
+                    <td>
+                        <input type="hidden" value="<?php echo $id ?>" name="user_id" id="user_id">
                     </td>
                 </tr>
 
@@ -109,10 +112,13 @@
 
                 <tr>
                     <td>
-                        <h4>Advertisement For:</h4>
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-phone-alt"></i></span>
+                            <input type="text" class="form-control" name="user-contact" id="user-contact" placeholder="Enter Contact" required>
+                        </div>
                     </td>
                     <td>
-                        <input type="radio" name="user-type" class="user-type" id="company" value="Company" required>Company
+                        Advertisement For:<input type="radio" name="user-type" class="user-type" id="company" value="Company" required>Company
                         <input type="radio" name="user-type" class="user-type" id="individual" value="Individual" required>Individual
                     </td>
                 </tr>
@@ -129,6 +135,10 @@
                         <div class="input-group">
                             <span class="input-group-addon"><i class="fa fa-at"></i></span>
                             <input type="text" name="company-email" id="company-email" placeholder="Enter Company Email" class="form-control">
+                        </div>
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-phone-alt"></i></span>
+                            <input type="text" class="form-control" name="company-contact" id="company-contact" placeholder="Enter Contact" required>
                         </div>
                     </td>
                 </tr>
