@@ -1,6 +1,16 @@
 # project_web2017002
 Web Project
 ==============================================
+05-7-2017
+
+* Post data for 4 forms is now localized in csv files
+* Js bug fixes
+* UI bugs fixed
+* Php errors fixed
+* instamojo is fixed at speific place
+* forms data is collected and send to a page and 4 forms actully stores data in local disk in form of files
+* Forms are now submit through AJAX method
+
 04-7-2017
 
 * Instamojo is working perfect with real cards too
