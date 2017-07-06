@@ -32,3 +32,11 @@
 #kidstab, #sportstab, #fashiontab, #otherhomenlifetab, #usedhomelifetab{
     display: none;
 }
+#alert{
+    background: rgba(234,40,39,0.82);
+    color: #e9e9e9;
+    text-transform: capitalize;
+    text-align: center;
+    font-size: medium;
+    font-family: "Arial Black";
+}
