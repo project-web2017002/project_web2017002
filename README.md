@@ -1,6 +1,15 @@
 # project_web2017002
 Web Project
 ==============================================
+06-7-2017
+
+* All forms are now able to save data in csv file in their respective category folder
+* jquery validations are applied to few post forms
+* An editor is edited to add product in Admin bar, it is not able to save for now
+* maximum errors are fixed
+* code minimized for fast loading of pages
+* structure of ifelse statements is used for validations(AI)
+
 05-7-2017
 
 * Post data for 4 forms is now localized in csv files
