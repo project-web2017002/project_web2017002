@@ -1,6 +1,16 @@
 # project_web2017002
 Web Project
 ==============================================
+07-7-2017
+
+* All forms are now able to save data in csv file in their respective category folder as well as ad info in Database
+* By clicking on category in category menu it now displays how many ads that particular category has
+* editor has been added with full funtionality and admin can save data edited in editor in HTML and txt file format
+* admin is now able to see how many products are listed on website but not thier info (just number)
+* shorten the code for fast processing of data to be submitted
+* new javascript code added
+* several code bugs fixes
+
 06-7-2017
 
 * All forms are now able to save data in csv file in their respective category folder
