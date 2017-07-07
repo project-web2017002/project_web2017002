@@ -16,14 +16,14 @@
 
                 <tr>
                     <td>
-                        <select required name="event-type" id="event-type" class="form-control">
+                        <select name="event-type" id="event-type" class="form-control">
                             <option value="">--Select Event Type--</option>
                             <option value="Event Management">Event Management</option>
                             <option value="Live Event">Live Event</option>
                         </select>
                     </td>
                     <td id="management-event-tab">
-                        <select required name="management-event-ser-type" id="management-event-ser-type" class="form-control">
+                        <select name="management-event-ser-type" id="management-event-ser-type" class="form-control">
                             <option value="">--Management Service Type--</option>
                             <option value="Catering">Catering</option>
                             <option value="Decoration">Decoration</option>
@@ -36,7 +36,7 @@
                         </select>
                     </td>
                     <td id="live-event-tab">
-                        <select required name="live-event-ser-type" id="live-event-ser-type" class="form-control">
+                        <select name="live-event-ser-type" id="live-event-ser-type" class="form-control">
                             <option value="">--Live Event Service Type--</option>
                             <option value="Catering">Catering</option>
                             <option value="Decoration">Decoration</option>
@@ -60,13 +60,13 @@
                     <td>
                         <div class="input-group">
                             <span class="input-group-addon"><i class="fa fa-map-marker"></i></span>
-                            <input type="text" class="form-control" name="event-city" id="event-city" required placeholder="Enter Event City">
+                            <input type="text" class="form-control" name="event-city" id="event-city" placeholder="Enter Event City">
                         </div>
                     </td>
                     <td>
                         <div class="input-group">
                             <span class="input-group-addon"><i class="fa fa-rupee"></i></span>
-                            <input type="text" name="event-cost" required class="form-control" id="event-cost" placeholder="Enter Cost">
+                            <input type="text" name="event-cost" class="form-control" id="event-cost" placeholder="Enter Cost">
                         </div>
                     </td>
                 </tr>
@@ -75,13 +75,13 @@
                     <td>
                         <div class="input-group">
                             <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                            <input type="text" name="user-name" id="user-name" required placeholder="Enter Your Name" class="form-control">
+                            <input type="text" name="user-name" id="user-name" placeholder="Enter Your Name" class="form-control">
                         </div>
                     </td>
                     <td>
                         <div class="input-group">
                             <span class="input-group-addon"><i class="fa fa-at"></i></span>
-                            <input type="email" name="user-email" id="user-email" required placeholder="Enter Personal Email" class="form-control">
+                            <input type="email" name="user-email" id="user-email" placeholder="Enter Personal Email" class="form-control">
                         </div>
                     </td>
                 </tr>
@@ -91,8 +91,8 @@
                         <h4>I am:</h4>
                     </td>
                     <td>
-                        <input type="radio" name="event-ser-type" class="event-ser-type" id="Looking" value="Looking for a Service" required>Looking for a Service
-                        <input type="radio" name="event-ser-type" class="event-ser-type" id="Providing" value="Providing a service" required>Providing a service
+                        <input type="radio" name="event-ser-type" class="event-ser-type" id="Looking" value="Looking for a Service">Looking for a Service
+                        <input type="radio" name="event-ser-type" class="event-ser-type" id="Providing" value="Providing a service">Providing a service
                     </td>
                 </tr>
 
@@ -105,7 +105,7 @@
                     </td>
 
                     <td>
-                        <textarea class="form-control" id="event-desc" name="event-desc" required placeholder="Enter Description"></textarea>
+                        <textarea class="form-control" id="event-desc" name="event-desc" placeholder="Enter Description"></textarea>
                     </td>
                 </tr>
 
@@ -114,8 +114,8 @@
                         <h4>Select Advertisement Type:</h4>
                     </td>
                     <td>
-                        <input type="radio" name="adv-type" class="adv-type" id="free-adv" value="Free" required>Free
-                        <input type="radio" name="adv-type" class="adv-type" id="paid-adv" value="Paid" required>Paid
+                        <input type="radio" name="adv-type" class="adv-type" id="free-adv" value="Free">Free
+                        <input type="radio" name="adv-type" class="adv-type" id="paid-adv" value="Paid">Paid
                     </td>
                 </tr>
 
@@ -177,8 +177,11 @@
                 </tr>
 
                 <tr>
-                    <td colspan="2">
-                        <input type="submit" name="submiteventForm" id="submiteventForm" value="Continue" class="btn btn-danger btn-block">
+                    <td>
+                        <div id="validateeventForm" class="btn btn-success btn-block">Validate Form</div>
+                    </td>
+                    <td>
+                        <input type="submit" name="submiteventForm" id="submiteventForm" value="Continue" class="btn btn-danger btn-block hidden">
                     </td>
                 </tr>
             </table>

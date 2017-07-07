@@ -16,13 +16,13 @@
 
                 <tr>
                     <td colspan="2">
-                        <input type="text" required class="form-control" name="job-title" id="job-title" placeholder="Enter Job Title">
+                        <input type="text" class="form-control" name="job-title" id="job-title" placeholder="Enter Job Title">
                     </td>
                 </tr>
 
                 <tr>
                     <td>
-                        <select name="job-type" id="job-type" required class="form-control">
+                        <select name="job-type" id="job-type" class="form-control">
                             <option value="">--SELECT JOB TYPE--</option>
                             <option value="Part-Time">Part-Time Job</option>
                             <option value="Full-Time">Full-Time Job</option>
@@ -31,7 +31,7 @@
                         </select>
                     </td>
                     <td>
-                        <input type="text" name="job-role" id="job-role" required class="form-control" placeholder="Enter Job Role">
+                        <input type="text" name="job-role" id="job-role" class="form-control" placeholder="Enter Job Role">
                     </td>
                 </tr>
 
@@ -39,13 +39,13 @@
                     <td>
                         <div class="input-group">
                             <span class="input-group-addon"><i class="fa fa-rupee"></i></span>
-                            <input type="text" name="min-sal" required class="form-control" id="min-sal" placeholder="Minimum Salary/mon">
+                            <input type="text" name="min-sal" class="form-control" id="min-sal" placeholder="Minimum Salary/mon">
                         </div>
                     </td>
                     <td>
                         <div class="input-group">
                             <span class="input-group-addon"><i class="fa fa-rupee"></i></span>
-                            <input type="text" name="max-sal" required class="form-control" id="max-sal" placeholder="Maximum Salary/mon">
+                            <input type="text" name="max-sal" class="form-control" id="max-sal" placeholder="Maximum Salary/mon">
                         </div>
                     </td>
                 </tr>
@@ -68,10 +68,10 @@
 
                 <tr>
                     <td>
-                        <input type="text" required class="form-control" name="job-location" id="job-location" placeholder="Enter Job location's (separated by Comma)">
+                        <input type="text" class="form-control" name="job-location" id="job-location" placeholder="Enter Job location's (separated by Comma)">
                     </td>
                     <td>
-                        <input type="text" required class="form-control" name="job-exp" id="job-exp" placeholder="Enter required minimum Experience (in months)">
+                        <input type="text" class="form-control" name="job-exp" id="job-exp" placeholder="Enter minimum Experience (in months)">
                     </td>
                 </tr>
 
@@ -79,11 +79,11 @@
                     <td>
                         <div class="input-group">
                             <span class="input-group-addon"><i class="glyphicon glyphicon-phone-alt"></i></span>
-                            <input type="text" required class="form-control" name="recruit-number" id="recruit-number" placeholder="Enter Recruiter's Contact Number">
+                            <input type="text" class="form-control" name="recruit-number" id="recruit-number" placeholder="Enter Recruiter's Contact Number">
                         </div>
                     </td>
                     <td>
-                        <textarea class="form-control" name="job-desc" id="job-desc" placeholder="Enter Job Description" required></textarea>
+                        <textarea class="form-control" name="job-desc" id="job-desc" placeholder="Enter Job Description"></textarea>
                     </td>
                 </tr>
 
@@ -92,8 +92,8 @@
                         <h4>Select Advertisement Type:</h4>
                     </td>
                     <td>
-                        <input type="radio" name="adv-type" class="adv-type" id="free-adv" value="Free" required>Free
-                        <input type="radio" name="adv-type" class="adv-type" id="paid-adv" value="Paid" required>Paid
+                        <input type="radio" name="adv-type" class="adv-type" id="free-adv" value="Free">Free
+                        <input type="radio" name="adv-type" class="adv-type" id="paid-adv" value="Paid">Paid
                     </td>
                 </tr>
 
@@ -155,8 +155,11 @@
                 </tr>
 
                 <tr>
-                    <td colspan="2">
-                        <input type="submit" name="submitJobForm" id="submitJobForm" value="Continue" class="btn btn-danger btn-block">
+                    <td>
+                        <div id="validatejobForm" class="btn btn-success btn-block">Validate Form</div>
+                    </td>
+                    <td>
+                        <input type="submit" name="submitJobForm" id="submitJobForm" value="Continue" class="btn btn-danger btn-block hidden">
                     </td>
                 </tr>
             </table>

@@ -19,9 +19,9 @@
                         <h4>I want to:</h4>
                     </td>
                     <td>
-                        <input type="radio" name="home-todo" class="home-todo" id="Sell" value="Sell" required>Sell
-                        <input type="radio" name="home-todo" class="home-todo" id="Buy" value="Buy" required>Buy
-                        <input type="radio" name="home-todo" class="home-todo" id="Rent" value="Rent" required>Rent
+                        <input type="radio" name="home-todo" class="home-todo" id="Sell" value="Sell">Sell
+                        <input type="radio" name="home-todo" class="home-todo" id="Buy" value="Buy">Buy
+                        <input type="radio" name="home-todo" class="home-todo" id="Rent" value="Rent">Rent
                     </td>
                 </tr>
 
@@ -78,7 +78,7 @@
 
                 <tr>
                     <td>
-                        <select name="home-size" id="home-size" required class="form-control">
+                        <select name="home-size" id="home-size" class="form-control">
                             <option value="">--SELECT Property Area--</option>
                             <option value="1BHK">1BHK</option>
                             <option value="2BHK">2BHK</option>
@@ -90,7 +90,7 @@
                     <td>
                         <div class="input-group">
                             <span class="input-group-addon"><i class="fa fa-rupee"></i></span>
-                            <input type="text" name="home-cost" required class="form-control" id="home-cost" placeholder="Expected Cost">
+                            <input type="text" name="home-cost" class="form-control" id="home-cost" placeholder="Expected Cost">
                         </div>
                     </td>
                 </tr>
@@ -99,13 +99,13 @@
                     <td>
                         <div class="input-group">
                             <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                            <input type="text" name="user-name" id="user-name" required placeholder="Enter Name" class="form-control">
+                            <input type="text" name="user-name" id="user-name" placeholder="Enter Name" class="form-control">
                         </div>
                     </td>
                     <td>
                         <div class="input-group">
                             <span class="input-group-addon"><i class="fa fa-at"></i></span>
-                            <input type="email" name="user-email" id="user-email" required placeholder="Enter Personal Email" class="form-control">
+                            <input type="email" name="user-email" id="user-email" placeholder="Enter Personal Email" class="form-control">
                         </div>
                     </td>
                 </tr>
@@ -114,12 +114,12 @@
                     <td>
                         <div class="input-group">
                             <span class="input-group-addon"><i class="glyphicon glyphicon-phone-alt"></i></span>
-                            <input type="text" class="form-control" name="user-contact" id="user-contact" placeholder="Enter Contact" required>
+                            <input type="text" class="form-control" name="user-contact" id="user-contact" placeholder="Enter Contact">
                         </div>
                     </td>
                     <td>
-                        Advertisement For:<input type="radio" name="user-type" class="user-type" id="company" value="Company" required>Company
-                        <input type="radio" name="user-type" class="user-type" id="individual" value="Individual" required>Individual
+                        Advertisement For:<input type="radio" name="user-type" class="user-type" id="company" value="Company">Company
+                        <input type="radio" name="user-type" class="user-type" id="individual" value="Individual">Individual
                     </td>
                 </tr>
 
@@ -138,7 +138,7 @@
                         </div>
                         <div class="input-group">
                             <span class="input-group-addon"><i class="glyphicon glyphicon-phone-alt"></i></span>
-                            <input type="text" class="form-control" name="company-contact" id="company-contact" placeholder="Enter Contact" required>
+                            <input type="text" class="form-control" name="company-contact" id="company-contact" placeholder="Enter Contact">
                         </div>
                     </td>
                 </tr>
@@ -148,8 +148,8 @@
                         <h4>Select Advertisement Type:</h4>
                     </td>
                     <td>
-                        <input type="radio" name="adv-type" class="adv-type" id="free-adv" value="Free" required>Free
-                        <input type="radio" name="adv-type" class="adv-type" id="paid-adv" value="Paid" required>Paid
+                        <input type="radio" name="adv-type" class="adv-type" id="free-adv" value="Free">Free
+                        <input type="radio" name="adv-type" class="adv-type" id="paid-adv" value="Paid">Paid
                     </td>
                 </tr>
 
@@ -211,8 +211,11 @@
                 </tr>
 
                 <tr>
-                    <td colspan="2">
-                        <input type="submit" name="submithomeForm" id="submithomeForm" value="Continue" class="btn btn-danger btn-block">
+                    <td>
+                        <div id="validatehomeForm" class="btn btn-success btn-block">Validate Form</div>
+                    </td>
+                    <td>
+                        <input type="submit" name="submithomeForm" id="submithomeForm" value="Continue" class="btn btn-danger btn-block hidden">
                     </td>
                 </tr>
             </table>

@@ -7,6 +7,7 @@ if($ctid==''){
         <div class="page-header">
             <h4><strong style="text-align: center; text-transform: capitalize">Services</strong></h4>
         </div>
+        <div id="alert"></div>
 <?php
         require("topforms/servicesform.php");
     }
@@ -15,6 +16,7 @@ if($ctid==''){
         <div class="page-header">
             <h4><strong style="text-align: center; text-transform: capitalize">Homes Or Real Estate</strong></h4>
         </div>
+        <div id="alert"></div>
         <?php
         require("topforms/homeform.php");
     }
@@ -23,6 +25,7 @@ if($ctid==''){
         <div class="page-header">
             <h4><strong style="text-align: center; text-transform: capitalize">Jobs</strong></h4>
         </div>
+        <div id="alert"></div>
         <?php
         require("topforms/jobform.php");
     }
@@ -31,6 +34,7 @@ if($ctid==''){
         <div class="page-header">
             <h4><strong style="text-align: center; text-transform: capitalize">Cars</strong></h4>
         </div>
+        <div id="alert"></div>
         <?php
         require("topforms/carform.php");
     }
@@ -39,6 +43,7 @@ if($ctid==''){
         <div class="page-header">
             <h4><strong style="text-align: center; text-transform: capitalize">Bikes</strong></h4>
         </div>
+        <div id="alert"></div>
         <?php
         require("topforms/bikeform.php");
     }
@@ -47,6 +52,7 @@ if($ctid==''){
         <div class="page-header">
             <h4><strong style="text-align: center; text-transform: capitalize">Education</strong></h4>
         </div>
+        <div id="alert"></div>
         <?php
         require("topforms/educationform.php");
     }
@@ -55,6 +61,7 @@ if($ctid==''){
         <div class="page-header">
             <h4><strong style="text-align: center; text-transform: capitalize">Mobiles & Tablets</strong></h4>
         </div>
+        <div id="alert"></div>
         <?php
         require("topforms/mobntabletform.php");
     }

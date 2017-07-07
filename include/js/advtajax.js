@@ -1,7 +1,7 @@
 //Services Form
 $("#submitservicesForm").click(function(){
     var category_id=$("#adv_cat").val();
-    var user_id = $("#user-id").val();
+    var user_id = $("#user_id").val();
     var service_type=$("#ser-type").val();
     var service_fees=$("#ser-fee").val();
     var service_name=$("#Exact-Service-name").val();
@@ -42,7 +42,7 @@ $("#submitservicesForm").click(function(){
 //Bike Form
 $("#submitbikeForm").click(function(){
     var category_id=$("#adv_cat").val();
-    var user_id = $("#user-id").val();
+    var user_id = $("#user_id").val();
     var bike_cat_type = $("input[name=bike-cat-type]:checked").val();
     var bike_brand = $("#bike-brand").val();
     var bike_cost = $("#bike-cost").val();
@@ -82,7 +82,7 @@ $("#submitbikeForm").click(function(){
 //Car Form
 $("#submitcarForm").click(function(){
     var category_id=$("#adv_cat").val();
-    var user_id = $("#user-id").val();
+    var user_id = $("#user_id").val();
     var car_cat_type = $("input[name=car-cat-type]:checked").val();
     var car_brand = $("#car-brand").val();
     var car_cost = $("#car-cost").val();
@@ -122,7 +122,7 @@ $("#submitcarForm").click(function(){
 //Education Form
 $("#submiteducationForm").click(function(){
     var category_id=$("#adv_cat").val();
-    var user_id = $("#user-id").val();
+    var user_id = $("#user_id").val();
     var education_type = $("input[name=education-type]:checked").val();
     var other_education_type = $("#other-edu-val").val();
     var edu_title = $("#edu-title").val();
@@ -164,7 +164,7 @@ $("#submiteducationForm").click(function(){
 //Home & Real estate Form
 $("#submithomeForm").click(function(){
     var category_id=$("#adv_cat").val();
-    var user_id = $("#user-id").val();
+    var user_id = $("#user_id").val();
     var home_todo = $("input[name=home-todo]:checked").val();
     var home_sell_type = $("input[name=home-sell-type]:checked").val();
     var home_buy_type = $("input[name=home-buy-type]:checked").val();
@@ -208,7 +208,7 @@ $("#submithomeForm").click(function(){
 //Jobs Form
 $("#submitJobForm").click(function(){
     var category_id=$("#adv_cat").val();
-    var user_id = $("#user-id").val();
+    var user_id = $("#user_id").val();
     var job_title = $("#job-title").val();
     var job_type = $("#job-type").val();
     var job_role = $("#job-role").val();
@@ -250,7 +250,7 @@ $("#submitJobForm").click(function(){
 //Mobile & Tablets Form
 $("#submitmobilesForm").click(function(){
     var category_id=$("#adv_cat").val();
-    var user_id = $("#user-id").val();
+    var user_id = $("#user_id").val();
     var mobile_want = $("#mobiles-want").val();
     var mobile_subcategory = $("#mobile-subcategory").val();
     var mob_ad_title = $("#mobile-ad-title").val();
@@ -295,7 +295,7 @@ $("#submitmobilesForm").click(function(){
 //Electronics & appliances Form
 $("#submitelectronicsForm").click(function(){
     var category_id=$("#adv_cat").val();
-    var user_id = $("#user-id").val();
+    var user_id = $("#user_id").val();
     var elect_want = $("#elect-want").val();
     var elect_subcategory = $("#electronics-subcategory").val();
     var elect_other = $("#electronics-other").val();
@@ -342,7 +342,7 @@ $("#submitelectronicsForm").click(function(){
 //Furniture & decoration Form
 $("#submithomelifestyleForm").click(function(){
     var category_id=$("#adv_cat").val();
-    var user_id = $("#user-id").val();
+    var user_id = $("#user_id").val();
     var home_category = $("#home-cat").val();
     var furn_subcategory = $("#furni-subcategory").val();
     var kids_subcategory = $("#kids-subcategory").val();
@@ -415,7 +415,7 @@ $("#submitpetsForm").click(function(){
 //Community Form
 $("#submitcommunitylForm").click(function(){
     var category_id=$("#adv_cat").val();
-    var user_id = $("#user-id").val();
+    var user_id = $("#user_id").val();
     var user_contact = $("#community-user-contact").val();
     var user_name=$("#user-name").val();
     var comm_user_email = $("#user-email").val();
@@ -440,7 +440,7 @@ $("#submitcommunitylForm").click(function(){
 //Entertainment Form
 $("#submitentertainmentForm").click(function(){
     var category_id=$("#adv_cat").val();
-    var user_id = $("#user-id").val();
+    var user_id = $("#user_id").val();
     var user_contact = $("#entertainment-user-contact").val();
     var user_name=$("#user-name").val();
     var enter_user_email = $("#user-email").val();
@@ -465,7 +465,7 @@ $("#submitentertainmentForm").click(function(){
 //Events Form
 $("#submiteventForm").click(function(){
     var category_id=$("#adv_cat").val();
-    var user_id = $("#user-id").val();
+    var user_id = $("#user_id").val();
     var event_type = $("#event-type").val();
     var event_manag_type = $("#management-event-ser-type").val();
     var event_live_type = $("#live-event-ser-type").val();
@@ -507,7 +507,7 @@ $("#submiteventForm").click(function(){
 //Matrimonial Form
 $("#submitmatrimonialForm").click(function(){
     var category_id=$("#adv_cat").val();
-    var user_id = $("#user-id").val();
+    var user_id = $("#user_id").val();
     var user_contact = $("#matrimonial-user-contact").val();
     var user_name=$("#user-name").val();
     var matri_user_email = $("#user-email").val();

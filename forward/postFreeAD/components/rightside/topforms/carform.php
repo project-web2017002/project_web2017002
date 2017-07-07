@@ -17,29 +17,29 @@
                 <tr>
                     <td>I want To:</td>
                     <td>
-                        <input type="radio" name="car-cat-type" class="car-cat-type" id="car-sell" value="Sell A Car" required>Sell A Car
-                        <input type="radio" name="car-cat-type" class="car-cat-type" id="car-buy" value="Buy A Car" required>Buy A Car
+                        <input type="radio" name="car-cat-type" class="car-cat-type" id="car-sell" value="Sell A Car">Sell A Car
+                        <input type="radio" name="car-cat-type" class="car-cat-type" id="car-buy" value="Buy A Car">Buy A Car
                     </td>
                 </tr>
 
                 <tr>
                     <td>
-                        <input type="text" class="form-control" name="car-brand" id="car-brand" required placeholder="Enter Car Brand">
+                        <input type="text" class="form-control" name="car-brand" id="car-brand" placeholder="Enter Car Brand">
                     </td>
                     <td>
                         <div class="input-group">
                             <span class="input-group-addon"><i class="fa fa-rupee"></i></span>
-                            <input type="text" name="car-cost" required class="form-control" id="car-cost" placeholder="Enter Price">
+                            <input type="text" name="car-cost" class="form-control" id="car-cost" placeholder="Enter Price">
                         </div>
                     </td>
                 </tr>
 
                 <tr>
                     <td>
-                        <input type="text" name="car-reg-year" id="car-reg-year" required placeholder="Enter Car Registration Year" class="form-control">
+                        <input type="text" name="car-reg-year" id="car-reg-year" placeholder="Enter Car Registration Year" class="form-control">
                     </td>
                     <td>
-                        <input type="text" name="car-city" id="car-city" required placeholder="Enter City" class="form-control">
+                        <input type="text" name="car-city" id="car-city" placeholder="Enter City" class="form-control">
                     </td>
                 </tr>
 
@@ -47,13 +47,13 @@
                     <td>
                         <div class="input-group">
                             <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                            <input type="text" name="user-name" id="user-name" required placeholder="Enter Your Name" class="form-control">
+                            <input type="text" name="user-name" id="user-name" placeholder="Enter Your Name" class="form-control">
                         </div>
                     </td>
                     <td>
                         <div class="input-group">
                             <span class="input-group-addon"><i class="fa fa-at"></i></span>
-                            <input type="email" name="user-email" id="user-email" required placeholder="Enter Personal Email" class="form-control">
+                            <input type="email" name="user-email" id="user-email" placeholder="Enter Personal Email" class="form-control">
                         </div>
                     </td>
                 </tr>
@@ -63,8 +63,8 @@
                         <h4>I am a:</h4>
                     </td>
                     <td>
-                        <input type="radio" name="car-user-type" class="car-user-type" id="dealer" value="Dealer" required>Dealer
-                        <input type="radio" name="car-user-type" class="car-user-type" id="single" value="Single" required>Individual
+                        <input type="radio" name="car-user-type" class="car-user-type" id="dealer" value="Dealer">Dealer
+                        <input type="radio" name="car-user-type" class="car-user-type" id="single" value="Single">Individual
                     </td>
                 </tr>
 
@@ -83,7 +83,7 @@
 
                 <tr>
                     <td colspan="2">
-                        <textarea class="form-control" id="car-desc" name="car-desc" required placeholder="Enter Description of Car"></textarea>
+                        <textarea class="form-control" id="car-desc" name="car-desc" placeholder="Enter Description of Car"></textarea>
                     </td>
                 </tr>
 
@@ -92,8 +92,8 @@
                         <h4>Select Advertisement Type:</h4>
                     </td>
                     <td>
-                        <input type="radio" name="adv-type" class="adv-type" id="free-adv" value="Free" required>Free
-                        <input type="radio" name="adv-type" class="adv-type" id="paid-adv" value="Paid" required>Paid
+                        <input type="radio" name="adv-type" class="adv-type" id="free-adv" value="Free">Free
+                        <input type="radio" name="adv-type" class="adv-type" id="paid-adv" value="Paid">Paid
                     </td>
                 </tr>
 
@@ -155,8 +155,11 @@
                 </tr>
 
                 <tr>
-                    <td colspan="2">
-                        <input type="submit" name="submitcarForm" id="submitcarForm" value="Continue" class="btn btn-danger btn-block">
+                    <td>
+                        <div id="validatecarForm" class="btn btn-success btn-block">Validate Form</div>
+                    </td>
+                    <td>
+                        <input type="submit" name="submitcarForm" id="submitcarForm" value="Continue" class="btn btn-danger btn-block hidden">
                     </td>
                 </tr>
             </table>

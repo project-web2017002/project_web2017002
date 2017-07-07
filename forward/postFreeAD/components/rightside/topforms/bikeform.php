@@ -17,29 +17,29 @@
                 <tr>
                     <td>I want To:</td>
                     <td>
-                        <input type="radio" name="bike-cat-type" class="bike-cat-type" id="bike-sell" value="Sell A bike" required>Sell A bike/Scooter
-                        <input type="radio" name="bike-cat-type" class="bike-cat-type" id="bike-buy" value="Buy A bike" required>Buy A bike/Scooter
+                        <input type="radio" name="bike-cat-type" class="bike-cat-type" id="bike-sell" value="Sell A bike">Sell A bike/Scooter
+                        <input type="radio" name="bike-cat-type" class="bike-cat-type" id="bike-buy" value="Buy A bike">Buy A bike/Scooter
                     </td>
                 </tr>
 
                 <tr>
                     <td>
-                        <input type="text" class="form-control" name="bike-brand" id="bike-brand" required placeholder="Enter bike/Scooter Brand">
+                        <input type="text" class="form-control" name="bike-brand" id="bike-brand" placeholder="Enter bike/Scooter Brand">
                     </td>
                     <td>
                         <div class="input-group">
                             <span class="input-group-addon"><i class="fa fa-rupee"></i></span>
-                            <input type="text" name="bike-cost" required class="form-control" id="bike-cost" placeholder="Enter Price">
+                            <input type="text" name="bike-cost" class="form-control" id="bike-cost" placeholder="Enter Price">
                         </div>
                     </td>
                 </tr>
 
                 <tr>
                     <td>
-                        <input type="text" name="bike-reg-year" id="bike-reg-year" required placeholder="Enter bike/Scooter Registration Year" class="form-control">
+                        <input type="text" name="bike-reg-year" id="bike-reg-year" placeholder="Enter bike/Scooter Registration Year" class="form-control">
                     </td>
                     <td>
-                        <input type="text" name="bike-city" id="bike-city" required placeholder="Enter City" class="form-control">
+                        <input type="text" name="bike-city" id="bike-city" placeholder="Enter City" class="form-control">
                     </td>
                 </tr>
 
@@ -47,13 +47,13 @@
                     <td>
                         <div class="input-group">
                             <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                            <input type="text" name="user-name" id="user-name" required placeholder="Enter Your Name" class="form-control">
+                            <input type="text" name="user-name" id="user-name" placeholder="Enter Your Name" class="form-control">
                         </div>
                     </td>
                     <td>
                         <div class="input-group">
                             <span class="input-group-addon"><i class="fa fa-at"></i></span>
-                            <input type="email" name="user-email" id="user-email" required placeholder="Enter Personal Email" class="form-control">
+                            <input type="email" name="user-email" id="user-email" placeholder="Enter Personal Email" class="form-control">
                         </div>
                     </td>
                 </tr>
@@ -63,8 +63,8 @@
                         <h4>I am a:</h4>
                     </td>
                     <td>
-                        <input type="radio" name="bike-user-type" class="bike-user-type" id="dealer" value="Dealer" required>Dealer
-                        <input type="radio" name="bike-user-type" class="bike-user-type" id="single" value="Single" required>Individual
+                        <input type="radio" name="bike-user-type" class="bike-user-type" id="dealer" value="Dealer">Dealer
+                        <input type="radio" name="bike-user-type" class="bike-user-type" id="single" value="Single">Individual
                     </td>
                 </tr>
 
@@ -83,7 +83,7 @@
 
                 <tr>
                     <td colspan="2">
-                        <textarea class="form-control" id="bike-desc" name="bike-desc" required placeholder="Enter Description of Bike/Scooter"></textarea>
+                        <textarea class="form-control" id="bike-desc" name="bike-desc" placeholder="Enter Description of Bike/Scooter"></textarea>
                     </td>
                 </tr>
 
@@ -92,8 +92,8 @@
                         <h4>Select Advertisement Type:</h4>
                     </td>
                     <td>
-                        <input type="radio" name="adv-type" class="adv-type" id="free-adv" value="Free" required>Free
-                        <input type="radio" name="adv-type" class="adv-type" id="paid-adv" value="Paid" required>Paid
+                        <input type="radio" name="adv-type" class="adv-type" id="free-adv" value="Free">Free
+                        <input type="radio" name="adv-type" class="adv-type" id="paid-adv" value="Paid">Paid
                     </td>
                 </tr>
 
@@ -155,8 +155,11 @@
                 </tr>
 
                 <tr>
-                    <td colspan="2">
-                        <input type="submit" name="submitbikeForm" id="submitbikeForm" value="Continue" class="btn btn-danger btn-block">
+                    <td>
+                        <div id="validatebikeForm" class="btn btn-success btn-block">Validate Form</div>
+                    </td>
+                    <td>
+                        <input type="submit" name="submitbikeForm" id="submitbikeForm" value="Continue" class="btn btn-danger btn-block hidden">
                     </td>
                 </tr>
             </table>

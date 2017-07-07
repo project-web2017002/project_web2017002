@@ -16,7 +16,7 @@
 
                 <tr>
                     <td>
-                        <select class="form-control" id="home-cat" name="home-cat" required>
+                        <select class="form-control" id="home-cat" name="home-cat">
                             <option value="">--Select One--</option>
                             <option value="Furniture & Decoration">Furniture & Decoration</option>
                             <option value="Kids & Toys">Kids & Toys</option>
@@ -27,7 +27,7 @@
                     </td>
 
                     <td id="furnituretab">
-                        <select class="form-control" id="furni-subcategory" name="furni-subcategory" required>
+                        <select class="form-control" id="furni-subcategory" name="furni-subcategory">
                             <option value="">--Select a Subcategory--</option>
                             <option value="Furniture for Home & Office">Furniture for Home & Office</option>
                             <option value="Home Decore - Furnishings">Home Decore - Furnishings</option>
@@ -39,7 +39,7 @@
                     </td>
 
                     <td id="kidstab">
-                        <select class="form-control" id="kids-subcategory" name="kids-subcategory" required>
+                        <select class="form-control" id="kids-subcategory" name="kids-subcategory">
                             <option value="">--Select a Subcategory--</option>
                             <option value="Toys - Games">Toys - Games</option>
                             <option value="Baby - Infant Products">Baby - Infant Products</option>
@@ -48,7 +48,7 @@
                     </td>
 
                     <td id="sportstab">
-                        <select class="form-control" id="sports-subcategory" name="sports-subcategory" required>
+                        <select class="form-control" id="sports-subcategory" name="sports-subcategory">
                             <option value="">--Select a Subcategory--</option>
                             <option value="Sports - Fitness Equipments">Sports - Fitness Equipments</option>
                             <option value="Bicycle & Accessories">Bicycle & Accessories</option>
@@ -61,7 +61,7 @@
                     </td>
 
                     <td id="fashiontab">
-                        <select class="form-control" id="fashion-subcategory" name="fashion-subcategory" required>
+                        <select class="form-control" id="fashion-subcategory" name="fashion-subcategory">
                             <option value="">--Select a Subcategory--</option>
                             <option value="Clothing - Garments(Men)">Clothing - Garments(Men)</option>
                             <option value="Watches(Men)">Watches(Men)</option>
@@ -95,13 +95,13 @@
 
                 <tr>
                     <td colspan="2">
-                        <input type="text" name="homelife-ad-title" id="homelife-ad-title" class="form-control" required placeholder="Enter Title of Ad">
+                        <input type="text" name="homelife-ad-title" id="homelife-ad-title" class="form-control" placeholder="Enter Title of Ad">
                     </td>
                 </tr>
 
                 <tr>
                     <td>
-                        <select class="form-control" id="homelife-condition" name="homelife-condition" required>
+                        <select class="form-control" id="homelife-condition" name="homelife-condition">
                             <option value="">--Please Select Condition--</option>
                             <option value="New">New</option>
                             <option value="Used">Used</option>
@@ -110,7 +110,7 @@
                     <td>
                         <div class="input-group">
                             <span class="input-group-addon"><i class="fa fa-rupee"></i></span>
-                            <input type="text" name="homelife-cost" required class="form-control" id="homelife-cost" placeholder="Enter Price">
+                            <input type="text" name="homelife-cost" class="form-control" id="homelife-cost" placeholder="Enter Price">
                         </div>
                     </td>
                 </tr>
@@ -139,17 +139,17 @@
                         </div>
                         <div class="input-group">
                             <span class="input-group-addon"><i class="fa fa-at"></i></span>
-                            <input type="email" name="user-email" id="user-email" required placeholder="Enter Email" class="form-control">
+                            <input type="email" name="user-email" id="user-email" placeholder="Enter Email" class="form-control">
                         </div>
                     </td>
                 </tr>
 
                 <tr>
                     <td>
-                        <input type="text" name="homelife-includes" id="homelife-includes" required placeholder="Package Includes (separate by Comma)" class="form-control">
+                        <input type="text" name="homelife-includes" id="homelife-includes" placeholder="Package Includes (separate by Comma)" class="form-control">
                     </td>
                     <td>
-                        <textarea class="form-control" id="homelife-desc" name="homelife-desc" required placeholder="Enter Description.."></textarea>
+                        <textarea class="form-control" id="homelife-desc" name="homelife-desc" placeholder="Enter Description.."></textarea>
                     </td>
                 </tr>
 
@@ -158,8 +158,8 @@
                         <h4>Select Advertisement Type:</h4>
                     </td>
                     <td>
-                        <input type="radio" name="adv-type" class="adv-type" id="free-adv" value="Free" required>Free
-                        <input type="radio" name="adv-type" class="adv-type" id="paid-adv" value="Paid" required>Paid
+                        <input type="radio" name="adv-type" class="adv-type" id="free-adv" value="Free">Free
+                        <input type="radio" name="adv-type" class="adv-type" id="paid-adv" value="Paid">Paid
                     </td>
                 </tr>
 
@@ -221,8 +221,11 @@
                 </tr>
 
                 <tr>
-                    <td colspan="2">
-                        <input type="submit" name="submithomelifestyleForm" id="submithomelifestyleForm" value="Continue" class="btn btn-danger btn-block">
+                    <td>
+                        <div id="validatehomelifestyleForm" class="btn btn-success btn-block">Validate Form</div>
+                    </td>
+                    <td>
+                        <input type="submit" name="submithomelifestyleForm" id="submithomelifestyleForm" value="Continue" class="btn btn-danger btn-block hidden">
                     </td>
                 </tr>
             </table>

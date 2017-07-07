@@ -16,7 +16,7 @@
 
                 <tr>
                     <td>
-                        <select name="ser-type" id="ser-type" required class="form-control">
+                        <select name="ser-type" id="ser-type" class="form-control">
                             <option value="">--SELECT SERVICE TYPE--</option>
                             <option value="Home Services">Home Services</option>
                             <option value="Legal Services">Legal Services</option>
@@ -31,14 +31,14 @@
                     <td>
                         <div class="input-group">
                             <span class="input-group-addon"><i class="fa fa-rupee"></i></span>
-                            <input type="text" name="ser-fee" required class="form-control" id="ser-fee" placeholder="Expected Fees">
+                            <input type="text" name="ser-fee" class="form-control" id="ser-fee" placeholder="Expected Fees">
                         </div>
                     </td>
                 </tr>
 
                 <tr id="servicetitletab">
                     <td colspan="2">
-                        <input type="text" name="Exact-Service-name" id="Exact-Service-name" required placeholder="Enter Service Title" class="form-control">
+                        <input type="text" name="Exact-Service-name" id="Exact-Service-name" placeholder="Enter Service Title" class="form-control">
                     </td>
                 </tr>
 
@@ -46,26 +46,26 @@
                     <td>
                         <div class="input-group">
                             <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                            <input type="text" name="user-name" id="user-name" required placeholder="Enter Name" class="form-control">
+                            <input type="text" name="user-name" id="user-name" placeholder="Enter Name" class="form-control">
                         </div>
                     </td>
                     <td>
                         <div class="input-group">
                             <span class="input-group-addon"><i class="fa fa-at"></i></span>
-                            <input type="email" name="user-email" id="user-email" required placeholder="Enter Personal Email" class="form-control">
+                            <input type="email" name="user-email" id="user-email" placeholder="Enter Personal Email" class="form-control">
                         </div>
                     </td>
                 </tr>
 
                 <tr>
                     <td>
-                        I am: <input type="radio" name="user-type" class="user-type" id="company" value="Company" required>Company
-                        <input type="radio" name="user-type" class="user-type" id="individual" value="Individual" required>Individual
+                        I am: <input type="radio" name="user-type" class="user-type" id="company" value="Company">Company
+                        <input type="radio" name="user-type" class="user-type" id="individual" value="Individual">Individual
                     </td>
                     <td>
                         <div class="input-group">
                             <span class="input-group-addon"><i class="glyphicon glyphicon-phone-alt"></i></span>
-                            <input type="text" class="form-control" name="user-contact" id="user-contact" placeholder="Enter Contact" required>
+                            <input type="text" class="form-control" name="user-contact" id="user-contact" placeholder="Enter Contact">
                         </div>
                     </td>
                 </tr>
@@ -85,7 +85,7 @@
                         </div>
                         <div class="input-group">
                             <span class="input-group-addon"><i class="glyphicon glyphicon-phone-alt"></i></span>
-                            <input type="text" class="form-control" name="company-contact" id="company-contact" placeholder="Enter Contact" required>
+                            <input type="text" class="form-control" name="company-contact" id="company-contact" placeholder="Enter Contact">
                         </div>
                     </td>
                 </tr>
@@ -95,8 +95,8 @@
                         <h4>Select Advertisement Type:</h4>
                     </td>
                     <td>
-                        <input type="radio" name="adv-type" class="adv-type" id="free-adv" value="Free" required>Free
-                        <input type="radio" name="adv-type" class="adv-type" id="paid-adv" value="Paid" required>Paid
+                        <input type="radio" name="adv-type" class="adv-type" id="free-adv" value="Free">Free
+                        <input type="radio" name="adv-type" class="adv-type" id="paid-adv" value="Paid">Paid
                     </td>
                 </tr>
 
@@ -158,8 +158,11 @@
                 </tr>
 
                 <tr>
-                    <td colspan="2">
-                        <input type="submit" name="submitservicesForm" id="submitservicesForm" value="Continue" class="btn btn-danger btn-block">
+                    <td>
+                        <div id="validateservicesForm" class="btn btn-success btn-block">Validate Form</div>
+                    </td>
+                    <td>
+                        <input type="submit" name="submitservicesForm" id="submitservicesForm" value="Continue" class="btn btn-danger btn-block hidden">
                     </td>
                 </tr>
             </table>

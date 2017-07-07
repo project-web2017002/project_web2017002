@@ -21,6 +21,17 @@ $(function(){
         }else{
             advt_type=adv_type;
         }
+
+        if(category_id.val() == ""){
+            $("#alert").text("Unable To fetch Category! Please Select a Category Again...");
+        }
+        else {
+            if (user_id.val() == "") {
+                $("#alert").text("Unable To fetch User Info! Please login Again...");
+            }
+            else {
+            }
+        }
     });
 
 //Job form Validation
@@ -45,6 +56,17 @@ $(function(){
             advt_type=$("input[name=paidser-type]:checked");
         }else{
             advt_type=adv_type;
+        }
+
+        if(category_id.val() == ""){
+            $("#alert").text("Unable To fetch Category! Please Select a Category Again...");
+        }
+        else {
+            if (user_id.val() == "") {
+                $("#alert").text("Unable To fetch User Info! Please login Again...");
+            }
+            else {
+            }
         }
     });
 
@@ -72,6 +94,17 @@ $(function(){
             advt_type=$("input[name=paidser-type]:checked");
         }else{
             advt_type=adv_type;
+        }
+
+        if(category_id.val() == ""){
+            $("#alert").text("Unable To fetch Category! Please Select a Category Again...");
+        }
+        else {
+            if (user_id.val() == "") {
+                $("#alert").text("Unable To fetch User Info! Please login Again...");
+            }
+            else {
+            }
         }
     });
 
@@ -103,6 +136,17 @@ $(function(){
         }else{
             advt_type=adv_type;
         }
+
+        if(category_id.val() == ""){
+            $("#alert").text("Unable To fetch Category! Please Select a Category Again...");
+        }
+        else {
+            if (user_id.val() == "") {
+                $("#alert").text("Unable To fetch User Info! Please login Again...");
+            }
+            else {
+            }
+        }
     });
 
 //Electronics form Validation
@@ -132,6 +176,17 @@ $(function(){
         }else{
             advt_type=adv_type;
         }
+
+        if(category_id.val() == ""){
+            $("#alert").text("Unable To fetch Category! Please Select a Category Again...");
+        }
+        else {
+            if (user_id.val() == "") {
+                $("#alert").text("Unable To fetch User Info! Please login Again...");
+            }
+            else {
+            }
+        }
     });
 
 //Bike form Validation
@@ -155,6 +210,17 @@ $(function(){
             advt_type=$("input[name=paidser-type]:checked");
         }else{
             advt_type=adv_type;
+        }
+
+        if(category_id.val() == ""){
+            $("#alert").text("Unable To fetch Category! Please Select a Category Again...");
+        }
+        else {
+            if (user_id.val() == "") {
+                $("#alert").text("Unable To fetch User Info! Please login Again...");
+            }
+            else {
+            }
         }
     });
 
@@ -180,6 +246,17 @@ $(function(){
         }else{
             advt_type=adv_type;
         }
+
+        if(category_id.val() == ""){
+            $("#alert").text("Unable To fetch Category! Please Select a Category Again...");
+        }
+        else {
+            if (user_id.val() == "") {
+                $("#alert").text("Unable To fetch User Info! Please login Again...");
+            }
+            else {
+            }
+        }
     });
 
 //Education form Validation
@@ -204,6 +281,17 @@ $(function(){
             advt_type=$("input[name=paidser-type]:checked");
         }else{
             advt_type=adv_type;
+        }
+
+        if(category_id.val() == ""){
+            $("#alert").text("Unable To fetch Category! Please Select a Category Again...");
+        }
+        else {
+            if (user_id.val() == "") {
+                $("#alert").text("Unable To fetch User Info! Please login Again...");
+            }
+            else {
+            }
         }
     });
 
@@ -233,6 +321,17 @@ $(function(){
         }else{
             advt_type=adv_type;
         }
+
+        if(category_id.val() == ""){
+            $("#alert").text("Unable To fetch Category! Please Select a Category Again...");
+        }
+        else {
+            if (user_id.val() == "") {
+                $("#alert").text("Unable To fetch User Info! Please login Again...");
+            }
+            else {
+            }
+        }
     });
 
 //Event form Validation
@@ -257,6 +356,17 @@ $(function(){
             advt_type=$("input[name=paidser-type]:checked");
         }else{
             advt_type=adv_type;
+        }
+
+        if(category_id.val() == ""){
+            $("#alert").text("Unable To fetch Category! Please Select a Category Again...");
+        }
+        else {
+            if (user_id.val() == "") {
+                $("#alert").text("Unable To fetch User Info! Please login Again...");
+            }
+            else {
+            }
         }
     });
 

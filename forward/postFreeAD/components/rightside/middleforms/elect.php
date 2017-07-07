@@ -16,7 +16,7 @@
 
                 <tr>
                     <td>
-                        <select class="form-control" id="elect-want" name="elect-want" required>
+                        <select class="form-control" id="elect-want" name="elect-want">
                             <option value="">--I want To:--</option>
                             <option value="Buy">Buy</option>
                             <option value="Sell">Sell</option>
@@ -24,7 +24,7 @@
                     </td>
 
                     <td>
-                        <select class="form-control" id="electronics-subcategory" name="electronics-subcategory" required>
+                        <select class="form-control" id="electronics-subcategory" name="electronics-subcategory">
                             <option value="">--Select a Subcategory--</option>
                             <option value="Camera">Camera</option>
                             <option value="Laptop/Computer">Laptop/Computer</option>
@@ -44,20 +44,20 @@
 
                 <tr id="electronicsothertab">
                     <td colspan="2">
-                        <input type="text" name="electronics-other" id="electronics-other" class="form-control" required placeholder="Specify Other">
+                        <input type="text" name="electronics-other" id="electronics-other" class="form-control" placeholder="Specify Other">
                     </td>
                 </tr>
 
 
                 <tr>
                     <td colspan="2">
-                        <input type="text" name="electronics-ad-title" id="electronics-ad-title" class="form-control" required placeholder="Enter Title of Ad">
+                        <input type="text" name="electronics-ad-title" id="electronics-ad-title" class="form-control" placeholder="Enter Title of Ad">
                     </td>
                 </tr>
 
                 <tr>
                     <td>
-                        <select class="form-control" id="elect-condition" name="elect-condition" required>
+                        <select class="form-control" id="elect-condition" name="elect-condition">
                             <option value="">--Please Select Condition--</option>
                             <option value="New">New</option>
                             <option value="Used">Used</option>
@@ -66,7 +66,7 @@
                     <td>
                         <div class="input-group">
                             <span class="input-group-addon"><i class="fa fa-rupee"></i></span>
-                            <input type="text" name="elect-cost" required class="form-control" id="elect-cost" placeholder="Enter Price">
+                            <input type="text" name="elect-cost" class="form-control" id="elect-cost" placeholder="Enter Price">
                         </div>
                     </td>
                 </tr>
@@ -86,10 +86,10 @@
 
                 <tr>
                     <td>
-                        <input type="text" class="form-control" name="elect-brand" id="elect-brand" required placeholder="Enter Brand">
+                        <input type="text" class="form-control" name="elect-brand" id="elect-brand" placeholder="Enter Brand">
                     </td>
                     <td>
-                        <input type="text" name="elect-model" required class="form-control" id="elect-model" placeholder="Enter Model (if no model, enter No)">
+                        <input type="text" name="elect-model" class="form-control" id="elect-model" placeholder="Enter Model (if no model, enter No)">
                     </td>
                 </tr>
 
@@ -104,17 +104,17 @@
                         </div>
                         <div class="input-group">
                             <span class="input-group-addon"><i class="fa fa-at"></i></span>
-                            <input type="email" name="user-email" id="user-email" required placeholder="Enter Email" class="form-control">
+                            <input type="email" name="user-email" id="user-email" placeholder="Enter Email" class="form-control">
                         </div>
                     </td>
                 </tr>
 
                 <tr>
                     <td>
-                        <input type="text" name="elect-includes" id="elect-includes" required placeholder="Package Includes (separate by Comma)" class="form-control">
+                        <input type="text" name="elect-includes" id="elect-includes" placeholder="Package Includes (separate by Comma)" class="form-control">
                     </td>
                     <td>
-                        <textarea class="form-control" id="elect-desc" name="elect-desc" required placeholder="Enter Description.."></textarea>
+                        <textarea class="form-control" id="elect-desc" name="elect-desc" placeholder="Enter Description.."></textarea>
                     </td>
                 </tr>
 
@@ -123,8 +123,8 @@
                         <h4>Select Advertisement Type:</h4>
                     </td>
                     <td>
-                        <input type="radio" name="adv-type" class="adv-type" id="free-adv" value="Free" required>Free
-                        <input type="radio" name="adv-type" class="adv-type" id="paid-adv" value="Paid" required>Paid
+                        <input type="radio" name="adv-type" class="adv-type" id="free-adv" value="Free">Free
+                        <input type="radio" name="adv-type" class="adv-type" id="paid-adv" value="Paid">Paid
                     </td>
                 </tr>
 
@@ -186,8 +186,11 @@
                 </tr>
 
                 <tr>
-                    <td colspan="2">
-                        <input type="submit" name="submitelectronicsForm" id="submitelectronicsForm" value="Continue" class="btn btn-danger btn-block">
+                    <td>
+                        <div id="validateelectronicsForm" class="btn btn-success btn-block">Validate Form</div>
+                    </td>
+                    <td>
+                        <input type="submit" name="submitelectronicsForm" id="submitelectronicsForm" value="Continue" class="btn btn-danger btn-block hidden">
                     </td>
                 </tr>
             </table>

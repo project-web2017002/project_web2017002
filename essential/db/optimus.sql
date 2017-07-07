@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 03, 2017 at 03:25 PM
+-- Generation Time: Jul 07, 2017 at 01:39 PM
 -- Server version: 5.7.14
 -- PHP Version: 5.6.25
 
@@ -66,6 +66,14 @@ CREATE TABLE `listed_products` (
   `product_title` varchar(300) NOT NULL,
   `pro_description_file` varchar(3000) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `listed_products`
+--
+
+INSERT INTO `listed_products` (`product_id`, `product_title`, `pro_description_file`) VALUES
+(1, 'Jalandhar', '//localhost/optimus/Category/categoryId/10001/2017-07-07-12-53-46pm-1.csv'),
+(2, 'Sell', '//localhost/optimus/Category/categoryId/10002/2017-07-07-01-04-17pm-1.csv');
 
 -- --------------------------------------------------------
 
@@ -152,7 +160,7 @@ CREATE TABLE `status` (
 --
 
 INSERT INTO `status` (`no`, `user_id`, `status`) VALUES
-(1, 1, 0),
+(1, 1, 1),
 (2, 2, 0);
 
 -- --------------------------------------------------------
@@ -249,7 +257,7 @@ ALTER TABLE `verified_user`
 -- AUTO_INCREMENT for table `admin_status`
 --
 ALTER TABLE `admin_status`
-  MODIFY `num` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `num` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT for table `advertisement`
 --
@@ -259,7 +267,7 @@ ALTER TABLE `advertisement`
 -- AUTO_INCREMENT for table `listed_products`
 --
 ALTER TABLE `listed_products`
-  MODIFY `product_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `product_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT for table `orders`
 --
@@ -274,7 +282,7 @@ ALTER TABLE `policy_agreement`
 -- AUTO_INCREMENT for table `realadmin`
 --
 ALTER TABLE `realadmin`
-  MODIFY `admin_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `admin_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT for table `status`
 --

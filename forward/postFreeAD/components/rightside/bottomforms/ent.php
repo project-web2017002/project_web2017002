@@ -24,7 +24,7 @@
                     <td>
                         <div class="input-group">
                             <span class="input-group-addon"><i class="fa fa-at"></i></span>
-                            <input type="email" name="user-email" id="user-email" required placeholder="Enter Email" class="form-control">
+                            <input type="email" name="user-email" id="user-email" placeholder="Enter Email" class="form-control">
                         </div>
                     </td>
                 </tr>
@@ -40,8 +40,11 @@
 
 
                 <tr>
-                    <td colspan="2">
-                        <input type="submit" name="submitentertainmentForm" id="submitentertainmentForm" value="Continue" class="btn btn-danger btn-block">
+                    <td>
+                        <div id="validateentertainmentForm" class="btn btn-success btn-block">Validate Form</div>
+                    </td>
+                    <td>
+                        <input type="submit" name="submitentertainmentForm" id="submitentertainmentForm" value="Continue" class="btn btn-danger btn-block hidden">
                     </td>
                 </tr>
             </table>

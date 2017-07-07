@@ -16,7 +16,7 @@
 
                 <tr>
                     <td>
-                        <select class="form-control" name="education-type" id="education-type" required>
+                        <select class="form-control" name="education-type" id="education-type">
                             <option value="">--Please Select One--</option>
                             <option value="Career Counseling">Career Counseling</option>
                             <option value="Certification & Training">Certification & Training</option>
@@ -36,12 +36,12 @@
 
                 <tr>
                     <td>
-                        <input type="text" class="form-control" name="edu-title" id="edu-title" placeholder="Enter Title of AD" required>
+                        <input type="text" class="form-control" name="edu-title" id="edu-title" placeholder="Enter Title of AD">
                     </td>
                     <td>
                         <div class="input-group">
                             <span class="input-group-addon"><i class="fa fa-map-marker"></i></span>
-                            <input type="text" class="form-control" name="edu-city" id="edu-city" placeholder="Enter City" required>
+                            <input type="text" class="form-control" name="edu-city" id="edu-city" placeholder="Enter City">
                         </div>
                     </td>
                 </tr>
@@ -50,23 +50,23 @@
                     <td>
                         <div class="input-group">
                             <span class="input-group-addon"><i class="fa fa-rupee"></i></span>
-                            <input type="text" class="form-control" name="edu-fees" id="edu-fees" placeholder="Enter Fees" required>
+                            <input type="text" class="form-control" name="edu-fees" id="edu-fees" placeholder="Enter Fees">
                         </div>
                     </td>
                     <td>
                         <div class="input-group">
                             <span class="input-group-addon"><i class="fa fa-graduation-cap"></i></span>
-                            <input type="text" class="form-control" name="edu-stream" id="edu-stream" placeholder="Enter Stream" required>
+                            <input type="text" class="form-control" name="edu-stream" id="edu-stream" placeholder="Enter Stream">
                         </div>
                     </td>
                 </tr>
 
                 <tr>
                     <td>
-                        <input type="text" class="form-control" name="edu-insti-name" id="edu-insti-name" placeholder="Enter Institute Name" required>
+                        <input type="text" class="form-control" name="edu-insti-name" id="edu-insti-name" placeholder="Enter Institute Name">
                     </td>
                     <td>
-                        <input type="text" class="form-control" name="edu-insti-address" id="edu-insti-address" placeholder="Enter Institute Address" required>
+                        <input type="text" class="form-control" name="edu-insti-address" id="edu-insti-address" placeholder="Enter Institute Address">
                     </td>
                 </tr>
 
@@ -74,20 +74,20 @@
                     <td>
                         <div class="input-group">
                             <span class="input-group-addon"><i class="glyphicon glyphicon-phone-alt"></i></span>
-                            <input type="text" class="form-control" name="edu-insti-contact" id="edu-insti-contact" placeholder="Enter Institute Contact" required>
+                            <input type="text" class="form-control" name="edu-insti-contact" id="edu-insti-contact" placeholder="Enter Institute Contact">
                         </div>
                     </td>
                     <td>
                         <div class="input-group">
                             <span class="input-group-addon"><i class="fa fa-at"></i></span>
-                            <input type="email" class="form-control" name="edu-insti-email" id="edu-insti-email" placeholder="Enter Institute Email" required>
+                            <input type="email" class="form-control" name="edu-insti-email" id="edu-insti-email" placeholder="Enter Institute Email">
                         </div>
                     </td>
                 </tr>
 
                 <tr>
                     <td colspan="2">
-                        <textarea class="form-control" id="edu-desc" name="edu-desc" required placeholder="Enter Description"></textarea>
+                        <textarea class="form-control" id="edu-desc" name="edu-desc" placeholder="Enter Description"></textarea>
                     </td>
                 </tr>
 
@@ -96,8 +96,8 @@
                         <h4>Select Advertisement Type:</h4>
                     </td>
                     <td>
-                        <input type="radio" name="adv-type" class="adv-type" id="free-adv" value="Free" required>Free
-                        <input type="radio" name="adv-type" class="adv-type" id="paid-adv" value="Paid" required>Paid
+                        <input type="radio" name="adv-type" class="adv-type" id="free-adv" value="Free">Free
+                        <input type="radio" name="adv-type" class="adv-type" id="paid-adv" value="Paid">Paid
                     </td>
                 </tr>
 
@@ -159,8 +159,11 @@
                 </tr>
 
                 <tr>
-                    <td colspan="2">
-                        <input type="submit" name="submiteducationForm" id="submiteducationForm" value="Continue" class="btn btn-danger btn-block">
+                    <td>
+                        <div id="validateeducationForm" class="btn btn-success btn-block">Validate Form</div>
+                    </td>
+                    <td>
+                        <input type="submit" name="submiteducationForm" id="submiteducationForm" value="Continue" class="btn btn-danger btn-block hidden">
                     </td>
                 </tr>
             </table>

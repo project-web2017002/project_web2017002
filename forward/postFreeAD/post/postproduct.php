@@ -30,6 +30,7 @@ switch($category_id){
 }
 
 function one(){
+    $con = $GLOBALS['con'];
     $posted_data = $GLOBALS['posted_data'];
     $category_id = $GLOBALS['category_id'];
     $user_id = $posted_data['userid'];
@@ -44,8 +45,33 @@ function one(){
     $company_email = $posted_data['companyemail'];
     $company_contact = $posted_data['companycontact'];
     $advt_type = $posted_data['advtype'];
+    $date = date("Y-m-d-h-i-sa");
+    $name = $date."-".$user_id;
+
+    $path = "../../../Category/categoryID/".$category_id."/";
+    mkdir($path,0,true);
+    $filename = $name.".csv";
+
+    $fileopen = fopen($path."/".$filename,"x");
+    $fileheadings = array("Category ID","User ID","Service Type","Service Fees","Service Name","User Name","User Email","User Contact",
+    "User Type","Company Name","Company Email","Compaby Contact","Advertisement Type","Date");
+    fputcsv($fileopen,$fileheadings);
+    fclose($fileopen);
+
+    $fileopen2=fopen($path."/".$filename,"a");
+    $fileheadings2 = array($category_id,$user_id,$service_type,$service_fees,$service_name,$user_name,$user_email,$user_contact,
+        $user_type,$company_name,$company_email,$company_contact,$advt_type,$date);
+    fputcsv($fileopen2,$fileheadings2);
+    fclose($fileopen2);
+
+    $url = "//localhost/optimus/Category/categoryId/".$category_id."/".$filename;
+
+    $insertQuery = mysqli_query($con,"insert into listed_products (product_title,pro_description_file) values 
+('$service_name','$url')")or die("Error in uploading");
+
 }
 function two(){
+    $con = $GLOBALS['con'];
     $posted_data = $GLOBALS['posted_data'];
     $category_id = $GLOBALS['category_id'];
     $user_id = $posted_data['userid'];
@@ -63,8 +89,32 @@ function two(){
     $user_contact = $posted_data['usercontact'];
     $company_conatct = $posted_data['companycontact'];
     $advt_type = $posted_data['advtype'];
+    $date = date("Y-m-d-h-i-sa");
+    $name = $date."-".$user_id;
+
+    $path = "../../../Category/categoryID/".$category_id."/";
+    mkdir($path,0,true);
+    $filename = $name.".csv";
+
+    $fileopen = fopen($path."/".$filename,"x");
+    $fileheadings = array("Category ID","User ID","Home Needed To","Home Sell","Home Buy","Home Rent","Home Size","Home Cost","User Name",
+        "User Email","User Type","Company Name","Company Email","User Contact","Company Contact","Advertisement Type","Date");
+    fputcsv($fileopen,$fileheadings);
+    fclose($fileopen);
+
+    $fileopen2=fopen($path."/".$filename,"a");
+    $fileheadings2 = array($category_id,$user_id,$home_todo,$home_sell,$home_buy,$home_rent,$home_size,$home_cost,$user_name,$user_email,
+    $user_type,$company_name,$company_email,$user_contact,$company_conatct,$advt_type,$date);
+    fputcsv($fileopen2,$fileheadings2);
+    fclose($fileopen2);
+
+    $url = "//localhost/optimus/Category/categoryId/".$category_id."/".$filename;
+
+    $insertQuery = mysqli_query($con,"insert into listed_products (product_title,pro_description_file) values 
+('$home_todo','$url')")or die("Error in uploading");
 }
 function three(){
+    $con = $GLOBALS['con'];
     $posted_data = $GLOBALS['posted_data'];
     $category_id = $GLOBALS['category_id'];
     $user_id = $posted_data['userid'];
@@ -80,8 +130,32 @@ function three(){
     $recruiter_number = $posted_data['recruiternumber'];
     $job_desc = $posted_data['jobdesc'];
     $advt_type = $posted_data['advtype'];
+    $date = date("Y-m-d-h-i-sa");
+    $name = $date."-".$user_id;
+
+    $path = "../../../Category/categoryID/".$category_id."/";
+    mkdir($path,0,true);
+    $filename = $name.".csv";
+
+    $fileopen = fopen($path."/".$filename,"x");
+    $fileheadings = array("Category ID","User ID","Job Title","Job Type","Job Role","Min Salary","Max Salary","Company Name","Company Email",
+    "Job Location","Job Experience","Recruiter Contact","Job Description","Advertisement Type","Date");
+    fputcsv($fileopen,$fileheadings);
+    fclose($fileopen);
+
+    $fileopen2=fopen($path."/".$filename,"a");
+    $fileheadings2 = array($category_id,$user_id,$job_title,$job_type,$job_role,$min_sal,$max_sal,$company_name,$company_email,$job_location,
+    $job_exp,$recruiter_number,$job_desc,$advt_type,$date);
+    fputcsv($fileopen2,$fileheadings2);
+    fclose($fileopen2);
+
+    $url = "//localhost/optimus/Category/categoryId/".$category_id."/".$filename;
+
+    $insertQuery = mysqli_query($con,"insert into listed_products (product_title,pro_description_file) values 
+('$job_title','$url')")or die("Error in uploading");
 }
 function four(){
+    $con = $GLOBALS['con'];
     $posted_data = $GLOBALS['posted_data'];
     $category_id = $GLOBALS['category_id'];
     $user_id = $posted_data['userid'];
@@ -96,8 +170,32 @@ function four(){
     $user_type = $posted_data['usertype'];
     $car_kms_driven = $posted_data['carkmsdriven'];
     $advt_type = $posted_data['advtype'];
+    $date = date("Y-m-d-h-i-sa");
+    $name = $date."-".$user_id;
+
+    $path = "../../../Category/categoryID/".$category_id."/";
+    mkdir($path,0,true);
+    $filename = $name.".csv";
+
+    $fileopen = fopen($path."/".$filename,"x");
+    $fileheadings = array("Category ID","User ID","Car Category Type","Car Brand","Car Cost","Car Registration Year","Car City","User Name",
+        "User Email","User Contact","User Type","Car Kms Driven","Advertisement Type","Date");
+    fputcsv($fileopen,$fileheadings);
+    fclose($fileopen);
+
+    $fileopen2=fopen($path."/".$filename,"a");
+    $fileheadings2 = array($category_id,$user_id,$car_cat_type,$car_brand,$car_cost,$car_reg_year,$car_city,$user_name,$user_email,$user_contact,
+        $user_type,$car_kms_driven,$advt_type,$date);
+    fputcsv($fileopen2,$fileheadings2);
+    fclose($fileopen2);
+
+    $url = "//localhost/optimus/Category/categoryId/".$category_id."/".$filename;
+
+    $insertQuery = mysqli_query($con,"insert into listed_products (product_title,pro_description_file) values 
+('$car_cat_type $car_brand','$url')")or die("Error in uploading");
 }
 function five(){
+    $con = $GLOBALS['con'];
     $posted_data = $GLOBALS['posted_data'];
     $category_id = $GLOBALS['category_id'];
     $user_id = $posted_data['userid'];
@@ -112,8 +210,32 @@ function five(){
     $user_type = $posted_data['usertype'];
     $bike_kms_driven = $posted_data['bikekmsdriven'];
     $advt_type = $posted_data['advtype'];
+    $date = date("Y-m-d-h-i-sa");
+    $name = $date."-".$user_id;
+
+    $path = "../../../Category/categoryID/".$category_id."/";
+    mkdir($path,0,true);
+    $filename = $name.".csv";
+
+    $fileopen = fopen($path."/".$filename,"x");
+    $fileheadings = array("Category ID","User ID","Bike Category Type","Bike Brand","Bike Cost","Bike Registration Year","Bike City","User Name",
+        "User Email","User Contact","User Type","Bike Kms Driven","Advertisement Type","Date");
+    fputcsv($fileopen,$fileheadings);
+    fclose($fileopen);
+
+    $fileopen2=fopen($path."/".$filename,"a");
+    $fileheadings2 = array($category_id,$user_id,$bike_cat_type,$bike_brand,$bike_cost,$bike_reg_year,$bike_city,$user_name,$user_email,$user_contact,
+        $user_type,$bike_kms_driven,$advt_type,$date);
+    fputcsv($fileopen2,$fileheadings2);
+    fclose($fileopen2);
+
+    $url = "//localhost/optimus/Category/categoryId/".$category_id."/".$filename;
+
+    $insertQuery = mysqli_query($con,"insert into listed_products (product_title,pro_description_file) values 
+('$bike_brand','$url')")or die("Error in uploading");
 }
 function six(){
+    $con = $GLOBALS['con'];
     $posted_data = $GLOBALS['posted_data'];
     $category_id = $GLOBALS['category_id'];
     $user_id = $posted_data['userid'];
@@ -129,8 +251,33 @@ function six(){
     $edu_insti_email = $posted_data['instiemail'];
     $edu_desc = $posted_data['edudesc'];
     $advt_type = $posted_data['advtype'];
+    $date = date("Y-m-d-h-i-sa");
+    $name = $date."-".$user_id;
+
+    $path = "../../../Category/categoryID/".$category_id."/";
+    mkdir($path,0,true);
+    $filename = $name.".csv";
+
+    $fileopen = fopen($path."/".$filename,"x");
+    $fileheadings = array("Category ID","User ID","Education Type","Other Education Type","Education Title","Education City","Education Fees",
+    "Education Stream","Education Institute Name","Education Institute Address","Education Institute Contact","Education Institure Email",
+        "Education Description","Advertisement Type","Date");
+    fputcsv($fileopen,$fileheadings);
+    fclose($fileopen);
+
+    $fileopen2=fopen($path."/".$filename,"a");
+    $fileheadings2 = array($category_id,$user_id,$edu_type,$other_edu_type,$edu_title,$edu_city,$edu_fees,$edu_stream,$edu_insti_name,
+        $edu_insti_address,$edu_insti_contact,$edu_insti_email,$edu_desc,$advt_type,$date);
+    fputcsv($fileopen2,$fileheadings2);
+    fclose($fileopen2);
+
+    $url = "//localhost/optimus/Category/categoryId/".$category_id."/".$filename;
+
+    $insertQuery = mysqli_query($con,"insert into listed_products (product_title,pro_description_file) values 
+('$edu_title','$url')")or die("Error in uploading");
 }
 function seven(){
+    $con = $GLOBALS['con'];
     $posted_data = $GLOBALS['posted_data'];
     $category_id = $GLOBALS['category_id'];
     $user_id = $posted_data['userid'];
@@ -149,8 +296,33 @@ function seven(){
     $mob_include = $posted_data['mobinclude'];
     $mob_desc = $posted_data['mobdesc'];
     $advt_type = $posted_data['advtype'];
+    $date = date("Y-m-d-h-i-sa");
+    $name = $date."-".$user_id;
+
+    $path = "../../../Category/categoryID/".$category_id."/";
+    mkdir($path,0,true);
+    $filename = $name.".csv";
+
+    $fileopen = fopen($path."/".$filename,"x");
+    $fileheadings = array("Category ID","User ID","User want To","Mobile Subcategory","Mobile Ad title","Mobile Condition","Mobile Cost",
+        "Mobile Used","Mobile Bill","Mobile Brand","Mobile Model","User Name","User Email","User Contact","Package Include","Mobile Description",
+        "Advertisement Type","Date");
+    fputcsv($fileopen,$fileheadings);
+    fclose($fileopen);
+
+    $fileopen2=fopen($path."/".$filename,"a");
+    $fileheadings2 = array($category_id,$user_id,$mob_want,$mob_subcat,$mob_ad_title,$mob_condition,$mob_cost,$mob_used,$mob_bill,$mob_brand,
+    $mob_model,$user_name,$user_email,$user_contact,$mob_include,$mob_desc,$advt_type,$date);
+    fputcsv($fileopen2,$fileheadings2);
+    fclose($fileopen2);
+
+    $url = "//localhost/optimus/Category/categoryId/".$category_id."/".$filename;
+
+    $insertQuery = mysqli_query($con,"insert into listed_products (product_title,pro_description_file) values 
+('$mob_ad_title','$url')")or die("Error in uploading");
 }
 function eight(){
+    $con = $GLOBALS['con'];
     $posted_data = $GLOBALS['posted_data'];
     $category_id = $GLOBALS['category_id'];
     $user_id = $posted_data['userid'];
@@ -171,8 +343,33 @@ function eight(){
     $homelife_includes = $posted_data['homelifeinclude'];
     $homelife_desc = $posted_data['homelifedesc'];
     $advt_type = $posted_data['advtype'];
+    $date = date("Y-m-d-h-i-sa");
+    $name = $date."-".$user_id;
+
+    $path = "../../../Category/categoryID/".$category_id."/";
+    mkdir($path,0,true);
+    $filename = $name.".csv";
+
+    $fileopen = fopen($path."/".$filename,"x");
+    $fileheadings = array("Category ID","User ID","Home Category","Kids","Furniture","Sports","Fashion","Other Category","Ad Title","Product Condition",
+        "Product cost","Product Used For","Product Bill","User Name","User Email","User Contact","Product Include","Product Description",
+    "Advertisement Type","Date");
+    fputcsv($fileopen,$fileheadings);
+    fclose($fileopen);
+
+    $fileopen2=fopen($path."/".$filename,"a");
+    $fileheadings2 = array($category_id,$user_id,$home_cat,$kid_cat,$fur_cat,$sports_cat,$fashion_cat,$other_cat,$homelife_ad_title,$homelife_condition,
+    $homelife_cost,$homelife_used,$homelife_bill,$user_name,$user_email,$user_contact,$homelife_includes,$homelife_desc,$advt_type,$date);
+    fputcsv($fileopen2,$fileheadings2);
+    fclose($fileopen2);
+
+    $url = "//localhost/optimus/Category/categoryId/".$category_id."/".$filename;
+
+    $insertQuery = mysqli_query($con,"insert into listed_products (product_title,pro_description_file) values 
+('$homelife_ad_title','$url')")or die("Error in uploading");
 }
 function nine(){
+    $con = $GLOBALS['con'];
     $posted_data = $GLOBALS['posted_data'];
     $category_id = $GLOBALS['category_id'];
     $user_id = $posted_data['userid'];
@@ -191,9 +388,34 @@ function nine(){
     $elect_include = $posted_data['elecinclude'];
     $elect_desc = $posted_data['elecdesc'];
     $advt_type = $posted_data['advtype'];
+    $date = date("Y-m-d-h-i-sa");
+    $name = $date."-".$user_id;
+
+    $path = "../../../Category/categoryID/".$category_id."/";
+    mkdir($path,0,true);
+    $filename = $name.".csv";
+
+    $fileopen = fopen($path."/".$filename,"x");
+    $fileheadings = array("Category ID","User ID","Electronics Needed to","Electronics Subcategory","Electronics Ad title","Electronics Condition",
+    "Electronics Cost","Electronics Used For","Electronics Bill","Electronics Brand","Electronics Model","User Name","User Email","User Contact",
+    "Electronics Includes","Electronics Description","Advertisement Type","Date");
+    fputcsv($fileopen,$fileheadings);
+    fclose($fileopen);
+
+    $fileopen2=fopen($path."/".$filename,"a");
+    $fileheadings2 = array($category_id,$user_id,$elect_want,$elect_subcat,$elect_ad_title,$elect_condition,$elect_cost,$elect_used,$elect_bill,
+    $elect_brand,$elect_model,$user_name,$user_email,$user_contact,$elect_include,$elect_desc,$advt_type,$date);
+    fputcsv($fileopen2,$fileheadings2);
+    fclose($fileopen2);
+
+    $url = "//localhost/optimus/Category/categoryId/".$category_id."/".$filename;
+
+    $insertQuery = mysqli_query($con,"insert into listed_products (product_title,pro_description_file) values 
+('$elect_ad_title','$url')")or die("Error in uploading");
 }
 
 function ten(){
+    $con = $GLOBALS['con'];
     $posted_data = $GLOBALS['posted_data'];
     $category_id = $GLOBALS['category_id'];
     $user_id = $posted_data['userid'];
@@ -216,8 +438,14 @@ function ten(){
     $fileheadings2 = array($category_id,$user_id,$user_name,$user_email,$user_contact,$date);
     fputcsv($fileopen2,$fileheadings2);
     fclose($fileopen2);
+
+    $url = "//localhost/optimus/Category/categoryId/".$category_id."/".$filename;
+
+    $insertQuery = mysqli_query($con,"insert into listed_products (product_title,pro_description_file) values 
+('$category_id','$url')")or die("Error in uploading");
 }
 function eleven(){
+    $con = $GLOBALS['con'];
     $posted_data = $GLOBALS['posted_data'];
     $category_id = $GLOBALS['category_id'];
     $user_id = $posted_data['userid'];
@@ -240,9 +468,15 @@ function eleven(){
     $fileheadings2 = array($category_id,$user_id,$user_name,$user_email,$user_contact,$date);
     fputcsv($fileopen2,$fileheadings2);
     fclose($fileopen2);
+
+    $url = "//localhost/optimus/Category/categoryId/".$category_id."/".$filename;
+
+    $insertQuery = mysqli_query($con,"insert into listed_products (product_title,pro_description_file) values 
+('$category_id','$url')")or die("Error in uploading");
 
 }
 function twelve(){
+    $con = $GLOBALS['con'];
     $posted_data = $GLOBALS['posted_data'];
     $category_id = $GLOBALS['category_id'];
     $user_id = $posted_data['userid'];
@@ -266,8 +500,14 @@ function twelve(){
     fputcsv($fileopen2,$fileheadings2);
     fclose($fileopen2);
 
+    $url = "//localhost/optimus/Category/categoryId/".$category_id."/".$filename;
+
+    $insertQuery = mysqli_query($con,"insert into listed_products (product_title,pro_description_file) values 
+('$category_id','$url')")or die("Error in uploading");
+
 }
 function thirteen(){
+    $con = $GLOBALS['con'];
     $posted_data = $GLOBALS['posted_data'];
     $category_id = $GLOBALS['category_id'];
     $user_id = $posted_data['userid'];
@@ -283,8 +523,32 @@ function thirteen(){
     $user_contact = $posted_data['usercontact'];
     $event_desc = $posted_data['eventdesc'];
     $advt_type = $posted_data['advtype'];
+    $date = date("Y-m-d-h-i-sa");
+    $name = $date."-".$user_id;
+
+    $path = "../../../Category/categoryID/".$category_id."/";
+    mkdir($path,0,true);
+    $filename = $name.".csv";
+
+    $fileopen = fopen($path."/".$filename,"x");
+    $fileheadings = array("Category ID","User ID","Event Type","Management Event Type","Live Event Type","Other Event Type","Event City","Event Cost",
+    "User Name","User Email","Event Service Type","User Contact","Event Description","Advertisement Type","Date");
+    fputcsv($fileopen,$fileheadings);
+    fclose($fileopen);
+
+    $fileopen2=fopen($path."/".$filename,"a");
+    $fileheadings2 = array($category_id,$user_id,$event_type,$manage_event_type,$live_event_type,$other_event_type,$event_city,$event_cost,$user_name,
+        $user_email,$event_ser_type,$user_contact,$event_desc,$advt_type,$date);
+    fputcsv($fileopen2,$fileheadings2);
+    fclose($fileopen2);
+
+    $url = "//localhost/optimus/Category/categoryId/".$category_id."/".$filename;
+
+    $insertQuery = mysqli_query($con,"insert into listed_products (product_title,pro_description_file) values 
+('$event_type','$url')")or die("Error in uploading");
 }
 function fourteen(){
+    $con = $GLOBALS['con'];
     $posted_data = $GLOBALS['posted_data'];
     $category_id = $GLOBALS['category_id'];
     $user_id = $posted_data['userid'];
@@ -307,5 +571,10 @@ function fourteen(){
     $fileheadings2 = array($category_id,$user_id,$user_name,$user_email,$user_contact,$date);
     fputcsv($fileopen2,$fileheadings2);
     fclose($fileopen2);
+
+    $url = "//localhost/optimus/Category/categoryId/".$category_id."/".$filename;
+
+    $insertQuery = mysqli_query($con,"insert into listed_products (product_title,pro_description_file) values 
+('$category_id','$url')")or die("Error in uploading");
 
 }
