@@ -3,4 +3,3 @@
 <script src="//localhost/optimus/include/js/ajax.js"></script>
 <script src="//localhost/optimus/include/js/advertisejs.js"></script>
 <script src="//localhost/optimus/include/js/advtajax.js"></script>
-<script src="//localhost/optimus/include/js/adv_valid_script.js"></script>

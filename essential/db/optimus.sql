@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 07, 2017 at 01:39 PM
+-- Generation Time: Jul 17, 2017 at 02:11 PM
 -- Server version: 5.7.14
 -- PHP Version: 5.6.25
 
@@ -58,6 +58,25 @@ CREATE TABLE `advertisement` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `featpro`
+--
+
+CREATE TABLE `featpro` (
+  `num` int(11) NOT NULL,
+  `byAdmin` int(11) NOT NULL,
+  `file` varchar(200) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `featpro`
+--
+
+INSERT INTO `featpro` (`num`, `byAdmin`, `file`) VALUES
+(4, 1, '2017-07-14-09-59-57am-1');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `listed_products`
 --
 
@@ -72,8 +91,7 @@ CREATE TABLE `listed_products` (
 --
 
 INSERT INTO `listed_products` (`product_id`, `product_title`, `pro_description_file`) VALUES
-(1, 'Jalandhar', '//localhost/optimus/Category/categoryId/10001/2017-07-07-12-53-46pm-1.csv'),
-(2, 'Sell', '//localhost/optimus/Category/categoryId/10002/2017-07-07-01-04-17pm-1.csv');
+(1, 'Want to get my AC repaired', '//localhost/optimus/Category/categoryId/10001/2017-07-17-01-13-11pm-1.csv');
 
 -- --------------------------------------------------------
 
@@ -119,7 +137,8 @@ CREATE TABLE `policy_agreement` (
 
 INSERT INTO `policy_agreement` (`counter`, `user_id`, `above_18`, `TnC`) VALUES
 (1, 1, 1, 1),
-(2, 2, 1, 1);
+(2, 2, 1, 1),
+(3, 3, 1, 1);
 
 -- --------------------------------------------------------
 
@@ -160,8 +179,9 @@ CREATE TABLE `status` (
 --
 
 INSERT INTO `status` (`no`, `user_id`, `status`) VALUES
-(1, 1, 1),
-(2, 2, 0);
+(1, 1, 0),
+(2, 2, 0),
+(3, 3, 0);
 
 -- --------------------------------------------------------
 
@@ -183,7 +203,8 @@ CREATE TABLE `verified_user` (
 
 INSERT INTO `verified_user` (`user_id`, `user_name`, `user_login_id`, `user_contact`, `user_password`) VALUES
 (1, 'Akash Chouhan', 'ak@gmail.com', '8968336242', '$2y$15$xlEeqyR62jB.9anM2358Ou9cKd5XGO60JScgkU8pt0Ye7GYzr4ahi'),
-(2, 'test', 'test@gmail.com', '7894561236', '$2y$15$CaOVGwVk3DAYuSds4UDv/.ckClKJbgdsCPDqjqUYLpxjNdAh7ADW6');
+(2, 'test', 'test@gmail.com', '7894561236', '$2y$15$CaOVGwVk3DAYuSds4UDv/.ckClKJbgdsCPDqjqUYLpxjNdAh7ADW6'),
+(3, 'Charlette', 'charli@icloud.com', '9874563210', '$2y$15$n8kgQAV3rURlqinke1bnZ.IFlpv6FcOpo6ihAVBEVNi0VDocuA4Ta');
 
 --
 -- Indexes for dumped tables
@@ -201,6 +222,13 @@ ALTER TABLE `admin_status`
 --
 ALTER TABLE `advertisement`
   ADD PRIMARY KEY (`advt_id`);
+
+--
+-- Indexes for table `featpro`
+--
+ALTER TABLE `featpro`
+  ADD PRIMARY KEY (`num`),
+  ADD KEY `byAdmin` (`byAdmin`);
 
 --
 -- Indexes for table `listed_products`
@@ -264,10 +292,15 @@ ALTER TABLE `admin_status`
 ALTER TABLE `advertisement`
   MODIFY `advt_id` int(11) NOT NULL AUTO_INCREMENT;
 --
+-- AUTO_INCREMENT for table `featpro`
+--
+ALTER TABLE `featpro`
+  MODIFY `num` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+--
 -- AUTO_INCREMENT for table `listed_products`
 --
 ALTER TABLE `listed_products`
-  MODIFY `product_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `product_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT for table `orders`
 --
@@ -277,7 +310,7 @@ ALTER TABLE `orders`
 -- AUTO_INCREMENT for table `policy_agreement`
 --
 ALTER TABLE `policy_agreement`
-  MODIFY `counter` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `counter` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT for table `realadmin`
 --
@@ -287,12 +320,12 @@ ALTER TABLE `realadmin`
 -- AUTO_INCREMENT for table `status`
 --
 ALTER TABLE `status`
-  MODIFY `no` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `no` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT for table `verified_user`
 --
 ALTER TABLE `verified_user`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
 -- Constraints for dumped tables
 --
@@ -302,6 +335,12 @@ ALTER TABLE `verified_user`
 --
 ALTER TABLE `admin_status`
   ADD CONSTRAINT `admin_status_ibfk_1` FOREIGN KEY (`admin_id`) REFERENCES `realadmin` (`admin_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `featpro`
+--
+ALTER TABLE `featpro`
+  ADD CONSTRAINT `featpro_ibfk_1` FOREIGN KEY (`byAdmin`) REFERENCES `realadmin` (`admin_id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `orders`

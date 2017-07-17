@@ -50,8 +50,11 @@
 
 
                 <tr>
-                    <td colspan="2">
+                    <td>
                         <input type="text" name="electronics-ad-title" id="electronics-ad-title" class="form-control" placeholder="Enter Title of Ad">
+                    </td>
+                    <td>
+                        <input type="text" name="elect-city" id="elect-city" class="form-control" placeholder="Enter Location(City)">
                     </td>
                 </tr>
 
@@ -66,7 +69,7 @@
                     <td>
                         <div class="input-group">
                             <span class="input-group-addon"><i class="fa fa-rupee"></i></span>
-                            <input type="text" name="elect-cost" class="form-control" id="elect-cost" placeholder="Enter Price">
+                            <input type="text" name="cost" class="form-control" id="cost" placeholder="Enter Price">
                         </div>
                     </td>
                 </tr>
@@ -99,12 +102,12 @@
                     </td>
                     <td>
                         <div class="input-group">
-                            <span class="input-group-addon"><i class="glyphicon glyphicon-phone-alt"></i></span>
-                            <input type="text" name="elect-user-contact" id="elect-user-contact" placeholder="Enter Contact Number" class="form-control">
-                        </div>
-                        <div class="input-group">
                             <span class="input-group-addon"><i class="fa fa-at"></i></span>
                             <input type="email" name="user-email" id="user-email" placeholder="Enter Email" class="form-control">
+                        </div>
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-phone-alt"></i></span>
+                            <input type="text" name="user-contact" id="user-contact" placeholder="Enter Contact Number" class="form-control">
                         </div>
                     </td>
                 </tr>
@@ -123,7 +126,7 @@
                         <h4>Select Advertisement Type:</h4>
                     </td>
                     <td>
-                        <input type="radio" name="adv-type" class="adv-type" id="free-adv" value="Free">Free
+                        <input type="radio" name="adv-type" class="adv-type" id="free-adv" value="Free" checked>Free
                         <input type="radio" name="adv-type" class="adv-type" id="paid-adv" value="Paid">Paid
                     </td>
                 </tr>
@@ -179,18 +182,15 @@
                                 </ul>
                             </div>
                             <div class="row">
-                                <input type="radio" name="paidser-type" class="paidser-type" value="Premium" id="premiumser">Select
+                                <input type="radio" name="paidser-type" class="paidser-type" value="Premium" id="premiumser" checked>Select
                             </div>
                         </div>
                     </td>
                 </tr>
 
                 <tr>
-                    <td>
-                        <div id="validateelectronicsForm" class="btn btn-success btn-block">Validate Form</div>
-                    </td>
-                    <td>
-                        <input type="submit" name="submitelectronicsForm" id="submitelectronicsForm" value="Continue" class="btn btn-danger btn-block hidden">
+                    <td colspan="2">
+                        <div id="submitelectronicsForm" class="btn btn-danger btn-block">Continue</div>
                     </td>
                 </tr>
             </table>

@@ -18,7 +18,7 @@
                     <td>I want To:</td>
                     <td>
                         <input type="radio" name="bike-cat-type" class="bike-cat-type" id="bike-sell" value="Sell A bike">Sell A bike/Scooter
-                        <input type="radio" name="bike-cat-type" class="bike-cat-type" id="bike-buy" value="Buy A bike">Buy A bike/Scooter
+                        <input type="radio" name="bike-cat-type" class="bike-cat-type" id="bike-buy" value="Buy A bike" checked>Buy A bike/Scooter
                     </td>
                 </tr>
 
@@ -29,7 +29,7 @@
                     <td>
                         <div class="input-group">
                             <span class="input-group-addon"><i class="fa fa-rupee"></i></span>
-                            <input type="text" name="bike-cost" class="form-control" id="bike-cost" placeholder="Enter Price">
+                            <input type="text" name="cost" class="form-control" id="cost" placeholder="Enter Price">
                         </div>
                     </td>
                 </tr>
@@ -64,7 +64,7 @@
                     </td>
                     <td>
                         <input type="radio" name="bike-user-type" class="bike-user-type" id="dealer" value="Dealer">Dealer
-                        <input type="radio" name="bike-user-type" class="bike-user-type" id="single" value="Single">Individual
+                        <input type="radio" name="bike-user-type" class="bike-user-type" id="single" value="Single" checked>Individual
                     </td>
                 </tr>
 
@@ -72,7 +72,7 @@
                     <td>
                         <div class="input-group">
                             <span class="input-group-addon"><i class="glyphicon glyphicon-phone-alt"></i></span>
-                            <input type="text" name="bike-user-contact" id="bike-user-contact" placeholder="Enter Contact Number" class="form-control">
+                            <input type="text" name="user-contact" id="user-contact" placeholder="Enter Contact Number" class="form-control">
                         </div>
                     </td>
 
@@ -92,7 +92,7 @@
                         <h4>Select Advertisement Type:</h4>
                     </td>
                     <td>
-                        <input type="radio" name="adv-type" class="adv-type" id="free-adv" value="Free">Free
+                        <input type="radio" name="adv-type" class="adv-type" id="free-adv" value="Free" checked>Free
                         <input type="radio" name="adv-type" class="adv-type" id="paid-adv" value="Paid">Paid
                     </td>
                 </tr>
@@ -148,18 +148,15 @@
                                 </ul>
                             </div>
                             <div class="row">
-                                <input type="radio" name="paidser-type" class="paidser-type" value="Premium" id="premiumser">Select
+                                <input type="radio" name="paidser-type" class="paidser-type" value="Premium" id="premiumser" checked>Select
                             </div>
                         </div>
                     </td>
                 </tr>
 
                 <tr>
-                    <td>
-                        <div id="validatebikeForm" class="btn btn-success btn-block">Validate Form</div>
-                    </td>
-                    <td>
-                        <input type="submit" name="submitbikeForm" id="submitbikeForm" value="Continue" class="btn btn-danger btn-block hidden">
+                    <td colspan="2">
+                        <div id="submitbikeForm" class="btn btn-danger btn-block">Continue</div>
                     </td>
                 </tr>
             </table>

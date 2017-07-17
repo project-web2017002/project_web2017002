@@ -1,107 +1,80 @@
 $(function(){
 
-    $(':radio[id=company]').change(function(){
-        $("#companytab").show('slow');
-        $("#company-name").prop('required',true);
-        $("#company-email").prop('required',true);
+    //prevent from entering characters and special characters
+    $("#cost").keydown(function(e){
+        if(!((e.which > 47 && e.which < 58) || (e.which > 95 && e.which < 106) || e.which == 9 || e.which == 8 || e.which == 46)){
+            e.preventDefault();
+        }
     });
 
+    $("#user-name").keydown(function(e){
+        if((e.which > 47 && e.which < 58) || (e.which > 95 && e.which < 106)){
+            e.preventDefault();
+        }
+    });
+
+    $("#user-contact").keydown(function(e){
+        if(!((e.which > 47 && e.which < 58) || (e.which > 95 && e.which < 106) || e.which == 9 || e.which == 8 || e.which == 46)){
+            e.preventDefault();
+        }
+    });
+
+    $(':radio[id=company]').change(function(){
+        $("#companytab").show();
+    });
     $(':radio[id=individual]').change(function(){
-        $("#company-name").removeAttr('required');
-        $("#company-email").removeAttr('required');
-        $("#companytab").hide('slow');
+        $("#companytab").hide();
     });
 
     $(':radio[id=free-adv]').change(function(){
-        $("#diamondser").removeAttr('required');
-        $("#premiumser").removeAttr('required');
-        $("#paidadvtab").hide('slow');
-        $("#freeadvtab").show('slow');
+        $("#paidadvtab").hide();
+        $("#freeadvtab").show();
     });
-
     $(':radio[id=paid-adv]').change(function(){
-        $("#diamondser").prop('required',true);
-        $("#premiumser").prop('required',true);
-        $("#freeadvtab").hide('slow');
-        $("#paidadvtab").show('slow');
+        $("#freeadvtab").hide();
+        $("#paidadvtab").show();
     });
 
     $('#ser-type').change(function(){
-        $("#servicetitletab").show('slow');
+        $("#servicetitletab").show();
     });
 
     $(':radio[id=Sell]').change(function(){
         $("#buyhometab").hide();
         $("#renthometab").hide();
-        $("#sellhometab").show('slow');
-        $(".home-sell-type").each(function(){
-            $(".home-sell-type").prop('required',true);
-        });
-        $(".home-rent-type").each(function(){
-            $(".home-rent-type").removeAttr('required');
-        });
-        $(".home-buy-type").each(function(){
-            $(".home-buy-type").removeAttr('required');
-        });
+        $("#sellhometab").show();
     });
-
     $(':radio[id=Buy]').change(function(){
         $("#renthometab").hide();
         $("#sellhometab").hide();
-        $("#buyhometab").show('slow');
-        $(".home-buy-type").each(function(){
-            $(".home-buy-type").prop('required',true);
-        });
-        $(".home-rent-type").each(function(){
-            $(".home-rent-type").removeAttr('required');
-        });
-        $(".home-sell-type").each(function(){
-            $(".home-sell-type").removeAttr('required');
-        });
+        $("#buyhometab").show();
     });
 
     $(':radio[id=Rent]').change(function(){
         $("#buyhometab").hide();
         $("#sellhometab").hide();
-        $("#renthometab").show('slow');
-        $(".home-rent-type").each(function(){
-            $(".home-rent-type").prop('required',true);
-        });
-        $(".home-sell-type").each(function(){
-            $(".home-sell-type").removeAttr('required');
-        });
-        $(".home-buy-type").each(function(){
-            $(".home-buy-type").removeAttr('required');
-        });
+        $("#renthometab").show();
     });
 
     $(':radio[id=car-sell]').change(function(){
         $("#sellcartab").show();
-        $("#car-driven").prop('required',true);
     });
-
     $(':radio[id=car-buy]').change(function(){
         $("#sellcartab").hide();
-        $("#car-driven").removeAttr('required');
     });
 
     $(':radio[id=bike-sell]').change(function(){
         $("#sellbiketab").show();
-        $("#bike-driven").prop('required',true);
     });
-
     $(':radio[id=bike-buy]').change(function(){
         $("#sellbiketab").hide();
-        $("#bike-driven").removeAttr('required');
     });
 
     $("#education-type").on('change',function(){
         if( this.value == "Other" ) {
             $("#otherEducationtab").show();
-            $("#other-edu-val").prop('required',true);
         }else{
             $("#otherEducationtab").hide();
-            $("#other-edu-val").removeAttr('required');
         }
     });
 
@@ -205,6 +178,4 @@ $(function(){
             $("#sportstab").hide();
         }
     });
-
-
 });

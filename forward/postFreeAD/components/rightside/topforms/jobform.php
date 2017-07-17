@@ -68,7 +68,7 @@
 
                 <tr>
                     <td>
-                        <input type="text" class="form-control" name="job-location" id="job-location" placeholder="Enter Job location's (separated by Comma)">
+                        <input type="text" class="form-control" name="job-location" id="job-location" placeholder="Enter Job location">
                     </td>
                     <td>
                         <input type="text" class="form-control" name="job-exp" id="job-exp" placeholder="Enter minimum Experience (in months)">
@@ -92,7 +92,7 @@
                         <h4>Select Advertisement Type:</h4>
                     </td>
                     <td>
-                        <input type="radio" name="adv-type" class="adv-type" id="free-adv" value="Free">Free
+                        <input type="radio" name="adv-type" class="adv-type" id="free-adv" value="Free" checked>Free
                         <input type="radio" name="adv-type" class="adv-type" id="paid-adv" value="Paid">Paid
                     </td>
                 </tr>
@@ -148,18 +148,15 @@
                                 </ul>
                             </div>
                             <div class="row">
-                                <input type="radio" name="paidser-type" class="paidser-type" value="Premium" id="premiumser">Select
+                                <input type="radio" name="paidser-type" class="paidser-type" value="Premium" id="premiumser" checked>Select
                             </div>
                         </div>
                     </td>
                 </tr>
 
                 <tr>
-                    <td>
-                        <div id="validatejobForm" class="btn btn-success btn-block">Validate Form</div>
-                    </td>
-                    <td>
-                        <input type="submit" name="submitJobForm" id="submitJobForm" value="Continue" class="btn btn-danger btn-block hidden">
+                    <td colspan="2">
+                        <div id="submitJobForm" class="btn btn-danger btn-block">Continue</div>
                     </td>
                 </tr>
             </table>

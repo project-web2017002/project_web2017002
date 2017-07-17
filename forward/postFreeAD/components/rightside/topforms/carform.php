@@ -18,7 +18,7 @@
                     <td>I want To:</td>
                     <td>
                         <input type="radio" name="car-cat-type" class="car-cat-type" id="car-sell" value="Sell A Car">Sell A Car
-                        <input type="radio" name="car-cat-type" class="car-cat-type" id="car-buy" value="Buy A Car">Buy A Car
+                        <input type="radio" name="car-cat-type" class="car-cat-type" id="car-buy" value="Buy A Car" checked>Buy A Car
                     </td>
                 </tr>
 
@@ -64,7 +64,7 @@
                     </td>
                     <td>
                         <input type="radio" name="car-user-type" class="car-user-type" id="dealer" value="Dealer">Dealer
-                        <input type="radio" name="car-user-type" class="car-user-type" id="single" value="Single">Individual
+                        <input type="radio" name="car-user-type" class="car-user-type" id="single" value="Single" checked>Individual
                     </td>
                 </tr>
 
@@ -72,7 +72,7 @@
                     <td>
                         <div class="input-group">
                             <span class="input-group-addon"><i class="glyphicon glyphicon-phone-alt"></i></span>
-                            <input type="text" name="car-user-contact" id="car-user-contact" placeholder="Enter Contact Number" class="form-control">
+                            <input type="text" name="user-contact" id="user-contact" placeholder="Enter Contact Number" class="form-control">
                         </div>
                     </td>
 
@@ -92,7 +92,7 @@
                         <h4>Select Advertisement Type:</h4>
                     </td>
                     <td>
-                        <input type="radio" name="adv-type" class="adv-type" id="free-adv" value="Free">Free
+                        <input type="radio" name="adv-type" class="adv-type" id="free-adv" value="Free" checked>Free
                         <input type="radio" name="adv-type" class="adv-type" id="paid-adv" value="Paid">Paid
                     </td>
                 </tr>
@@ -148,18 +148,15 @@
                                 </ul>
                             </div>
                             <div class="row">
-                                <input type="radio" name="paidser-type" class="paidser-type" value="Premium" id="premiumser">Select
+                                <input type="radio" name="paidser-type" class="paidser-type" value="Premium" id="premiumser" checked>Select
                             </div>
                         </div>
                     </td>
                 </tr>
 
                 <tr>
-                    <td>
-                        <div id="validatecarForm" class="btn btn-success btn-block">Validate Form</div>
-                    </td>
-                    <td>
-                        <input type="submit" name="submitcarForm" id="submitcarForm" value="Continue" class="btn btn-danger btn-block hidden">
+                    <td colspan="2">
+                        <div id="submitcarForm" class="btn btn-danger btn-block">Continue</div>
                     </td>
                 </tr>
             </table>

@@ -19,7 +19,7 @@
                         <h4>I want to:</h4>
                     </td>
                     <td>
-                        <input type="radio" name="home-todo" class="home-todo" id="Sell" value="Sell">Sell
+                        <input type="radio" name="home-todo" class="home-todo" id="Sell" value="Sell" checked>Sell
                         <input type="radio" name="home-todo" class="home-todo" id="Buy" value="Buy">Buy
                         <input type="radio" name="home-todo" class="home-todo" id="Rent" value="Rent">Rent
                     </td>
@@ -34,7 +34,7 @@
                                     Sell Home Type:
                                 </td>
                                 <td>
-                                    <input type="radio" name="home-sell-type" class="home-sell-type" id="Own" value="Own">Own Home
+                                    <input type="radio" name="home-sell-type" class="home-sell-type" id="Own" value="Own" checked>Own Home
                                     <input type="radio" name="home-sell-type" class="home-sell-type" id="Flat" value="Flat">Flat/Apartment
                                     <input type="radio" name="home-sell-type" class="home-sell-type" id="Land" value="Land">Land
                                 </td>
@@ -51,7 +51,7 @@
                             <tr>
                                 <td>Buy Home on:</td>
                                 <td>
-                                    <input type="radio" name="home-buy-type" class="home-buy-type" id="permanent" value="permanent">Permanent Basis
+                                    <input type="radio" name="home-buy-type" class="home-buy-type" id="permanent" value="permanent" checked>Permanent Basis
                                     <input type="radio" name="home-buy-type" class="home-buy-type" id="rentbasis" value="rentbasis">Rent Basis
                                 </td>
                             </tr>
@@ -68,7 +68,7 @@
                                 <td>Rent Home Type</td>
                                 <td>
                                     <input type="radio" name="home-rent-type" class="home-rent-type" id="Flatrent" value="Flatrent">Flat/Apartment
-                                    <input type="radio" name="home-rent-type" class="home-rent-type" id="Homerent" value="Homerent">Home
+                                    <input type="radio" name="home-rent-type" class="home-rent-type" id="Homerent" value="Homerent" checked>Home
                                 </td>
                             </tr>
 
@@ -90,7 +90,7 @@
                     <td>
                         <div class="input-group">
                             <span class="input-group-addon"><i class="fa fa-rupee"></i></span>
-                            <input type="text" name="home-cost" class="form-control" id="home-cost" placeholder="Expected Cost">
+                            <input type="text" name="cost" class="form-control" id="cost" placeholder="Expected Cost">
                         </div>
                     </td>
                 </tr>
@@ -119,7 +119,7 @@
                     </td>
                     <td>
                         Advertisement For:<input type="radio" name="user-type" class="user-type" id="company" value="Company">Company
-                        <input type="radio" name="user-type" class="user-type" id="individual" value="Individual">Individual
+                        <input type="radio" name="user-type" class="user-type" id="individual" value="Individual" checked>Individual
                     </td>
                 </tr>
 
@@ -128,6 +128,9 @@
                         <div class="input-group">
                             <span class="input-group-addon"><i class="fa fa-institution"></i></span>
                             <input type="text" name="company-name" id="company-name" placeholder="Enter Company Name" class="form-control">
+                        </div>
+                        <div>
+                            <input type="text" class="form-control" name="home-city" id="home-city" placeholder="Enter Location(City)">
                         </div>
                     </td>
 
@@ -148,7 +151,7 @@
                         <h4>Select Advertisement Type:</h4>
                     </td>
                     <td>
-                        <input type="radio" name="adv-type" class="adv-type" id="free-adv" value="Free">Free
+                        <input type="radio" name="adv-type" class="adv-type" id="free-adv" value="Free" checked>Free
                         <input type="radio" name="adv-type" class="adv-type" id="paid-adv" value="Paid">Paid
                     </td>
                 </tr>
@@ -204,18 +207,15 @@
                                 </ul>
                             </div>
                             <div class="row">
-                                <input type="radio" name="paidser-type" class="paidser-type" value="Premium" id="premiumser">Select
+                                <input type="radio" name="paidser-type" class="paidser-type" value="Premium" id="premiumser" checked>Select
                             </div>
                         </div>
                     </td>
                 </tr>
 
                 <tr>
-                    <td>
-                        <div id="validatehomeForm" class="btn btn-success btn-block">Validate Form</div>
-                    </td>
-                    <td>
-                        <input type="submit" name="submithomeForm" id="submithomeForm" value="Continue" class="btn btn-danger btn-block hidden">
+                    <td colspan="2">
+                        <div id="submithomeForm" class="btn btn-danger btn-block">Continue</div>
                     </td>
                 </tr>
             </table>

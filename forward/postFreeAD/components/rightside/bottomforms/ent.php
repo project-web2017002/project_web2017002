@@ -18,7 +18,7 @@
                     <td>
                         <div class="input-group">
                             <span class="input-group-addon"><i class="glyphicon glyphicon-phone-alt"></i></span>
-                            <input type="text" name="entertainment-user-contact" id="entertainment-user-contact" placeholder="Enter Contact Number" class="form-control">
+                            <input type="text" name="user-contact" id="user-contact" placeholder="Enter Contact Number" class="form-control">
                         </div>
                     </td>
                     <td>
@@ -40,11 +40,8 @@
 
 
                 <tr>
-                    <td>
-                        <div id="validateentertainmentForm" class="btn btn-success btn-block">Validate Form</div>
-                    </td>
-                    <td>
-                        <input type="submit" name="submitentertainmentForm" id="submitentertainmentForm" value="Continue" class="btn btn-danger btn-block hidden">
+                    <td colspan="2">
+                        <div id="submitentertainmentForm" class="btn btn-danger btn-block">Continue</div>
                     </td>
                 </tr>
             </table>

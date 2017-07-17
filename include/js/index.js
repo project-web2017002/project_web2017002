@@ -4,8 +4,8 @@ function changename(data){
 }
 
 $(function(){
-    $('body').slideDown(1500);
-    $("#mainWindow").show(1500);
+    $('body').fadeIn(1500);
+    $("#mainWindow").fadeIn(1500);
 });
 
 $(".btn-pref .btn").click(function () {

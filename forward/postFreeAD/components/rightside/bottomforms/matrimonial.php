@@ -18,7 +18,7 @@
                     <td>
                         <div class="input-group">
                             <span class="input-group-addon"><i class="glyphicon glyphicon-phone-alt"></i></span>
-                            <input type="text" name="matrimonial-user-contact" id="matrimonial-user-contact" placeholder="Enter Contact Number" class="form-control">
+                            <input type="text" name="user-contact" id="user-contact" placeholder="Enter Contact Number" class="form-control">
                         </div>
                     </td>
                     <td>
@@ -39,11 +39,8 @@
                 </tr>
 
                 <tr>
-                    <td>
-                        <div id="validatematrimonialForm" class="btn btn-success btn-block">Validate Form</div>
-                    </td>
-                    <td>
-                        <input type="submit" name="submitmatrimonialForm" id="submitmatrimonialForm" value="Continue" class="btn btn-danger btn-block hidden">
+                    <td colspan="2">
+                        <div id="submitmatrimonialForm" class="btn btn-danger btn-block">Continue</div>
                     </td>
                 </tr>
             </table>

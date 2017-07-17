@@ -31,14 +31,17 @@
                     <td>
                         <div class="input-group">
                             <span class="input-group-addon"><i class="fa fa-rupee"></i></span>
-                            <input type="text" name="ser-fee" class="form-control" id="ser-fee" placeholder="Expected Fees">
+                            <input type="text" name="cost" class="form-control" id="cost" placeholder="Expected Cost">
                         </div>
                     </td>
                 </tr>
 
                 <tr id="servicetitletab">
-                    <td colspan="2">
+                    <td>
                         <input type="text" name="Exact-Service-name" id="Exact-Service-name" placeholder="Enter Service Title" class="form-control">
+                    </td>
+                    <td>
+                        <input type="text" class="form-control" name="ser-city" id="ser-city" placeholder="Enter Location(City)">
                     </td>
                 </tr>
 
@@ -60,7 +63,7 @@
                 <tr>
                     <td>
                         I am: <input type="radio" name="user-type" class="user-type" id="company" value="Company">Company
-                        <input type="radio" name="user-type" class="user-type" id="individual" value="Individual">Individual
+                        <input type="radio" name="user-type" class="user-type" id="individual" value="Individual" checked>Individual
                     </td>
                     <td>
                         <div class="input-group">
@@ -95,7 +98,7 @@
                         <h4>Select Advertisement Type:</h4>
                     </td>
                     <td>
-                        <input type="radio" name="adv-type" class="adv-type" id="free-adv" value="Free">Free
+                        <input type="radio" name="adv-type" class="adv-type" id="free-adv" value="Free" checked>Free
                         <input type="radio" name="adv-type" class="adv-type" id="paid-adv" value="Paid">Paid
                     </td>
                 </tr>
@@ -151,18 +154,15 @@
                                 </ul>
                             </div>
                             <div class="row">
-                                <input type="radio" name="paidser-type" class="paidser-type" value="Premium" id="premiumser">Select
+                                <input type="radio" name="paidser-type" class="paidser-type" value="Premium" id="premiumser" checked>Select
                             </div>
                         </div>
                     </td>
                 </tr>
 
                 <tr>
-                    <td>
-                        <div id="validateservicesForm" class="btn btn-success btn-block">Validate Form</div>
-                    </td>
-                    <td>
-                        <input type="submit" name="submitservicesForm" id="submitservicesForm" value="Continue" class="btn btn-danger btn-block hidden">
+                    <td colspan="2">
+                        <div id="submitservicesForm" class="btn btn-danger btn-block">Continue</div>
                     </td>
                 </tr>
             </table>

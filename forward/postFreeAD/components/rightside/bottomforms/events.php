@@ -24,7 +24,6 @@
                     </td>
                     <td id="management-event-tab">
                         <select name="management-event-ser-type" id="management-event-ser-type" class="form-control">
-                            <option value="">--Management Service Type--</option>
                             <option value="Catering">Catering</option>
                             <option value="Decoration">Decoration</option>
                             <option value="Entertainment">Entertainment</option>
@@ -32,12 +31,10 @@
                             <option value="Photography-Videography">Photography-Videography</option>
                             <option value="Stage & Infra">Stage & Infra</option>
                             <option value="Venues">Venues</option>
-                            <option value="Other">Other</option>
                         </select>
                     </td>
                     <td id="live-event-tab">
                         <select name="live-event-ser-type" id="live-event-ser-type" class="form-control">
-                            <option value="">--Live Event Service Type--</option>
                             <option value="Catering">Catering</option>
                             <option value="Decoration">Decoration</option>
                             <option value="Entertainment">Entertainment</option>
@@ -45,14 +42,7 @@
                             <option value="Photography-Videography">Photography-Videography</option>
                             <option value="Stage & Infra">Stage & Infra</option>
                             <option value="Venues">Venues</option>
-                            <option value="Other">Other</option>
                         </select>
-                    </td>
-                </tr>
-
-                <tr id="OtherEventServiceTab">
-                    <td colspan="2">
-                        <input type="text" id="other-event-ser" name="other-event-ser"class="form-control" placeholder="Please Specify Other Service">
                     </td>
                 </tr>
 
@@ -66,7 +56,7 @@
                     <td>
                         <div class="input-group">
                             <span class="input-group-addon"><i class="fa fa-rupee"></i></span>
-                            <input type="text" name="event-cost" class="form-control" id="event-cost" placeholder="Enter Cost">
+                            <input type="text" name="cost" class="form-control" id="cost" placeholder="Enter Cost">
                         </div>
                     </td>
                 </tr>
@@ -91,7 +81,7 @@
                         <h4>I am:</h4>
                     </td>
                     <td>
-                        <input type="radio" name="event-ser-type" class="event-ser-type" id="Looking" value="Looking for a Service">Looking for a Service
+                        <input type="radio" name="event-ser-type" class="event-ser-type" id="Looking" value="Looking for a Service" checked>Looking for a Service
                         <input type="radio" name="event-ser-type" class="event-ser-type" id="Providing" value="Providing a service">Providing a service
                     </td>
                 </tr>
@@ -100,7 +90,7 @@
                     <td>
                         <div class="input-group">
                             <span class="input-group-addon"><i class="glyphicon glyphicon-phone-alt"></i></span>
-                            <input type="text" name="event-user-contact" id="event-user-contact" placeholder="Enter Contact Number" class="form-control">
+                            <input type="text" name="user-contact" id="user-contact" placeholder="Enter Contact Number" class="form-control">
                         </div>
                     </td>
 
@@ -114,7 +104,7 @@
                         <h4>Select Advertisement Type:</h4>
                     </td>
                     <td>
-                        <input type="radio" name="adv-type" class="adv-type" id="free-adv" value="Free">Free
+                        <input type="radio" name="adv-type" class="adv-type" id="free-adv" value="Free" checked>Free
                         <input type="radio" name="adv-type" class="adv-type" id="paid-adv" value="Paid">Paid
                     </td>
                 </tr>
@@ -170,18 +160,15 @@
                                 </ul>
                             </div>
                             <div class="row">
-                                <input type="radio" name="paidser-type" class="paidser-type" value="Premium" id="premiumser">Select
+                                <input type="radio" name="paidser-type" class="paidser-type" value="Premium" id="premiumser" checked>Select
                             </div>
                         </div>
                     </td>
                 </tr>
 
                 <tr>
-                    <td>
-                        <div id="validateeventForm" class="btn btn-success btn-block">Validate Form</div>
-                    </td>
-                    <td>
-                        <input type="submit" name="submiteventForm" id="submiteventForm" value="Continue" class="btn btn-danger btn-block hidden">
+                    <td colspan="2">
+                        <div id="submiteventForm" class="btn btn-danger btn-block">Continue</div>
                     </td>
                 </tr>
             </table>

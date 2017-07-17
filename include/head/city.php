@@ -4,7 +4,7 @@
 <ul class="dropdown-menu defineminwidth" id="city">
     <script>
         var addon = document.getElementById("city");
-        var cities = ['All Cities','Ahmedabad','Bangalore','Chandigarh','Chennai','Coimbtore',
+        var cities = ['Ahmedabad','Bangalore','Chandigarh','Chennai','Coimbtore',
             'Delhi','Gurgaon','Hyderabad','Jaipur','Kochi','Kolkata','Lakhnow',
             'Mumbai','Pune','Trivandrum'];
         for(var a=0;a<cities.length;a++){
