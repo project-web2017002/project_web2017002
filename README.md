@@ -1,6 +1,20 @@
 # project_web2017002
 Web Project
 ==============================================
+17-7-2017
+
+* Ad forms are now validated
+* Admin can add a product to Featured product Category
+* User can view product of different categories by clicking on menubar on left
+* user can view products for cities also by clicking on the select city option on top right navbar
+* new database for managing featured product is added
+* Virtual ads added for making sure that place is used
+* so many lines of codes removed for shortening the code and faster processing from server
+* validations are done on client end not on server
+* few code for Css/JS/Bootstrap Added
+* page loading style changed from slide to fadeIn
+* some more changes made too for flexibility
+
 07-7-2017
 
 * All forms are now able to save data in csv file in their respective category folder as well as ad info in Database
