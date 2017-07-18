@@ -1,6 +1,16 @@
 # project_web2017002
 Web Project
 ==============================================
+18-7-2017
+
+* Admin can now remove a featured product
+* Admin can now view featured products and all products listed on website
+* When a featured product is removed from featured category that products info is saved in a file under admin panel for future reference
+* Small interface changes for Admin in navbar
+* besides of Folders for cities, now cities products are listed by some code, hence removed bunch of extra files and extra lines of code
+* more work is on PHP now
+* bugs of validations fixed for two forms
+
 17-7-2017
 
 * Ad forms are now validated
