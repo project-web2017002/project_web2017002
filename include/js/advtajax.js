@@ -939,6 +939,10 @@ $("#submitJobForm").click(function(){
     }else{
         advt_type=adv_type;
     }
+    var data = "categoryid="+ category_id +"&userid="+ user_id +"&jobtitle="+ job_title +"&jobtype="+ job_type +"&jobrole="+ job_role +
+        "&minsal="+ min_sal +"&maxsal="+ max_sal +"&companyname="+ job_company_name +"&companyemail="+ job_company_email +
+        "&joblocation="+ job_location +"&jobexp="+ job_experience +"&recruiternumber="+ job_recruiter_number +"&jobdesc="+ job_desc +
+        "&advtype="+advt_type;
     if(category_id == ''){
         alert.innerHTML = "Failed To get Category Info!";
     }else {
@@ -984,11 +988,27 @@ $("#submitJobForm").click(function(){
                                                             if(advt_type == ''){
                                                                 alert.innerHTML = "Please select paid Advertisement Type!";
                                                             }
+                                                            else{
+                                                                $.ajax({
+                                                                    type:"post",
+                                                                    data:data,
+                                                                    url:"//localhost/optimus/forward/postFreeAD/post/postproduct.php",
+                                                                    beforeSend: function(){
+                                                                        $("#submitJobForm").prop('disabled',true);
+                                                                    },
+                                                                    success: function(data) {
+                                                                        if(data == 'Success'){
+                                                                            window.location.assign('../../');
+                                                                        }else{
+                                                                            alert(data);
+                                                                        }
+                                                                    },
+                                                                    error: function(data){
+                                                                        alert("Form didn't submit!");
+                                                                    }
+                                                                });
+                                                            }
                                                         }else{
-                                                            var data = "categoryid="+ category_id +"&userid="+ user_id +"&jobtitle="+ job_title +"&jobtype="+ job_type +"&jobrole="+ job_role +
-                                                                "&minsal="+ min_sal +"&maxsal="+ max_sal +"&companyname="+ job_company_name +"&companyemail="+ job_company_email +
-                                                                "&joblocation="+ job_location +"&jobexp="+ job_experience +"&recruiternumber="+ job_recruiter_number +"&jobdesc="+ job_desc +
-                                                                "&advtype="+advt_type;
                                                             $.ajax({
                                                                 type:"post",
                                                                 data:data,
