@@ -11,8 +11,21 @@
         <div class="collapse navbar-collapse" id="myNavbar">
             <ul class="nav navbar-nav">
                 <li><a href="#" data-toggle="modal" data-target="#newAdminModal"><i class="fa fa-user-plus"></i> Add New Admin</a></li>
-                <li><a href="#" data-toggle="modal" data-target="#newFPModal"><i class="glyphicon glyphicon-plus"></i> Add Featured Product</a></li>
-                <li><a href="#"></a></li>
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">Featured Product<span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#" data-toggle="modal" data-target="#newFPModal"><i class="glyphicon glyphicon-plus"></i> Add Featured Product</a></li>
+                        <li><a href="#" id="removefp"><i class="glyphicon glyphicon-remove"></i> Remove Featured Product</a></li>
+                        <li><a href="#" id="viewfp"><i class="glyphicon glyphicon-eye-open"></i> View Featured Product</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">More<span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#" style="cursor:pointer;" id="moveToOrders" title="View ALL Orders"><span class="glyphicon glyphicon-eye-open"></span> View All Orders</a></li>
+                        <li><a href="#" style="cursor:pointer;" id="moveToProducts" title="View ALL Products"><span class="glyphicon glyphicon-eye-open"></span> View All Product</a></li>
+                    </ul>
+                </li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 <li>

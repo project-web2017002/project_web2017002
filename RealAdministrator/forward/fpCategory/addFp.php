@@ -50,20 +50,21 @@ if($category == ''){
                             if ($row == 1) {
                                 continue;
                             } else {
+                                $row = 0;
                                 $field = implode(",", $data);
                                 $row_arr = explode(",",$field);
                                 $us_er_id = $row_arr[1];
                                 if($category == 10001){
                                     $title = $row_arr[4];
-                                    $da_te_ti_me = $row_arr[13];
-                                    $adver_type = $row_arr[12];
+                                    $da_te_ti_me = $row_arr[14];
+                                    $adver_type = $row_arr[13];
                                     $date=substr($da_te_ti_me,0,-11);
                                     $time = substr($da_te_ti_me,11);
                                 }
                                 elseif ($category == 10002 || $category == 10012){
                                     $title = $row_arr[2];
-                                    $da_te_ti_me = $row_arr[16];
-                                    $adver_type = $row_arr[15];
+                                    $da_te_ti_me = $row_arr[17];
+                                    $adver_type = $row_arr[16];
                                     $date=substr($da_te_ti_me,0,-11);
                                     $time = substr($da_te_ti_me,11);
                                 }
@@ -76,15 +77,15 @@ if($category == ''){
                                 }
                                 elseif ($category == 10004){
                                     $title = $row_arr[3];
-                                    $da_te_ti_me = $row_arr[13];
-                                    $adver_type = $row_arr[12];
+                                    $da_te_ti_me = $row_arr[14];
+                                    $adver_type = $row_arr[13];
                                     $date=substr($da_te_ti_me,0,-11);
                                     $time = substr($da_te_ti_me,11);
                                 }
                                 elseif ($category == 10005){
                                     $title = $row_arr[3];
-                                    $da_te_ti_me = $row_arr[13];
-                                    $adver_type = $row_arr[12];
+                                    $da_te_ti_me = $row_arr[14];
+                                    $adver_type = $row_arr[13];
                                     $date=substr($da_te_ti_me,0,-11);
                                     $time = substr($da_te_ti_me,11);
                                 }
@@ -97,22 +98,22 @@ if($category == ''){
                                 }
                                 elseif ($category == 10007 || $category == 10016){
                                     $title = $row_arr[4];
-                                    $da_te_ti_me = $row_arr[17];
-                                    $adver_type = $row_arr[16];
+                                    $da_te_ti_me = $row_arr[18];
+                                    $adver_type = $row_arr[17];
                                     $date=substr($da_te_ti_me,0,-11);
                                     $time = substr($da_te_ti_me,11);
                                 }
                                 elseif ($category == 10008 || $category == 10017 || $category == 10010 || $category == 10011 || $category == 10013){
                                     $title = $row_arr[8];
-                                    $da_te_ti_me = $row_arr[19];
-                                    $adver_type = $row_arr[18];
+                                    $da_te_ti_me = $row_arr[20];
+                                    $adver_type = $row_arr[19];
                                     $date=substr($da_te_ti_me,0,-11);
                                     $time = substr($da_te_ti_me,11);
                                 }
                                 elseif ($category == 10009){
                                     $title = $row_arr[4];
-                                    $da_te_ti_me = $row_arr[17];
-                                    $adver_type = $row_arr[16];
+                                    $da_te_ti_me = $row_arr[18];
+                                    $adver_type = $row_arr[17];
                                     $date=substr($da_te_ti_me,0,-11);
                                     $time = substr($da_te_ti_me,11);
                                 }

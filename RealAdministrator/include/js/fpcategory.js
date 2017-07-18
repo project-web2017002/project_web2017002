@@ -5,6 +5,10 @@ $(function(){
         window.location.assign("../../");
     });
 
+    $("#goback2").click(function(){
+        window.location.assign("../../../");
+    });
+
     var j;
     var categories = ['services','homes','jobs','cars','bikes','education','mobiles & tablets',
         'furniture & decor','electronics and appliances','kids & toys','sports, hobbies & fashion',
@@ -24,6 +28,14 @@ $(function(){
         }
     });
 
+    $("#removefp").click(function(){
+        window.location.assign("forward/fpCategory/");
+    });
+
+    $("#viewfp").click(function(){
+        window.location.assign("forward/fpCategory/view/");
+    });
+
 });
 
 function addNow(file,category){
@@ -35,4 +47,23 @@ function addNow(file,category){
     };
     xmlhttp.open("GET", "send.php?file=" + file + "&categoryId="+ category, true);
     xmlhttp.send();
+}
+
+function remove(featpronum){
+    $.ajax({
+        type:"post",
+        data:"num="+featpronum,
+        url:"remove.php",
+        success:function(data){
+            if(data == 'Success'){
+                $("#message2").html("Product Removed SuccessFully");
+                window.location.reload();
+            }else{
+                $("#message2").html(data);
+            }
+        },
+        error:function() {
+            $("#message2").html("Error");
+        }
+    });
 }

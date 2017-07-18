@@ -12,9 +12,11 @@
     <tr>
         <td>Orders:</td>
         <td><span class="badge"><?php echo $num_orders ?></span></td>
+        <td><span class="glyphicon glyphicon-eye-open" style="cursor:pointer;" id="moveToOrders" title="View ALL Orders"></span></td>
     </tr>
     <tr>
         <td>Products:</td>
         <td><span class="badge"><?php echo $num_products ?></span></td>
+        <td><span class="glyphicon glyphicon-eye-open" style="cursor:pointer;" id="moveToProducts" title="View ALL Products"></span></td>
     </tr>
 </table>

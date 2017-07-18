@@ -33,7 +33,7 @@ if($count == 0){
                                 $job_title = $row_arr[2];
                                 $cost = $row_arr[6];
                                 $use_r_name = $row_arr[7];
-                                $da_te = $row_arr[15];
+                                $da_te = $row_arr[14];
                                 ?>
                                 <div class="col-lg-4 col-md-6 col-sm-12" style="float: left; height:450px;">
                                     <div class="row">
