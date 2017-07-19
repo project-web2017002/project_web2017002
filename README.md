@@ -1,6 +1,17 @@
 # project_web2017002
 Web Project
 ==============================================
+19-7-2017
+
+* Now after creating ad users are asked to upload a reference image
+* just one image can be uploaded
+* Users can see image of product in respective category
+* image's fakepath is saved in db
+* common code is gathered in same place and dopped to respective places
+* backend js is shorten 
+* removed extra files and directories
+* more bugs fixed
+
 18-7-2017
 
 * Admin can now remove a featured product
