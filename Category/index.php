@@ -1,3 +1,8 @@
+<?php
+error_reporting(0);
+require("essential/db/db.php");
+require("essential/ses/session.php");
+?>
 <div class="container-fluid">
     <?php
     if($categoryid == 10001){

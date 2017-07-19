@@ -355,7 +355,10 @@ function seven(){
     $insertQuery = mysqli_query($con,"insert into listed_products (product_title,pro_description_file) values 
 ('$mob_ad_title','$url')")or die("Error in uploading");
     if($insertQuery){
-        echo "Success";
+        $getprid = mysqli_query($con,"select * from listed_products where pro_description_file='$url'");
+        $fetch = mysqli_fetch_array($getprid);
+        $pr_id = $fetch[0];
+        echo $pr_id;
     }else{
         echo "Failure";
     }

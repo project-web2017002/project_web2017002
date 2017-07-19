@@ -28,6 +28,10 @@ if($count == 0){
                             if ($row == 1) {
                                 continue;
                             } else {
+                                $row=0;
+                                $getimage = mysqli_query($con,"SELECT * FROM `listed_products` WHERE `pro_description_file`='//localhost/optimus/".$file."'");
+                                $fetch = mysqli_fetch_array($getimage);
+                                $image = $fetch[3];
                                 $field = implode(",", $data);
                                 $row_arr = explode(",", $field);
                                 $title = $row_arr[4];
@@ -37,8 +41,18 @@ if($count == 0){
                                 ?>
                                 <div class="col-lg-4 col-md-6 col-sm-12" style="float: left; height:450px;">
                                     <div class="row">
-                                        <img class="img-responsive img-thumbnail img-rounded"
-                                             src="http://www.crouzet.com/wp-content/themes/innovistasensors_wp-theme_crouzet-portal/assets/algolia/img/no-image-available.jpg">
+                                        <?php
+                                        if(!($image == NULL || $image == '')){
+                                            ?>
+                                            <img class="img-responsive img-thumbnail img-rounded" src="<?php echo 'Category/images/'.$image; ?>">
+                                            <?php
+                                        }else {
+                                            ?>
+                                            <img class="img-responsive img-thumbnail img-rounded"
+                                                 src="http://www.crouzet.com/wp-content/themes/innovistasensors_wp-theme_crouzet-portal/assets/algolia/img/no-image-available.jpg">
+                                            <?php
+                                        }
+                                        ?>
                                     </div>
                                     <div class="row">
                                         <h3><?php echo $title ?></h3>
@@ -47,11 +61,9 @@ if($count == 0){
                                         <h6>Cost: <i class="fa fa-rupee"></i><?php echo $cost ?></h6>
                                     </div>
                                 </div>
-
                                 <?php
                             }
                         }
-                        echo "<br>";
                         fclose($handle);
                     } else {
                         echo "Could not open file: " . $file;

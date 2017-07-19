@@ -26,6 +26,7 @@ if($num <= 0){
                     continue;
                 } else {
                     $row = 0;
+                    $image = $getdata[3];
                     $field = implode(",", $data);
                     $row_arr = explode(",", $field);
                     for($i=0;$i<sizeof($row_arr);$i++){
@@ -101,8 +102,18 @@ if($num <= 0){
                             ?>
                             <div class="col-lg-4 col-md-6 col-sm-12" style="float: left; height:450px;">
                                 <div class="row">
-                                    <img class="img-responsive img-thumbnail img-rounded"
-                                         src="http://www.crouzet.com/wp-content/themes/innovistasensors_wp-theme_crouzet-portal/assets/algolia/img/no-image-available.jpg">
+                                    <?php
+                                    if($image != NULL) {
+                                        ?>
+                                        <img class="img-responsive img-thumbnail img-rounded" src="<?php echo 'Category/images/'.$image; ?>">
+                                        <?php
+                                    }else {
+                                        ?>
+                                        <img class="img-responsive img-thumbnail img-rounded"
+                                             src="http://www.crouzet.com/wp-content/themes/innovistasensors_wp-theme_crouzet-portal/assets/algolia/img/no-image-available.jpg">
+                                        <?php
+                                    }
+                                        ?>
                                 </div>
                                 <div class="row">
                                     <h3><?php echo $title ?></h3>

@@ -1141,8 +1141,8 @@ $("#submitmobilesForm").click(function(){
                                                                                             $("#submitmobilesForm").prop('disabled',true);
                                                                                         },
                                                                                         success: function(data) {
-                                                                                            if(data == 'Success'){
-                                                                                                window.location.assign('../../');
+                                                                                            if(data != 'Failure'){
+                                                                                                window.location.assign('?aagvgfeenmb='+data);
                                                                                             }else{
                                                                                                 alert(data);
                                                                                             }
@@ -1161,8 +1161,8 @@ $("#submitmobilesForm").click(function(){
                                                                                         $("#submitmobilesForm").prop('disabled',true);
                                                                                     },
                                                                                     success: function(data) {
-                                                                                        if(data == 'Success'){
-                                                                                            window.location.assign('../../');
+                                                                                        if(data != 'Failure'){
+                                                                                            window.location.assign('?aagvgfeenmb='+data);
                                                                                         }else{
                                                                                             alert(data);
                                                                                         }
@@ -1217,8 +1217,8 @@ $("#submitmobilesForm").click(function(){
                                                                                     $("#submitmobilesForm").prop('disabled',true);
                                                                                 },
                                                                                 success: function(data) {
-                                                                                    if(data == 'Success'){
-                                                                                        window.location.assign('../../');
+                                                                                    if(data != 'Failure'){
+                                                                                        window.location.assign('?aagvgfeenmb='+data);
                                                                                     }else{
                                                                                         alert(data);
                                                                                     }
@@ -1237,8 +1237,8 @@ $("#submitmobilesForm").click(function(){
                                                                                 $("#submitmobilesForm").prop('disabled',true);
                                                                             },
                                                                             success: function(data) {
-                                                                                if(data == 'Success'){
-                                                                                    window.location.assign('../../');
+                                                                                if(data != 'Failure'){
+                                                                                    window.location.assign('?aagvgfeenmb='+data);
                                                                                 }else{
                                                                                     alert(data);
                                                                                 }

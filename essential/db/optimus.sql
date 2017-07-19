@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 17, 2017 at 02:11 PM
+-- Generation Time: Jul 19, 2017 at 02:42 PM
 -- Server version: 5.7.14
 -- PHP Version: 5.6.25
 
@@ -72,7 +72,7 @@ CREATE TABLE `featpro` (
 --
 
 INSERT INTO `featpro` (`num`, `byAdmin`, `file`) VALUES
-(4, 1, '2017-07-14-09-59-57am-1');
+(2, 1, '2017-07-18-06-16-27am-1');
 
 -- --------------------------------------------------------
 
@@ -83,15 +83,21 @@ INSERT INTO `featpro` (`num`, `byAdmin`, `file`) VALUES
 CREATE TABLE `listed_products` (
   `product_id` int(11) NOT NULL,
   `product_title` varchar(300) NOT NULL,
-  `pro_description_file` varchar(3000) NOT NULL
+  `pro_description_file` varchar(3000) NOT NULL,
+  `ref_img` varchar(200) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `listed_products`
 --
 
-INSERT INTO `listed_products` (`product_id`, `product_title`, `pro_description_file`) VALUES
-(1, 'Want to get my AC repaired', '//localhost/optimus/Category/categoryId/10001/2017-07-17-01-13-11pm-1.csv');
+INSERT INTO `listed_products` (`product_id`, `product_title`, `pro_description_file`, `ref_img`) VALUES
+(1, 'Want to get my AC repaired', '//localhost/optimus/Category/categoryId/10001/2017-07-17-01-13-11pm-1.csv', NULL),
+(2, 'Work from Home for Housewifes', '//localhost/optimus/Category/categoryId/10003/2017-07-18-06-16-27am-1.csv', NULL),
+(3, 'Delhi to Agra with two-way', '//localhost/optimus/Category/categoryId/10001/2017-07-19-10-34-34am-1.csv', NULL),
+(4, 'Fixing wires issue at home', '//localhost/optimus/Category/categoryId/10001/2017-07-19-10-39-56am-1.csv', NULL),
+(5, 'Iphone 7 to sell', '//localhost/optimus/Category/categoryId/10007/2017-07-19-11-44-35am-1.csv', NULL),
+(9, 'Want an iPhone 7 jet Black', '//localhost/optimus/Category/categoryId/10007/2017-07-19-12-34-34pm-1.csv', '1500471990_iphone7-jetblack-select-2016.png');
 
 -- --------------------------------------------------------
 
@@ -295,12 +301,12 @@ ALTER TABLE `advertisement`
 -- AUTO_INCREMENT for table `featpro`
 --
 ALTER TABLE `featpro`
-  MODIFY `num` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `num` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT for table `listed_products`
 --
 ALTER TABLE `listed_products`
-  MODIFY `product_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `product_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 --
 -- AUTO_INCREMENT for table `orders`
 --
