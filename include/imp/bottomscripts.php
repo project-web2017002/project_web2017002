@@ -4,3 +4,4 @@
 <script src="//localhost/optimus/include/js/advertisejs.js"></script>
 <script src="//localhost/optimus/include/js/advtajax.js"></script>
 <script src="//localhost/optimus/include/js/imageShow.js"></script>
+<script src="//localhost/optimus/include/js/product.js"></script>

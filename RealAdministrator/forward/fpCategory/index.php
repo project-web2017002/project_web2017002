@@ -51,6 +51,7 @@ if($aid == ''){
                             continue;
                         } else {
                             $row = 0;
+                            $image = $fetchdata[3];
                             $field = implode(",", $data);
                             $row_arr = explode(",",$field);
                             $category = $row_arr[0];
@@ -116,8 +117,18 @@ if($aid == ''){
                             ?>
                             <div class="col-lg-4 col-md-6 col-sm-12" style="float: left; height:450px;">
                                 <div class="row">
-                                    <img class="img-responsive img-thumbnail img-rounded"
-                                         src="http://www.crouzet.com/wp-content/themes/innovistasensors_wp-theme_crouzet-portal/assets/algolia/img/no-image-available.jpg">
+                                    <?php
+                                    if($image == '') {
+                                        ?>
+                                        <img class="img-responsive img-thumbnail img-rounded"
+                                             src="http://www.crouzet.com/wp-content/themes/innovistasensors_wp-theme_crouzet-portal/assets/algolia/img/no-image-available.jpg">
+                                        <?php
+                                    }else{
+                                        ?>
+                                        <img class="img-responsive img-thumbnail img-rounded" src="../../../Caregory/images/<?php echo $image ?>">
+                                        <?php
+                                    }
+                                    ?>
                                 </div>
                                 <div class="row">
                                     <h3><?php echo $title ?></h3>

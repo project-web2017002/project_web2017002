@@ -22,8 +22,8 @@
                 <li class="dropdown">
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#">More<span class="caret"></span></a>
                     <ul class="dropdown-menu">
-                        <li><a href="#" style="cursor:pointer;" id="moveToOrders" title="View ALL Orders"><span class="glyphicon glyphicon-eye-open"></span> View All Orders</a></li>
-                        <li><a href="#" style="cursor:pointer;" id="moveToProducts" title="View ALL Products"><span class="glyphicon glyphicon-eye-open"></span> View All Product</a></li>
+                        <li><a href="#" style="cursor:pointer;" class="moveToOrders" title="View ALL Orders"><span class="glyphicon glyphicon-eye-open"></span> View All Orders</a></li>
+                        <li><a href="#" style="cursor:pointer;" class="moveToProducts" title="View ALL Products"><span class="glyphicon glyphicon-eye-open"></span> View All Product</a></li>
                     </ul>
                 </li>
             </ul>

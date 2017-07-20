@@ -24,7 +24,7 @@ $(function(){
         $("#admin-id").text(vale);
     });
 
-    $("#moveToProducts").click(function(){
+    $(".moveToProducts").click(function(){
         window.location.assign("forward/move/products/");
     });
 
