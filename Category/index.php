@@ -2,6 +2,7 @@
 error_reporting(0);
 require("essential/db/db.php");
 require("essential/ses/session.php");
+require("forward/OtherFiles/viewProduct/index.php");
 ?>
 <div class="container-fluid">
     <?php

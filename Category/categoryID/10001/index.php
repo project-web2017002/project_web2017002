@@ -34,6 +34,7 @@ if($count == 0){
                     $row=0;
                     $getimage = mysqli_query($con,"SELECT * FROM `listed_products` WHERE `pro_description_file`='//localhost/optimus/".$file."'");
                     $fetch = mysqli_fetch_array($getimage);
+                    $this_pro_id = $fetch[0];
                     $image = $fetch[3];
                     $field = implode(",", $data);
                     $row_arr = explode(",", $field);
@@ -44,7 +45,7 @@ if($count == 0){
                     ?>
 
                             <div class="col-lg-4 col-md-6 col-sm-12" style="float: left; height:450px;">
-                                <div class="row">
+                                <div class="row" style="cursor: pointer" onclick="ViewProduct(<?php echo $this_pro_id; ?>);">
                                     <?php
                                     if(!($image == NULL || $image == '')){
                                         ?>

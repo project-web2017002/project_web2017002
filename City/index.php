@@ -1,4 +1,6 @@
 <?php
+error_reporting(0);
+require("forward/OtherFiles/viewProduct/index.php");
 $row = 0;
 $total = 0;
 $getALL_products = mysqli_query($con,"Select * from listed_products");
@@ -26,6 +28,7 @@ if($num <= 0){
                     continue;
                 } else {
                     $row = 0;
+                    $this_pro_id = $getdata[0];
                     $image = $getdata[3];
                     $field = implode(",", $data);
                     $row_arr = explode(",", $field);
@@ -101,7 +104,7 @@ if($num <= 0){
                             }
                             ?>
                             <div class="col-lg-4 col-md-6 col-sm-12" style="float: left; height:450px;">
-                                <div class="row">
+                                <div class="row" style="cursor: pointer" onclick="ViewProduct(<?php echo $this_pro_id; ?>);">
                                     <?php
                                     if($image != NULL) {
                                         ?>

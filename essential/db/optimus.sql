@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 19, 2017 at 02:42 PM
+-- Generation Time: Jul 20, 2017 at 02:49 PM
 -- Server version: 5.7.14
 -- PHP Version: 5.6.25
 
@@ -72,7 +72,8 @@ CREATE TABLE `featpro` (
 --
 
 INSERT INTO `featpro` (`num`, `byAdmin`, `file`) VALUES
-(2, 1, '2017-07-18-06-16-27am-1');
+(2, 1, '2017-07-18-06-16-27am-1'),
+(3, 1, '2017-07-19-12-34-34pm-1');
 
 -- --------------------------------------------------------
 
@@ -301,7 +302,7 @@ ALTER TABLE `advertisement`
 -- AUTO_INCREMENT for table `featpro`
 --
 ALTER TABLE `featpro`
-  MODIFY `num` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `num` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT for table `listed_products`
 --
