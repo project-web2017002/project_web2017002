@@ -1,6 +1,16 @@
 # project_web2017002
 Web Project
 ==============================================
+20-7-2017
+
+* View product bugs fixed
+* users can view product info by clicking on product's image(not detailed info)
+* started working on collecting data of all categories at a centralized space so that extra caregories and common code can be removed
+* product info between admin and user is gathered from common place now (reduced code)
+* css effects added
+* js effects added and removed too
+* several bugs fixed (mean it)
+
 19-7-2017
 
 * Now after creating ad users are asked to upload a reference image
