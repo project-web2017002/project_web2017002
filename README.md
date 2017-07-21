@@ -1,6 +1,17 @@
 # project_web2017002
 Web Project
 ==============================================
+21-7-2017
+
+* Products can be added to cart now
+* Products can be removed from cart now
+* cart products can now be viewed
+* new database created for cart products handling
+* database named advertisementinfo removed as it is not more needed
+* one centralized file created for view different category products, hence removed extra php files and code
+* filtering of city name and category is done in url
+* several bugs fixed
+
 20-7-2017
 
 * View product bugs fixed
