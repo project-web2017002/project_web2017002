@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 20, 2017 at 02:49 PM
+-- Generation Time: Jul 21, 2017 at 12:49 PM
 -- Server version: 5.7.14
 -- PHP Version: 5.6.25
 
@@ -39,21 +39,6 @@ CREATE TABLE `admin_status` (
 INSERT INTO `admin_status` (`num`, `admin_id`, `status`) VALUES
 (1, 1, 0),
 (2, 2, 0);
-
--- --------------------------------------------------------
-
---
--- Table structure for table `advertisement`
---
-
-CREATE TABLE `advertisement` (
-  `advt_id` int(11) NOT NULL,
-  `advt_type` varchar(100) NOT NULL,
-  `advt_cat` varchar(10) NOT NULL,
-  `advt_user_type` varchar(40) NOT NULL,
-  `advt_consumer_id` int(11) NOT NULL,
-  `advt_file` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -172,6 +157,18 @@ INSERT INTO `realadmin` (`admin_id`, `admin_name`, `admin_email`, `admin_contact
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `shoppingcart`
+--
+
+CREATE TABLE `shoppingcart` (
+  `count` int(11) NOT NULL,
+  `product_id` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `status`
 --
 
@@ -225,12 +222,6 @@ ALTER TABLE `admin_status`
   ADD KEY `admin_id` (`admin_id`);
 
 --
--- Indexes for table `advertisement`
---
-ALTER TABLE `advertisement`
-  ADD PRIMARY KEY (`advt_id`);
-
---
 -- Indexes for table `featpro`
 --
 ALTER TABLE `featpro`
@@ -272,6 +263,14 @@ ALTER TABLE `realadmin`
   ADD PRIMARY KEY (`admin_id`);
 
 --
+-- Indexes for table `shoppingcart`
+--
+ALTER TABLE `shoppingcart`
+  ADD PRIMARY KEY (`count`),
+  ADD KEY `product_id` (`product_id`),
+  ADD KEY `user_id` (`user_id`);
+
+--
 -- Indexes for table `status`
 --
 ALTER TABLE `status`
@@ -293,11 +292,6 @@ ALTER TABLE `verified_user`
 --
 ALTER TABLE `admin_status`
   MODIFY `num` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
---
--- AUTO_INCREMENT for table `advertisement`
---
-ALTER TABLE `advertisement`
-  MODIFY `advt_id` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `featpro`
 --
@@ -323,6 +317,11 @@ ALTER TABLE `policy_agreement`
 --
 ALTER TABLE `realadmin`
   MODIFY `admin_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+--
+-- AUTO_INCREMENT for table `shoppingcart`
+--
+ALTER TABLE `shoppingcart`
+  MODIFY `count` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT for table `status`
 --
@@ -367,6 +366,13 @@ ALTER TABLE `order_status`
 --
 ALTER TABLE `policy_agreement`
   ADD CONSTRAINT `policy_agreement_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `verified_user` (`user_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `shoppingcart`
+--
+ALTER TABLE `shoppingcart`
+  ADD CONSTRAINT `shoppingcart_ibfk_1` FOREIGN KEY (`product_id`) REFERENCES `listed_products` (`product_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `shoppingcart_ibfk_2` FOREIGN KEY (`user_id`) REFERENCES `verified_user` (`user_id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `status`

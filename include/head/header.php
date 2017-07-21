@@ -38,7 +38,8 @@ error_reporting(0);
                     </li>
                     <li class="dropdown"><?php
                         require("city.php");
-                        ?></li>
+                        ?>
+                    </li>
                     <?php
                     if($id==''){
                         ?>

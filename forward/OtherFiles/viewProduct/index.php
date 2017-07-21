@@ -4,22 +4,17 @@
     <div class="errorViewProduct"></div>
     <div class="viewProductBody">
         <div class="container">
+            <div class="row"><div class="col-sm-12"><div id="vieproducterror"></div></div></div>
             <div class="row">
                 <div class="col-md-4 col-sm-12" style="text-align: -webkit-center;" id="img-tab"></div>
                 <div class="col-md-8 col-sm-12">
                     <div class="container-fluid">
+                        <div class="hidden" id="_jkpr"></div>
                         <div class="row">
                             <div class="col-sm-12" style="font-size: larger; font-weight: 700" id="viewproductTitle"></div>
                         </div>
                         <hr>
-                        <div class="row">
-                            <div class="col-sm-6 btn btn-primary" style="font-weight: 900;">
-                                <h1>Cost: <span class="fa fa-rupee" id="cost"></span></h1>
-                            </div>
-                            <div class="col-sm-6 btn btn-success" style="font-weight: 900;">
-                                <h1><span class="fa fa-shopping-cart"></span> Add to cart</h1>
-                            </div>
-                        </div>
+                        <div class="row" id="_prc"></div>
                         <div class="row">
                             <div class="col-sm-12">
                                 <table class="table">

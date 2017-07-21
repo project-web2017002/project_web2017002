@@ -2,6 +2,8 @@
 error_reporting(0);
 require("../../essential/db/db.php");
 require("../../essential/ses/session.php");
+$categoryid = $_GET['categoryId'];
+$city = $_GET['city'];
 $ctid = $_GET['ctId'];
 $scripterr = $_GET['err'];
 $product_id = $_GET['aagvgfeenmb'];
