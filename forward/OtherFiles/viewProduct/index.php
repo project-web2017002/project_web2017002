@@ -13,8 +13,14 @@
                         <div class="row">
                             <div class="col-sm-12" style="font-size: larger; font-weight: 700" id="viewproductTitle"></div>
                         </div>
-                        <hr>
-                        <div class="row" id="_prc"></div>
+                        <?php
+                        if($id != '') {
+                            ?>
+                            <hr>
+                            <div class="row" id="_prc"></div>
+                            <?php
+                        }
+                        ?>
                         <div class="row">
                             <div class="col-sm-12">
                                 <table class="table">

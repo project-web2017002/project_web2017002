@@ -38,3 +38,26 @@ $(".btn-pref .btn").click(function () {
     $(".btn-pref .btn").removeClass("btn-primary").addClass("btn-default");
     $(this).removeClass("btn-default").addClass("btn-primary");
 });
+
+function changecategory(dataa){
+    var urlofpage = window.location.href;
+    var sep;
+    var ult;
+    var parsed;
+    if(urlofpage.indexOf('?') > -1){
+        sep = "&";
+        if(urlofpage.includes('categoryId=')){
+            ult = urlofpage.replace(/(categoryId=)[^\&]+/, '$1' + dataa);
+            window.location.href = ult;
+        }else{
+            parsed = "categoryId=" + encodeURIComponent(dataa);
+            ult = urlofpage + sep + parsed;
+            window.location.href = ult;
+        }
+    } else {
+        sep = "?";
+        parsed = "categoryId=" + encodeURIComponent(dataa);
+        ult = urlofpage + sep + parsed;
+        window.location.href = ult;
+    }
+}

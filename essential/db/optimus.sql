@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 21, 2017 at 12:49 PM
+-- Generation Time: Jul 25, 2017 at 01:37 PM
 -- Server version: 5.7.14
 -- PHP Version: 5.6.25
 
@@ -93,10 +93,16 @@ INSERT INTO `listed_products` (`product_id`, `product_title`, `pro_description_f
 
 CREATE TABLE `orders` (
   `order_counter` int(11) NOT NULL,
-  `unique_order_number` varchar(30) NOT NULL,
   `order_by` int(11) NOT NULL,
   `product_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `orders`
+--
+
+INSERT INTO `orders` (`order_counter`, `order_by`, `product_id`) VALUES
+(10, 1, 9);
 
 -- --------------------------------------------------------
 
@@ -106,9 +112,18 @@ CREATE TABLE `orders` (
 
 CREATE TABLE `order_status` (
   `counter` int(11) NOT NULL,
-  `unique_order_number` varchar(30) NOT NULL,
-  `status` varchar(300) NOT NULL
+  `unique_order_number` int(11) NOT NULL,
+  `status` varchar(300) NOT NULL,
+  `payment_req_id_mojo` varchar(200) NOT NULL,
+  `payment_id_mojo` varchar(200) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `order_status`
+--
+
+INSERT INTO `order_status` (`counter`, `unique_order_number`, `status`, `payment_req_id_mojo`, `payment_id_mojo`) VALUES
+(2, 10, 'Order Placed', '6f7c06055dbf4260b54d23e9f3c1aee0', 'MOJO7725005A19693359');
 
 -- --------------------------------------------------------
 
@@ -239,7 +254,6 @@ ALTER TABLE `listed_products`
 --
 ALTER TABLE `orders`
   ADD PRIMARY KEY (`order_counter`),
-  ADD UNIQUE KEY `unique_order_number` (`unique_order_number`),
   ADD KEY `order_by` (`order_by`),
   ADD KEY `product_id` (`product_id`);
 
@@ -247,6 +261,7 @@ ALTER TABLE `orders`
 -- Indexes for table `order_status`
 --
 ALTER TABLE `order_status`
+  ADD PRIMARY KEY (`counter`),
   ADD KEY `unique_order_number` (`unique_order_number`);
 
 --
@@ -306,7 +321,12 @@ ALTER TABLE `listed_products`
 -- AUTO_INCREMENT for table `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `order_counter` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `order_counter` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+--
+-- AUTO_INCREMENT for table `order_status`
+--
+ALTER TABLE `order_status`
+  MODIFY `counter` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT for table `policy_agreement`
 --
@@ -321,7 +341,7 @@ ALTER TABLE `realadmin`
 -- AUTO_INCREMENT for table `shoppingcart`
 --
 ALTER TABLE `shoppingcart`
-  MODIFY `count` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `count` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 --
 -- AUTO_INCREMENT for table `status`
 --
@@ -359,7 +379,7 @@ ALTER TABLE `orders`
 -- Constraints for table `order_status`
 --
 ALTER TABLE `order_status`
-  ADD CONSTRAINT `order_status_ibfk_1` FOREIGN KEY (`unique_order_number`) REFERENCES `orders` (`unique_order_number`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `order_status_ibfk_1` FOREIGN KEY (`unique_order_number`) REFERENCES `orders` (`order_counter`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `policy_agreement`

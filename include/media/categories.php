@@ -13,7 +13,7 @@
             'fa-smile-o','fa-paint-brush','fa-building','fa-female','fa-paw','fa-building-o',
             'fa-music','fa-users','fa-calendar','fa-mars-double'];
         for(var j=0; j<categoryData.length; j++){
-            newCategory.innerHTML += '<a href="?categoryId='+ categoryId[j] +'" class="list-group-item functional">'
+            newCategory.innerHTML += '<a onclick="changecategory('+categoryId[j]+')" class="list-group-item functional" style="cursor: pointer">'
                 + '<span class="fa '
                 + newClass[j]
                 + '"></span>&nbsp;&nbsp;&nbsp;'

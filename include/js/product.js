@@ -5,6 +5,18 @@ $(function(){
         $("#_jkpr").html(''); $("#vieproducterror").html(''); $("#_prc").html('');
         $("#viewProduct").hide('slow');
     });
+
+    $("#buy").click(function(){
+        var a = $("#pr_id").html();
+        var b = $("#cos").html();
+        var data = "?a="+b+"&b="+a;
+        if(a == '' || b == ''){
+            return false;
+        }else{
+            window.location.assign("../../payment_gateway/"+data);
+        }
+    });
+
 });
 
 function addtocart() {

@@ -75,7 +75,7 @@ if($id==""){
                             if($imagefile == '' || $imagefile == NULL){
                                 $image = "http://www.crouzet.com/wp-content/themes/innovistasensors_wp-theme_crouzet-portal/assets/algolia/img/no-image-available.jpg";
                             }else{
-                                $image = "../../Category/images/$filename";
+                                $image = "../../Category/images/$imagefile";
                             }
                             if (($handle = fopen("../../".$filename, "r")) !== FALSE) {
                                 while (($data = fgetcsv($handle, 4096, ",")) !== FALSE) {
@@ -113,7 +113,10 @@ if($id==""){
                                         ?>
 
                                         <div class="row" style="margin-top: 10px;">
-                                            <div class="col-md-1 col-sm-12"></div>
+                                            <div class="col-md-1 col-sm-12">
+                                                <div class="hidden" id="pr_id"><?php echo $pr_id ?></div>
+                                                <div class="hidden" id="cos"><?php echo $cost ?></div>
+                                            </div>
 
                                             <div class="col-md-2 col-sm-12">
                                                 <img class="img-responsive img-thumbnail" src="<?php echo $image ?>"/>
@@ -138,7 +141,7 @@ if($id==""){
                                                 </div>
                                                 <br>
                                                 <div class="row">
-                                                    <div class="col-sm-12 btn btn-info">
+                                                    <div class="col-sm-12 btn btn-info" id="buy">
                                                         <span class="glyphicon glyphicon-new-window"></span> Buy Now
                                                     </div>
                                                 </div>

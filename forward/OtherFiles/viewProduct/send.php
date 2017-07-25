@@ -23,6 +23,7 @@ if ($numrows <= 0) {
                 $field = implode(",", $data);
                 $row_arr = explode(",", $field);
                 $category = $row_arr[0];
+                $cust_id = $row_arr[1];
                 if ($category == 10001) {
                     $cost = $row_arr[3]; $username = $row_arr[6]; $email = $row_arr[7]; $contact = $row_arr[8];
                 } elseif ($category == 10002 || $category == 10012) {
@@ -54,7 +55,11 @@ if ($numrows <= 0) {
     $cartquery = mysqli_query($con,"select * from shoppingcart where product_id=$product_id and user_id=$id");
     $numcart = mysqli_num_rows($cartquery);
     if($numcart <= 0){
-        $option = "<div class='col-sm-6 btn btn-default' style='font-weight: 900;'><h1>Cost: <span class='fa fa-rupee' id='cost'></span></h1></div><div class='col-sm-6 btn btn-success' id='_acpr' style='font-weight: 900;' onclick='addtocart();'><h1><span class='fa fa-shopping-cart'></span> Add to cart</h1></div>";
+        if($cust_id == $id){
+            $option = "<div class='col-sm-6 btn btn-default' style='font-weight: 900;'><h1>Cost: <span class='fa fa-rupee' id='cost'></span></h1></div><div class='col-sm-6 btn btn-warning btn-lg'><span class='fa fa-shopping-cart'></span>Can't Add to cart/Added By You</div>";
+        }else {
+            $option = "<div class='col-sm-6 btn btn-default' style='font-weight: 900;'><h1>Cost: <span class='fa fa-rupee' id='cost'></span></h1></div><div class='col-sm-6 btn btn-success' id='_acpr' style='font-weight: 900;' onclick='addtocart();'><h1><span class='fa fa-shopping-cart'></span> Add to cart</h1></div>";
+        }
     }else{
         $option = "<div class='col-sm-6 btn btn-default' style='font-weight: 900;'><h1>Cost: <span class='fa fa-rupee' id='cost'></span></h1></div><div class='col-sm-6 btn btn-info' style='font-weight: 900;'><h1><span class='fa fa-shopping-cart'></span> In Cart</h1></div>";
     }

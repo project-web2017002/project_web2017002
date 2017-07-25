@@ -20,7 +20,7 @@ $featuredcount = mysqli_num_rows($checkfeatured);
         </div>
         <div class="col-lg-9 rightsidebar" id="mainWindow">
             <?php
-            if($categoryid==''&&$city==''){
+            if($categoryid=='' && $city==''){
             include("carousal.php");
             ?>
             <div class="padmar" style="text-align: -webkit-center">
@@ -37,11 +37,12 @@ $featuredcount = mysqli_num_rows($checkfeatured);
                     </div>
                     <?php
                 }
-            }elseif($city==''){
+            }elseif($city == '' && $categoryid != ''){
                 require("Category/index.php");
-            }
-            else{
+            }elseif($city != '' && $categoryid == ''){
                 require("City/index.php");
+            }else{
+                require("Filter/index.php");
             }
             ?>
         </div>
