@@ -1,6 +1,20 @@
 # project_web2017002
 Web Project
 ==============================================
+25-7-2017
+
+* Now product can be buy from cart
+* payments can be made through instamojo payment gateway options
+* orders details are now able to see in orders database
+* orders status database now contains order status and payment details
+* filter is applied on see products by category and city, particular product can be see for a particular category and city both or for each one of them
+* user can now see how many products or which products he/she ordered from profile page
+* users can now see how many products they have uploaded for selling
+* once products are ordered then they are removed from cart
+* user cannot buy product that he/she posted on website
+* several small changes or bugs fixes
+* shorten the code for many pages
+
 21-7-2017
 
 * Products can be added to cart now
