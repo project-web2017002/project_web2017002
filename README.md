@@ -1,6 +1,16 @@
 # project_web2017002
 Web Project
 ==============================================
+26-7-2017
+
+* data availablity code changes in php 
+* admin can now see all ordered products list
+* Users can now easily navigate to their ordered/selling products (UI smooth)
+* Working on providing easy to contact consumer for ordering or getting to thr product
+* several bugs fixed
+* js code edited by clearing extra memory space
+* php execution is now faster as compared to previous code in terms of accessing data
+
 25-7-2017
 
 * Now product can be buy from cart
