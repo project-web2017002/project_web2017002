@@ -206,7 +206,7 @@ if($id==''){
                                 <?php
                                 $row = 0;
                                 $totalpr = 0;
-                                $getallpro = mysqli_query($con,"select * from listed_products");
+                                $getallpro = mysqli_query($con,"select * from listed_products order by product_id desc");
                                 while($fetchprodata = mysqli_fetch_array($getallpro)){
                                     $file = substr($fetchprodata[2], 20);
                                     if (($handle = fopen("../../".$file, "r")) !== FALSE) {

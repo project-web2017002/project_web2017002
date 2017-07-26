@@ -49,7 +49,7 @@ require("forward/OtherFiles/viewProduct/index.php");
         ?>
         <div class="row">
             <div class="col-xs-12" style="text-align: center; text-transform: capitalize; color: #e40046;">
-                <h3>Showing Results In: <strong><?php echo $categoryname . " > " . $city ?></strong></h3>
+                <h5>Showing Results In: <strong><?php echo $categoryname . " under " . $city ." City" ?></strong></h5>
             </div>
         </div>
         <div class="container">

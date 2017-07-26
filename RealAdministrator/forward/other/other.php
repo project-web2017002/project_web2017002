@@ -12,7 +12,7 @@
     <tr>
         <td>Orders:</td>
         <td><span class="badge"><?php echo $num_orders ?></span></td>
-        <td><span class="glyphicon glyphicon-eye-open" style="cursor:pointer;" class="moveToOrders" title="View ALL Orders"></span></td>
+        <td class="moveToOrders"><span class="glyphicon glyphicon-eye-open" style="cursor:pointer;" title="View ALL Orders"></span></td>
     </tr>
     <tr>
         <td>Products:</td>
