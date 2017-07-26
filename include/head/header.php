@@ -29,7 +29,7 @@ error_reporting(0);
                     <li>
                         <form class="navbar-form adjustedForm">
                             <div class="input-group">
-                                <input type="text" class="form-control" placeholder="Search Products and brands">
+                                <input type="text" class="form-control" placeholder="Search Products and brands" required title="Please Enter Your Search">
                                 <div class="input-group-btn">
                                     <button class="btn" type="submit"><span class="glyphicon glyphicon-search"></span></button>
                                 </div>
