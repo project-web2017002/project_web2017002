@@ -11,7 +11,7 @@
                 <form id="Signupform" method="post" autocomplete="off">
                     <div class="form-group">
                         <input type="text" name="username" id="username" class="form-control" placeholder="Enter Your Name" required pattern="[a-zA-Z]{3,}"
-                        title="Username contains only alphabets">
+                        title="Username contains only alphabets" autofocus>
                     </div>
                     <div class="form-group">
                         <input type="email" name="content" id="content" class="form-control" placeholder="Enter Email" required>

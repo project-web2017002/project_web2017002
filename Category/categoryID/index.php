@@ -2,9 +2,15 @@
 error_reporting(0);
     require("essential/db/db.php");
     require("essential/ses/session.php");
-    $files = glob("Category/categoryId/$cateory/*.csv");
-    $count = count($files);
-    $counter = 0;
+    $page = $_GET['page'];
+    if($page == '' || $page == 1){
+        $start = 0;
+    }else{
+        $start = ($page*6)-6;
+    }
+    //$files = glob("Category/categoryId/$cateory/*.csv");
+    $files = mysqli_query($con,"select * from listed_products where pro_description_file like '%$cateory%' limit $start,6");
+    $count = mysqli_num_rows($files);
     $row = 0;
     ?>
     <div class="row">
@@ -14,16 +20,53 @@ error_reporting(0);
     </div>
     <?php
     if ($count == 0) { ?>
-        <div class="well">No Ad posted in this category</div>
-    <?php } else { ?>
+        <div class="container well" style="text-align: -webkit-center">
+            <img src="include/media/images/nothing_found.png" class="img-responsive img-rounded">
+        </div>
+    <?php } else {
+        $files2 = mysqli_query($con,"select * from listed_products where pro_description_file like '%$cateory%'");
+        $count2 = mysqli_num_rows($files2);
+        $pages = ceil($count2/6);
+        ?>
+        <div class="container row" style="text-align: center">
+            <ul class="pagination pagination-lg">
+        <?php
+        if($pages <= 10) {
+            for ($x = 1; $x <= $pages; $x++) {
+                if($x == $page || $page == '') {
+                    ?>
+                    <li class="active" onclick="changepage(<?php echo $x ?>)"><a href="#"><?php echo $x ?></a></li>
+                    <?php
+                }else{
+                    ?>
+                    <li onclick="changepage(<?php echo $x ?>)"><a href="#"><?php echo $x ?></a></li>
+                    <?php
+                }
+            }
+        }else{
+            if($pages > 10){
+                for ($x = $page; $x <= $page+9; $x++) {
+                    if($x == $page || $page == '') {
+                        ?>
+                        <li class="active" onclick="changepage(<?php echo $x ?>)"><a href="#"><?php echo $x ?></a></li>
+                        <?php
+                    }else{
+                        ?>
+                        <li onclick="changepage(<?php echo $x ?>)"><a href="#"><?php echo $x ?></a></li>
+                        <?php
+                    }
+                }
+
+            }
+        }
+        ?>
+            </ul>
+        </div>
         <div class="container">
             <div class="row" style="text-align: -webkit-center; text-transform: capitalize">
                 <?php
-                foreach ($files as $file) {
-                    $counter++;
-                    if ($counter == 6) {
-                        break;
-                    } else {
+                while($fetchfilenames = mysqli_fetch_array($files)){
+                    $file = substr($fetchfilenames[2],20);
                         if (($handle = fopen($file, "r")) !== FALSE) {
                             while (($data = fgetcsv($handle, 4096, ",")) !== FALSE) {
                                 $row++;
@@ -31,10 +74,10 @@ error_reporting(0);
                                     continue;
                                 } else {
                                     $row = 0;
-                                    $getimage = mysqli_query($con, "SELECT * FROM `listed_products` WHERE `pro_description_file`='//localhost/optimus/" . $file . "'");
-                                    $fetch = mysqli_fetch_array($getimage);
-                                    $this_pro_id = $fetch[0];
-                                    $image = $fetch[3];
+                                    //$getimage = mysqli_query($con, "SELECT * FROM `listed_products` WHERE `pro_description_file`='//localhost/optimus/" . $file . "'");
+                                    //$fetch = mysqli_fetch_array($getimage);
+                                    $this_pro_id = $fetchfilenames[0];
+                                    $image = $fetchfilenames[3];
                                     $field = implode(",", $data);
                                     $row_arr = explode(",", $field);
                                     $category = $row_arr[0];
@@ -118,7 +161,7 @@ error_reporting(0);
                                                      src="<?php echo 'Category/images/' . $image; ?>">
                                             <?php } else { ?>
                                                 <img class="img-responsive img-thumbnail img-rounded"
-                                                     src="http://www.crouzet.com/wp-content/themes/innovistasensors_wp-theme_crouzet-portal/assets/algolia/img/no-image-available.jpg">
+                                                     src="include/media/images/no-image-available.jpg">
                                             <?php } ?>
                                         </div>
                                         <div class="row">
@@ -135,10 +178,44 @@ error_reporting(0);
                         } else {
                             echo "Could not open file: " . $file;
                         }
-                    }
+
                 }
                 ?>
             </div>
+        </div>
+        <div class="container row" style="text-align: center">
+            <ul class="pagination pagination-lg">
+                <?php
+                if($pages <= 10) {
+                    for ($x = 1; $x <= $pages; $x++) {
+                        if($x == $page || $page == '') {
+                            ?>
+                            <li class="active" onclick="changepage(<?php echo $x ?>)"><a href="#"><?php echo $x ?></a></li>
+                            <?php
+                        }else{
+                            ?>
+                            <li onclick="changepage(<?php echo $x ?>)"><a href="#"><?php echo $x ?></a></li>
+                            <?php
+                        }
+                    }
+                }else{
+                    if($pages > 10){
+                        for ($x = $page; $x <= $page+9; $x++) {
+                            if($x == $page || $page == '') {
+                                ?>
+                                <li class="active" onclick="changepage(<?php echo $x ?>)"><a href="#"><?php echo $x ?></a></li>
+                                <?php
+                            }else{
+                                ?>
+                                <li onclick="changepage(<?php echo $x ?>)"><a href="#"><?php echo $x ?></a></li>
+                                <?php
+                            }
+                        }
+
+                    }
+                }
+                ?>
+            </ul>
         </div>
         <?php
     }

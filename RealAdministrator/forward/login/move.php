@@ -8,7 +8,7 @@
                 </div>
 
                 <div class="form-group">
-                    <input class="form-control" type="text" placeholder="Enter Username" id="uname" name="uname" required>
+                    <input class="form-control" type="text" placeholder="Enter Username" id="uname" name="uname" required autofocus>
                 </div>
 
                 <div class="form-group">

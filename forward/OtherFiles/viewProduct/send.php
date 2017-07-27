@@ -48,7 +48,7 @@ if ($numrows <= 0) {
     }
     $image = $fetch[3];
     if($image == ''){
-        $img = "<img class='img-responsive img-thumbnail' id='viewproductImage' src='http://www.crouzet.com/wp-content/themes/innovistasensors_wp-theme_crouzet-portal/assets/algolia/img/no-image-available.jpg'>";
+        $img = "<img class='img-responsive img-thumbnail' id='viewproductImage' src='include/media/images/no-image-available.jpg'>";
     }else {
         $img = "<img class='img-responsive img-thumbnail' id='viewproductImage' src='Category/images/$image'>";
     }

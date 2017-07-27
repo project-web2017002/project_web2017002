@@ -73,7 +73,7 @@ if($id==""){
                             $filename = substr($product_detail_fetch[2],20);
                             $imagefile = $product_detail_fetch[3];
                             if($imagefile == '' || $imagefile == NULL){
-                                $image = "http://www.crouzet.com/wp-content/themes/innovistasensors_wp-theme_crouzet-portal/assets/algolia/img/no-image-available.jpg";
+                                $image = "../../include/media/images/no-image-available.jpg";
                             }else{
                                 $image = "../../Category/images/$imagefile";
                             }

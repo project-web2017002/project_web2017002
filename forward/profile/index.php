@@ -172,7 +172,7 @@ if($id==''){
                                         $title = $fetprdetails[1];
                                         $image = $fetprdetails[3];
                                         if($image == '' || $image == NULL){
-                                            $imgfile = "http://www.crouzet.com/wp-content/themes/innovistasensors_wp-theme_crouzet-portal/assets/algolia/img/no-image-available.jpg"; //empty image
+                                            $imgfile = "../../include/media/images/no-image-available.jpg"; //empty image
                                         }else{
                                             $imgfile = "../../Category/images/$image"; // reference img
                                         }
@@ -226,7 +226,7 @@ if($id==''){
                                                     $title = $fetchprodata[1];
                                                     $image1 = $fetchprodata[3];
                                                     if($image1 == '' || $image1 == NULL){
-                                                        $imgfile1 = "http://www.crouzet.com/wp-content/themes/innovistasensors_wp-theme_crouzet-portal/assets/algolia/img/no-image-available.jpg"; //empty image
+                                                        $imgfile1 = "../../include/media/images/no-image-available.jpg"; //empty image
                                                     }else{
                                                         $imgfile1 = "../../Category/images/$image1"; // reference img
                                                     }

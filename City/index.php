@@ -108,7 +108,7 @@ if($city == ''){
                                                 } else {
                                                     ?>
                                                     <img class="img-responsive img-thumbnail img-rounded"
-                                                         src="http://www.crouzet.com/wp-content/themes/innovistasensors_wp-theme_crouzet-portal/assets/algolia/img/no-image-available.jpg">
+                                                         src="include/media/images/no-image-available.jpg">
                                                     <?php
                                                 }
                                                 ?>

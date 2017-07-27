@@ -10,7 +10,7 @@
             <div class="modal-body">
                 <form name="loginform" method="post" id="loginForm">
                     <div class="form-group">
-                        <input type="text" name="content" id="loginContent" class="form-control" placeholder="Mobile Number/Email" required>
+                        <input type="text" name="content" id="loginContent" class="form-control" placeholder="Mobile Number/Email" required autofocus>
                     </div>
                     <div class="form-group">
                         <input type="password" name="pass" id="loginPass" class="form-control" placeholder="Password" required>
