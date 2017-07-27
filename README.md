@@ -1,6 +1,14 @@
 # project_web2017002
 Web Project
 ==============================================
+27-7-2017
+
+* Added pagination in category wise searching of products
+* updated code for almost 60% files
+* Bug fix of getting no product info when admin trying to access view featured products and view all orders
+* Added html validations and attributes to some forms for both admin and users
+* small image bugs fixes too
+
 26-7-2017
 
 * data availablity code changes in php 
