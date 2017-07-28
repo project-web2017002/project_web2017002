@@ -1,6 +1,14 @@
 # project_web2017002
 Web Project
 ==============================================
+28-7-2017
+
+* js code is 100% changed for submitted all forms data
+* pagination is applied in city wise searching
+* pagination is applied to both city wise and category wise searching
+* for pagination small effects changed
+* fixed errors
+
 27-7-2017
 
 * Added pagination in category wise searching of products
