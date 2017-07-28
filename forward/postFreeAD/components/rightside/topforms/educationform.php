@@ -2,17 +2,10 @@
     <div class="col-md-1 col-sm-12"></div>
 
     <div class="col-md-10 col-sm-12">
-        <form name="educationForm" autocomplete="off" method="post">
+        <form class="postform" name="educationForm" autocomplete="off" method="post">
             <table class="table">
 
-                <tr>
-                    <td>
-                        <input type="hidden" value="<?php echo $ctid ?>" name="adv_cat" id="adv_cat">
-                    </td>
-                    <td>
-                        <input type="hidden" value="<?php echo $id ?>" name="user_id" id="user_id">
-                    </td>
-                </tr>
+                <?php require("components/rightside/elements/commontop.php"); ?>
 
                 <tr>
                     <td>
@@ -38,12 +31,7 @@
                     <td>
                         <input type="text" class="form-control" name="edu-title" id="edu-title" placeholder="Enter Title of AD">
                     </td>
-                    <td>
-                        <div class="input-group">
-                            <span class="input-group-addon"><i class="fa fa-map-marker"></i></span>
-                            <input type="text" class="form-control" name="edu-city" id="edu-city" placeholder="Enter City">
-                        </div>
-                    </td>
+                    <?php require("components/rightside/elements/postcity.php"); ?>
                 </tr>
 
                 <tr>
@@ -91,13 +79,8 @@
                     </td>
                 </tr>
 
-                <?php require("components/rightside/common.php"); ?>
-
-                <tr>
-                    <td colspan="2">
-                        <div id="submiteducationForm" class="btn btn-danger btn-block">Continue</div>
-                    </td>
-                </tr>
+                <?php require("components/rightside/elements/commonbtm.php"); ?>
+                <?php require("components/rightside/elements/btn.php"); ?>
             </table>
         </form>
     </div>

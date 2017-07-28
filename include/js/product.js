@@ -43,7 +43,7 @@ function addtocart() {
 }
 
 function ViewProduct(pr_id) {
-    $("#viewProduct").fadeIn('slow');
+    $("#viewProduct").show('slow');
     var data = "skey=" + pr_id;
     $.ajax({
         type: "POST",

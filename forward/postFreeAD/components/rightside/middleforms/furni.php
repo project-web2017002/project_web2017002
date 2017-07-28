@@ -2,17 +2,10 @@
     <div class="col-md-1 col-sm-12"></div>
 
     <div class="col-md-10 col-sm-12">
-        <form name="homelifestyleForm" autocomplete="off" method="post">
+        <form class="postform" name="homelifestyleForm" autocomplete="off" method="post">
             <table class="table">
 
-                <tr>
-                    <td>
-                        <input type="hidden" value="<?php echo $ctid ?>" name="adv_cat" id="adv_cat">
-                    </td>
-                    <td>
-                        <input type="hidden" value="<?php echo $id ?>" name="user_id" id="user_id">
-                    </td>
-                </tr>
+                <?php require("components/rightside/elements/commontop.php"); ?>
 
                 <tr>
                     <td>
@@ -93,9 +86,7 @@
                     <td>
                         <input type="text" name="homelife-ad-title" id="homelife-ad-title" class="form-control" placeholder="Enter Title of Ad">
                     </td>
-                    <td>
-                        <input type="text" name="homelife-city" id="homelife-city" placeholder="Enter Location (City)" class="form-control">
-                    </td>
+                    <?php require("components/rightside/elements/postcity.php"); ?>
                 </tr>
 
                 <tr>
@@ -128,19 +119,12 @@
                 </tr>
 
                 <tr>
-                    <td>
-                        <input type="text" name="user-name" id="user-name" placeholder="Enter user Name" class="form-control">
-                    </td>
-                    <td>
-                        <div class="input-group">
-                            <span class="input-group-addon"><i class="fa fa-at"></i></span>
-                            <input type="email" name="user-email" id="user-email" placeholder="Enter Email" class="form-control">
-                        </div>
-                        <div class="input-group">
-                            <span class="input-group-addon"><i class="glyphicon glyphicon-phone-alt"></i></span>
-                            <input type="text" name="user-contact" id="user-contact" placeholder="Enter Contact Number" class="form-control">
-                        </div>
-                    </td>
+                    <?php require("components/rightside/elements/username.php"); ?>
+                    <?php require("components/rightside/elements/useremail.php"); ?>
+                </tr>
+
+                <tr>
+                    <?php require("components/rightside/elements/usercontact.php"); ?>
                 </tr>
 
                 <tr>
@@ -152,13 +136,8 @@
                     </td>
                 </tr>
 
-                <?php require("components/rightside/common.php"); ?>
-
-                <tr>
-                    <td colspan="2">
-                        <div id="submithomelifestyleForm" class="btn btn-danger btn-block">Continue</div>
-                    </td>
-                </tr>
+                <?php require("components/rightside/elements/commonbtm.php"); ?>
+                <?php require("components/rightside/elements/btn.php"); ?>
             </table>
         </form>
     </div>

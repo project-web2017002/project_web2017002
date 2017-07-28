@@ -5,6 +5,8 @@ $("#signup").click(function() {
     var pass = $("#pass").val();
     var verify_terms = $("#verify_terms").val();
     var verify_age = $("#verify_age").val();
+    $("#signupModal").hide();
+    $("#loading").show();
     $.ajax({
         type: "POST",
         url: "//localhost/optimus/forward/signup/send.php",
@@ -13,10 +15,12 @@ $("#signup").click(function() {
             $("#signup").prop('disabled',true);
         },
         success: function(data) {
-            alert("success");
+            $("#loading").hide();
             window.location.reload(true);
         },
         error: function(data){
+            $("#signupModal").show();
+            $("#loading").hide();
             alert("Form didn't submit!");
         }
     });
@@ -25,6 +29,8 @@ $("#signup").click(function() {
 $("#login").click(function(){
     var login_id = $("#loginContent").val();
     var login_pass = $("#loginPass").val();
+    $("#loginModal").hide();
+    $("#loading").show();
     $.ajax({
         type:"post",
         url:"//localhost/optimus/forward/login/send.php",
@@ -33,9 +39,12 @@ $("#login").click(function(){
             $("#login").prop('disabled',true);
         },
         success: function(data) {
+            $("#loading").hide();
             window.location.reload(true);
         },
         error: function(data){
+            $("#loginModal").show();
+            $("#loading").hide();
             alert("Form didn't submit!");
         }
     });
@@ -79,6 +88,8 @@ $("#edit").click(function(){
     var u_name=$("#usernam").val();
     var u_email=$("#conten").val();
     var u_contact=$("#contan").val();
+    $("#editModal").hide();
+    $("#loading").show();
     $.ajax({
         type:"post",
         url:"//localhost/optimus/forward/profile/send.php",
@@ -87,9 +98,12 @@ $("#edit").click(function(){
             $("#edit").prop('disabled',true);
         },
         success: function(data) {
+            $("#loading").hide();
             window.location.reload(true);
         },
         error: function(data){
+            $("#editModal").show();
+            $("#loading").hide();
             alert("Form didn't submit!");
         }
     });

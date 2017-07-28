@@ -10,19 +10,19 @@
     <!-- Wrapper for slides -->
     <div class="carousel-inner" role="listbox">
         <div class="item active centered-images">
-            <img class="img-responsive" src="https://www.indiblogger.in/images/happyhours/quikr2/brandcover.png" alt="Chania">
+            <img class="img-responsive" src="include/media/images/brandcover.png">
         </div>
 
         <div class="item centered-images">
-            <img class="img-responsive" src="https://www.indiblogger.in/images/happyhours/quikr2/brandcover.png" alt="Chania">
+            <img class="img-responsive" src="include/media/images/brandcover.png">
         </div>
 
         <div class="item centered-images">
-            <img class="img-responsive" src="https://www.indiblogger.in/images/happyhours/quikr2/brandcover.png" alt="Flower">
+            <img class="img-responsive" src="include/media/images/brandcover.png">
         </div>
 
         <div class="item centered-images">
-            <img class="img-responsive" src="https://www.indiblogger.in/images/happyhours/quikr2/brandcover.png" alt="Flower">
+            <img class="img-responsive" src="include/media/images/brandcover.png">
         </div>
     </div>
 

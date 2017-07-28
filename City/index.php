@@ -3,14 +3,22 @@ error_reporting(0);
 if($city == ''){
     echo "<script>window.location.assign('/optimus/');</script>";
 }
+$page = $_GET['page'];
+if($page == '' || $page == 1){
+    $start = 0;
+}else{
+    $start = ($page*6)-6;
+}
     require("forward/OtherFiles/viewProduct/index.php");
     $row = 0;
     $total = 0;
-    $getALL_products = mysqli_query($con, "Select * from listed_products");
+    $getALL_products = mysqli_query($con, "Select * from listed_products limit $start,6");
     $num = mysqli_num_rows($getALL_products);
     if ($num <= 0) {
         ?>
-        <div class="jumbotron">No products Found</div>
+        <div class="container well" style="text-align: -webkit-center">
+            <img src="include/media/images/nothing_found.png" class="img-responsive img-rounded">
+        </div>
         <?php
     } else {
         ?>
@@ -127,9 +135,58 @@ if($city == ''){
                         }
                     }
                 }
+                $pages = ceil($total/6);
                 ?>
             </div>
         </div>
+        <?php
+        if($total > 0) {
+            ?>
+            <div class="container row" style="text-align: center">
+                <ul class="pagination pagination-lg">
+                    <?php
+                    if ($pages <= 10) {
+                        for ($x = 1; $x <= $pages; $x++) {
+                            if ($x == $page || $page == '') {
+                                ?>
+                                <li class="active" onclick="changepage(<?php echo $x ?>)"><a
+                                            href="#"><?php echo $x ?></a></li>
+                                <?php
+                            } else {
+                                ?>
+                                <li onclick="changepage(<?php echo $x ?>)"><a href="#"><?php echo $x ?></a></li>
+                                <?php
+                            }
+                        }
+                    } else {
+                        if ($pages > 10) {
+                            for ($x = $page; $x <= $page + 9; $x++) {
+                                if ($x == $page || $page == '') {
+                                    ?>
+                                    <li class="active" onclick="changepage(<?php echo $x ?>)"><a
+                                                href="#"><?php echo $x ?></a></li>
+                                    <?php
+                                } else {
+                                    ?>
+                                    <li onclick="changepage(<?php echo $x ?>)"><a href="#"><?php echo $x ?></a></li>
+                                    <?php
+                                }
+                            }
+
+                        }
+                    }
+                    ?>
+                </ul>
+            </div>
+            <?php
+        }else {
+            ?>
+            <div class="container well" style="text-align: -webkit-center">
+                <img src="include/media/images/nothing_found.png" class="img-responsive img-rounded">
+            </div>
+            <?php
+        }
+            ?>
         <div class="well"><?php echo "Total Products in " . $city . " category: " . $total ?></div>
         <?php
     }

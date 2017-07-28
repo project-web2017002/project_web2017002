@@ -2,17 +2,10 @@
     <div class="col-md-1 col-sm-12"></div>
 
     <div class="col-md-10 col-sm-12">
-        <form name="jobsForm" autocomplete="off" method="post">
+        <form class="postform" name="jobsForm" autocomplete="off" method="post">
             <table class="table">
 
-                <tr>
-                    <td>
-                        <input type="hidden" value="<?php echo $ctid ?>" name="adv_cat" id="adv_cat">
-                    </td>
-                    <td>
-                        <input type="hidden" value="<?php echo $id ?>" name="user_id" id="user_id">
-                    </td>
-                </tr>
+                <?php require("components/rightside/elements/commontop.php"); ?>
 
                 <tr>
                     <td colspan="2">
@@ -67,9 +60,7 @@
                 </tr>
 
                 <tr>
-                    <td>
-                        <input type="text" class="form-control" name="job-location" id="job-location" placeholder="Enter Job location">
-                    </td>
+                    <?php require("components/rightside/elements/postcity.php"); ?>
                     <td>
                         <input type="text" class="form-control" name="job-exp" id="job-exp" placeholder="Enter minimum Experience (in months)">
                     </td>
@@ -87,13 +78,8 @@
                     </td>
                 </tr>
 
-                <?php require("components/rightside/common.php"); ?>
-
-                <tr>
-                    <td colspan="2">
-                        <div id="submitJobForm" class="btn btn-danger btn-block">Continue</div>
-                    </td>
-                </tr>
+                <?php require("components/rightside/elements/commonbtm.php"); ?>
+                <?php require("components/rightside/elements/btn.php"); ?>
             </table>
         </form>
     </div>

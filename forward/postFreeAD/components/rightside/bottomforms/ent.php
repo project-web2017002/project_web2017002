@@ -2,48 +2,24 @@
     <div class="col-md-1 col-sm-12"></div>
 
     <div class="col-md-10 col-sm-12">
-        <form name="entertainmentForm" autocomplete="off" method="post">
+        <form class="postform" name="entertainmentForm" autocomplete="off" method="post">
             <table class="table">
 
+                <?php require("components/rightside/elements/commontop.php"); ?>
+
                 <tr>
-                    <td>
-                        <input type="hidden" value="<?php echo $ctid ?>" name="adv_cat" id="adv_cat">
-                    </td>
-                    <td>
-                        <input type="hidden" value="<?php echo $id ?>" name="user_id" id="user_id">
-                    </td>
+                    <?php require("components/rightside/elements/usercontact.php"); ?>
+                    <?php require("components/rightside/elements/useremail.php"); ?>
                 </tr>
 
                 <tr>
-                    <td>
-                        <div class="input-group">
-                            <span class="input-group-addon"><i class="glyphicon glyphicon-phone-alt"></i></span>
-                            <input type="text" name="user-contact" id="user-contact" placeholder="Enter Contact Number" class="form-control">
-                        </div>
-                    </td>
-                    <td>
-                        <div class="input-group">
-                            <span class="input-group-addon"><i class="fa fa-at"></i></span>
-                            <input type="email" name="user-email" id="user-email" placeholder="Enter Email" class="form-control">
-                        </div>
-                    </td>
-                </tr>
-
-                <tr>
-                    <td>
-                        <input type="text" name="user-name" id="user-name" placeholder="Enter user Name" class="form-control">
-                    </td>
+                    <?php require("components/rightside/elements/username.php"); ?>
                     <td>
                         You can avail this feature Through Our Support Team, Fill the above form and our team will get to you Shortly.
                     </td>
                 </tr>
 
-
-                <tr>
-                    <td colspan="2">
-                        <div id="submitentertainmentForm" class="btn btn-danger btn-block">Continue</div>
-                    </td>
-                </tr>
+                <?php require("components/rightside/elements/btn.php"); ?>
             </table>
         </form>
     </div>

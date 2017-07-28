@@ -2,17 +2,10 @@
     <div class="col-md-1 col-sm-12"></div>
 
     <div class="col-md-10 col-sm-12">
-        <form name="servicesForm" autocomplete="off" method="post" enctype="multipart/form-data">
+        <form class="postform" name="servicesForm" autocomplete="off" method="post" enctype="multipart/form-data">
             <table class="table">
 
-                <tr>
-                    <td>
-                        <input type="hidden" value="<?php echo $ctid ?>" name="adv_cat" id="adv_cat">
-                    </td>
-                    <td>
-                        <input type="hidden" value="<?php echo $id ?>" name="user_id" id="user_id">
-                    </td>
-                </tr>
+                <?php require("components/rightside/elements/commontop.php"); ?>
 
                 <tr>
                     <td>
@@ -40,36 +33,19 @@
                     <td>
                         <input type="text" name="Exact-Service-name" id="Exact-Service-name" placeholder="Enter Service Title" class="form-control">
                     </td>
-                    <td>
-                        <input type="text" class="form-control" name="ser-city" id="ser-city" placeholder="Enter Location(City)">
-                    </td>
+                    <?php require("components/rightside/elements/postcity.php"); ?>
                 </tr>
 
                 <tr>
-                    <td>
-                        <div class="input-group">
-                            <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                            <input type="text" name="user-name" id="user-name" placeholder="Enter Name" class="form-control">
-                        </div>
-                    </td>
-                    <td>
-                        <div class="input-group">
-                            <span class="input-group-addon"><i class="fa fa-at"></i></span>
-                            <input type="email" name="user-email" id="user-email" placeholder="Enter Personal Email" class="form-control">
-                        </div>
-                    </td>
+                    <?php require("components/rightside/elements/username.php"); ?>
+                    <?php require("components/rightside/elements/useremail.php"); ?>
                 </tr>
 
                 <tr>
+                    <?php require("components/rightside/elements/usercontact.php"); ?>
                     <td>
                         I am: <input type="radio" name="user-type" class="user-type" id="company" value="Company">Company
                         <input type="radio" name="user-type" class="user-type" id="individual" value="Individual" checked>Individual
-                    </td>
-                    <td>
-                        <div class="input-group">
-                            <span class="input-group-addon"><i class="glyphicon glyphicon-phone-alt"></i></span>
-                            <input type="text" class="form-control" name="user-contact" id="user-contact" placeholder="Enter Contact">
-                        </div>
                     </td>
                 </tr>
 
@@ -93,13 +69,8 @@
                     </td>
                 </tr>
 
-                <?php require("components/rightside/common.php"); ?>
-
-                <tr>
-                    <td colspan="2">
-                        <div id="submitservicesForm" class="btn btn-danger btn-block">Continue</div>
-                    </td>
-                </tr>
+                <?php require("components/rightside/elements/commonbtm.php"); ?>
+                <?php require("components/rightside/elements/btn.php"); ?>
             </table>
         </form>
     </div>

@@ -14,7 +14,7 @@ $featuredcount = mysqli_num_rows($checkfeatured);
             </div>
             <div class="row">
                 <div>
-                    <img src="http://www.marknewtonband.com/wp-content/uploads/2016/09/adver-marknewtonband-1.png" alt="Avertisemant" class="img-responsive">
+                    <img src="include/media/images/mcd.png" alt="Avertisemant" class="img-responsive">
                 </div>
             </div>
         </div>
@@ -24,7 +24,7 @@ $featuredcount = mysqli_num_rows($checkfeatured);
             include("carousal.php");
             ?>
             <div class="padmar" style="text-align: -webkit-center">
-                <img src="https://shaeff04.files.wordpress.com/2015/05/apple.jpg" alt="Avertisemant" class="img-responsive">
+                <img src="include/media/images/apple.jpg" alt="Avertisemant" class="img-responsive">
             </div>
                 <?php
                 if($featuredcount > 0) {
@@ -49,7 +49,7 @@ $featuredcount = mysqli_num_rows($checkfeatured);
     </div>
     <div class="row">
         <div class="padmar" style="text-align: -webkit-center">
-            <img src="http://blog.refreshideas.com/wp-content/uploads/2016/08/ai-coverpic.jpg" alt="Avertisemant" class="img-responsive">
+            <img src="include/media/images/ai-coverpic.jpg" alt="Avertisemant" class="img-responsive">
         </div>
     </div>
 </div>

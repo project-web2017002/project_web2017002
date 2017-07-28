@@ -28,3 +28,7 @@ include("profile/edit.php");
         </div>
     </div>
 </div>
+
+<div id="loading" style="display: none; top:0; left:0; position: fixed; text-align: -webkit-center; padding: 15% 0; background: transparent; width: 100%; z-index: 9999">
+    <img src="/optimus/include/media/images/loading.gif">
+</div>
