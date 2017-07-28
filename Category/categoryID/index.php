@@ -27,41 +27,47 @@ error_reporting(0);
         $files2 = mysqli_query($con,"select * from listed_products where pro_description_file like '%$cateory%'");
         $count2 = mysqli_num_rows($files2);
         $pages = ceil($count2/6);
-        ?>
-        <div class="container row" style="text-align: center">
-            <ul class="pagination pagination-lg">
-        <?php
-        if($pages <= 10) {
-            for ($x = 1; $x <= $pages; $x++) {
-                if($x == $page || $page == '') {
-                    ?>
-                    <li class="active" onclick="changepage(<?php echo $x ?>)"><a href="#"><?php echo $x ?></a></li>
+        if($count2 > 0) {
+            ?>
+            <div class="container row" style="text-align: center">
+                <ul class="pagination pagination-lg">
                     <?php
-                }else{
-                    ?>
-                    <li onclick="changepage(<?php echo $x ?>)"><a href="#"><?php echo $x ?></a></li>
-                    <?php
-                }
-            }
-        }else{
-            if($pages > 10){
-                for ($x = $page; $x <= $page+9; $x++) {
-                    if($x == $page || $page == '') {
-                        ?>
-                        <li class="active" onclick="changepage(<?php echo $x ?>)"><a href="#"><?php echo $x ?></a></li>
-                        <?php
-                    }else{
-                        ?>
-                        <li onclick="changepage(<?php echo $x ?>)"><a href="#"><?php echo $x ?></a></li>
-                        <?php
-                    }
-                }
+                    if ($pages <= 10) {
+                        for ($x = 1; $x <= $pages; $x++) {
+                            if ($x == $page || $page == '') {
+                                ?>
+                                <li class="active" onclick="changepage(<?php echo $x ?>)"><a
+                                            href="#"><?php echo $x ?></a></li>
+                                <?php
+                            } else {
+                                ?>
+                                <li onclick="changepage(<?php echo $x ?>)"><a href="#"><?php echo $x ?></a></li>
+                                <?php
+                            }
+                        }
+                    } else {
+                        if ($pages > 10) {
+                            for ($x = $page; $x <= $page + 9; $x++) {
+                                if ($x == $page || $page == '') {
+                                    ?>
+                                    <li class="active" onclick="changepage(<?php echo $x ?>)"><a
+                                                href="#"><?php echo $x ?></a></li>
+                                    <?php
+                                } else {
+                                    ?>
+                                    <li onclick="changepage(<?php echo $x ?>)"><a href="#"><?php echo $x ?></a></li>
+                                    <?php
+                                }
+                            }
 
-            }
+                        }
+                    }
+                    ?>
+                </ul>
+            </div>
+            <?php
         }
-        ?>
-            </ul>
-        </div>
+            ?>
         <div class="container">
             <div class="row" style="text-align: -webkit-center; text-transform: capitalize">
                 <?php
@@ -183,39 +189,52 @@ error_reporting(0);
                 ?>
             </div>
         </div>
-        <div class="container row" style="text-align: center">
-            <ul class="pagination pagination-lg">
-                <?php
-                if($pages <= 10) {
-                    for ($x = 1; $x <= $pages; $x++) {
-                        if($x == $page || $page == '') {
-                            ?>
-                            <li class="active" onclick="changepage(<?php echo $x ?>)"><a href="#"><?php echo $x ?></a></li>
-                            <?php
-                        }else{
-                            ?>
-                            <li onclick="changepage(<?php echo $x ?>)"><a href="#"><?php echo $x ?></a></li>
-                            <?php
-                        }
-                    }
-                }else{
-                    if($pages > 10){
-                        for ($x = $page; $x <= $page+9; $x++) {
-                            if($x == $page || $page == '') {
+        <?php
+        if($count2 > 0) {
+            ?>
+            <div class="container row" style="text-align: center">
+                <ul class="pagination pagination-lg">
+                    <?php
+                    if ($pages <= 10) {
+                        for ($x = 1; $x <= $pages; $x++) {
+                            if ($x == $page || $page == '') {
                                 ?>
-                                <li class="active" onclick="changepage(<?php echo $x ?>)"><a href="#"><?php echo $x ?></a></li>
+                                <li class="active" onclick="changepage(<?php echo $x ?>)"><a
+                                            href="#"><?php echo $x ?></a></li>
                                 <?php
-                            }else{
+                            } else {
                                 ?>
                                 <li onclick="changepage(<?php echo $x ?>)"><a href="#"><?php echo $x ?></a></li>
                                 <?php
                             }
                         }
+                    } else {
+                        if ($pages > 10) {
+                            for ($x = $page; $x <= $page + 9; $x++) {
+                                if ($x == $page || $page == '') {
+                                    ?>
+                                    <li class="active" onclick="changepage(<?php echo $x ?>)"><a
+                                                href="#"><?php echo $x ?></a></li>
+                                    <?php
+                                } else {
+                                    ?>
+                                    <li onclick="changepage(<?php echo $x ?>)"><a href="#"><?php echo $x ?></a></li>
+                                    <?php
+                                }
+                            }
 
+                        }
                     }
-                }
-                ?>
-            </ul>
-        </div>
-        <?php
+                    ?>
+                </ul>
+            </div>
+            <?php
+        }else{
+            ?>
+            <div class="container well" style="text-align: -webkit-center">
+                <img src="include/media/images/nothing_found.png" class="img-responsive img-rounded">
+            </div>
+<?php
+        }
     }
+    ?>
