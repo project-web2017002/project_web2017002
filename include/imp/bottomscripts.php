@@ -6,3 +6,4 @@
 <script src="//localhost/optimus/include/js/advtajax.js"></script>
 <script src="//localhost/optimus/include/js/imageShow.js"></script>
 <script src="//localhost/optimus/include/js/product.js"></script>
+<script src="//localhost/optimus/include/js/fb.js"></script>

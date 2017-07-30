@@ -108,3 +108,24 @@ $("#edit").click(function(){
         }
     });
 });
+
+$("#edit2").click(function(){
+    var u_contact=$("#contan").val();
+    $("#loading").show();
+    $.ajax({
+        type:"post",
+        url:"//localhost/optimus/forward/profile/send.php",
+        data:"u_contact="+u_contact,
+        beforeSend: function(){
+            $("#edit").prop('disabled',true);
+        },
+        success: function(data) {
+            $("#loading").hide();
+            window.location.reload(true);
+        },
+        error: function(data){
+            $("#loading").hide();
+            alert("Form didn't submit!");
+        }
+    });
+});

@@ -1,9 +1,17 @@
 <?php
-$name_fetch=mysqli_query($con,"select * from verified_user where user_id=$id");
-$name_array=mysqli_fetch_array($name_fetch);
-$user_name=$name_array[1];
-$user_email=$name_array[2];
-$user_contact=$name_array[3];
+if($googleid == '') {
+    $name_fetch = mysqli_query($con, "select * from verified_user where user_id=$id");
+    $name_array = mysqli_fetch_array($name_fetch);
+    $user_name = $name_array[1];
+    $user_email = $name_array[2];
+    $user_contact = $name_array[3];
+}else{
+    $name_fetch = mysqli_query($con, "select * from users where id=$googleid");
+    $name_array = mysqli_fetch_array($name_fetch);
+    $user_name = $name_array[3]." ".$name_array[4];
+    $user_email = $name_array[5];
+    $user_contact = $name_array[12];
+}
 ?>
 <a class="dropdown-toggle" data-toggle="dropdown" id="user-value" href="#" style="text-transform: uppercase">
     <span class="fa fa-user-circle-o fa-lg"></span> <?php echo $user_name ?>
