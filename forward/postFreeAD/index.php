@@ -21,21 +21,24 @@ $product_id = $_GET['aagvgfeenmb'];
 </head>
 <body style="background: #f3f3f3">
 <?php
+if($id != "" || $googleid != '') {
 //login/signup modal
-require("../../forward/modal.php");
+    require("../../forward/modal.php");
 //header
-include("../../include/head/header.php");
+    include("../../include/head/header.php");
+}
 ?>
 <div class="container">
     <!-- main Content -->
     <?php
-    if($id==""){
+    if($id == "" || $googleid == ''){
         ?>
         <div class="container">
             <div class="row">
                 <div class="jumbotron">
-                    <div class="jumbotron" data-toggle="modal" data-target="#myModal">
-                        <h1 style="text-align: center; color: #e40046;">Login/Signup To Post an Ad</h1>
+                    <div class="jumbotron" style="text-align: center;">
+                        <h1 style=" color: #e40046;">Login/Signup To Post an Ad</h1>
+                        <h3><a href="../../">Click here to go back</a></h3>
                     </div>
                 </div>
             </div>
@@ -78,9 +81,12 @@ include("../../include/head/header.php");
     ?>
 </div>
 <?php
+if($id != "" || $googleid != '') {
 //footer
-require("../../include/foot/footer.php");
-require("../../include/imp/bottomscripts.php");
+    require("../../include/foot/footer.php");
+}
+    require("../../include/imp/bottomscripts.php");
+
 ?>
 </body>
 </html>

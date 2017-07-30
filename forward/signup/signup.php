@@ -31,19 +31,15 @@
                     <button type="submit" name="signup" id="signup" class="btn btn-danger hidden" style="width: 100%; background-color: #e40046; color: white;">Continue</button>
                 </form>
                 <br><br>
-                <div class="row smalltext">or Signup using (not working)</div>
+                <div class="row smalltext">or</div>
                 <div class="row smalltext">
-                    <div class="col-lg-4">
-                        <button class="btn btn-primary btn-block"><i class="fa fa-facebook-official"></i> Facebook</button>
-                    </div>
-                    <div class="col-lg-4">
-                        <button class="btn btn-danger btn-block"><i class="fa fa-google-plus-official"></i> Google</button>
-                    </div>
+                    <div class="col-lg-4"></div>
                     <div class="col-lg-4">
                         <button class="btn btn-warning btn-block" data-toggle="modal" data-target="#loginModal" data-dismiss="modal">
                             <i class="fa fa-user-circle-o"></i> Login
                         </button>
                     </div>
+                    <div class="col-lg-4"></div>
                 </div>
                 <br><br>
             </div>
