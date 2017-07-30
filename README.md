@@ -1,6 +1,16 @@
 # project_web2017002
 Web Project
 ==============================================
+30-7-2017
+
+* Google login integrated
+* new database for google users created
+* admin can now see how many users joined using google
+* Session code changes
+* users of google login can also view their profile and edit contact number
+* code changes in many files due to google integration
+* several bugs fixed
+
 28-7-2017
 
 * js code is 100% changed for submitted all forms data
