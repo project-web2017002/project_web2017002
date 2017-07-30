@@ -5,7 +5,13 @@
                 <div class="btn-group" role="group">
                     <button type="button" id="stars" class="btn btn-primary gtn" href="#tab4" data-toggle="tab">
                         <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
-                        <div class="hidden-xs">Users</div>
+                        <div class="hidden-xs">Our Users</div>
+                    </button>
+                </div>
+                <div class="btn-group" role="group">
+                    <button type="button" id="gtk" class="btn btn-default gtn" href="#tabgu" data-toggle="tab">
+                        <span class="fa fa-google-plus" aria-hidden="true"></span>
+                        <div class="hidden-xs">Google Users</div>
                     </button>
                 </div>
                 <div class="btn-group" role="group">
@@ -27,6 +33,11 @@
                     <div class="tab-pane fade in active table-responsive" id="tab4">
                         <?php
                         require("morefiles/allusers.php");
+                        ?>
+                    </div>
+                    <div class="tab-pane fade in table-responsive" id="tabgu">
+                        <?php
+                        require("morefiles/googleusers.php");
                         ?>
                     </div>
                     <div class="tab-pane fade in table-responsive" id="tab5">

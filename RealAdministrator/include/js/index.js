@@ -28,6 +28,10 @@ $(function(){
         window.location.assign("forward/move/products/");
     });
 
+    $(".moveToOrders").click(function(){
+        window.location.assign("forward/move/orders/");
+    });
+
     function refresh_Div(){
         $("#refreshable").hide();
         $("#refreshable").fadeIn('slow');
