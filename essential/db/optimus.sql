@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 25, 2017 at 01:37 PM
+-- Generation Time: Jul 30, 2017 at 08:48 PM
 -- Server version: 5.7.14
 -- PHP Version: 5.6.25
 
@@ -83,7 +83,8 @@ INSERT INTO `listed_products` (`product_id`, `product_title`, `pro_description_f
 (3, 'Delhi to Agra with two-way', '//localhost/optimus/Category/categoryId/10001/2017-07-19-10-34-34am-1.csv', NULL),
 (4, 'Fixing wires issue at home', '//localhost/optimus/Category/categoryId/10001/2017-07-19-10-39-56am-1.csv', NULL),
 (5, 'Iphone 7 to sell', '//localhost/optimus/Category/categoryId/10007/2017-07-19-11-44-35am-1.csv', NULL),
-(9, 'Want an iPhone 7 jet Black', '//localhost/optimus/Category/categoryId/10007/2017-07-19-12-34-34pm-1.csv', '1500471990_iphone7-jetblack-select-2016.png');
+(9, 'Want an iPhone 7 jet Black', '//localhost/optimus/Category/categoryId/10007/2017-07-19-12-34-34pm-1.csv', '1500471990_iphone7-jetblack-select-2016.png'),
+(10, 'Spa services', '//localhost/optimus/Category/categoryId/10001/2017-07-28-05-28-57pm-1.csv', NULL);
 
 -- --------------------------------------------------------
 
@@ -94,15 +95,16 @@ INSERT INTO `listed_products` (`product_id`, `product_title`, `pro_description_f
 CREATE TABLE `orders` (
   `order_counter` int(11) NOT NULL,
   `order_by` int(11) NOT NULL,
-  `product_id` int(11) NOT NULL
+  `product_id` int(11) NOT NULL,
+  `usertype` varchar(12) NOT NULL DEFAULT 'GENERAL'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `orders`
 --
 
-INSERT INTO `orders` (`order_counter`, `order_by`, `product_id`) VALUES
-(10, 1, 9);
+INSERT INTO `orders` (`order_counter`, `order_by`, `product_id`, `usertype`) VALUES
+(10, 1, 9, 'GENERAL');
 
 -- --------------------------------------------------------
 
@@ -144,7 +146,6 @@ CREATE TABLE `policy_agreement` (
 
 INSERT INTO `policy_agreement` (`counter`, `user_id`, `above_18`, `TnC`) VALUES
 (1, 1, 1, 1),
-(2, 2, 1, 1),
 (3, 3, 1, 1);
 
 -- --------------------------------------------------------
@@ -199,8 +200,36 @@ CREATE TABLE `status` (
 
 INSERT INTO `status` (`no`, `user_id`, `status`) VALUES
 (1, 1, 0),
-(2, 2, 0),
 (3, 3, 0);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `users`
+--
+
+CREATE TABLE `users` (
+  `id` int(11) NOT NULL,
+  `oauth_provider` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `oauth_uid` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `first_name` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
+  `last_name` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
+  `email` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `gender` varchar(10) COLLATE utf8_unicode_ci NOT NULL,
+  `locale` varchar(10) COLLATE utf8_unicode_ci NOT NULL,
+  `picture` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `link` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `created` datetime NOT NULL,
+  `modified` datetime NOT NULL,
+  `contact` varchar(12) COLLATE utf8_unicode_ci DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Dumping data for table `users`
+--
+
+INSERT INTO `users` (`id`, `oauth_provider`, `oauth_uid`, `first_name`, `last_name`, `email`, `gender`, `locale`, `picture`, `link`, `created`, `modified`, `contact`) VALUES
+(11, 'google', '116269446106411150871', 'optimustechproject', 'web201702', 'optimustechprojectweb201702@gmail.com', '', 'en', 'https://lh3.googleusercontent.com/-XdUIqdMkCWA/AAAAAAAAAAI/AAAAAAAAAAA/4252rscbv5M/photo.jpg', '', '2017-07-30 19:25:56', '2017-07-30 20:04:46', '7896541230');
 
 -- --------------------------------------------------------
 
@@ -212,8 +241,8 @@ CREATE TABLE `verified_user` (
   `user_id` int(11) NOT NULL,
   `user_name` varchar(200) NOT NULL,
   `user_login_id` varchar(30) NOT NULL,
-  `user_contact` varchar(11) NOT NULL,
-  `user_password` varchar(200) NOT NULL
+  `user_contact` varchar(11) DEFAULT NULL,
+  `user_password` varchar(200) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -222,7 +251,6 @@ CREATE TABLE `verified_user` (
 
 INSERT INTO `verified_user` (`user_id`, `user_name`, `user_login_id`, `user_contact`, `user_password`) VALUES
 (1, 'Akash Chouhan', 'ak@gmail.com', '8968336242', '$2y$15$xlEeqyR62jB.9anM2358Ou9cKd5XGO60JScgkU8pt0Ye7GYzr4ahi'),
-(2, 'test', 'test@gmail.com', '7894561236', '$2y$15$CaOVGwVk3DAYuSds4UDv/.ckClKJbgdsCPDqjqUYLpxjNdAh7ADW6'),
 (3, 'Charlette', 'charli@icloud.com', '9874563210', '$2y$15$n8kgQAV3rURlqinke1bnZ.IFlpv6FcOpo6ihAVBEVNi0VDocuA4Ta');
 
 --
@@ -293,6 +321,12 @@ ALTER TABLE `status`
   ADD KEY `user_id` (`user_id`);
 
 --
+-- Indexes for table `users`
+--
+ALTER TABLE `users`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `verified_user`
 --
 ALTER TABLE `verified_user`
@@ -316,7 +350,7 @@ ALTER TABLE `featpro`
 -- AUTO_INCREMENT for table `listed_products`
 --
 ALTER TABLE `listed_products`
-  MODIFY `product_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `product_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 --
 -- AUTO_INCREMENT for table `orders`
 --
@@ -341,12 +375,17 @@ ALTER TABLE `realadmin`
 -- AUTO_INCREMENT for table `shoppingcart`
 --
 ALTER TABLE `shoppingcart`
-  MODIFY `count` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `count` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `status`
 --
 ALTER TABLE `status`
   MODIFY `no` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+--
+-- AUTO_INCREMENT for table `users`
+--
+ALTER TABLE `users`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 --
 -- AUTO_INCREMENT for table `verified_user`
 --

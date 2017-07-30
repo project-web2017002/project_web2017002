@@ -1,4 +1,8 @@
 <?php
 error_reporting(0);
 session_start();
-$id = $_SESSION['login_id'];
+if($_SESSION['login_id']){
+    $id = $_SESSION['login_id'];
+}elseif($_SESSION['userData']){
+    $googleid = $_SESSION['userData'];
+}
