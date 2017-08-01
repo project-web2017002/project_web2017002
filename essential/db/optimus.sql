@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 30, 2017 at 08:48 PM
+-- Generation Time: Jul 31, 2017 at 10:24 PM
 -- Server version: 5.7.14
 -- PHP Version: 5.6.25
 
@@ -229,7 +229,8 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `oauth_provider`, `oauth_uid`, `first_name`, `last_name`, `email`, `gender`, `locale`, `picture`, `link`, `created`, `modified`, `contact`) VALUES
-(11, 'google', '116269446106411150871', 'optimustechproject', 'web201702', 'optimustechprojectweb201702@gmail.com', '', 'en', 'https://lh3.googleusercontent.com/-XdUIqdMkCWA/AAAAAAAAAAI/AAAAAAAAAAA/4252rscbv5M/photo.jpg', '', '2017-07-30 19:25:56', '2017-07-30 20:04:46', '7896541230');
+(11, 'google', '116269446106411150871', 'optimustechproject', 'web201702', 'optimustechprojectweb201702@gmail.com', '', 'en', 'https://lh3.googleusercontent.com/-XdUIqdMkCWA/AAAAAAAAAAI/AAAAAAAAAAA/4252rscbv5M/photo.jpg', '', '2017-07-30 19:25:56', '2017-07-31 21:48:35', '7896541230'),
+(14, 'facebook', '123243221630366', 'Srinivas', 'Shikhar', 'optimustechprojectweb201702@gmail.com', 'male', 'en_GB', 'https://scontent.xx.fbcdn.net/v/t1.0-1/c15.0.50.50/p50x50/10354686_10150004552801856_220367501106153455_n.jpg?oh=b0e4037a0b04d52224a51836c84c322d&oe=59FEA22F', 'https://www.facebook.com/app_scoped_user_id/123243221630366/', '2017-07-31 21:56:37', '2017-07-31 22:16:16', '7896541230');
 
 -- --------------------------------------------------------
 
@@ -385,7 +386,7 @@ ALTER TABLE `status`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 --
 -- AUTO_INCREMENT for table `verified_user`
 --
