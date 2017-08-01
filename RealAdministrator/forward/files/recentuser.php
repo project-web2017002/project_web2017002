@@ -11,7 +11,7 @@
                 <div class="btn-group" role="group">
                     <button type="button" id="gtk" class="btn btn-default gtn" href="#tabgu" data-toggle="tab">
                         <span class="fa fa-google-plus" aria-hidden="true"></span>
-                        <div class="hidden-xs">Google Users</div>
+                        <div class="hidden-xs">G+/FB Users</div>
                     </button>
                 </div>
                 <div class="btn-group" role="group">
