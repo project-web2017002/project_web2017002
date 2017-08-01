@@ -34,11 +34,12 @@ function updateImageDisplay() {
             list.appendChild(listItem);
         }
     }
-}var fileTypes = [
+}
+var fileTypes = [
     'image/jpeg',
     'image/jpg',
     'image/png'
-]
+];
 
 function validFileType(file) {
     for(var i = 0; i < fileTypes.length; i++) {
@@ -46,9 +47,9 @@ function validFileType(file) {
             return true;
         }
     }
-
     return false;
-}function returnFileSize(number) {
+}
+function returnFileSize(number) {
     if(number < 1024) {
         return number + 'bytes';
     } else if(number > 1024 && number < 1048576) {

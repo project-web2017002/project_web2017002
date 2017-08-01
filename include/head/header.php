@@ -41,7 +41,7 @@ error_reporting(0);
                         ?>
                     </li>
                     <?php
-                    if($id=='' && $googleid==''){
+                    if($id=='' && $googleid=='' && $fbid == ''){
                         ?>
                         <li class="positionModalbtn" data-toggle="modal" data-target="#myModal">
                             <span class="glyphicon glyphicon-user"></span> Login/Signup

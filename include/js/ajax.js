@@ -110,15 +110,13 @@ $("#edit").click(function(){
 });
 
 $("#edit2").click(function(){
+    $("#edit").prop('disabled',true);
     var u_contact=$("#contan").val();
     $("#loading").show();
     $.ajax({
         type:"post",
         url:"//localhost/optimus/forward/profile/send.php",
         data:"u_contact="+u_contact,
-        beforeSend: function(){
-            $("#edit").prop('disabled',true);
-        },
         success: function(data) {
             $("#loading").hide();
             window.location.reload(true);

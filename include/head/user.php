@@ -1,12 +1,18 @@
 <?php
-if($googleid == '') {
+if($id != '') {
     $name_fetch = mysqli_query($con, "select * from verified_user where user_id=$id");
     $name_array = mysqli_fetch_array($name_fetch);
     $user_name = $name_array[1];
     $user_email = $name_array[2];
     $user_contact = $name_array[3];
+}elseif($googleid != ''){
+    $name_fetch = mysqli_query($con, "select * from users where id=$googleid and oauth_provider='google'");
+    $name_array = mysqli_fetch_array($name_fetch);
+    $user_name = $name_array[3]." ".$name_array[4];
+    $user_email = $name_array[5];
+    $user_contact = $name_array[12];
 }else{
-    $name_fetch = mysqli_query($con, "select * from users where id=$googleid");
+    $name_fetch = mysqli_query($con, "select * from users where id=$fbid and oauth_provider='facebook'");
     $name_array = mysqli_fetch_array($name_fetch);
     $user_name = $name_array[3]." ".$name_array[4];
     $user_email = $name_array[5];

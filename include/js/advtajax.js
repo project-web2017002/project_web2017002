@@ -168,7 +168,7 @@ $("#submitForm").click(function(){
 
                     data = "categoryid="+ category_id +"&userid="+ user_id +"&carcattype="+ car_cat_type +"&carbrand="+ car_brand +"&carcost="+
                         car_cost +"&carregyear="+ car_reg_year +"&carcity="+ post_city +"&username="+ user_name +"&useremail="+ user_email +
-                        "&usercontact="+ user_contact + "&usertype="+ car_user_type +"&carkmsdriven="+ car_kms_driven +"$cardesc="+car_desc+"&advtype="+ advt_type;
+                        "&usercontact="+ user_contact + "&usertype="+ car_user_type +"&carkmsdriven="+ car_kms_driven +"&cardesc="+car_desc+"&advtype="+ advt_type;
 
                     if(car_cat_type == ''){
                         alert.innerHTML = err[15];
@@ -997,8 +997,8 @@ function submitservices(data){
             $("#submitservicesForm").prop('disabled',true);
         },
         success: function(data) {
-            if(data == 'Success'){
-                window.location.assign('../../');
+            if(data != 'Failure'){
+                window.location.assign('?aagvgfeenmb='+data);
             }else{
                 alert(data);
             }
@@ -1018,8 +1018,8 @@ function submitbikes(data){
             $("#submitbikeForm").prop('disabled',true);
         },
         success: function(data) {
-            if(data == 'Success'){
-                window.location.assign('../../');
+            if(data != 'Failure'){
+                window.location.assign('?aagvgfeenmb='+data);
             }else{
                 alert(data);
             }
@@ -1031,6 +1031,7 @@ function submitbikes(data){
 }
 
 function submitcars(data){
+    $("#loading").show();
     $.ajax({
         type:"post",
         data:data,
@@ -1039,13 +1040,16 @@ function submitcars(data){
             $("#submitcarForm").prop('disabled',true);
         },
         success: function(data) {
-            if(data == 'Success'){
-                window.location.assign('../../');
+            if(data != 'Failure'){
+                $("#loading").hide();
+                window.location.assign('?aagvgfeenmb='+data);
             }else{
+                $("#loading").hide();
                 alert(data);
             }
         },
         error: function(data){
+            $("#loading").hide();
             alert("Form didn't submit!");
         }
     });
@@ -1060,8 +1064,8 @@ function submiteducation(data){
             $("#submiteducationForm").prop('disabled',true);
         },
         success: function(data) {
-            if(data == 'Success'){
-                window.location.assign('../../');
+            if(data != 'Failure'){
+                window.location.assign('?aagvgfeenmb='+data);
             }else{
                 alert(data);
             }
@@ -1081,8 +1085,8 @@ function submithome(data){
             $("#submithomeForm").prop('disabled',true);
         },
         success: function(data) {
-            if(data == 'Success'){
-                window.location.assign('../../');
+            if(data != 'Failure'){
+                window.location.assign('?aagvgfeenmb='+data);
             }else{
                 alert(data);
             }
@@ -1102,8 +1106,8 @@ function submitjob(data){
             $("#submitJobForm").prop('disabled',true);
         },
         success: function(data) {
-            if(data == 'Success'){
-                window.location.assign('../../');
+            if(data != 'Failure'){
+                window.location.assign('?aagvgfeenmb='+data);
             }else{
                 alert(data);
             }
@@ -1144,8 +1148,8 @@ function submitelectronics(data){
             $("#submitelectronicsForm").prop('disabled',true);
         },
         success: function(data) {
-            if(data == 'Success'){
-                window.location.assign('../../');
+            if(data != 'Failure'){
+                window.location.assign('?aagvgfeenmb='+data);
             }else{
                 alert(data);
             }
@@ -1165,9 +1169,8 @@ function submithomelife(data){
             $("#submithomelifestyleForm").prop('disabled',true);
         },
         success: function(data) {
-            if(data == 'Success')
-            {
-                window.location.assign('../../');
+            if(data != 'Failure'){
+                window.location.assign('?aagvgfeenmb='+data);
             }else{
                 alert(data);
             }
@@ -1187,8 +1190,8 @@ function submitevent(data){
             $("#submiteventForm").prop('disabled',true);
         },
         success: function(data) {
-            if(data == 'Success'){
-                window.location.assign('../../');
+            if(data != 'Failure'){
+                window.location.assign('?aagvgfeenmb='+data);
             }else{
                 alert(data);
             }
