@@ -1,6 +1,22 @@
 # project_web2017002
 Web Project
 ==============================================
+01-8-2017
+
+* now on each post posted user who post the ad will receive an test email
+* on post posted successfully, admin1 will also recieve email(our admins are dummy)
+* several bugs fixed
+
+31-7-2017
+
+•	Session code changes
+•	users of fb login can also view their profile and edit contact number
+•	code changes in many files due to fb integration
+•	several bugs fixed
+•	fb login integrated
+•	database for google/fb users updated
+•	admin can now see how many users joined using fb
+
 30-7-2017
 
 * Google login integrated
