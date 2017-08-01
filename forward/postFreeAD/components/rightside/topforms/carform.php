@@ -22,7 +22,7 @@
                     <td>
                         <div class="input-group">
                             <span class="input-group-addon"><i class="fa fa-rupee"></i></span>
-                            <input type="text" name="car-cost" class="form-control" id="car-cost" placeholder="Enter Price">
+                            <input type="text" name="cost" class="form-control" id="cost" placeholder="Enter Price">
                         </div>
                     </td>
                 </tr>
