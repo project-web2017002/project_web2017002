@@ -21,7 +21,7 @@ $product_id = $_GET['aagvgfeenmb'];
 </head>
 <body style="background: #f3f3f3">
 <?php
-if($id != "" || $googleid != '') {
+if($id != "" || $googleid != '' || $fbid != '') {
 //login/signup modal
     require("../../forward/modal.php");
 //header
@@ -31,7 +31,7 @@ if($id != "" || $googleid != '') {
 <div class="container">
     <!-- main Content -->
     <?php
-    if($id == "" || $googleid == ''){
+    if($id == "" && $googleid == '' && $fbid == ''){
         ?>
         <div class="container">
             <div class="row">
@@ -81,7 +81,7 @@ if($id != "" || $googleid != '') {
     ?>
 </div>
 <?php
-if($id != "" || $googleid != '') {
+if($id != "" || $googleid != '' || $fbid != '') {
 //footer
     require("../../include/foot/footer.php");
 }

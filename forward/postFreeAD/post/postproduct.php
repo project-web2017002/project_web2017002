@@ -70,7 +70,14 @@ function one(){
     $insertQuery = mysqli_query($con,"insert into listed_products (product_title,pro_description_file) values 
 ('$service_name','$url')")or die("Error in uploading");
     if($insertQuery){
-        echo "Success";
+        $getprid = mysqli_query($con,"select * from listed_products where pro_description_file='$url'");
+        $fetch = mysqli_fetch_array($getprid);
+        $pr_id = $fetch[0];
+        $mailed = sendmail($user_email,"opadmin1@gmail.com");
+        if($mailed == 'send')
+            echo $pr_id;
+        else
+            echo "Post Posted";
     }else{
         echo "Failure";
     }
@@ -119,7 +126,14 @@ function two(){
     $insertQuery = mysqli_query($con,"insert into listed_products (product_title,pro_description_file) values 
 ('$home_todo','$url')")or die("Error in uploading");
     if($insertQuery){
-        echo "Success";
+        $getprid = mysqli_query($con,"select * from listed_products where pro_description_file='$url'");
+        $fetch = mysqli_fetch_array($getprid);
+        $pr_id = $fetch[0];
+        $mailed = sendmail($user_email,"opadmin1@gmail.com");
+        if($mailed == 'send')
+            echo $pr_id;
+        else
+            echo "Post Posted";
     }else{
         echo "Failure";
     }
@@ -165,7 +179,14 @@ function three(){
     $insertQuery = mysqli_query($con,"insert into listed_products (product_title,pro_description_file) values 
 ('$job_title','$url')")or die("Error in uploading");
     if($insertQuery){
-        echo "Success";
+        $getprid = mysqli_query($con,"select * from listed_products where pro_description_file='$url'");
+        $fetch = mysqli_fetch_array($getprid);
+        $pr_id = $fetch[0];
+        $mailed = sendmail($company_email,"opadmin1@gmail.com");
+        if($mailed == 'send')
+            echo $pr_id;
+        else
+            echo "Post Posted";
     }else{
         echo "Failure";
     }
@@ -211,7 +232,14 @@ function four(){
     $insertQuery = mysqli_query($con,"insert into listed_products (product_title,pro_description_file) values 
 ('$car_cat_type $car_brand','$url')")or die("Error in uploading");
     if($insertQuery){
-        echo "Success";
+        $getprid = mysqli_query($con,"select * from listed_products where pro_description_file='$url'");
+        $fetch = mysqli_fetch_array($getprid);
+        $pr_id = $fetch[0];
+        $mailed = sendmail($user_email,"opadmin1@gmail.com");
+        if($mailed == 'send')
+            echo $pr_id;
+        else
+            echo "Post Posted";
     }else{
         echo "Failure";
     }
@@ -257,7 +285,14 @@ function five(){
     $insertQuery = mysqli_query($con,"insert into listed_products (product_title,pro_description_file) values 
 ('$bike_brand','$url')")or die("Error in uploading");
     if($insertQuery){
-        echo "Success";
+        $getprid = mysqli_query($con,"select * from listed_products where pro_description_file='$url'");
+        $fetch = mysqli_fetch_array($getprid);
+        $pr_id = $fetch[0];
+        $mailed = sendmail($user_email,"opadmin1@gmail.com");
+        if($mailed == 'send')
+            echo $pr_id;
+        else
+            echo "Post Posted";
     }else{
         echo "Failure";
     }
@@ -304,7 +339,14 @@ function six(){
     $insertQuery = mysqli_query($con,"insert into listed_products (product_title,pro_description_file) values 
 ('$edu_title','$url')")or die("Error in uploading");
     if($insertQuery){
-        echo "Success";
+        $getprid = mysqli_query($con,"select * from listed_products where pro_description_file='$url'");
+        $fetch = mysqli_fetch_array($getprid);
+        $pr_id = $fetch[0];
+        $mailed = sendmail($edu_insti_email,"opadmin1@gmail.com");
+        if($mailed == 'send')
+            echo $pr_id;
+        else
+            echo "Post Posted";
     }else{
         echo "Failure";
     }
@@ -358,7 +400,11 @@ function seven(){
         $getprid = mysqli_query($con,"select * from listed_products where pro_description_file='$url'");
         $fetch = mysqli_fetch_array($getprid);
         $pr_id = $fetch[0];
-        echo $pr_id;
+        $mailed = sendmail($user_email,"opadmin1@gmail.com");
+        if($mailed == 'send')
+            echo $pr_id;
+        else
+            echo "Post Posted";
     }else{
         echo "Failure";
     }
@@ -411,7 +457,14 @@ function eight(){
     $insertQuery = mysqli_query($con,"insert into listed_products (product_title,pro_description_file) values 
 ('$homelife_ad_title','$url')")or die("Error in uploading");
     if($insertQuery){
-        echo "Success";
+        $getprid = mysqli_query($con,"select * from listed_products where pro_description_file='$url'");
+        $fetch = mysqli_fetch_array($getprid);
+        $pr_id = $fetch[0];
+        $mailed = sendmail($user_email,"opadmin1@gmail.com");
+        if($mailed == 'send')
+            echo $pr_id;
+        else
+            echo "Post Posted";
     }else{
         echo "Failure";
     }
@@ -462,7 +515,14 @@ function nine(){
     $insertQuery = mysqli_query($con,"insert into listed_products (product_title,pro_description_file) values 
 ('$elect_ad_title','$url')")or die("Error in uploading");
     if($insertQuery){
-        echo "Success";
+        $getprid = mysqli_query($con,"select * from listed_products where pro_description_file='$url'");
+        $fetch = mysqli_fetch_array($getprid);
+        $pr_id = $fetch[0];
+        $mailed = sendmail($user_email,"opadmin1@gmail.com");
+        if($mailed == 'send')
+            echo $pr_id;
+        else
+            echo "Post Posted";
     }else{
         echo "Failure";
     }
@@ -498,7 +558,11 @@ function ten(){
     $insertQuery = mysqli_query($con,"insert into listed_products (product_title,pro_description_file) values 
 ('$category_id','$url')")or die("Error in uploading");
     if($insertQuery){
-        echo "Success";
+        $mailed = sendmail($user_email,"opadmin1@gmail.com");
+        if($mailed == 'send')
+            echo "Success";
+        else
+            echo "Post Posted";
     }else{
         echo "Failure";
     }
@@ -533,7 +597,11 @@ function eleven(){
     $insertQuery = mysqli_query($con,"insert into listed_products (product_title,pro_description_file) values 
 ('$category_id','$url')")or die("Error in uploading");
     if($insertQuery){
-        echo "Success";
+        $mailed = sendmail($user_email,"opadmin1@gmail.com");
+        if($mailed == 'send')
+            echo "Success";
+        else
+            echo "Post Posted";
     }else{
         echo "Failure";
     }
@@ -569,7 +637,11 @@ function twelve(){
     $insertQuery = mysqli_query($con,"insert into listed_products (product_title,pro_description_file) values 
 ('$category_id','$url')")or die("Error in uploading");
     if($insertQuery){
-        echo "Success";
+        $mailed = sendmail($user_email,"opadmin1@gmail.com");
+        if($mailed == 'send')
+            echo "Success";
+        else
+            echo "Post Posted";
     }else{
         echo "Failure";
     }
@@ -615,7 +687,14 @@ function thirteen(){
     $insertQuery = mysqli_query($con,"insert into listed_products (product_title,pro_description_file) values 
 ('$event_type','$url')")or die("Error in uploading");
     if($insertQuery){
-        echo "Success";
+        $getprid = mysqli_query($con,"select * from listed_products where pro_description_file='$url'");
+        $fetch = mysqli_fetch_array($getprid);
+        $pr_id = $fetch[0];
+        $mailed = sendmail($user_email,"opadmin1@gmail.com");
+        if($mailed == 'send')
+            echo $pr_id;
+        else
+            echo "Post Posted";
     }else{
         echo "Failure";
     }
@@ -650,8 +729,35 @@ function fourteen(){
     $insertQuery = mysqli_query($con,"insert into listed_products (product_title,pro_description_file) values 
 ('$category_id','$url')")or die("Error in uploading");
     if($insertQuery){
-        echo "Success";
+        $mailed = sendmail($user_email,"opadmin1@gmail.com");
+        if($mailed == 'send')
+            echo "Success";
+        else
+            echo "Post Posted";
     }else{
         echo "Failure";
     }
+}
+
+function sendmail($one,$two){
+    require("../../../mail/PHPMailerAutoload.php");
+    $mail  = new PHPMailer();
+    $mail->Host = "smtp.gmail.com";
+    $mail->isSMTP();
+    $mail->SMTPAuth = true;
+    $mail->Username = "optimustechprojectweb201702@gmail.com";
+    $mail->Password = "Pass@1234";
+    $mail->SMTPSecure = "tls"; //or ssl
+    $mail->Port = 587;//465 for ssl
+    $mail->Subject = "Test Mail";
+    $mail->Body = "Body Of the mail";
+    $mail->setFrom("optimustechprojectweb201702@gmail.com","optimustechproject web201702");
+    $mail->addAddress($one);
+    $mail->addCC($two);
+    $mail->WordWrap = 50;
+    $mail->isHTML(true);
+    if($mail->send())
+        return "send";
+    else
+        return "Failure".$mail->ErrorInfo;
 }

@@ -1,10 +1,10 @@
 <?php
-if($_SESSION['userData'] == '') {
+if($_SESSION['userData'] == '' && $_SESSION['userDatafb'] == '' && $_SESSION['login_id'] == '') {
 //Include GP config file && User class
     include_once 'forward/login/GoogleLogin/gpConfig.php';
-    include_once 'forward/login/GoogleLogin/User.php';
+    include_once 'forward/login/User.php';
 
-    if (isset($_GET['code'])) {
+    if (isset($_GET['code']) && !$_GET['state']) {
         $gClient->authenticate($_GET['code']);
         $_SESSION['token'] = $gClient->getAccessToken();
         header('Location: ' . filter_var($redirectURL, FILTER_SANITIZE_URL));
@@ -24,7 +24,7 @@ if($_SESSION['userData'] == '') {
         //Insert or update user data to the database
         $gpUserData = array(
             'oauth_provider' => 'google',
-            'oauth_uid'     => $gpUserProfile['id'],
+            'oauth_uid' => $gpUserProfile['id'],
             'first_name' => $gpUserProfile['given_name'],
             'last_name' => $gpUserProfile['family_name'],
             'email' => $gpUserProfile['email'],
@@ -48,6 +48,80 @@ if($_SESSION['userData'] == '') {
     } else {
         $authUrl = $gClient->createAuthUrl();
         $output = filter_var($authUrl, FILTER_SANITIZE_URL);
+    }
+
+// Include FB config file && User class
+    require_once 'forward/login/fbLogin/fbConfig.php';
+    if (isset($accessToken)) {
+        if (isset($_SESSION['facebook_access_token'])) {
+            $fb->setDefaultAccessToken($_SESSION['facebook_access_token']);
+        } else {
+            // Put short-lived access token in session
+            $_SESSION['facebook_access_token'] = (string)$accessToken;
+
+            // OAuth 2.0 client handler helps to manage access tokens
+            $oAuth2Client = $fb->getOAuth2Client();
+
+            // Exchanges a short-lived access token for a long-lived one
+            $longLivedAccessToken = $oAuth2Client->getLongLivedAccessToken($_SESSION['facebook_access_token']);
+            $_SESSION['facebook_access_token'] = (string)$longLivedAccessToken;
+
+            // Set default access token to be used in script
+            $fb->setDefaultAccessToken($_SESSION['facebook_access_token']);
+        }
+
+        if (isset($_GET['code']) && $_GET['state']) {
+            header('Location: ./');
+        }
+
+        // Getting user facebook profile info
+        try {
+            $profileRequest = $fb->get('/me?fields=name,first_name,last_name,email,link,gender,locale,picture');
+            $fbUserProfile = $profileRequest->getGraphNode()->asArray();
+        } catch (FacebookResponseException $e) {
+            echo 'Graph returned an error: ' . $e->getMessage();
+            session_destroy();
+            // Redirect user back to app login page
+            header("Location: ./");
+            exit;
+        } catch (FacebookSDKException $e) {
+            echo 'Facebook SDK returned an error: ' . $e->getMessage();
+            exit;
+        }
+
+        // Initialize User class
+        $user2 = new User();
+
+        // Insert or update user data to the database
+        $fbUserData = array(
+            'oauth_provider' => 'facebook',
+            'oauth_uid' => $fbUserProfile['id'],
+            'first_name' => $fbUserProfile['first_name'],
+            'last_name' => $fbUserProfile['last_name'],
+            'email' => $fbUserProfile['email'],
+            'gender' => $fbUserProfile['gender'],
+            'locale' => $fbUserProfile['locale'],
+            'picture' => $fbUserProfile['picture']['url'],
+            'link' => $fbUserProfile['link']
+        );
+        $userData2 = $user2->checkUserfb($fbUserData);
+
+        // Put user data into session
+        $_SESSION['userDatafb'] = $userData2['id'];
+
+        // Render facebook profile data
+        if (!empty($userData2)) {
+            //do noting
+        } else {
+            $output2 = '<h3 style="color:red">Some problem occurred, please try again.</h3>';
+        }
+
+    } else {
+        // Get login url
+        $loginURL = $helper->getLoginUrl($redirectURL, $fbPermissions);
+
+        // Render facebook login button
+        $output2 = htmlspecialchars($loginURL);
     }
 }
 ?>
@@ -75,8 +149,8 @@ if($_SESSION['userData'] == '') {
                 <div class="row smalltext">
                     <div class="col-lg-4">
 <!--                        <div class="fb-login-button" data-max-rows="1" data-size="medium" data-button-type="continue_with" data-show-faces="false" data-auto-logout-link="true" data-use-continue-as="true"></div>-->
-                          <!--fb:login-button scope="public_profile,email" onlogin="checkLoginState();"></fb:login-button-->
-                        <button class="btn btn-primary btn-block"><i class="fa fa-facebook-official"></i> Facebook</button>
+                          <!--fb:login-button class="btn btn-primary btn-block" scope="public_profile,email" onlogin="checkLoginState();"></fb:login-button-->
+                        <a href="<?php echo $output2 ?>" class="btn btn-primary btn-block"><i class="fa fa-facebook-official"></i> Facebook</a>
                     </div>
                     <div class="col-lg-4">
                         <a href="<?php echo $output ?>" class="btn btn-danger btn-block"><i class="fa fa-google-plus-official"></i> Google</a>

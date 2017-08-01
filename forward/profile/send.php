@@ -1,7 +1,7 @@
 <?php
 require("../../essential/db/db.php");
 require("../../essential/ses/session.php");
-if($googleid == '') {
+if($id != '') {
     $u_name = $_POST['u_name'];
     $u_email = $_POST['u_email'];
     $u_contact = $_POST['u_contact'];
@@ -12,10 +12,19 @@ if($googleid == '') {
     } else {
         $err = "Some Error! " . mysqli_error($con);
     }
+}elseif($googleid != ''){
+    $u_contact = $_POST['u_contact'];
+
+    $update_query = mysqli_query($con, "update users set contact='$u_contact' where id=$googleid and oauth_provider='google'");
+    if ($update_query) {
+        echo "success";
+    } else {
+        $err = "Some Error! " . mysqli_error($con);
+    }
 }else{
     $u_contact = $_POST['u_contact'];
 
-    $update_query = mysqli_query($con, "update users set contact='$u_contact' where id=$googleid");
+    $update_query = mysqli_query($con, "update users set contact='$u_contact' where id=$fbid and oauth_provider='facebook'");
     if ($update_query) {
         echo "success";
     } else {

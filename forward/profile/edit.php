@@ -1,16 +1,22 @@
 <?php
-if($googleid=='') {
-    $get_all_info = mysqli_query($con, "select * from verified_user where user_id=$id");
-    $fetch_all_info = mysqli_fetch_array($get_all_info);
-    $user_name = $fetch_all_info[1];
-    $user_email = $fetch_all_info[2];
-    $user_contact = $fetch_all_info[3];
+if($id != '') {
+    $name_fetch = mysqli_query($con, "select * from verified_user where user_id=$id");
+    $name_array = mysqli_fetch_array($name_fetch);
+    $user_name = $name_array[1];
+    $user_email = $name_array[2];
+    $user_contact = $name_array[3];
+}elseif($googleid != ''){
+    $name_fetch = mysqli_query($con, "select * from users where id=$googleid and oauth_provider='google'");
+    $name_array = mysqli_fetch_array($name_fetch);
+    $user_name = $name_array[3]." ".$name_array[4];
+    $user_email = $name_array[5];
+    $user_contact = $name_array[12];
 }else{
-    $get_all_info = mysqli_query($con, "select * from users where id=$googleid");
-    $fetch_all_info = mysqli_fetch_array($get_all_info);
-    $user_name = $fetch_all_info[3]." ".$fetch_all_info[4];
-    $user_email = $fetch_all_info[5];
-    $user_contact = $fetch_all_info[12];
+    $name_fetch = mysqli_query($con, "select * from users where id=$fbid and oauth_provider='facebook'");
+    $name_array = mysqli_fetch_array($name_fetch);
+    $user_name = $name_array[3]." ".$name_array[4];
+    $user_email = $name_array[5];
+    $user_contact = $name_array[12];
 }
 ?>
 <div id="editModal" class="modal fade" role="dialog">
@@ -24,7 +30,7 @@ if($googleid=='') {
             <div class="modal-body smalltext">
                 <form id="EditDataForm" method="post" autocomplete="off">
                     <?php
-                    if($googleid == '') {
+                    if($googleid == '' && $fbid == '') {
                         ?>
                         <div class="form-group">
                             <input type="text" name="usernam" id="usernam" class="form-control" pattern="[a-zA-Z]{3,}"
@@ -43,7 +49,7 @@ if($googleid=='') {
                                value="<?php echo $user_contact ?>" placeholder="Enter Contact Number">
                     </div>
                     <?php
-                    if($googleid == '') {
+                    if($googleid == '' || $fbid == '') {
                         ?>
                         <button type="submit" name="edit" id="edit" class="btn btn-danger"
                                 style="width: 100%; background-color: #e40046; color: white;">Continue
