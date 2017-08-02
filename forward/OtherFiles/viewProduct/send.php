@@ -30,9 +30,7 @@ if ($numrows <= 0) {
                     $cost = $row_arr[7]; $username = $row_arr[8]; $email = $row_arr[9]; $contact = $row_arr[14];
                 } elseif ($category == 10003) {
                     $cost = $row_arr[6]; $username = $row_arr[7]; $email = $row_arr[8]; $contact = $row_arr[11];
-                } elseif ($category == 10004 || $category == 10005) {
-                    $cost = $row_arr[6]; $username = $row_arr[8]; $email = $row_arr[11]; $contact = $row_arr[10];
-                } elseif ($category == 10006) {
+                } elseif ($category == 10004 || $category == 10005 || $category == 10006) {
                     $cost = $row_arr[4]; $username = $row_arr[7]; $email = $row_arr[8]; $contact = $row_arr[9];
                 } elseif ($category == 10007 || $category == 10016) {
                     $cost = $row_arr[7]; $username = $row_arr[12]; $email = $row_arr[13]; $contact = $row_arr[14];
