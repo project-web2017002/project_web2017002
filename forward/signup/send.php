@@ -20,7 +20,7 @@ require("../../essential/db/db.php");
     }else{
         $agreed=0;
     }
-    $check=mysqli_query($con,"select * from verified_user where user_login_id='$user_login_id' or user_contact='$user_contact_nu''");
+    $check=mysqli_query($con,"select * from verified_user where user_login_id='$user_login_id' or user_contact='$user_contact_nu'");
     $numrows=mysqli_num_rows($check);
     if($numrows>0){
         $err="User already exists!";
@@ -37,8 +37,16 @@ values ('$name','$user_login_id','$user_contact_nu','$enc_pass')");
                 if($agreement_insert){
                     $statusquery=mysqli_query($con,"insert into status (user_id,status) values ($user_id_obt,1)");
                     if($statusquery){
-                        session_start();
-                        $_SESSION['login_id'] = $user_id_obt;
+                        $otp_gen = randomString();
+                        $create_otp_query = mysqli_query($con,"insert into otp_signup (user,OTP_VAL) values ($user_id_obt,$otp_gen)");
+                        $mailed = sendmail($user_login_id,"opadmin1@gmail.com",$otp_gen);
+                        if($mailed == 'send') {
+                            echo "Success";
+                            session_start();
+                            $_SESSION['login_id'] = $user_id_obt;
+                        }
+                        else
+                            echo "Signed Up";
                     }else{
                         $err="Some error! ".mysqli_error($con);
                     }
@@ -54,4 +62,38 @@ values ('$name','$user_login_id','$user_contact_nu','$enc_pass')");
             $err="Some error! ".mysqli_error($con);
         }
     }
+
+function randomString() {
+    $length = 4;
+    $characters = '12356789';
+    $charactersLength = strlen($characters);
+    $randomString = '';
+    for ($i = 0; $i < $length; $i++) {
+        $randomString .= $characters[rand(0, $charactersLength - 1)];
+    }
+    return $randomString;
+}
+
+function sendmail($one,$two,$three){
+    require("../../mail/PHPMailerAutoload.php");
+    $mail  = new PHPMailer();
+    $mail->Host = "smtp.gmail.com";
+    $mail->isSMTP();
+    $mail->SMTPAuth = true;
+    $mail->Username = "optimustechprojectweb201702@gmail.com";
+    $mail->Password = "Pass@1234";
+    $mail->SMTPSecure = "tls"; //or ssl
+    $mail->Port = 587;//465 for ssl
+    $mail->Subject = "OTP for account verification";
+    $mail->Body = "Enter the Following OTP:<br><br>".$three;
+    $mail->setFrom("optimustechprojectweb201702@gmail.com","Welcome");
+    $mail->addAddress($one);
+    $mail->addCC($two);
+    $mail->WordWrap = 50;
+    $mail->isHTML(true);
+    if($mail->send())
+        return "send";
+    else
+        return "Failure".$mail->ErrorInfo;
+}
 ?>
