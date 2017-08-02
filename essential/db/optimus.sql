@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 31, 2017 at 10:24 PM
+-- Generation Time: Aug 02, 2017 at 10:23 PM
 -- Server version: 5.7.14
 -- PHP Version: 5.6.25
 
@@ -84,7 +84,8 @@ INSERT INTO `listed_products` (`product_id`, `product_title`, `pro_description_f
 (4, 'Fixing wires issue at home', '//localhost/optimus/Category/categoryId/10001/2017-07-19-10-39-56am-1.csv', NULL),
 (5, 'Iphone 7 to sell', '//localhost/optimus/Category/categoryId/10007/2017-07-19-11-44-35am-1.csv', NULL),
 (9, 'Want an iPhone 7 jet Black', '//localhost/optimus/Category/categoryId/10007/2017-07-19-12-34-34pm-1.csv', '1500471990_iphone7-jetblack-select-2016.png'),
-(10, 'Spa services', '//localhost/optimus/Category/categoryId/10001/2017-07-28-05-28-57pm-1.csv', NULL);
+(10, 'Spa services', '//localhost/optimus/Category/categoryId/10001/2017-07-28-05-28-57pm-1.csv', NULL),
+(14, 'Sell A Car Renault', '//localhost/optimus/Category/categoryId/10004/2017-08-01-10-14-56pm-3.csv', '1501606280_Renault.jpg');
 
 -- --------------------------------------------------------
 
@@ -130,6 +131,18 @@ INSERT INTO `order_status` (`counter`, `unique_order_number`, `status`, `payment
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `otp_signup`
+--
+
+CREATE TABLE `otp_signup` (
+  `numb` int(11) NOT NULL,
+  `user` int(11) NOT NULL,
+  `OTP_VAL` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `policy_agreement`
 --
 
@@ -146,7 +159,8 @@ CREATE TABLE `policy_agreement` (
 
 INSERT INTO `policy_agreement` (`counter`, `user_id`, `above_18`, `TnC`) VALUES
 (1, 1, 1, 1),
-(3, 3, 1, 1);
+(3, 3, 1, 1),
+(13, 13, 1, 1);
 
 -- --------------------------------------------------------
 
@@ -167,8 +181,8 @@ CREATE TABLE `realadmin` (
 --
 
 INSERT INTO `realadmin` (`admin_id`, `admin_name`, `admin_email`, `admin_contact`, `admin_password`) VALUES
-(1, 'Admin1', 'admin1@gmail.com', '1234567890', '$2y$10$8PGvL9vJnVnLBwAFl7TiFed4eZKkbu2Lp6zPj4nW8wyVwafEXQT/O'),
-(2, 'Admin2', 'admin2@gmail.com', '0123456789', '$2y$10$spWtDhkwo3V9eJ91KDK/zOwgoLjXpOaHRSghwFV/F1smH37Wat8/W');
+(1, 'Admin1', 'opadmin1@gmail.com', '1234567890', '$2y$10$8PGvL9vJnVnLBwAFl7TiFed4eZKkbu2Lp6zPj4nW8wyVwafEXQT/O'),
+(2, 'Admin2', 'opadmin2@gmail.com', '0123456789', '$2y$10$spWtDhkwo3V9eJ91KDK/zOwgoLjXpOaHRSghwFV/F1smH37Wat8/W');
 
 -- --------------------------------------------------------
 
@@ -200,7 +214,8 @@ CREATE TABLE `status` (
 
 INSERT INTO `status` (`no`, `user_id`, `status`) VALUES
 (1, 1, 0),
-(3, 3, 0);
+(3, 3, 0),
+(13, 13, 0);
 
 -- --------------------------------------------------------
 
@@ -252,7 +267,8 @@ CREATE TABLE `verified_user` (
 
 INSERT INTO `verified_user` (`user_id`, `user_name`, `user_login_id`, `user_contact`, `user_password`) VALUES
 (1, 'Akash Chouhan', 'ak@gmail.com', '8968336242', '$2y$15$xlEeqyR62jB.9anM2358Ou9cKd5XGO60JScgkU8pt0Ye7GYzr4ahi'),
-(3, 'Charlette', 'charli@icloud.com', '9874563210', '$2y$15$n8kgQAV3rURlqinke1bnZ.IFlpv6FcOpo6ihAVBEVNi0VDocuA4Ta');
+(3, 'Charlette', 'charli@icloud.com', '9874563210', '$2y$15$n8kgQAV3rURlqinke1bnZ.IFlpv6FcOpo6ihAVBEVNi0VDocuA4Ta'),
+(13, 'Robot', 'akashverma141997@gmail.com', '7896541230', '$2y$15$bFdTy6l.ugmfIqntB4ycWuvEN81ijJBP7E.7eVMDwloEaS6IIPcBe');
 
 --
 -- Indexes for dumped tables
@@ -292,6 +308,14 @@ ALTER TABLE `orders`
 ALTER TABLE `order_status`
   ADD PRIMARY KEY (`counter`),
   ADD KEY `unique_order_number` (`unique_order_number`);
+
+--
+-- Indexes for table `otp_signup`
+--
+ALTER TABLE `otp_signup`
+  ADD PRIMARY KEY (`numb`),
+  ADD KEY `user` (`user`),
+  ADD KEY `user_2` (`user`);
 
 --
 -- Indexes for table `policy_agreement`
@@ -351,7 +375,7 @@ ALTER TABLE `featpro`
 -- AUTO_INCREMENT for table `listed_products`
 --
 ALTER TABLE `listed_products`
-  MODIFY `product_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `product_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 --
 -- AUTO_INCREMENT for table `orders`
 --
@@ -363,10 +387,15 @@ ALTER TABLE `orders`
 ALTER TABLE `order_status`
   MODIFY `counter` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
+-- AUTO_INCREMENT for table `otp_signup`
+--
+ALTER TABLE `otp_signup`
+  MODIFY `numb` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+--
 -- AUTO_INCREMENT for table `policy_agreement`
 --
 ALTER TABLE `policy_agreement`
-  MODIFY `counter` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `counter` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 --
 -- AUTO_INCREMENT for table `realadmin`
 --
@@ -381,7 +410,7 @@ ALTER TABLE `shoppingcart`
 -- AUTO_INCREMENT for table `status`
 --
 ALTER TABLE `status`
-  MODIFY `no` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `no` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 --
 -- AUTO_INCREMENT for table `users`
 --
@@ -391,7 +420,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `verified_user`
 --
 ALTER TABLE `verified_user`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 --
 -- Constraints for dumped tables
 --

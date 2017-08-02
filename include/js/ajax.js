@@ -5,7 +5,6 @@ $("#signup").click(function() {
     var pass = $("#pass").val();
     var verify_terms = $("#verify_terms").val();
     var verify_age = $("#verify_age").val();
-    $("#signupModal").hide();
     $("#loading").show();
     $.ajax({
         type: "POST",
@@ -15,13 +14,17 @@ $("#signup").click(function() {
             $("#signup").prop('disabled',true);
         },
         success: function(data) {
-            $("#loading").hide();
-            window.location.reload(true);
+            if(data == "Success") {
+                $("#loading").hide();
+                window.location.assign('forward/signup/otp/');
+            }else{
+                $("#loading").hide();
+                window.location.assign('?error='+data);
+            }
         },
         error: function(data){
             $("#signupModal").show();
             $("#loading").hide();
-            alert("Form didn't submit!");
         }
     });
 });
@@ -29,7 +32,6 @@ $("#signup").click(function() {
 $("#login").click(function(){
     var login_id = $("#loginContent").val();
     var login_pass = $("#loginPass").val();
-    $("#loginModal").hide();
     $("#loading").show();
     $.ajax({
         type:"post",
@@ -40,12 +42,17 @@ $("#login").click(function(){
         },
         success: function(data) {
             $("#loading").hide();
-            window.location.reload(true);
+            if(data == 'Success') {
+                window.location.reload(true);
+            }else if(data == "OTP"){
+                window.location.assign('forward/signup/otp/');
+            }else{
+                $("#login").removeAttr('disabled');
+                console.log(data);
+            }
         },
         error: function(data){
-            $("#loginModal").show();
             $("#loading").hide();
-            alert("Form didn't submit!");
         }
     });
 });
