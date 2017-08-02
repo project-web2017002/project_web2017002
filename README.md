@@ -1,6 +1,14 @@
 # project_web2017002
 Web Project
 ==============================================
+02-8-2017
+
+* after signup an otp is send to new user and he/she asked to enter in it next prompted window
+* if user skips this, next time on login, user will again ask to enter otp and new otp is generated
+* new db for otp handling is created
+* code edited to open mainpage for giving access to user who is logged in without google/fb
+* bugs fixes
+
 01-8-2017
 
 * now on each post posted user who post the ad will receive an test email
