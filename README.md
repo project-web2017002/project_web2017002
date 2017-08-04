@@ -1,6 +1,16 @@
 # project_web2017002
 Web Project
 ==============================================
+04-8-2017
+
+* Many bugs fixed for emails
+* Bug fixed to resend otp on login again if user skips otp verification during signup
+* Order a product bug fixed as it previously not accepting value of that product
+* Rearranged code for file handling
+* Db error bugs fixed
+* Session for fb/google/general user created
+* Some other changes made too.
+
 02-8-2017
 
 * after signup an otp is send to new user and he/she asked to enter in it next prompted window
