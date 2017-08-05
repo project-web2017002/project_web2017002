@@ -1,6 +1,13 @@
 # project_web2017002
 Web Project
 ==============================================
+05-8-2017
+
+* UI design changed for mainpage
+* js, UI changes, is changed
+* CSS also changed
+* some more changes made
+
 04-8-2017
 
 * Many bugs fixed for emails
