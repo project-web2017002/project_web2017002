@@ -57,10 +57,15 @@ error_reporting(0);
                         </li>
                         <?php
                     }
+                    if($categoryid != '' || $city != '') {
+                        ?>
+                        <li class="positionadbtn" data-toggle="modal" data-target="#postModal">
+                            <a id="btnPostAd" href="#" class="btn btn-warning navbar-btn" title="Post Free Ad">Post Free
+                                Ad</a>
+                        </li>
+                        <?php
+                    }
                     ?>
-                    <li class="positionadbtn" data-toggle="modal" data-target="#postModal">
-                        <a id="btnPostAd" href="#" class="btn btn-warning navbar-btn" title="Post Free Ad">Post Free Ad</a>
-                    </li>
                 </ul>
             </div>
         </div>

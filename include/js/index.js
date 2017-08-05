@@ -40,6 +40,10 @@ function changename(data){
 $(function(){
     $('body').fadeIn(1500);
     $("#mainWindow").fadeIn(1500);
+
+    $('#oo').click(function(){
+        $('#CategoryMenu').slideToggle();
+    });
 });
 
 $(".btn-pref .btn").click(function () {

@@ -37,7 +37,7 @@
         require("include/imp/topscripts.php");
         ?>
 	</head>
-	<body style="background: #f3f3f3">
+	<body>
     <?php
     //login/signup modal
         require("forward/modal.php");

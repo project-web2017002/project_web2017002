@@ -7,6 +7,7 @@
         <span class="glyphicon glyphicon-chevron-down"></span>
     </a>
 <?php } ?>
+
 <ul class="dropdown-menu defineminwidth" id="city">
     <script>
         var addon = document.getElementById("city");
