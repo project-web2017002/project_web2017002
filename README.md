@@ -1,6 +1,23 @@
 # project_web2017002
 Web Project
 ==============================================
+09-8-2017
+
+* view style for all filters changes by adding custome animation 
+* in place of sidebar whole page is used
+* js for accessing values of forms changed
+
+08-8-2017
+
+* fb login problem fixed as it is not responding when user is already registered
+* working of uploading or posting an ad changes
+* small UI/styles changes
+
+07-8-2017
+
+* style for view products category wise changes
+* UI changes and css with custom animations added
+
 05-8-2017
 
 * UI design changed for mainpage
