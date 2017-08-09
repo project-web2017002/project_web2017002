@@ -142,7 +142,7 @@ if($page == '' || $page == 1){
                                             }
                                         }
                                         ?>
-                                        <div class="col-lg-4 col-md-6 col-sm-12" style="float: left; height:450px;">
+                                        <div class="col-lg-3 col-md-6 col-sm-12" style="float: left; height:450px; padding: 10px" id="tes4">
                                             <div class="row" style="cursor: pointer"
                                                  onclick="ViewProduct(<?php echo $this_pro_id; ?>);">
                                                 <?php

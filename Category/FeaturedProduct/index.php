@@ -70,19 +70,19 @@ error_reporting(0);
                                     }
                                     ?>
 
-                                    <div class="col-lg-4 col-md-6 col-sm-12">
+                                    <div class="col-lg-3 col-md-6 col-sm-12" id="test">
                                         <div class="row" style="cursor: pointer"
                                              onclick="ViewProduct(<?php echo $this_pro_id; ?>);">
                                             <?php
                                             if ($image == '') {
                                                 ?>
-                                                <img class="img-responsive img-thumbnail img-rounded"
-                                                     src="include/media/images/no-image-available.jpg">
+                                                <img class="img-responsive img-rounded"
+                                                     src="include/media/images/no-image-available.jpg" style="max-height: 250px">
                                                 <?php
                                             } else {
                                                 ?>
-                                                <img class="img-responsive img-thumbnail img-rounded"
-                                                     src="Category/images/<?php echo $image ?>">
+                                                <img class="img-responsive img-rounded"
+                                                     src="Category/images/<?php echo $image ?>" style="max-height: 250px">
                                                 <?php
                                             }
                                             ?>

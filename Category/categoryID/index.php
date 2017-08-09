@@ -159,14 +159,14 @@ error_reporting(0);
                                         $da_te = '';
                                     }
                                     ?>
-                                    <div class="col-lg-4 col-md-6 col-sm-12" style="float: left; height:450px;">
+                                    <div class="col-lg-3 col-md-6 col-sm-12" style="float: left; height:450px; padding: 10px" id="tes2">
                                         <div class="row" style="cursor: pointer"
                                              onclick="ViewProduct(<?php echo $this_pro_id; ?>);">
                                             <?php if ($image != NULL) { ?>
-                                                <img class="img-responsive img-thumbnail img-rounded"
+                                                <img class="img-responsive img-rounded"
                                                      src="<?php echo 'Category/images/' . $image; ?>">
                                             <?php } else { ?>
-                                                <img class="img-responsive img-thumbnail img-rounded"
+                                                <img class="img-responsive img-rounded"
                                                      src="include/media/images/no-image-available.jpg">
                                             <?php } ?>
                                         </div>
