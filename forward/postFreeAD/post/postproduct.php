@@ -749,9 +749,9 @@ function sendmail($one,$two){
     $mail->Password = "Pass@1234";
     $mail->SMTPSecure = "tls"; //or ssl
     $mail->Port = 587;//465 for ssl
-    $mail->Subject = "Test Mail";
-    $mail->Body = "Body Of the mail";
-    $mail->setFrom("optimustechprojectweb201702@gmail.com","optimustechproject web201702");
+    $mail->Subject = "Your Product Has been Successfully Posted!";
+    $mail->Body = "You have posted an Post...";
+    $mail->setFrom("optimustechprojectweb201702@gmail.com","Welcome");
     $mail->addAddress($one);
     $mail->addCC($two);
     $mail->WordWrap = 50;
