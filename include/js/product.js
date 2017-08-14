@@ -3,7 +3,9 @@ $(function(){
         $("#viewproductTitle").html(''); $("#img-tab").html(''); $("#cost").html('');
         $("#by").html(''); $("#em").html(''); $("#co").html('');
         $("#_jkpr").html(''); $("#vieproducterror").html(''); $("#_prc").html('');
-        $("#viewProduct").hide('slow');
+        $("#viewProduct").hide();
+        $("body").removeClass("modal-open");
+        document.body.style.removeProperty(paddingRight);
     });
 
     $("#buy").click(function(){
@@ -43,7 +45,9 @@ function addtocart() {
 }
 
 function ViewProduct(pr_id) {
-    $("#viewProduct").show('slow');
+    $("body").addClass("modal-open");
+    document.body.style.paddingRight = "17px";
+    $("#viewProduct").slideToggle('slow');
     var data = "skey=" + pr_id;
     $.ajax({
         type: "POST",

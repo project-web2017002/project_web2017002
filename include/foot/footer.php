@@ -1,3 +1,25 @@
+<div class="mobile-app">
+    <div class="container">
+        <div class="col-md-5 app-left">
+            <img src="//localhost/optimus/include/media/images/app.png" alt="App logo">
+        </div>
+        <div class="col-md-7 app-right">
+            <h3>Resale App is the <span>Easiest</span> way for Selling and buying second-hand goods</h3>
+            <p>Download our app for better experience. Our app is available at playstore and app store</p><br>
+            <div class="app-buttons">
+                <div class="app-button">
+                    <a href="https://play.google.com/store?hl=en"><img src="//localhost/optimus/include/media/images/1.png" alt="Playstore link"></a>
+                </div>
+                <div class="app-button">
+                    <a href="https://itunes.apple.com/in/genre/ios/id36?mt=8"><img src="//localhost/optimus/include/media/images/2.png" alt="App Store link"></a>
+                </div>
+                <div class="clearfix"> </div>
+            </div>
+        </div>
+        <div class="clearfix"></div>
+    </div>
+</div>
+
 <footer class="container">
 	<div class="row">
         <div class="col-md-12 inlinelist-parent">
@@ -30,14 +52,6 @@
                                 <a href="https://www.plus.google.com/" target="_blank" title="Google+"><i class="fa fa-google-plus"></i></a>
                                 <a href="https://www.twitter.com/" target="_blank" title="Twitter"><i class="fa fa-twitter"></i></a>
                                 <a href="https://www.youtube.com/" target="_blank" title="Youtube"><i class="fa fa-youtube"></i></a>
-                            </div>
-                        </div>
-                        <div class="col-md-6 col-sm-12">
-                            <div class="inlinelistbottomone">
-                                <h5>Download Our App</h5>
-                                <a href="#" target="_blank" title="Apple Store"><i class="fa fa-apple"></i></a>
-                                <a href="#" target="_blank" title="Play Store"><i class="fa fa-play"></i></a>
-                                <a href="#" target="_blank" title="Windows Store"><i class="fa fa-windows"></i></a>
                             </div>
                         </div>
                     </div>

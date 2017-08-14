@@ -102,3 +102,64 @@ function changepage(dataa){
         window.location.href = ult;
     }
 }
+
+var mod = document.getElementById('myModal');
+var modal = document.getElementById('loginModal');
+var modal2 = document.getElementById('signupModal');
+
+function one() {
+// Hide the login modal
+    mod.style.display = "none";
+    $("#myModal").removeClass("in");
+    modal2.style.display = "none";
+    $("#signupModal").removeClass("in");
+// Show the next modal after the fade effect is finished
+    setTimeout(function () {
+        document.getElementById('loginModal').style.display = "block";
+        $("#loginModal").addClass("in");
+    }, 200);
+}
+
+function two() {
+// Hide the login modal
+    mod.style.display = "none";
+    $("#myModal").removeClass("in");
+    modal.style.display = "none";
+    $("#loginModal").removeClass("in");
+// Show the next modal after the fade effect is finished
+    setTimeout(function () {
+        document.getElementById('signupModal').style.display = "block";
+        $("#signupModal").addClass("in");
+    }, 200);
+}
+
+function closed(){
+        modal.style.display = "none";
+        $('#loginModal').removeClass("in");
+        modal2.style.display = "none";
+        $('#signupModal').removeClass("in");
+        $("body").removeClass("modal-open");
+        document.body.style.paddingRight = '';
+        $('.modal-backdrop').remove();
+}
+
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+        $('#loginModal').removeClass("in");
+        $("body").removeClass("modal-open");
+        document.body.style.paddingRight = '';
+        $('.modal-backdrop').remove();
+    }else if(event.target == modal2){
+        modal2.style.display = "none";
+        $('#signupModal').removeClass("in");
+        $("body").removeClass("modal-open");
+        document.body.style.paddingRight = '';
+        $('.modal-backdrop').remove();
+    }
+};
+
+$(".btn-pref .atn").click(function () {
+    $(".btn-pref .atn").removeClass("btn-primary").addClass("btn-default");
+    $(this).removeClass("btn-default").addClass("btn-primary");
+});
