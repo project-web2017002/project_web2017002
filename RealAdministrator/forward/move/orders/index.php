@@ -103,7 +103,7 @@ if($aid == ''){
                                     continue;
                                 }
                                 ?>
-                                <div class="col-lg-4 col-md-6 col-sm-12" style="float: left;">
+                                <div class="col-sm-12">
                                     <div class="row">
                                         <?php
                                         if($image == '') {
