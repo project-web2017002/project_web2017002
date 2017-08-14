@@ -1,6 +1,28 @@
 # project_web2017002
 Web Project
 ==============================================
+14-8-2017
+
+* change view option added in all possible filters
+* footer edited and UI changes
+* js and css edited for UI/UX and mobile friendly view
+
+12-8-2017
+
+* problems occured in submitting of ad forms added
+* admin panel order viewing and users list bugs fixed
+
+11-8-2017
+
+* change view option in city wise and category wise arranging of products added
+* UI changes
+* bugs fixes
+
+10-8-2017
+
+* pagination problem fixed
+* change view option in featured products added
+
 09-8-2017
 
 * view style for all filters changes by adding custome animation 
