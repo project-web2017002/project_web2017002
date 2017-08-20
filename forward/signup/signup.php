@@ -3,7 +3,7 @@
         <!-- Modal content-->
         <div class="modal-content">
             <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <button type="button" class="close" onclick="closed()">&times;</button>
                 <h4 class="modal-title"><i class="fa fa-user-circle"></i> Signup</h4>
                 <div class="row smalltext">Please provide your Mobile Number or Email to Signup</div>
             </div>
@@ -35,7 +35,7 @@
                 <div class="row smalltext">
                     <div class="col-lg-4"></div>
                     <div class="col-lg-4">
-                        <button class="btn btn-warning btn-block" data-toggle="modal" data-target="#loginModal" data-dismiss="modal">
+                        <button class="btn btn-warning btn-block" onclick="one()">
                             <i class="fa fa-user-circle-o"></i> Login
                         </button>
                     </div>
