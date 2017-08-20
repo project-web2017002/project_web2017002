@@ -57,6 +57,9 @@ if($page == '' || $page == 1){
         </div>
         <?php
     } else {
+        $nextquery = mysqli_query($con,"select MAX(cost) from listed_products");
+        $vann = mysqli_fetch_array($nextquery);
+        $ostc = $vann[0];
         ?>
         <div class="row">
             <div class="col-xs-12" style="text-align: center; text-transform: capitalize; color: #e40046;">
@@ -72,6 +75,45 @@ if($page == '' || $page == 1){
                 <i class="fa fa-th-list btn btn-default atn" style="cursor: pointer" href="#test8" data-toggle="tab"></i>
             </div>
         </div>
+        <div class="row">
+        <div class="col-md-3 col-sm-12">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <input type="text" class="form-control" name="srchitem" id="srchitem" placeholder="Name Contains"/>
+                        <div class="btn btn-primary btn-block">Search</div>
+                    </div>
+                </div><hr><br>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <p>
+                            <input type="hidden" id="pi" value="<?php echo $ostc; ?>"/>
+                            <label for="price">Price range:</label>
+                            <input type="text" id="price" style="border:0; color:#b9cd6d; font-weight:bold;"/>
+                        </p>
+                        <div id="slider"></div>
+                    </div>
+                    <script>
+                        $(function() {
+                            var mm = $('#pi').val();
+                            $("#slider").slider({
+                                range:true,
+                                min: 0,
+                                max: mm,
+                                step: 500,
+                                values: [ 0, mm ],
+                                slide: function( event, ui ) {
+                                    $("#price").val( "Rs." + ui.values[ 0 ] + " - Rs." + ui.values[ 1 ] );
+                                }
+                            });
+                            $("#price").val("Rs." + $("#slider").slider("values", 0) +
+                                " - Rs." + $("#slider").slider("values", 1));
+                        });
+                    </script>
+                </div><hr><br>
+            </div>
+        </div>
+        <div class="col-md-9 col-sm-12">
         <div class="container tab-content">
             <div class="row tab-pane fade in active" style="text-align: -webkit-center; text-transform: capitalize" id="test7">
                 <?php
@@ -316,6 +358,8 @@ if($page == '' || $page == 1){
                 }
                 ?>
             </div>
+        </div>
+        </div>
         </div>
         <?php
         if($total > 0) {

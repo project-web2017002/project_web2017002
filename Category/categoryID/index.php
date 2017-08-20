@@ -20,6 +20,7 @@ error_reporting(0);
             <h3>Showing Results In: <strong><?php echo $categoryname; ?></strong></h3>
         </div>
     </div>
+
     <?php
     if ($count <= 0) { ?>
         <div class="container well" style="text-align: -webkit-center">
@@ -30,6 +31,9 @@ error_reporting(0);
         $count2 = mysqli_num_rows($files2);
         $pages = ceil($count2/6);
         if($count2 > 0) {
+            $nextquery = mysqli_query($con,"select MAX(cost) from listed_products");
+            $vann = mysqli_fetch_array($nextquery);
+            $ostc = $vann[0];
             ?>
             <div class="container row" style="text-align: center">
                 <div class="col-md-8 col-sm-12">
@@ -77,6 +81,45 @@ error_reporting(0);
             <?php
         }
             ?>
+        <div class="row">
+            <div class="col-md-3 col-sm-12">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <input type="text" class="form-control" name="srchitem" id="srchitem" placeholder="Name Contains"/>
+                            <div class="btn btn-primary btn-block">Search</div>
+                        </div>
+                    </div><hr><br>
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <p>
+                                <input type="hidden" id="pi" value="<?php echo $ostc; ?>"/>
+                                <label for="price">Price range:</label>
+                                <input type="text" id="price" style="border:0; color:#b9cd6d; font-weight:bold;"/>
+                            </p>
+                            <div id="slider"></div>
+                        </div>
+                        <script>
+                            $(function() {
+                                var mm = $('#pi').val();
+                                $("#slider").slider({
+                                    range:true,
+                                    min: 0,
+                                    max: mm,
+                                    step: 500,
+                                    values: [ 0, mm ],
+                                    slide: function( event, ui ) {
+                                        $("#price").val( "Rs." + ui.values[ 0 ] + " - Rs." + ui.values[ 1 ] );
+                                    }
+                                });
+                                $("#price").val("Rs." + $("#slider").slider("values", 0) +
+                                    " - Rs." + $("#slider").slider("values", 1));
+                            });
+                        </script>
+                    </div><hr><br>
+                </div>
+            </div>
+            <div class="col-md-9 col-sm-12">
         <div class="container tab-content">
             <div class="row tab-pane fade in active" id="test3" style="text-align: -webkit-center; text-transform: capitalize">
                 <?php
@@ -174,7 +217,7 @@ error_reporting(0);
                                 $date1[5] = substr($date1[5],0,2);
                                 $dval = $date1[0]."-".$date1[1]."-".$date1[2]." ".$date1[3].":".$date1[4].":".$date1[5];
                                 ?>
-                                <div class="col-lg-3 col-md-6 col-sm-12"
+                                <div class="col-lg-4 col-md-6 col-sm-12"
                                      style="float: left; height:450px; padding: 10px" id="tes2">
                                     <div class="row" style="cursor: pointer"
                                          onclick="ViewProduct(<?php echo $this_pro_id; ?>);">
@@ -329,6 +372,8 @@ error_reporting(0);
                     }
                 }
                 ?>
+            </div>
+        </div>
             </div>
         </div>
         <?php
