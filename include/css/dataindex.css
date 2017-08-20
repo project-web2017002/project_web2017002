@@ -13,9 +13,16 @@
     margin: 15px;
 }
 #CategoryMenu{
+    width: 90%;
+    margin: 10px 5%;
+}
+#CategoryMenu2{
     display: none;
     width: 90%;
     margin: 10px 5%;
+}
+#ooo{
+    display: none;
 }
 
 .mainBar-fluid{

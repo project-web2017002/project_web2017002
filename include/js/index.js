@@ -42,7 +42,14 @@ $(function(){
     $("#mainWindow").fadeIn(1500);
 
     $('#oo').click(function(){
-        $('#CategoryMenu').slideToggle();
+        $('#CategoryMenu2').slideDown();
+        $('#oo').hide();
+        $('#ooo').show();
+    });
+    $('#ooo').click(function(){
+        $('#CategoryMenu2').slideUp();
+        $('#ooo').hide();
+        $('#oo').show();
     });
 });
 

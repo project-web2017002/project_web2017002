@@ -1,5 +1,5 @@
 <?php if($city == '') {?>
-    <a class="dropdown-toggle" data-toggle="dropdown" id="cityvalue" href="#">Select City
+    <a class="dropdown-toggle" data-toggle="dropdown" id="cityvalue" href="#">Top Cities
         <span class="glyphicon glyphicon-chevron-down"></span>
     </a>
 <?php } else { ?>
