@@ -1,6 +1,31 @@
 # project_web2017002
 Web Project
 ==============================================
+19-9-2017
+
+* now location info will be directly added while posting ad
+* some code written for search bar
+
+18-8-2017
+
+* change view options are removed from unexpected locations
+* code changes made in showing city name automatically while posting ad
+
+17-8-2017
+
+* bugs fixed
+
+16-8-2017
+
+* more UI fixes and changes made
+* db errors fixed
+* js fixed in admin
+
+15-8-2017
+
+* UI changes made
+* bugs fixed
+
 14-8-2017
 
 * change view option added in all possible filters
