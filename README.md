@@ -1,6 +1,17 @@
 # project_web2017002
 Web Project
 ==============================================
+22-9-2017
+
+* trending ad bar is now changed (new UI)
+* js added
+* css changed and added
+* extra code excluded
+
+21-9-2017
+
+* worked on fixing errors occured in recent changes
+
 19-9-2017
 
 * now location info will be directly added while posting ad
