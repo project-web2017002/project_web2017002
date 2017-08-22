@@ -70,9 +70,25 @@ $featuredcount = mysqli_num_rows($checkfeatured);
                     ?>
                     <div class="text-primary" style="text-align: center; text-transform: capitalize"><h3>Featured Products</h3></div>
                     <div class="container padmar">
-                        <?php
-                        include("Category/FeaturedProduct/index.php");
-                        ?>
+                        <div class="row">
+                            <div id="featCarousel" class="carousel slide" data-ride="carousel" data-interval="3000">
+                                <div class="col-md-1 col-sm-12" style="text-align: -webkit-center; margin:10% 0;">
+                                    <a href="#featCarousel" role="button" data-slide="prev">
+                                        <img src="include/media/images/arrow_left.png" class="img-responsive"/>
+                                    </a>
+                                </div>
+                                <div class="col-md-10 col-sm-12">
+                                    <?php
+                                    include("Category/FeaturedProduct/index.php");
+                                    ?>
+                                </div>
+                                <div class="col-md-1 col-sm-12" style="text-align: -webkit-center; margin:10% 0;">
+                                    <a href="#featCarousel" role="button" data-slide="next">
+                                        <img src="include/media/images/arrow_right.png" class="img-responsive"/>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                     <?php
                 }
