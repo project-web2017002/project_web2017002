@@ -1,7 +1,7 @@
 # project_web2017002
 Web Project
 ==============================================
-23-9-2017
+23-8-2017
 
 * images are now displayed in admin bar view featured product option
 * database structures updated
@@ -10,18 +10,18 @@ Web Project
 * css/js updated
 * more carousels
 
-22-9-2017
+22-8-2017
 
 * trending ad bar is now changed (new UI)
 * js added
 * css changed and added
 * extra code excluded
 
-21-9-2017
+21-8-2017
 
 * worked on fixing errors occured in recent changes
 
-19-9-2017
+19-8-2017
 
 * now location info will be directly added while posting ad
 * some code written for search bar
