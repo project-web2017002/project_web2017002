@@ -8,6 +8,7 @@ if($aid == ''){
 else{
     $filename = $_GET['file'];
     $category = $_GET['categoryId'];
+    $prid = $_GET['secret'];
     if($filename != ''){
         $file = glob("../../../Category/categoryID/".$category."/".$filename.".csv");
         $count = count($file);
@@ -21,13 +22,21 @@ else{
                 $response ="Product is already Featured";
                 echo $response;
             }else{
-                $insert = mysqli_query($con,"insert into featpro (byAdmin,file) values ($aid, '$filename')");
-                if($insert){
-                    copy("../../../Category/categoryID/".$category."/".$filename.".csv","../../../Category/FeaturedProduct/".$filename.".csv");
-                    $response = "Product Featured Successfully";
-                    echo $response;
+                $sel_pr_id = mysqli_query($con,"select * from listed_products where pro_description_file='$prid'");
+                if($sel_pr_id) {
+                    $fet_id = mysqli_fetch_array($sel_pr_id);
+                    $id = $fet_id[0];
+                    $insert = mysqli_query($con, "insert into featpro (byAdmin,file,prod_id) values ($aid, '$filename',$id)");
+                    if ($insert) {
+                        copy("../../../Category/categoryID/" . $category . "/" . $filename . ".csv", "../../../Category/FeaturedProduct/" . $filename . ".csv");
+                        $response = "Product Featured Successfully";
+                        echo $response;
+                    } else {
+                        $response = "Problem While Featuring Product";
+                        echo $response;
+                    }
                 }else{
-                    $response = "Problem While Featuring Product";
+                    $response = "Product not available on Website";
                     echo $response;
                 }
             }

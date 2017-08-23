@@ -12,7 +12,7 @@ if($aid == ''){
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Remove Featured Product</title>
+    <title>View Featured Product | Admin | Optimus</title>
     <?php
     require("../../../include/imp/Allcss.php");
     require("../../../include/imp/topjs.php");
@@ -50,7 +50,10 @@ if($aid == ''){
                                     continue;
                                 } else {
                                     $row = 0;
-                                    $image = $fetchdata[3];
+                                    $image_prod = $fetchdata[3];
+                                    $query_image = mysqli_query($con,"select ref_img from listed_products where product_id=$image_prod");
+                                    $fetch_image_arr = mysqli_fetch_array($query_image);
+                                    $image = $fetch_image_arr[0];
                                     $field = implode(",", $data);
                                     $row_arr = explode(",",$field);
                                     $category = $row_arr[0];
@@ -76,7 +79,6 @@ if($aid == ''){
                                     elseif ($category == 10004){
                                         $title = $row_arr[3];
                                         $da_te_ti_me = $row_arr[14];
-                                        $adver_type = $row_arr[13];
                                         $date=substr($da_te_ti_me,0,-11);
                                         $time = substr($da_te_ti_me,11);
                                     }
@@ -117,14 +119,14 @@ if($aid == ''){
                                     <div class="col-lg-4 col-md-6 col-sm-12" style="float: left; height:450px;">
                                         <div class="row">
                                             <?php
-                                            if($image == '') {
+                                            if($image == "") {
                                                 ?>
-                                                <img class="img-responsive img-thumbnail img-rounded"
-                                                     src="../../../../include/media/images/no-image-available.jpg">
+                                                <input type="hidden" value="<?php echo $image ?>">
+                                                <img class="img-responsive img-thumbnail img-rounded" src="../../../../include/media/images/no-image-available.jpg"/>
                                                 <?php
                                             }else{
                                                 ?>
-                                                <img class="img-responsive img-thumbnail img-rounded" src="../../../../Category/images/<?php echo $image ?>">
+                                                <img class="img-responsive img-thumbnail img-rounded" src="../../../../Category/images/<?php echo $image ?>"/>
                                                 <?php
                                             }
                                             ?>

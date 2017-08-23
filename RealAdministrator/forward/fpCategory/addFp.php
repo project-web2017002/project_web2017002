@@ -44,6 +44,8 @@ if($category == ''){
                 echo "<script>alert('No products in this Category to Add into Featured Products');window.location.assign('../../');</script>";
             }else{
                 foreach ($files as $file){
+                    $naa = substr($file,8);
+                    $na = "//localhost/optimus".$naa;
                     if(($handle = fopen($file,"r")) !== false){
                         while (($data = fgetcsv($handle, 4096, ",")) !== FALSE) {
                             $row++;
@@ -129,7 +131,7 @@ if($category == ''){
                                     <?php
                                     if($adver_type != 'Free') {
                                         ?>
-                                        <td id="<?php echo $da_te_ti_me . "-" . $us_er_id ?>" class="text-success" style="cursor: pointer;" onclick="addNow(this.id,'<?php echo $category ?>');">Add this To featured</td>
+                                        <td id="<?php echo $da_te_ti_me . "-" . $us_er_id ?>" class="text-success" style="cursor: pointer;" onclick="addNow(this.id,'<?php echo $category ?>','<?php echo $na ?>');">Add this To featured</td>
                                         <?php
                                     }
                                     ?>

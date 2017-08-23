@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 20, 2017 at 08:03 PM
+-- Generation Time: Aug 23, 2017 at 10:30 PM
 -- Server version: 5.7.14
 -- PHP Version: 5.6.25
 
@@ -49,16 +49,19 @@ INSERT INTO `admin_status` (`num`, `admin_id`, `status`) VALUES
 CREATE TABLE `featpro` (
   `num` int(11) NOT NULL,
   `byAdmin` int(11) NOT NULL,
-  `file` varchar(200) NOT NULL
+  `file` varchar(200) NOT NULL,
+  `prod_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `featpro`
 --
 
-INSERT INTO `featpro` (`num`, `byAdmin`, `file`) VALUES
-(2, 1, '2017-07-18-06-16-27am-1'),
-(3, 1, '2017-07-19-12-34-34pm-1');
+INSERT INTO `featpro` (`num`, `byAdmin`, `file`, `prod_id`) VALUES
+(2, 1, '2017-07-18-06-16-27am-1', 2),
+(4, 1, '2017-07-19-10-34-34am-1', 3),
+(5, 1, '2017-07-19-10-39-56am-1', 4),
+(6, 1, '2017-07-19-12-34-34pm-1', 9);
 
 -- --------------------------------------------------------
 
@@ -289,7 +292,8 @@ ALTER TABLE `admin_status`
 --
 ALTER TABLE `featpro`
   ADD PRIMARY KEY (`num`),
-  ADD KEY `byAdmin` (`byAdmin`);
+  ADD KEY `byAdmin` (`byAdmin`),
+  ADD KEY `prod_id` (`prod_id`);
 
 --
 -- Indexes for table `listed_products`
@@ -373,7 +377,7 @@ ALTER TABLE `admin_status`
 -- AUTO_INCREMENT for table `featpro`
 --
 ALTER TABLE `featpro`
-  MODIFY `num` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `num` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 --
 -- AUTO_INCREMENT for table `listed_products`
 --
@@ -438,7 +442,8 @@ ALTER TABLE `admin_status`
 -- Constraints for table `featpro`
 --
 ALTER TABLE `featpro`
-  ADD CONSTRAINT `featpro_ibfk_1` FOREIGN KEY (`byAdmin`) REFERENCES `realadmin` (`admin_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `featpro_ibfk_1` FOREIGN KEY (`byAdmin`) REFERENCES `realadmin` (`admin_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `featpro_ibfk_2` FOREIGN KEY (`prod_id`) REFERENCES `listed_products` (`product_id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `orders`

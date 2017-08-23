@@ -38,14 +38,14 @@ $(function(){
 
 });
 
-function addNow(file,category){
+function addNow(file,category,pr_id){
     var xmlhttp = new XMLHttpRequest();
     xmlhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
             document.getElementById("message").innerHTML = this.responseText;
         }
     };
-    xmlhttp.open("GET", "send.php?file=" + file + "&categoryId="+ category, true);
+    xmlhttp.open("GET", "send.php?file=" + file + "&categoryId="+ category + "&secret=" + pr_id, true);
     xmlhttp.send();
 }
 
