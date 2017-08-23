@@ -1,6 +1,15 @@
 # project_web2017002
 Web Project
 ==============================================
+23-9-2017
+
+* images are now displayed in admin bar view featured product option
+* database structures updated
+* view product UI edited in user areas
+* several small/unspecified UI changes made
+* css/js updated
+* more carousels
+
 22-9-2017
 
 * trending ad bar is now changed (new UI)
