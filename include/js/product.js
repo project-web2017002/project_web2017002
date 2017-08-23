@@ -18,7 +18,6 @@ $(function(){
             window.location.assign("../../payment_gateway/"+data);
         }
     });
-
 });
 
 function addtocart() {
@@ -47,7 +46,7 @@ function addtocart() {
 function ViewProduct(pr_id) {
     $("body").addClass("modal-open");
     document.body.style.paddingRight = "17px";
-    $("#viewProduct").slideToggle('slow');
+    $("#viewProduct").show('slow');
     var data = "skey=" + pr_id;
     $.ajax({
         type: "POST",
@@ -56,7 +55,7 @@ function ViewProduct(pr_id) {
         success: function (data) {
             var arr = data.split(",");
             if (arr[0] == 'success') {
-                $("#viewproductTitle").html(arr[1]); $("#img-tab").html(arr[2]);
+                $(".viewproductTitle").html(arr[1]);
                 $("#_prc").html(arr[7]); $("#cost").html(arr[3]);
                 $("#by").html(arr[4]); $("#em").html(arr[5]); $("#co").html(arr[6]);
                 $("#_jkpr").html(pr_id);
