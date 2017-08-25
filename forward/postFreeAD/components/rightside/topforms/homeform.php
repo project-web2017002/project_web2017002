@@ -93,6 +93,10 @@
                     <?php require("components/rightside/elements/useremail.php"); ?>
                 </tr>
 
+                <tr class="hidden">
+                    <?php require("components/rightside/elements/postcity.php"); ?>
+                </tr>
+
                 <tr>
                     <?php require("components/rightside/elements/usercontact.php"); ?>
                     <td>
@@ -107,7 +111,6 @@
                             <span class="input-group-addon"><i class="fa fa-institution"></i></span>
                             <input type="text" name="company-name" id="company-name" placeholder="Enter Company Name" class="form-control">
                         </div>
-                        <?php require("components/rightside/elements/postcity.php"); ?>
                     </td>
 
                     <td>

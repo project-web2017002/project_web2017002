@@ -56,17 +56,30 @@ if($id != "" || $googleid != '' || $fbid != '') {
                     <div class="col-md-1 col-sm-12">
                         <!--empty-->
                     </div>
-
-                    <div class="col-md-2 col-sm-12">
-                        <?php
-                        require("components/leftindex.php");
+                    <?php
+                    if($ctid == '') {
                         ?>
-                    </div>
-                    <div class="col-md-8 col-sm-12">
+                        <div class="col-md-2 col-sm-12">
+                            <?php
+                            require("components/leftindex.php");
+                            ?>
+                        </div>
+                        <div class="col-md-8 col-sm-12">
+                            <?php
+                            require("components/rightindex.php");
+                            ?>
+                        </div>
                         <?php
-                        require("components/rightindex.php");
+                    }else{
                         ?>
-                    </div>
+                        <div class="col-md-10 col-sm-12">
+                            <?php
+                            require("components/rightindex.php");
+                            ?>
+                        </div>
+                        <?php
+                    }
+                        ?>
 
                     <div class="col-md-1 col-sm-12">
                         <!--empty-->

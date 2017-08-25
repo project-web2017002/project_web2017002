@@ -1,5 +1,8 @@
 <td>
-    <input type="text" class="form-control" name="pocity" id="pocity" placeholder="Enter Location(City)" disabled>
+    <div class="input-group">
+        <span class="input-group-addon"><i class="fa fa-map-marker"></i></span>
+        <input type="text" class="form-control" name="pocity" id="pocity" placeholder="Enter Location(City)" disabled>
+    </div>
 </td>
 <div id="map" style="display:none"></div>
 <script>

@@ -19,28 +19,53 @@ $featuredcount = mysqli_num_rows($checkfeatured);
     ?>
 
     <div class="row dataindex-main">
-        <div class="container">
-            <div class="row" id="CategoryMenu">
-                <?php
-                require("include/media/categories.php");
-                ?>
-            </div>
-            <div class="row" id="CategoryMenu2">
-                <?php
-                require("include/media/morecats.php");
-                ?>
-            </div>
-            <div class="row" id="oo" style="cursor: pointer">
+            <div class="container" id="nooo" style="cursor: pointer; display: none">
                 <div class="col-md-4 col-sm-12"></div>
-                <div class="col-md-4 col-sm-12" style="text-align: center; padding: 5px 10px">More Categories &bigtriangledown;</div>
+                <div class="col-md-4 col-sm-12" style="text-align: center; padding: 5px 10px">Show Categories
+                    &bigtriangledown;
+                </div>
                 <div class="col-md-4 col-sm-12"></div>
             </div>
-            <div class="row" id="ooo" style="cursor: pointer">
-                <div class="col-md-4 col-sm-12"></div>
-                <div class="col-md-4 col-sm-12" style="text-align: center; padding: 5px 10px">Less Categories &bigtriangleup;</div>
-                <div class="col-md-4 col-sm-12"></div>
+        <div class="container" id="mainnooo" style="cursor: pointer; display: none">
+            <div class="col-md-4 col-sm-12"></div>
+            <div class="col-md-4 col-sm-12" style="text-align: center; padding: 5px 10px">Hide Categories
+                &bigtriangleup;
             </div>
+            <div class="col-md-4 col-sm-12"></div>
         </div>
+            <div class="container" id="mainoo" style="display: none">
+                <div class="row" id="CategoryMenu">
+                    <?php
+                    require("include/media/categories.php");
+                    ?>
+                </div>
+                <div class="row" id="CategoryMenu2">
+                    <?php
+                    require("include/media/morecats.php");
+                    ?>
+                </div>
+                <div class="row" id="oo" style="cursor: pointer">
+                    <div class="col-md-4 col-sm-12"></div>
+                    <div class="col-md-4 col-sm-12" style="text-align: center; padding: 5px 10px">More Categories
+                        &bigtriangledown;
+                    </div>
+                    <div class="col-md-4 col-sm-12"></div>
+                </div>
+                <div class="row" id="ooo" style="cursor: pointer">
+                    <div class="col-md-4 col-sm-12"></div>
+                    <div class="col-md-4 col-sm-12" style="text-align: center; padding: 5px 10px">Less Categories
+                        &bigtriangleup;
+                    </div>
+                    <div class="col-md-4 col-sm-12"></div>
+                </div>
+            </div>
+        <?php
+        if($categoryid != '' || $city != '') {
+            echo "<script>$('#nooo').show();</script>";
+        } else {
+            echo "<script>$('#mainoo').show();</script>";
+        }
+        ?>
     </div>
 
     <?php
