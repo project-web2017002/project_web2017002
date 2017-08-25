@@ -41,6 +41,17 @@ $(function(){
     $('body').fadeIn(1500);
     $("#mainWindow").fadeIn(1500);
 
+    $('#nooo').click(function () {
+        $('#nooo').hide();
+        $('#mainnooo').show();
+        $('#mainoo').slideDown();
+    });
+    $('#mainnooo').click(function () {
+        $('#mainnooo').hide();
+        $('#nooo').show();
+        $('#mainoo').slideUp();
+    });
+
     $('#oo').click(function(){
         $('#CategoryMenu2').slideDown();
         $('#oo').hide();

@@ -45,7 +45,7 @@
     background-color: rgba(0,0,0,0.6);
 }
 .viewProductHeader{
-    color: black;
+    color: red;
     text-align: right;
     font-size: larger;
     cursor: pointer;
@@ -58,7 +58,15 @@
 #img-tab{
     text-align: -webkit-center;
 }
-.viewproductTitle{
+#viewproductTitle{
     font-size: larger;
     font-weight: 700;
+    text-align: center;
+}
+.safetips{
+    background:rgba(133,184,246,0.44);
+    border:2px solid black;
+    margin: 20px 0;
+    line-height: 30px;
+    font-size: medium;
 }

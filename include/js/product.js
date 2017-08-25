@@ -55,10 +55,12 @@ function ViewProduct(pr_id) {
         success: function (data) {
             var arr = data.split(",");
             if (arr[0] == 'success') {
-                $(".viewproductTitle").html(arr[1]);
+                $("#viewproductTitle").html(arr[1]); $("#img-tab").html(arr[11]);
+                $(".item.active.imm").html(arr[2]);
                 $("#_prc").html(arr[7]); $("#cost").html(arr[3]);
                 $("#by").html(arr[4]); $("#em").html(arr[5]); $("#co").html(arr[6]);
-                $("#_jkpr").html(pr_id);
+                $("#_jkpr").html(pr_id); $("#_lc").html(arr[8]); $("#_ad").html(arr[9]);
+                $("#pituresofproduct").html(arr[10]);
             } else { $(".errorViewProduct").html(arr[0]); }
         },
         error: function () { $("#viewProduct").hide(); }
