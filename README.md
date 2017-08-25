@@ -1,6 +1,22 @@
 # project_web2017002
 Web Project
 ==============================================
+25-8-2017
+
+* google/fb users are now able to post an advertisement
+* dummy data added for css fix
+* after selecting a category in post ad category, option to change category is now hidden
+* several UI changes made
+* js modified for displaying data to user
+* several bugs fixed
+
+24-8-2017
+
+* UI changed for view product info for user view
+* several UI changes
+* js changed for data passing
+* several bugs fixed
+
 23-8-2017
 
 * images are now displayed in admin bar view featured product option
