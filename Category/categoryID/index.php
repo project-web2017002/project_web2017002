@@ -31,7 +31,7 @@ error_reporting(0);
         $count2 = mysqli_num_rows($files2);
         $pages = ceil($count2/6);
         if($count2 > 0) {
-            $nextquery = mysqli_query($con,"select MAX(cost) from listed_products");
+            $nextquery = mysqli_query($con,"select MAX(cost) from listed_products where pro_description_file like '%$cateory%'");
             $vann = mysqli_fetch_array($nextquery);
             $ostc = $vann[0];
             ?>
@@ -145,7 +145,7 @@ error_reporting(0);
                                     $use_r_name = $row_arr[6];
                                     $da_te = $row_arr[14];
                                 } elseif ($category == 10002 || $category == 10012) {
-                                    $title = "Home for " . $row_arr[2];
+                                    $title = $row_arr[3]." for " . $row_arr[2];
                                     $cost = $row_arr[7];
                                     $use_r_name = $row_arr[8];
                                     $da_te = $row_arr[17];

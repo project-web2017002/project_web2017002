@@ -1,2 +1,2 @@
-"Category ID","User ID","Service Type","Service Fees","Service Name",City,"User Name","User Email","User Contact","User Type","Company Name","Company Email","Company Contact","Advertisement Type",Date
-10001,1,"Home Services",1600,"Want to get my AC repaired",Bangalore,Akash,ak@gmail.com,8976541230,Individual,,,,Free,2017-07-17-01-13-11pm
+"Category ID","User ID","Service Type","Service Fees","Service Name",City,"User Name","User Email","User Contact","User Type","Company Name","Company Email","Company Contact","Advertisement Type",Date,UserType
+10001,1,"Home Services",1600,"Want to get my AC repaired",Bangalore,Akash,ak@gmail.com,8976541230,Individual,,,,Free,2017-07-17-01-13-11pm,Our

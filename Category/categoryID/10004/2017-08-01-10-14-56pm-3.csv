@@ -1,2 +1,2 @@
-"Category ID","User ID","Car Category Type","Car Brand","Car Cost","Car Registration Year",City,"User Name","User Email","User Contact","User Type","Car Kms Driven","Car Description","Advertisement Type",Date
-10004,3,"Sell A Car",Renault,1100000,2017,Bangalore,Akash,akashverma141997@gmail.com,7896541230,Single,9000,"New Renault Duster only 9000kms driven",Diamond,2017-08-01-10-14-56pm
+"Category ID","User ID","Car Category Type","Car Brand","Car Cost","Car Registration Year",City,"User Name","User Email","User Contact","User Type","Car Kms Driven","Car Description","Advertisement Type",Date,UserType
+10004,3,"Sell A Car",Renault,1100000,2017,Bangalore,Akash,akashverma141997@gmail.com,7896541230,Single,9000,"New Renault Duster only 9000kms driven",Diamond,2017-08-01-10-14-56pm,Our

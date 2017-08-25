@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 23, 2017 at 10:30 PM
+-- Generation Time: Aug 25, 2017 at 08:01 PM
 -- Server version: 5.7.14
 -- PHP Version: 5.6.25
 
@@ -89,7 +89,8 @@ INSERT INTO `listed_products` (`product_id`, `product_title`, `pro_description_f
 (5, 'Iphone 7 to sell', '//localhost/optimus/Category/categoryId/10007/2017-07-19-11-44-35am-1.csv', NULL, 35000),
 (9, 'Want an iPhone 7 jet Black', '//localhost/optimus/Category/categoryId/10007/2017-07-19-12-34-34pm-1.csv', '1500471990_iphone7-jetblack-select-2016.png', 32000),
 (10, 'Spa services', '//localhost/optimus/Category/categoryId/10001/2017-07-28-05-28-57pm-1.csv', NULL, 3000),
-(14, 'Sell A Car Renault', '//localhost/optimus/Category/categoryId/10004/2017-08-01-10-14-56pm-3.csv', '1501606280_Renault.jpg', 1100000);
+(14, 'Sell A Car Renault', '//localhost/optimus/Category/categoryId/10004/2017-08-01-10-14-56pm-3.csv', '1501606280_Renault.jpg', 1100000),
+(16, 'Sell', '//localhost/optimus/Category/categoryId/10002/2017-08-25-07-04-00pm-11.csv', '1503668106_download.jpg', 600000);
 
 -- --------------------------------------------------------
 
@@ -250,7 +251,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `oauth_provider`, `oauth_uid`, `first_name`, `last_name`, `email`, `gender`, `locale`, `picture`, `link`, `created`, `modified`, `contact`) VALUES
-(11, 'google', '116269446106411150871', 'optimustechproject', 'web201702', 'optimustechprojectweb201702@gmail.com', '', 'en', 'https://lh3.googleusercontent.com/-XdUIqdMkCWA/AAAAAAAAAAI/AAAAAAAAAAA/4252rscbv5M/photo.jpg', '', '2017-07-30 19:25:56', '2017-08-17 20:33:31', '7896541230'),
+(11, 'google', '116269446106411150871', 'optimustechproject', 'web201702', 'optimustechprojectweb201702@gmail.com', '', 'en', 'https://lh3.googleusercontent.com/-XdUIqdMkCWA/AAAAAAAAAAI/AAAAAAAAAAA/4252rscbv5M/photo.jpg', '', '2017-07-30 19:25:56', '2017-08-25 18:40:22', '7896541230'),
 (14, 'facebook', '123243221630366', 'Srinivas', 'Shikhar', 'optimustechprojectweb201702@gmail.com', 'male', 'en_GB', 'https://scontent.xx.fbcdn.net/v/t1.0-1/c15.0.50.50/p50x50/10354686_10150004552801856_220367501106153455_n.jpg?oh=b0e4037a0b04d52224a51836c84c322d&oe=59FEA22F', 'https://www.facebook.com/app_scoped_user_id/123243221630366/', '2017-07-31 21:56:37', '2017-07-31 22:16:16', '7896541230');
 
 -- --------------------------------------------------------
@@ -382,7 +383,7 @@ ALTER TABLE `featpro`
 -- AUTO_INCREMENT for table `listed_products`
 --
 ALTER TABLE `listed_products`
-  MODIFY `product_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `product_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 --
 -- AUTO_INCREMENT for table `orders`
 --

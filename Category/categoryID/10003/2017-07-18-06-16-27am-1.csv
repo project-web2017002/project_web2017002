@@ -1,2 +1,2 @@
-"Category ID","User ID","Job Title","Job Type","Job Role","Min Salary","Max Salary","Company Name","Company Email",City,"Job Experience","Recruiter Contact","Job Description","Advertisement Type",Date
-10003,1,"Work from Home for Housewifes","Work From Home","Typing Assistant",3000,12000,Local,local@firmware.com,Chandigarh,0,8746631099,"Easy Typing Work",Premium,2017-07-18-06-16-27am
+"Category ID","User ID","Job Title","Job Type","Job Role","Min Salary","Max Salary","Company Name","Company Email",City,"Job Experience","Recruiter Contact","Job Description","Advertisement Type",Date,UserType
+10003,1,"Work from Home for Housewifes","Work From Home","Typing Assistant",3000,12000,Local,local@firmware.com,Chandigarh,0,8746631099,"Easy Typing Work",Premium,2017-07-18-06-16-27am,Our

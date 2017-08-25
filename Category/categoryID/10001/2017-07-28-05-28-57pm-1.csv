@@ -1,2 +1,2 @@
-"Category ID","User ID","Service Type","Service Fees","Service Name",City,"User Name","User Email","User Contact","User Type","Company Name","Company Email","Company Contact","Advertisement Type",Date
-10001,1,"Beauty Services",3000,"Spa services",Mumbai,Dummy,dumy@gmail.com,9563214580,Individual,,,,Free,2017-07-28-05-28-57pm
+"Category ID","User ID","Service Type","Service Fees","Service Name",City,"User Name","User Email","User Contact","User Type","Company Name","Company Email","Company Contact","Advertisement Type",Date,UserType
+10001,1,"Beauty Services",3000,"Spa services",Mumbai,Dummy,dumy@gmail.com,9563214580,Individual,,,,Free,2017-07-28-05-28-57pm,Our
