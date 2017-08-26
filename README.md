@@ -1,6 +1,11 @@
 # project_web2017002
 Web Project
 ==============================================
+26-8-2017
+
+* Search bar is now working
+* bugs fixed
+
 25-8-2017
 
 * google/fb users are now able to post an advertisement
