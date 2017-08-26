@@ -1,15 +1,23 @@
-<div id="searchModal" class="modal fade" role="dialog">
-    <div class="modal-dialog">
-        <!-- Modal content-->
-        <div class="modal-content">
-            <div class="modal-body">
-                <span class="glyphicon glyphicon-repeat"></span> Currently for reference only<br><br>
-                <span class="glyphicon glyphicon-repeat"></span> Dell Vostro 3568<br>
-                <span class="glyphicon glyphicon-repeat"></span> Philips Hair Dryer<br>
-                <span class="glyphicon glyphicon-repeat"></span> Digital Camera<br>
-                <span class="glyphicon glyphicon-repeat"></span> iPhone7 plus<br>
-            </div>
-        </div>
+<?php
+require('../../essential/db/db.php');
+require('../../essential/ses/session.php');
 
-    </div>
-</div>
+$searchQuery = mysqli_query($con,"Select * from listed_products where product_title like '%".$_POST['getdtaa']."%'");
+$nums = mysqli_num_rows($searchQuery);//total results searched
+$list = '<div class="container">';
+$list .= '<div class="row"><div class="col-xs-12"><ul style="list-style: none; margin:0 -20px; padding:5px;">';
+$count = 0;
+while($fetch = mysqli_fetch_array($searchQuery)){
+    $count++;
+    if($count <= 5)
+        $list .= '<li class="seritem" id="_'.$fetch[0].'">'.$fetch[1].'</li>';
+    else
+        break;
+}
+$list .= '</ul></div></div>';
+$list .= '<div class="row" style="text-align: center; border-top: 1px solid silver;"><div class="col-xs-6">Total Results: '.$nums.'</div>';
+$list .= '<div class="col-xs-6" style="cursor: pointer"><a title="View All results">View All results&nbsp;&gt;&gt;&gt;</a></div></div>';
+$list .= '</div><script>$(".seritem").click(function(){var ddd = $(this).attr("id"); ddd = ddd.substr(1); ViewProduct(ddd); $("#_srchitem").val(""); $("#serchresult").slideUp();});</script>';
+
+//return data
+echo $list;

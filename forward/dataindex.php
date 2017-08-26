@@ -11,7 +11,7 @@ $featuredcount = mysqli_num_rows($checkfeatured);
         <div class="row extra">
             <div class="positionadbtn" data-toggle="modal" data-target="#postModal"
                  style="text-align: center; margin-top:10%">
-                <a id="btnPostAd" href="#" class="btn btn-warning btn-lg" title="Post Free Ad">Post Free Ad</a>
+                <a id="btnPostAd" class="btn btn-warning btn-lg" title="Post Free Ad">Post Free Ad</a>
             </div>
         </div>
         <?php
