@@ -62,6 +62,53 @@ $(function(){
         $('#ooo').hide();
         $('#oo').show();
     });
+
+    /*$(".seritem").click(function(){
+        $("#_srchitem").val($(this).text());
+        $("#serchresult").slideUp();
+    });*/
+
+    $("#_srchitem").click(function(){
+        var vval = new_ov();
+        if(vval != '')
+            new_data(vval);
+        else
+            new_check();
+    });
+    $("#_srchitem").keyup(function (e) {
+        var vval = new_ov();
+        if(vval != '') {
+            /*if(e.which == 40){
+                e.preventDefault();
+                console.log(e.which);
+            }*/
+            new_data(vval);
+        }
+        else
+            new_check();
+    });
+
+    $("#_srchitem").focusout(function () {
+        $("#serchresult").slideUp();
+    });
+
+    var new_ov = function(){
+        $("#serchresult").slideDown();
+        var vll = $("#_srchitem").val();
+        return vll;
+    };
+
+    var new_data = function(getdtaa){
+        $.post('//localhost/optimus/forward/search/search.php',{getdtaa:getdtaa},function (data) {
+            $("#serchresult").html(data);
+        });
+    };
+
+    var new_check = function(){
+        $("#serchresult").slideDown();
+        var tempdata = "<div class=\"loaderparent\"><div class=\"loader\"></div></div>";
+        $("#serchresult").html(tempdata);
+    };
 });
 
 $(".btn-pref .btn").click(function () {

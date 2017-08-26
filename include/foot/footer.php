@@ -59,7 +59,7 @@
                 <div class="col-md-6 col-sm-12">
                     <div class="row poster">
                         <p>At Quikr, you can buy, sell or rent anything you can think of.
-                            <a id="btnpostAdfoot" href="#" class="btn btn-warning navbar-btn" title="Post Free Ad"
+                            <a id="btnpostAdfoot" class="btn btn-warning navbar-btn" title="Post Free Ad"
                                data-toggle="modal" data-target="#postModal">Post Free Ad</a>
                         </p>
                     </div>

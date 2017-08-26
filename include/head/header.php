@@ -27,14 +27,15 @@ error_reporting(0);
             <div class="collapse navbar-collapse" id="myNavbar">
                 <ul class="nav navbar-nav navbar-right">
                     <li>
-                        <form class="navbar-form adjustedForm">
+                        <form class="navbar-form adjustedForm" autocomplete="off">
                             <div class="input-group">
-                                <input type="text" class="form-control" placeholder="Search Products and brands" required title="Please Enter Your Search">
+                                <input type="text" class="form-control" id="_srchitem" placeholder="Search for Items" required title="Please Enter Your Search">
                                 <div class="input-group-btn">
                                     <button class="btn" type="submit"><span class="glyphicon glyphicon-search"></span></button>
                                 </div>
                             </div>
                         </form>
+                        <div id="serchresult"></div>
                     </li>
                     <li class="dropdown"><?php
                         require("city.php");
@@ -60,7 +61,7 @@ error_reporting(0);
                     if($categoryid != '' || $city != '') {
                         ?>
                         <li class="positionadbtn" data-toggle="modal" data-target="#postModal">
-                            <a id="btnPostAd" href="#" class="btn btn-warning navbar-btn" title="Post Free Ad">Post Free
+                            <a id="btnPostAd" class="btn btn-warning navbar-btn" title="Post Free Ad">Post Free
                                 Ad</a>
                         </li>
                         <?php

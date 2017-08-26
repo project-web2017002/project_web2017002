@@ -200,3 +200,49 @@ span.price{
     opacity: .7;
     filter: alpha(opacity=70);
 }
+
+#serchresult{
+    display: none;
+    background: white;
+    z-index: 99999;
+    width: 400px;
+    height: auto;
+    border:2px solid silver;
+    position: fixed;
+    margin-left:15px;
+    margin-top:-5px;
+}
+@media (max-width: 900px){
+    #serchresult{
+        width: 100%;
+        margin:0;
+    }
+}
+
+.loaderparent {
+    text-align: center;
+    padding: 0 42%;
+}
+.loader {
+    border:10px solid white;
+    border-top: 10px solid blue;
+    border-bottom: 10px solid cadetblue;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+.seritem{
+    text-transform: capitalize;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+.seritem:hover{
+    background: black;
+    color:white;
+}
