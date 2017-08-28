@@ -70,14 +70,14 @@ $(function(){
 
     $("#_srchitem").click(function(){
         var vval = new_ov();
-        if(vval != '')
+        if(vval.length >= 3)
             new_data(vval);
         else
             new_check();
     });
     $("#_srchitem").keyup(function (e) {
         var vval = new_ov();
-        if(vval != '') {
+        if(vval.length >= 3) {
             /*if(e.which == 40){
                 e.preventDefault();
                 console.log(e.which);

@@ -29,7 +29,7 @@ error_reporting(0);
                     <li>
                         <form class="navbar-form adjustedForm" autocomplete="off">
                             <div class="input-group">
-                                <input type="text" class="form-control" id="_srchitem" placeholder="Search for Items" required title="Please Enter Your Search">
+                                <input type="text" class="form-control" id="_srchitem" placeholder="Search for Items(Min. 3 Char.)" pattern=".{3,}" required title="Please Enter Your Search">
                                 <div class="input-group-btn">
                                     <button class="btn" type="submit"><span class="glyphicon glyphicon-search"></span></button>
                                 </div>

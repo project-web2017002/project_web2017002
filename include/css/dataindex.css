@@ -224,9 +224,10 @@ span.price{
     padding: 0 42%;
 }
 .loader {
-    border:10px solid white;
     border-top: 10px solid blue;
-    border-bottom: 10px solid cadetblue;
+    border-right: 10px solid red;
+    border-bottom: 10px solid blue;
+    border-left: 10px solid red;
     border-radius: 50%;
     width: 60px;
     height: 60px;
@@ -246,3 +247,31 @@ span.price{
     background: black;
     color:white;
 }
+@media (min-width:768px) {
+    #_srchitem {
+        width: 130px;
+        -webkit-transition: width 0.2s linear;
+        transition: width 0.2s linear;
+    }
+    #_srchitem:focus {
+        width: 400px;
+    }
+    #_funcid{
+        max-height: 600px;
+        overflow-y: scroll;
+        border:1px solid rgba(73,111,72,0.44);
+        padding: 10px;
+    }
+    #_funcid::-webkit-scrollbar{
+        display: none;
+    }
+}
+@media (max-width:768px) {
+    #_srchitem {
+        width: 100%;
+    }
+    #_srchitem:focus {
+        width: 100%;
+    }
+}
+

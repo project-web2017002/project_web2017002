@@ -51,7 +51,7 @@ function ViewProduct(pr_id) {
     $.ajax({
         type: "POST",
         data: data,
-        url: "forward/OtherFiles/viewProduct/send.php",
+        url: "//localhost/optimus/forward/OtherFiles/viewProduct/send.php",
         success: function (data) {
             var arr = data.split(",");
             if (arr[0] == 'success') {
