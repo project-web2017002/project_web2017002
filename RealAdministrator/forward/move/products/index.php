@@ -16,6 +16,7 @@ if($aid == ''){
     <?php
     require("../../../include/imp/Allcss.php");
     require("../../../include/imp/topjs.php");
+    require("../../ViewProductInfo/index.php");
     ?>
 </head>
 <body>
@@ -37,8 +38,8 @@ if($aid == ''){
             <?php
         }else {
             ?>
-            <div class="container">
-                <div class="row" style="text-align: -webkit-center; text-transform: capitalize">
+            <div class="container-fluid">
+                <div class="row" style="text-align: center; text-transform: capitalize">
                     <?php
                     while ($fetchdata = mysqli_fetch_array($getproducts)) {
                         $filename = substr($fetchdata[2],20);
@@ -49,87 +50,60 @@ if($aid == ''){
                                     continue;
                                 } else {
                                     $row = 0;
+                                    $rp_id = $fetchdata[0];
                                     $image = $fetchdata[3];
                                     $field = implode(",", $data);
                                     $row_arr = explode(",",$field);
                                     $category = $row_arr[0];
                                     $userID = $row_arr[1];
                                     if($category == 10001){
-                                        $title = $row_arr[4];
-                                        $da_te_ti_me = $row_arr[14];
-                                        $date=substr($da_te_ti_me,0,-11);
-                                        $time = substr($da_te_ti_me,11);
+                                        $title = $row_arr[4]; $da_te_ti_me = $row_arr[14]; $date=substr($da_te_ti_me,0,-11); $time = substr($da_te_ti_me,11);
                                     }
                                     elseif ($category == 10002 || $category == 10012){
-                                        $title = $row_arr[2];
-                                        $da_te_ti_me = $row_arr[17];
-                                        $date=substr($da_te_ti_me,0,-11);
-                                        $time = substr($da_te_ti_me,11);
+                                        $title = $row_arr[2]; $da_te_ti_me = $row_arr[17]; $date=substr($da_te_ti_me,0,-11); $time = substr($da_te_ti_me,11);
                                     }
                                     elseif ($category == 10003){
-                                        $title = $row_arr[2];
-                                        $da_te_ti_me = $row_arr[14];
-                                        $date=substr($da_te_ti_me,0,-11);
-                                        $time = substr($da_te_ti_me,11);
+                                        $title = $row_arr[2]; $da_te_ti_me = $row_arr[14]; $date=substr($da_te_ti_me,0,-11); $time = substr($da_te_ti_me,11);
                                     }
                                     elseif ($category == 10004){
-                                        $title = $row_arr[3];
-                                        $da_te_ti_me = $row_arr[14];
-                                        $adver_type = $row_arr[13];
-                                        $date=substr($da_te_ti_me,0,-11);
-                                        $time = substr($da_te_ti_me,11);
+                                        $title = $row_arr[3]; $da_te_ti_me = $row_arr[14]; $adver_type = $row_arr[13]; $date=substr($da_te_ti_me,0,-11); $time = substr($da_te_ti_me,11);
                                     }
                                     elseif ($category == 10005){
-                                        $title = $row_arr[3];
-                                        $da_te_ti_me = $row_arr[14];
-                                        $date=substr($da_te_ti_me,0,-11);
-                                        $time = substr($da_te_ti_me,11);
+                                        $title = $row_arr[3]; $da_te_ti_me = $row_arr[14]; $date=substr($da_te_ti_me,0,-11); $time = substr($da_te_ti_me,11);
                                     }
                                     elseif ($category == 10006){
-                                        $title = $row_arr[4];
-                                        $da_te_ti_me = $row_arr[14];
-                                        $date=substr($da_te_ti_me,0,-11);
-                                        $time = substr($da_te_ti_me,11);
+                                        $title = $row_arr[4]; $da_te_ti_me = $row_arr[14]; $date=substr($da_te_ti_me,0,-11); $time = substr($da_te_ti_me,11);
                                     }
                                     elseif ($category == 10007 || $category == 10016){
-                                        $title = $row_arr[4];
-                                        $da_te_ti_me = $row_arr[18];
-                                        $date=substr($da_te_ti_me,0,-11);
-                                        $time = substr($da_te_ti_me,11);
+                                        $title = $row_arr[4]; $da_te_ti_me = $row_arr[18]; $date=substr($da_te_ti_me,0,-11); $time = substr($da_te_ti_me,11);
                                     }
                                     elseif ($category == 10008 || $category == 10017 || $category == 10010 || $category == 10011 || $category == 10013){
-                                        $title = $row_arr[8];
-                                        $da_te_ti_me = $row_arr[20];
-                                        $date=substr($da_te_ti_me,0,-11);
-                                        $time = substr($da_te_ti_me,11);
+                                        $title = $row_arr[8]; $da_te_ti_me = $row_arr[20]; $date=substr($da_te_ti_me,0,-11); $time = substr($da_te_ti_me,11);
                                     }
                                     elseif ($category == 10009){
-                                        $title = $row_arr[4];
-                                        $da_te_ti_me = $row_arr[18];
-                                        $date=substr($da_te_ti_me,0,-11);
-                                        $time = substr($da_te_ti_me,11);
+                                        $title = $row_arr[4]; $da_te_ti_me = $row_arr[18]; $date=substr($da_te_ti_me,0,-11); $time = substr($da_te_ti_me,11);
                                     }
                                     else{
                                         continue;
                                     }
                                     ?>
-                                    <div class="col-lg-4 col-md-6 col-sm-12" style="float: left; height:450px;">
-                                        <div class="row">
+                                    <div class="col-lg-4 col-md-6 col-sm-12 ppprr">
+                                        <div class="row" onclick="ViewProduct(<?php echo $rp_id ?>)">
                                             <?php
                                             if($image == '') {
                                                 ?>
-                                                <img class="img-responsive img-thumbnail img-rounded"
-                                                     src="../../../../include/media/images/no-image-available.jpg">
+                                                <img class="img-rounded" src="../../../../include/media/images/no-image-available.jpg" width="150">
                                                 <?php
                                             }else{
                                                 ?>
-                                                <img class="img-responsive img-thumbnail img-rounded" src="../../../../Category/images/<?php echo $image ?>">
+                                                <img class="img-rounded" src="../../../../Category/images/<?php echo $image ?>" width="150">
                                                 <?php
                                             }
                                                 ?>
                                         </div>
                                         <div class="row">
-                                            <h3><?php echo $title ?></h3>
+                                            <br>
+                                            <h4><?php echo $title ?></h4>
                                             <h6>posted on: <?php echo $date ?></h6>
                                         </div>
                                     </div>

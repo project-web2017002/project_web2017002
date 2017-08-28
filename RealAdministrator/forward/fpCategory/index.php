@@ -16,6 +16,7 @@ if($aid == ''){
     <?php
     require("../../include/imp/Allcss.php");
     require("../../include/imp/topjs.php");
+    require("../ViewProductInfo/index.php");
     ?>
 </head>
 <body>
@@ -51,7 +52,9 @@ if($aid == ''){
                             continue;
                         } else {
                             $row = 0;
-                            $image = $fetchdata[3];
+                            $image_prod = $fetchdata[3];
+                            $query_image = mysqli_query($con,"select ref_img from listed_products where product_id=$image_prod");
+                            $fetch_image_arr = mysqli_fetch_array($query_image);
                             $field = implode(",", $data);
                             $row_arr = explode(",",$field);
                             $category = $row_arr[0];
@@ -116,7 +119,7 @@ if($aid == ''){
                             }
                             ?>
                             <div class="col-lg-4 col-md-6 col-sm-12" style="float: left; height:450px;">
-                                <div class="row">
+                                <div class="row" onclick="ViewProduct(<?php echo $number ?>);">
                                     <?php
                                     if($image == '') {
                                         ?>
@@ -125,7 +128,7 @@ if($aid == ''){
                                         <?php
                                     }else{
                                         ?>
-                                        <img class="img-responsive img-thumbnail img-rounded" src="../../../Caregory/images/<?php echo $image ?>">
+                                        <img class="img-responsive img-thumbnail img-rounded" src="../../../Category/images/<?php echo $image ?>">
                                         <?php
                                     }
                                     ?>

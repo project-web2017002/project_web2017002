@@ -16,6 +16,7 @@ if($aid == ''){
     <?php
     require("../../../include/imp/Allcss.php");
     require("../../../include/imp/topjs.php");
+    require("../../ViewProductInfo/index.php");
     ?>
 </head>
 <body>
@@ -117,7 +118,7 @@ if($aid == ''){
                                     }
                                     ?>
                                     <div class="col-lg-4 col-md-6 col-sm-12" style="float: left; height:450px;">
-                                        <div class="row">
+                                        <div class="row" onclick="ViewProduct(<?php echo $number ?>);">
                                             <?php
                                             if($image == "") {
                                                 ?>

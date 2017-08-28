@@ -32,10 +32,10 @@ $(function(){
         window.location.assign("forward/move/orders/");
     });
 
-    function refresh_Div(){
+    /*function refresh_Div(){
         $("#refreshable").hide();
         $("#refreshable").fadeIn('slow');
-    }
+    }*/
 
-    var reload = setInterval(refresh_Div, 15000);
+    //var reload = setInterval(refresh_Div, 15000);
 });

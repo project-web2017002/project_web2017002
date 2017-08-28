@@ -36,6 +36,10 @@ if($aid == ''){
             <div style="color: #e40046; text-align: center; text-transform: uppercase"><h1><strong>No Orders!!</strong></h1></div>
             <?php
         }else {
+            ?>
+            <div class="container-fluid">
+                <div class="row" style="text-align: -webkit-center; text-transform: capitalize">
+            <?php
             while($fetorderdata = mysqli_fetch_array($getorders)){
                 $ordernumer = $fetorderdata[0];
                 $getorderstatus = mysqli_query($con,"select * from order_status where unique_order_number=$ordernumer");
@@ -57,8 +61,6 @@ if($aid == ''){
                     <?php
                 }else {
         ?>
-        <div class="container">
-            <div class="row" style="text-align: -webkit-center; text-transform: capitalize">
                 <?php
                 while ($fetchdata = mysqli_fetch_array($getproducts)) {
                     $filename = substr($fetchdata[2],20);
@@ -69,6 +71,7 @@ if($aid == ''){
                                 continue;
                             } else {
                                 $row = 0;
+                                $rp_id = $fetchdata[0];
                                 $image = $fetchdata[3];
                                 $field = implode(",", $data); $row_arr = explode(",",$field);
                                 $category = $row_arr[0]; $userID = $row_arr[1];
@@ -103,7 +106,7 @@ if($aid == ''){
                                     continue;
                                 }
                                 ?>
-                                <div class="col-sm-12">
+                                <div class="col-md-4 col-sm-12 col-xs-12">
                                     <div class="row">
                                         <?php
                                         if($image == '') {
@@ -133,12 +136,12 @@ if($aid == ''){
                         }
                     }
                 }
-                ?>
-            </div>
-        </div>
-        <?php
                 }
             }
+            ?>
+                </div>
+            </div>
+            <?php
         }
         ?>
     </div>
