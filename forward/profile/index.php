@@ -1,6 +1,7 @@
 <?php
 require("../../essential/db/db.php");
 require("../../essential/ses/session.php");
+require("../../forward/OtherFiles/viewProduct/index.php");
 if($id=='' && $googleid == '' && $fbid == ''){
     echo "<script>window.locatio.assign('../../');</script>";
 }elseif(($googleid == '' && $fbid == '') && $id != '') {
@@ -221,6 +222,7 @@ if($id=='' && $googleid == '' && $fbid == ''){
                                                     continue;
                                                 }else{
                                                     $totalpr++;
+                                                    $prrid = $fetchprodata[0];
                                                     $title = $fetchprodata[1];
                                                     $image1 = $fetchprodata[3];
                                                     if($image1 == '' || $image1 == NULL){
@@ -229,7 +231,7 @@ if($id=='' && $googleid == '' && $fbid == ''){
                                                         $imgfile1 = "../../Category/images/$image1"; // reference img
                                                     }
                                                     ?>
-                                                    <tr>
+                                                    <tr onclick="ViewProduct(<?php echo $prrid ?>);">
                                                         <td><img src="<?php echo $imgfile1 ?>" alt="Product Image" class="img-responsive img-rounded" width="150"></td>
                                                         <td><?php echo $title ?></td>
                                                         <td></td>
@@ -485,10 +487,11 @@ if($id=='' && $googleid == '' && $fbid == ''){
                                                         $field = implode(",", $data);
                                                         $row_arr = explode(",", $field);
                                                         $userid = $row_arr[1];
-                                                        if ($userid != $id) {
+                                                        if ($userid != $googleid) {
                                                             continue;
                                                         } else {
                                                             $totalpr++;
+                                                            $prrid = $fetchprodata[0];
                                                             $title = $fetchprodata[1];
                                                             $image1 = $fetchprodata[3];
                                                             if ($image1 == '' || $image1 == NULL) {
@@ -497,7 +500,7 @@ if($id=='' && $googleid == '' && $fbid == ''){
                                                                 $imgfile1 = "../../Category/images/$image1"; // reference img
                                                             }
                                                             ?>
-                                                            <tr>
+                                                            <tr onclick="ViewProduct(<?php echo $prrid ?>);" style="cursor: pointer">
                                                                 <td><img src="<?php echo $imgfile1 ?>"
                                                                          alt="Product Image"
                                                                          class="img-responsive img-rounded" width="150">
@@ -660,7 +663,7 @@ if($id=='' && $googleid == '' && $fbid == ''){
                         <div class="tab-pane fade in" id="tab2">
                             <div class="container">
                                 <?php
-                                $getallordersbyme = mysqli_query($con,"select * from orders where order_by=$googleid and usertype='FB'");
+                                $getallordersbyme = mysqli_query($con,"select * from orders where order_by=$fbid and usertype='FB'");
                                 $getnum = mysqli_num_rows($getallordersbyme);
                                 ?>
                                 <div class="row" style="text-align: center">
@@ -755,10 +758,11 @@ if($id=='' && $googleid == '' && $fbid == ''){
                                                         $field = implode(",", $data);
                                                         $row_arr = explode(",", $field);
                                                         $userid = $row_arr[1];
-                                                        if($userid != $id){
+                                                        if($userid != $fbid){
                                                             continue;
                                                         }else{
                                                             $totalpr++;
+                                                            $prrid = $fetchprodata[0];
                                                             $title = $fetchprodata[1];
                                                             $image1 = $fetchprodata[3];
                                                             if($image1 == '' || $image1 == NULL){
@@ -767,7 +771,7 @@ if($id=='' && $googleid == '' && $fbid == ''){
                                                                 $imgfile1 = "../../Category/images/$image1"; // reference img
                                                             }
                                                             ?>
-                                                            <tr>
+                                                            <tr onclick="ViewProduct(<?php echo $prrid ?>);">
                                                                 <td><img src="<?php echo $imgfile1 ?>" alt="Product Image" class="img-responsive img-rounded" width="150"></td>
                                                                 <td><?php echo $title ?></td>
                                                                 <td></td>

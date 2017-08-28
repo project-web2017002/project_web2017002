@@ -29,8 +29,25 @@ switch($category_id){
     default: exit();
 }
 
-function one(){
+function mainn($one,$two,$three,$four){
     $con = $GLOBALS['con'];
+    $insertQuery = mysqli_query($con,"insert into listed_products (product_title,pro_description_file,cost) values 
+('$one','$two',$three)")or die("Error in uploading");
+    if($insertQuery){
+        $getprid = mysqli_query($con,"select * from listed_products where pro_description_file='$two'");
+        $fetch = mysqli_fetch_array($getprid);
+        $pr_id = $fetch[0];
+        $mailed = sendmail($four,"opadmin1@gmail.com");
+        if($mailed == 'send')
+            echo $pr_id;
+        else
+            echo "Post Posted";
+    }else{
+        echo "Failure";
+    }
+}
+
+function one(){
     $posted_data = $GLOBALS['posted_data'];
     $category_id = $GLOBALS['category_id'];
     $user_id = $posted_data['userid'];
@@ -69,20 +86,8 @@ function one(){
 
     $url = "//localhost/optimus/Category/categoryId/10001/".$filename;
 
-    $insertQuery = mysqli_query($con,"insert into listed_products (product_title,pro_description_file) values 
-('$service_name','$url')")or die("Error in uploading");
-    if($insertQuery){
-        $getprid = mysqli_query($con,"select * from listed_products where pro_description_file='$url'");
-        $fetch = mysqli_fetch_array($getprid);
-        $pr_id = $fetch[0];
-        $mailed = sendmail($user_email,"opadmin1@gmail.com");
-        if($mailed == 'send')
-            echo $pr_id;
-        else
-            echo "Post Posted";
-    }else{
-        echo "Failure";
-    }
+    mainn($service_name,$url,$service_fees,$user_email);
+
 }
 function two(){
     $con = $GLOBALS['con'];
@@ -126,20 +131,7 @@ function two(){
 
     $url = "//localhost/optimus/Category/categoryId/10002/".$filename;
 
-    $insertQuery = mysqli_query($con,"insert into listed_products (product_title,pro_description_file) values 
-('$home_todo','$url')")or die("Error in uploading");
-    if($insertQuery){
-        $getprid = mysqli_query($con,"select * from listed_products where pro_description_file='$url'");
-        $fetch = mysqli_fetch_array($getprid);
-        $pr_id = $fetch[0];
-        $mailed = sendmail($user_email,"opadmin1@gmail.com");
-        if($mailed == 'send')
-            echo $pr_id;
-        else
-            echo "Post Posted";
-    }else{
-        echo "Failure";
-    }
+    mainn($home_todo,$url,$home_cost,$user_email);
 }
 function three(){
     $con = $GLOBALS['con'];
@@ -180,20 +172,8 @@ function three(){
 
     $url = "//localhost/optimus/Category/categoryId/10003/".$filename;
 
-    $insertQuery = mysqli_query($con,"insert into listed_products (product_title,pro_description_file) values 
-('$job_title','$url')")or die("Error in uploading");
-    if($insertQuery){
-        $getprid = mysqli_query($con,"select * from listed_products where pro_description_file='$url'");
-        $fetch = mysqli_fetch_array($getprid);
-        $pr_id = $fetch[0];
-        $mailed = sendmail($company_email,"opadmin1@gmail.com");
-        if($mailed == 'send')
-            echo $pr_id;
-        else
-            echo "Post Posted";
-    }else{
-        echo "Failure";
-    }
+    mainn($job_title,$url,$max_sal,$company_email);
+
 }
 function four(){
     $con = $GLOBALS['con'];
@@ -234,20 +214,8 @@ function four(){
 
     $url = "//localhost/optimus/Category/categoryId/10004/".$filename;
 
-    $insertQuery = mysqli_query($con,"insert into listed_products (product_title,pro_description_file) values 
-('$car_cat_type $car_brand','$url')")or die("Error in uploading");
-    if($insertQuery){
-        $getprid = mysqli_query($con,"select * from listed_products where pro_description_file='$url'");
-        $fetch = mysqli_fetch_array($getprid);
-        $pr_id = $fetch[0];
-        $mailed = sendmail($user_email,"opadmin1@gmail.com");
-        if($mailed == 'send')
-            echo $pr_id;
-        else
-            echo "Post Posted";
-    }else{
-        echo "Failure";
-    }
+    mainn($car_cat_type." ".$car_brand,$url,$car_cost,$user_email);
+
 }
 function five(){
     $con = $GLOBALS['con'];
@@ -288,23 +256,10 @@ function five(){
 
     $url = "//localhost/optimus/Category/categoryId/10005/".$filename;
 
-    $insertQuery = mysqli_query($con,"insert into listed_products (product_title,pro_description_file) values 
-('$bike_brand','$url')")or die("Error in uploading");
-    if($insertQuery){
-        $getprid = mysqli_query($con,"select * from listed_products where pro_description_file='$url'");
-        $fetch = mysqli_fetch_array($getprid);
-        $pr_id = $fetch[0];
-        $mailed = sendmail($user_email,"opadmin1@gmail.com");
-        if($mailed == 'send')
-            echo $pr_id;
-        else
-            echo "Post Posted";
-    }else{
-        echo "Failure";
-    }
+    mainn($bike_brand,$url,$bike_cost,$user_email);
+
 }
 function six(){
-    $con = $GLOBALS['con'];
     $posted_data = $GLOBALS['posted_data'];
     $category_id = $GLOBALS['category_id'];
     $user_id = $posted_data['userid'];
@@ -343,20 +298,8 @@ function six(){
 
     $url = "//localhost/optimus/Category/categoryId/10006/".$filename;
 
-    $insertQuery = mysqli_query($con,"insert into listed_products (product_title,pro_description_file) values 
-('$edu_title','$url')")or die("Error in uploading");
-    if($insertQuery){
-        $getprid = mysqli_query($con,"select * from listed_products where pro_description_file='$url'");
-        $fetch = mysqli_fetch_array($getprid);
-        $pr_id = $fetch[0];
-        $mailed = sendmail($edu_insti_email,"opadmin1@gmail.com");
-        if($mailed == 'send')
-            echo $pr_id;
-        else
-            echo "Post Posted";
-    }else{
-        echo "Failure";
-    }
+    mainn($edu_title,$url,$edu_fees,$edu_insti_email);
+
 }
 function seven(){
     $con = $GLOBALS['con'];
@@ -402,20 +345,8 @@ function seven(){
 
     $url = "//localhost/optimus/Category/categoryId/10007/".$filename;
 
-    $insertQuery = mysqli_query($con,"insert into listed_products (product_title,pro_description_file) values 
-('$mob_ad_title','$url')")or die("Error in uploading");
-    if($insertQuery){
-        $getprid = mysqli_query($con,"select * from listed_products where pro_description_file='$url'");
-        $fetch = mysqli_fetch_array($getprid);
-        $pr_id = $fetch[0];
-        $mailed = sendmail($user_email,"opadmin1@gmail.com");
-        if($mailed == 'send')
-            echo $pr_id;
-        else
-            echo "Post Posted";
-    }else{
-        echo "Failure";
-    }
+    mainn($mob_ad_title,$url,$mob_cost,$user_email);
+
 }
 function eight(){
     $con = $GLOBALS['con'];
@@ -463,20 +394,8 @@ function eight(){
 
     $url = "//localhost/optimus/Category/categoryId/10008/".$filename;
 
-    $insertQuery = mysqli_query($con,"insert into listed_products (product_title,pro_description_file) values 
-('$homelife_ad_title','$url')")or die("Error in uploading");
-    if($insertQuery){
-        $getprid = mysqli_query($con,"select * from listed_products where pro_description_file='$url'");
-        $fetch = mysqli_fetch_array($getprid);
-        $pr_id = $fetch[0];
-        $mailed = sendmail($user_email,"opadmin1@gmail.com");
-        if($mailed == 'send')
-            echo $pr_id;
-        else
-            echo "Post Posted";
-    }else{
-        echo "Failure";
-    }
+    mainn($homelife_ad_title,$url,$homelife_cost,$user_email);
+
 }
 function nine(){
     $con = $GLOBALS['con'];
@@ -522,22 +441,9 @@ function nine(){
 
     $url = "//localhost/optimus/Category/categoryId/10009/".$filename;
 
-    $insertQuery = mysqli_query($con,"insert into listed_products (product_title,pro_description_file) values 
-('$elect_ad_title','$url')")or die("Error in uploading");
-    if($insertQuery){
-        $getprid = mysqli_query($con,"select * from listed_products where pro_description_file='$url'");
-        $fetch = mysqli_fetch_array($getprid);
-        $pr_id = $fetch[0];
-        $mailed = sendmail($user_email,"opadmin1@gmail.com");
-        if($mailed == 'send')
-            echo $pr_id;
-        else
-            echo "Post Posted";
-    }else{
-        echo "Failure";
-    }
-}
+    mainn($elect_ad_title,$url,$elect_cost,$user_email);
 
+}
 function ten(){
     $con = $GLOBALS['con'];
     $posted_data = $GLOBALS['posted_data'];
@@ -698,20 +604,7 @@ function thirteen(){
 
     $url = "//localhost/optimus/Category/categoryId/10020/".$filename;
 
-    $insertQuery = mysqli_query($con,"insert into listed_products (product_title,pro_description_file) values 
-('$event_type','$url')")or die("Error in uploading");
-    if($insertQuery){
-        $getprid = mysqli_query($con,"select * from listed_products where pro_description_file='$url'");
-        $fetch = mysqli_fetch_array($getprid);
-        $pr_id = $fetch[0];
-        $mailed = sendmail($user_email,"opadmin1@gmail.com");
-        if($mailed == 'send')
-            echo $pr_id;
-        else
-            echo "Post Posted";
-    }else{
-        echo "Failure";
-    }
+    mainn($event_type,$url,$event_cost,$user_email);
 }
 function fourteen(){
     $con = $GLOBALS['con'];
