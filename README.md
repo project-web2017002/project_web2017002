@@ -1,6 +1,13 @@
 # project_web2017002
 Web Project
 ==============================================
+28-8-2017
+
+* Search bar fixed
+* admin can now view product info
+* UI changes made
+* bugs fixed
+
 26-8-2017
 
 * Search bar is now working
