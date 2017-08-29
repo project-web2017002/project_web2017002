@@ -1,6 +1,9 @@
 <?php
+// for displaying results if user want to view product for a particular city under particular category or vice versa
+
 error_reporting(0);
 require("forward/OtherFiles/viewProduct/index.php");
+// setting category name
     if ($categoryid == 10001) {
         $categoryname = "Services";
     } elseif ($categoryid == 10002 || $categoryid == 10012) {
@@ -33,23 +36,23 @@ require("forward/OtherFiles/viewProduct/index.php");
         echo "<script>window.location.assign('/optimus/');</script>";
     }
 
-    if($city == ''){
+    if($city == '' || $categoryid == ''){ // if user search for any one filter then move him back
         echo "<script>window.location.assign('/optimus/');</script>";
     }
-
+//pagination
 $page = $_GET['page'];
 if($page == '' || $page == 1){
     $start = 0;
 }else{
     $start = ($page*6)-6;
 }
-    $row = 0;
-    $total = 0;
+    $row = 0; // for setting row count of a file
+    $total = 0; // for counting total number of products found
     $que = "Select * from listed_products limit $start,6";
     $getALL_products = mysqli_query($con,$que);
     $getALL_products1 = mysqli_query($con,$que);
     $num = mysqli_num_rows($getALL_products);
-    if ($num <= 0) {
+    if ($num <= 0) { // if no product found at all
         ?>
         <div class="container well" style="text-align: -webkit-center">
             <img src="include/media/images/nothing_found.png" class="img-responsive img-rounded">
@@ -65,16 +68,8 @@ if($page == '' || $page == 1){
                 <h5>Showing Results In: <strong><?php echo $categoryname . " under " . $city ." City" ?></strong></h5>
             </div>
         </div>
-        <!--div class="row">
-            <div class="col-md-4 col-sm-12"></div>
-            <div class="col-md-4 col-sm-12"></div>
-            <div class="col-md-4 col-sm-12 btn-pref" style="font-size: larger; padding: 25px;">
-                Change View:&nbsp;
-                <i class="fa fa-th-large btn btn-primary atn" style="cursor: pointer;" href="#test7" data-toggle="tab"></i>&nbsp;
-                <i class="fa fa-th-list btn btn-default atn" style="cursor: pointer" href="#test8" data-toggle="tab"></i>
-            </div>
-        </div-->
         <div class="row">
+            <!--Side bar filter-->
             <div class="col-md-3 col-sm-12">
                 <div class="container">
                     <div class="row">
@@ -112,14 +107,17 @@ if($page == '' || $page == 1){
                     </div><hr><br>
                 </div>
             </div>
+            <!--Side bar filter ends-->
+
+            <!--displaying product-->
             <div class="col-md-9 col-sm-12">
                 <div class="container">
                     <div class="row" style="text-align: -webkit-center; text-transform: capitalize">
                         <?php
-                        while ($getdata = mysqli_fetch_array($getALL_products)) {
+                        while ($getdata = mysqli_fetch_array($getALL_products)) { //opening each file
                             $file = substr($getdata[2], 20);
                             if (($handle = fopen($file, "r")) !== FALSE) {
-                                while (($data = fgetcsv($handle, 4096, ",")) !== FALSE) {
+                                while (($data = fgetcsv($handle, 4096, ",")) !== FALSE) { //getting each row
                                     $row++;
                                     if ($row == 1) {
                                         continue;
@@ -128,17 +126,19 @@ if($page == '' || $page == 1){
                                         $this_pro_id = $getdata[0];
                                         $image = $getdata[3];
                                         $field = implode(",", $data);
-                                        $row_arr = explode(",", $field);
-                                        for ($i = 0; $i < sizeof($row_arr); $i++) {
+                                        $row_arr = explode(",", $field); // converting row string into array
+                                        for ($i = 0; $i < sizeof($row_arr); $i++) { // if any row having city name
                                             $getcity = $row_arr[$i];
                                             if ($getcity != $city) {
-                                                continue;
+                                                continue; // if city name not found in that row skip it
                                             } else {
-                                                $categoryofad = $row_arr[0];
+                                                $categoryofad = $row_arr[0]; // category id from file
                                                 if ($categoryofad != $categoryid) {
-                                                    continue;
+                                                    continue; // if category id of file is not same as that of user required category name
                                                 } else {
-                                                    $total++;
+                                                    $total++; // incrementing total file found by 1
+
+                                                    // getting particular product/ad info
                                                     if ($categoryofad == 10001) {
                                                         $cost = $row_arr[3];
                                                         $title = $row_arr[4];
@@ -192,7 +192,7 @@ if($page == '' || $page == 1){
                                                     } else {
                                                         continue;
                                                     }
-
+                                                    // changing date format
                                                     $date1 = explode("-",$da_te);
                                                     if(stripos($date1[5],"pm") !== false) {
                                                         $date1[3] = $date1[3]+12;
@@ -201,6 +201,7 @@ if($page == '' || $page == 1){
                                                     $dval = $date1[0]."-".$date1[1]."-".$date1[2]." ".$date1[3].":".$date1[4].":".$date1[5];
                                                 }
                                                 ?>
+                                                <!--Displaying product-->
                                                 <div class="col-lg-3 col-md-6 col-sm-12" style="float: left; height:450px; padding: 10px" id="tes4">
                                                     <div class="row" style="cursor: pointer"
                                                          onclick="ViewProduct(<?php echo $this_pro_id; ?>);">
@@ -236,6 +237,7 @@ if($page == '' || $page == 1){
                         ?>
                     </div>
                     <?php
+                    // pagination
                     if($total > 0) {
                         ?>
                         <div class="container row" style="text-align: center">
@@ -285,6 +287,7 @@ if($page == '' || $page == 1){
                     ?>
                 </div>
             </div>
+            <!--displaying product ends-->
         </div>
         <div class="well"><?php echo "Total Products in " . $categoryname . " > " . $city . " category: " . $total ?></div>
         <?php

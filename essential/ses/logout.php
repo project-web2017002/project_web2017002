@@ -1,13 +1,15 @@
 <?php
+// for logging out the user
 error_reporting(0);
-include("../db/db.php");
-require("session.php");
+include("../db/db.php"); // include db file
+require("session.php"); // session file
 if($id == ''){
 
 //Unset token and user data from session
     $_SESSION['token'] = NULL;
     $_SESSION['facebook_access_token'] = NULL;
     $_SESSION['userData'] = NULL;
+    $_SESSION['userDatafb'] = NULL;
 
 //Destroy entire session
     session_destroy();

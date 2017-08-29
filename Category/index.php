@@ -1,14 +1,17 @@
 <?php
 error_reporting(0);
+// user will not be able to move further until category id recives
 if($categoryid == ''){
     echo "<script>window.location.assign('/optimus/');</script>";
 }
     require("essential/db/db.php");
     require("essential/ses/session.php");
-    require("forward/OtherFiles/viewProduct/index.php");
+    require("forward/OtherFiles/viewProduct/index.php"); // files to show product details
     ?>
     <div class="container-fluid">
         <?php
+
+        // setting category id and name of that category
         if ($categoryid == 10001) {
             $cateory = 10001;
             $categoryname = "Services";
@@ -54,7 +57,7 @@ if($categoryid == ''){
         } else {
             $cateory = '';
         }
-        require("categoryID/index.php");
+        require("categoryID/index.php"); // include category id file
         ?>
     </div>
     <?php

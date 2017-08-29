@@ -1,8 +1,11 @@
 <?php
+//featured product file
+//maximum eight products to be displayed in featured product
+
 error_reporting(0);
     require("essential/db/db.php");
     require("forward/OtherFiles/viewProduct/index.php");
-    $files = glob("Category/FeaturedProduct/*.csv");
+    $files = glob("Category/FeaturedProduct/*.csv"); // getting all files from featured product directory
     $count = count($files);
     $row = 0;
     $itm = 0;
@@ -13,12 +16,14 @@ error_reporting(0);
         <?php
     } else {
         ?>
+        <!--Featured product carousel-->
 <div class="carousel-inner">
         <div class="item active">
             <div class="row">
                 <div class="col-sm-12">
                     <div class="row" style="text-align: -webkit-center; text-transform: capitalize">
                         <?php
+                        //displaying first four files
                         foreach ($files as $file) {
                             $itm++;
                             if($itm > 4){
@@ -26,26 +31,28 @@ error_reporting(0);
                             } else {
                                 $filename_dummy = substr($file, 25);
                                 $filename = substr($filename_dummy, 0, -4);
-                                $check = mysqli_query($con, "select * from featpro where file='$filename'");
+                                $check = mysqli_query($con, "select * from featpro where file='$filename'"); //verifying file name with db
                                 $numrows = mysqli_num_rows($check);
                                 if ($check == 0) {
-                                    continue;
+                                    continue; // if file not found in db, skip it
                                 } else {
-                                    if (($handle = fopen($file, "r")) !== FALSE) {
+                                    if (($handle = fopen($file, "r")) !== FALSE) { //opening file
                                         while (($data = fgetcsv($handle, 4096, ",")) !== FALSE) {
                                             $row++;
                                             if ($row == 1) {
-                                                continue;
+                                                continue; // skips first row
                                             } else {
-                                                $row = 0;
+                                                $row = 0; //reset row to 0 for next file
                                                 $field = implode(",", $data);
                                                 $row_arr = explode(",", $field);
-                                                $category = $row_arr[0];
+                                                $category = $row_arr[0]; // getting category id from file's first field
+                                                // verifying file from listed products on website
                                                 $get_this_pro_ID = mysqli_query($con, "select * from listed_products where pro_description_file='//localhost/optimus/Category/categoryId/$category/$filename.csv'");
                                                 $fetchthis = mysqli_fetch_array($get_this_pro_ID);
-                                                $this_pro_id = $fetchthis[0];
-                                                $us_er_id = $row_arr[1];
-                                                $image = $fetchthis[3];
+                                                $this_pro_id = $fetchthis[0]; // product id from db
+                                                $us_er_id = $row_arr[1]; // user id from file
+                                                $image = $fetchthis[3]; // image from db
+                                                // getting data from file according to files
                                                 if ($category == 10001) {
                                                     $title = $row_arr[4];
                                                     $cost = $row_arr[3];
@@ -78,7 +85,7 @@ error_reporting(0);
                                                     $cost = 0000;
                                                 }
                                                 ?>
-
+                                                <!-- displaying product-->
                                                 <div class="col-lg-3 col-md-6 col-sm-12" id="test">
                                                     <div class="row" style="cursor: pointer"
                                                          onclick="ViewProduct(<?php echo $this_pro_id; ?>);">
@@ -125,12 +132,14 @@ error_reporting(0);
                 <div class="col-sm-12">
                     <div class="row" style="text-align: -webkit-center; text-transform: capitalize">
                         <?php
+                        // showing results for 5 to 8 products or second row
+                        // else details are same as first row
                         foreach ($files as $file) {
                             $itm2++;
                             if($itm2 < 5){
-                                continue;
+                                continue; // for first 4 products skip
                             } elseif ($itm2 > 8){
-                                break;
+                                break; // after eight products break;
                             } else {
                                 $filename_dummy = substr($file, 25);
                                 $filename = substr($filename_dummy, 0, -4);
@@ -186,7 +195,7 @@ error_reporting(0);
                                                     $cost = 0000;
                                                 }
                                                 ?>
-
+                                                <!--Displaying product-->
                                                 <div class="col-lg-3 col-md-6 col-sm-12" id="test">
                                                     <div class="row" style="cursor: pointer"
                                                          onclick="ViewProduct(<?php echo $this_pro_id; ?>);">
@@ -229,6 +238,7 @@ error_reporting(0);
             </div>
         </div>
 </div>
+        <!--Featured product carousel ends-->
         <?php
     }
 ?>
