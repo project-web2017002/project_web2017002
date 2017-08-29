@@ -1,4 +1,5 @@
 <?php
+// fb configuration file
 if(!session_id()){
 	session_start();
 }
