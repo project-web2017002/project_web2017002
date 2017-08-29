@@ -1,4 +1,7 @@
 <?php
+// getting user data of users who signup using google or fb
+// it returns data back to its call
+
 class User {
 	private $dbHost     = "localhost";
     private $dbUsername = "root";

@@ -1,5 +1,7 @@
 <?php
-if($_SESSION['userData'] == '' && $_SESSION['userDatafb'] == '' && $_SESSION['login_id'] == '') {
+// login modal
+
+if($_SESSION['userData'] == '' && $_SESSION['userDatafb'] == '' && $_SESSION['login_id'] == '') { // checks if any user is not logged in
 //Include GP config file && User class
     include_once 'forward/login/GoogleLogin/gpConfig.php';
     include_once 'forward/login/User.php';
@@ -130,7 +132,7 @@ if($_SESSION['userData'] == '' && $_SESSION['userDatafb'] == '' && $_SESSION['lo
         <!-- Modal content-->
         <div class="modal-content">
             <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <button type="button" class="close" onclick="closed();">&times;</button>
                 <h4 class="modal-title"><i class="fa fa-user-circle"></i> Login</h4>
                 <div class="row smalltext">Please provide your Mobile Number or Email to Login</div>
             </div>
@@ -143,20 +145,19 @@ if($_SESSION['userData'] == '' && $_SESSION['userDatafb'] == '' && $_SESSION['lo
                         <input type="password" name="pass" id="loginPass" class="form-control" placeholder="Password" required>
                     </div>
                     <button type="submit" id="login" name="login" class="btn btn-danger" style="width: 100%; background-color: #e40046; color: white;" disabled>Continue</button>
+                    <!--^ executed through ajax-->
                 </form>
                 <br><br>
                 <div class="row smalltext">or Login using</div>
                 <div class="row smalltext">
                     <div class="col-lg-4">
-<!--                        <div class="fb-login-button" data-max-rows="1" data-size="medium" data-button-type="continue_with" data-show-faces="false" data-auto-logout-link="true" data-use-continue-as="true"></div>-->
-                          <!--fb:login-button class="btn btn-primary btn-block" scope="public_profile,email" onlogin="checkLoginState();"></fb:login-button-->
                         <a href="<?php echo $output2 ?>" class="btn btn-primary btn-block"><i class="fa fa-facebook-official"></i> Facebook</a>
                     </div>
                     <div class="col-lg-4">
                         <a href="<?php echo $output ?>" class="btn btn-danger btn-block"><i class="fa fa-google-plus-official"></i> Google</a>
                     </div>
                     <div class="col-lg-4">
-                        <button class="btn btn-warning btn-block" data-toggle="modal" data-target="#signupModal" data-dismiss="modal">
+                        <button class="btn btn-warning btn-block" onclick="two()">
                             <i class="fa fa-user-circle-o"></i> Signup
                         </button>
                     </div>

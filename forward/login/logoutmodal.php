@@ -1,4 +1,4 @@
-<!-- Modal -->
+<!-- Logout confirmationModal -->
 <div id="logoutModal" class="modal fade" role="dialog">
     <div class="modal-dialog">
 
