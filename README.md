@@ -1,6 +1,10 @@
 # project_web2017002
 Web Project
 ==============================================
+29-8-2017
+
+* code comments added in many files
+
 28-8-2017
 
 * Search bar fixed
