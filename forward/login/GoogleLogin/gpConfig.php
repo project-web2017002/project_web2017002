@@ -1,4 +1,5 @@
 <?php
+// google config file
 session_start();
 
 //Include Google client library
@@ -14,7 +15,7 @@ $redirectURL = 'http://localhost/optimus/'; //Callback URL
 
 //Call Google API
 $gClient = new Google_Client();
-$gClient->setApplicationName('Optimus');
+$gClient->setApplicationName('Optimus'); // change this to designated app name
 $gClient->setClientId($clientId);
 $gClient->setClientSecret($clientSecret);
 $gClient->setRedirectUri($redirectURL);
