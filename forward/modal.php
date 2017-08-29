@@ -1,13 +1,13 @@
 <?php
-//login/signup modals
+
 error_reporting(0);
-include("login/login.php");
-include("signup/signup.php");
-include("postFreeAD/adBlockModal.php");
-include("login/logoutmodal.php");
-include("profile/edit.php");
+include("login/login.php");//login modal
+include("signup/signup.php");//signup modal
+include("postFreeAD/adBlockModal.php"); // post free ad confirmation modal
+include("login/logoutmodal.php"); // logout confirmation modal
+include("profile/edit.php"); // profile edit modal
 
-
+//function for date time convert to "few days ago" like string
 function time_elapsed_string($datetime, $full = false) {
     $now = new DateTime;
     $ago = new DateTime($datetime);
@@ -39,6 +39,7 @@ function time_elapsed_string($datetime, $full = false) {
 
 
 ?>
+<!--Login signup modal-->
 <div id="myModal" class="modal fade" role="dialog">
     <div class="modal-dialog" id="moda">
         <!-- Modal content-->
@@ -60,7 +61,7 @@ function time_elapsed_string($datetime, $full = false) {
         </div>
     </div>
 </div>
-
+<!--Loader gif-->
 <div id="loading" style="display: none; top:0; left:0; position: fixed; text-align: -webkit-center; padding: 15% 0; background: transparent; width: 100%; z-index: 9999">
     <img src="/optimus/include/media/images/loading.gif">
 </div>

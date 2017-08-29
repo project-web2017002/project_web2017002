@@ -1,13 +1,16 @@
 <?php
+// cart page
+
+
 error_reporting(0);
 require("../../essential/db/db.php");
 require("../../essential/ses/session.php");
 $categoryid = $_GET['categoryId'];
 $city = $_GET['city'];
-if($id==""){
+if($id == '' || $googleid == '' || $fbid == ''){ // if user is not signed in, then no access
     echo "<script>window.location.assign('../../');</script>";
 }else{
-    $get_my_cart = mysqli_query($con,"select * from shoppingcart where user_id=$id");
+    $get_my_cart = mysqli_query($con,"select * from shoppingcart where user_id=$id"); // getting particular user cart info
     ?>
     <!DOCTYPE html>
     <html>
@@ -39,6 +42,7 @@ if($id==""){
                 <?php
                 $num_cart = mysqli_num_rows($get_my_cart);
                 if($num_cart <= 0){
+                    // if no product found
                     ?>
 
                     <div class="row">
@@ -49,12 +53,12 @@ if($id==""){
 
                     <?php
                 }else {
-                    while($fetch = mysqli_fetch_array($get_my_cart)) {
+                    while($fetch = mysqli_fetch_array($get_my_cart)) { // getting each cart product
                         $cou = $fetch[0];
                         $pr_id = $fetch[1];
-                        $get_this_product = mysqli_query($con,"select * from listed_products where product_id=$pr_id");
+                        $get_this_product = mysqli_query($con,"select * from listed_products where product_id=$pr_id"); //product info
                         $numproduct = mysqli_num_rows($get_this_product);
-                        if($numproduct <= 0){
+                        if($numproduct <= 0){ // if products removed from db by user or sold out
                             ?>
                             <div class="row">
                                 <div class="col-md-4 col-sm-12"></div>
@@ -77,7 +81,7 @@ if($id==""){
                             }else{
                                 $image = "../../Category/images/$imagefile";
                             }
-                            if (($handle = fopen("../../".$filename, "r")) !== FALSE) {
+                            if (($handle = fopen("../../".$filename, "r")) !== FALSE) { //opening product file
                                 while (($data = fgetcsv($handle, 4096, ",")) !== FALSE) {
                                     $row++;
                                     if ($row == 1) {
@@ -87,6 +91,7 @@ if($id==""){
                                         $field = implode(",", $data);
                                         $row_arr = explode(",", $field);
                                         $categor_y = $row_arr[0];
+                                        //getting cost of product
                                         if($categor_y == 10001){ $cost = $row_arr[3]; }
                                         elseif ($categor_y == 10002 || $categor_y == 10012){ $cost = $row_arr[7]; }
                                         elseif ($categor_y == 10003){ $cost = $row_arr[6]; }

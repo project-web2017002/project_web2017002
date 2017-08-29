@@ -1,3 +1,4 @@
+<!--SIgnup form modal-->
 <div id="signupModal" class="modal fade" role="dialog">
     <div class="modal-dialog" id="moda">
         <!-- Modal content-->

@@ -1,4 +1,6 @@
 <?php
+//to remove a product from cart
+
 error_reporting(0);
 require("../../essential/db/db.php");
 require("../../essential/ses/session.php");

@@ -1,4 +1,6 @@
 <?php
+// verify otp entered
+// this page called through ajax with return enable
 require("../../../essential/db/db.php");
 require("../../../essential/ses/session.php");
 $b = $_POST['b'];

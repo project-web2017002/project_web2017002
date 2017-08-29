@@ -1,3 +1,7 @@
+<!--Displaying product details-->
+<!--Data will be displayed through js and jquery on request-->
+<!--No need to enter dummy data, or php code-->
+
 <script src="//localhost/optimus/include/js/product.js"></script>
 
 <div class="modal" id="viewProduct">
@@ -7,20 +11,24 @@
                 <div class="viewProductHeader">&times; Close</div>
             </div><hr/>
             <div class="row">
+                <!--Diaplay error-->
                 <div class="errorViewProduct"></div>
             </div>
             <div class="row">
                 <div class="col-sm-12">
+                    <!--Diaplay error-->
                     <div id="vieproducterror"></div>
                 </div>
             </div>
             <div class="row">
                 <div class="col-md-7 col-sm-12">
                     <div class="row">
+                        <!--Displays title of product-->
                         <div class="col-md-12 col-sm-12 col-xs-12" id="viewproductTitle"></div>
                     </div>
                     <div class="row">
                         <div class="col-md-4 col-sm-12 col-xs-12" style="text-align: right;">
+                            <!--Location of product availability-->
                             <span class="fa fa-map-marker"></span>&nbsp;<span id="_lc"></span>
                         </div>
                         <div class="col-md-8 col-sm-12 col-xs-12" style="text-align: left">
@@ -32,6 +40,7 @@
                         <div class="col-md-12 col-sm-12">
                             <div id="prodImagesCarousel" class="carousel slide" data-ride="carousel" data-interval="16000">
                                 <div class="row">
+                                    <!--It will display images of product-->
                                     <div class="col-md-12 col-sm-12" id="img-tab"></div>
                                 </div>
                             </div>
@@ -44,6 +53,7 @@
                         </div>
                     </div><br/>
 
+                    <!--Small product images indicators will display here-->
                     <div class="row" id="pituresofproduct"></div>
 
                 </div>
@@ -52,7 +62,7 @@
                         <div class="col-sm-12 col-xs-12">
                             <div class="hidden" id="_jkpr"></div>
                             <?php
-                            if($id != '' || $fbid != '' || $googleid != '') {
+                            if($id != '' || $fbid != '' || $googleid != '') { // if user is logged in
                                 ?>
                                 <hr>
                                 <div class="row" id="_prc"></div>
@@ -62,7 +72,7 @@
                             <div class="row">
                                 <div class="col-sm-12 col-xs-12">
                                     <?php
-                                    if($id != '' || $fbid != '' || $googleid != '') {
+                                    if($id != '' || $fbid != '' || $googleid != '') { // if user is logged in
                                         ?>
                                         <div class="row" style="border:2px solid rgba(133,184,246,0.44); margin: 10px 0;">
                                             <div class="col-sm-12 col-xs-12">
@@ -114,23 +124,6 @@
                 </div>
             </div>
             <br/>
-            <!--div class="row">
-                <div class="col-md-1 col-sm-12"></div>
-                <div class="col-md-5 col-sm-12" style="border: 1px solid grey;">
-                    <h4>Features</h4>
-                    <ul>
-                        <li></li>
-                        <li></li>
-                        <li></li>
-                        <li></li>
-                        <li></li>
-                    </ul>
-                </div>
-                <div class="col-md-5 col-sm-12">
-
-                </div>
-                <div class="col-md-1 col-sm-12"></div>
-            </div-->
         </div>
     </div>
 </div>

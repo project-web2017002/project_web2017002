@@ -6,7 +6,7 @@ $featuredcount = mysqli_num_rows($checkfeatured);
 <div class="container-fluid mainBar-fluid">
 
     <?php
-    if($categoryid == '' && $city == '') {
+    if($categoryid == '' && $city == '') { // if user didn't request to view product from any category or for any city
         ?>
         <div class="row extra">
             <div class="positionadbtn" data-toggle="modal" data-target="#postModal"
@@ -18,6 +18,7 @@ $featuredcount = mysqli_num_rows($checkfeatured);
     }
     ?>
 
+    <!--Category MEnu list-->
     <div class="row dataindex-main">
             <div class="container" id="nooo" style="cursor: pointer; display: none">
                 <div class="col-md-4 col-sm-12"></div>
@@ -67,9 +68,9 @@ $featuredcount = mysqli_num_rows($checkfeatured);
         }
         ?>
     </div>
-
+    <!--Category MEnu list ends-->
     <?php
-    if($categoryid == '' && $city == '') {
+    if($categoryid == '' && $city == '') { // if user didn't request to view product from any category or for any city
         ?>
         <div class="row" style="padding: 10px">
             <div class="container">
@@ -87,10 +88,11 @@ $featuredcount = mysqli_num_rows($checkfeatured);
     }
     ?>
 
+    <!--show featured product-->
     <div class="row">
         <div class="rightsidebar" id="mainWindow">
             <?php
-            if($categoryid=='' && $city==''){
+            if($categoryid=='' && $city==''){ // if user didn't request to view product from any category or for any city
                 if($featuredcount > 0) {
                     ?>
                     <div class="text-primary" style="text-align: center; text-transform: capitalize"><h3>Featured Products</h3></div>
@@ -117,12 +119,12 @@ $featuredcount = mysqli_num_rows($checkfeatured);
                     </div>
                     <?php
                 }
-            }elseif($city == '' && $categoryid != ''){
+            }elseif($city == '' && $categoryid != ''){ // if user wants to see products for a category
                 require("Category/index.php");
-            }elseif($city != '' && $categoryid == ''){
+            }elseif($city != '' && $categoryid == ''){ // if user wants to see products for a city
                 require("City/index.php");
             }else{
-                require("Filter/index.php");
+                require("Filter/index.php"); // if user wants to see products for a category as well a city
             }
             ?>
         </div>

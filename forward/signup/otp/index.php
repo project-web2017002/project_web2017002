@@ -1,6 +1,10 @@
 <?php
+//otp verification page
+//only for user registered from our form
+
     require("../../../essential/db/db.php");
     require("../../../essential/ses/session.php");
+    //if user isn't logged in
     if($id == ''){
         echo "<script>window.location.assign('../../../');</script>";
     }else{
