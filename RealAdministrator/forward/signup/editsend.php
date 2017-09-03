@@ -1,5 +1,5 @@
 <?php
-
+// this will update admin info
 require("../../essential/db/db.php");
 require("../../essential/session/session.php");
 

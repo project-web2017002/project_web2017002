@@ -1,4 +1,5 @@
 <?php
+// this will remove a user
 require("../../../essential/db/db.php");
 require("../../../essential/session/session.php");
 

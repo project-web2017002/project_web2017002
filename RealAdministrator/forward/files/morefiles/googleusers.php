@@ -1,4 +1,5 @@
 <?php
+// this will create list of all users registered from google and facebook
 error_reporting(0);
 ?>
 

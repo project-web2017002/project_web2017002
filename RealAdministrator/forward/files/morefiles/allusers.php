@@ -1,4 +1,5 @@
 <?php
+// this will create list of all users registered through our forms
 error_reporting(0);
 ?>
 

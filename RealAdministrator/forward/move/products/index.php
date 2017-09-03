@@ -1,4 +1,5 @@
 <?php
+// this will display all products registered on website
 error_reporting(0);
 require("../../../essential/db/db.php");
 require("../../../essential/session/session.php");

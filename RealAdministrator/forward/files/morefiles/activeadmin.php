@@ -1,4 +1,5 @@
 <?php
+// this will create list of all active/online admins
 error_reporting(0);
 ?>
 

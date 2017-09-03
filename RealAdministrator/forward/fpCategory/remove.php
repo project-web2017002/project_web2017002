@@ -1,4 +1,5 @@
 <?php
+// this will remove the featured product from website
 error_reporting(0);
 require("../../essential/db/db.php");
 require("../../essential/session/session.php");
@@ -13,15 +14,15 @@ if($num == ''){
     }else{
         $fetch = mysqli_fetch_array($getfile);
         $file = $fetch[2];
-        $copy = copy("../../../Category/FeaturedProduct/".$file.".csv","../../BIN/FeaturedProducts/".$file.".csv");
+        $copy = copy("../../../Category/FeaturedProduct/".$file.".csv","../../BIN/FeaturedProducts/".$file.".csv"); // copy file to bin folder in admin
         if(!$copy){
             echo "Failed to perform Operation";
         }else{
-            $delete = unlink("../../../Category/FeaturedProduct/".$file.".csv");
+            $delete = unlink("../../../Category/FeaturedProduct/".$file.".csv"); // remove file from featured product category
             if(!$delete){
                 echo "Failed to perform Operation";
             }else{
-                $querydelete = mysqli_query($con,"delete from featpro where num=$num");
+                $querydelete = mysqli_query($con,"delete from featpro where num=$num"); // delete from db
                 if(!$querydelete){
                     echo "Failed To delete";
                 }else{

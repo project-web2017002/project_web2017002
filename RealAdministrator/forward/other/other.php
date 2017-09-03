@@ -1,4 +1,5 @@
 <?php
+// displays side bar with total regisred products and orders count
 
     $get_orders=mysqli_query($con,"select * from orders");
     $num_orders=mysqli_num_rows($get_orders);

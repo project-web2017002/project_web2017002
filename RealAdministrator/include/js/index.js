@@ -23,19 +23,13 @@ $(function(){
         var vale = $(this).attr('id');
         $("#admin-id").text(vale);
     });
-
+// change window location
     $(".moveToProducts").click(function(){
         window.location.assign("forward/move/products/");
     });
-
+// change window location
     $(".moveToOrders").click(function(){
         window.location.assign("forward/move/orders/");
     });
 
-    /*function refresh_Div(){
-        $("#refreshable").hide();
-        $("#refreshable").fadeIn('slow');
-    }*/
-
-    //var reload = setInterval(refresh_Div, 15000);
 });

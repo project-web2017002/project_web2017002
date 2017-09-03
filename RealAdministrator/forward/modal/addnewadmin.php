@@ -1,3 +1,6 @@
+<?php
+// this modal popup windows displays a form to existing admin, so that new admin can be added
+?>
 <div id="newAdminModal" class="modal fade" role="dialog">
     <div class="modal-dialog" id="moda">
         <!-- Modal content-->

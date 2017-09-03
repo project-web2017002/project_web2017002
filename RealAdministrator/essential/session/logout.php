@@ -1,4 +1,5 @@
 <?php
+//logout admin and update db and destroy session
 error_reporting(0);
 include("../db/db.php");
 require("session.php");

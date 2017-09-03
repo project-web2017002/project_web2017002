@@ -1,4 +1,5 @@
 <?php
+// this will create a list of all ordered products
 error_reporting(0);
 require("../../../essential/db/db.php");
 require("../../../essential/session/session.php");

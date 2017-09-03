@@ -1,4 +1,5 @@
 <?php
+// to remove a featured product from website
 error_reporting(0);
 require("../../essential/db/db.php");
 require("../../essential/session/session.php");
@@ -31,7 +32,7 @@ if($aid == ''){
 <div class="container well">
     <div class="row">
         <?php
-        $getproducts = mysqli_query($con,"select * from featpro");
+        $getproducts = mysqli_query($con,"select * from featpro"); // checks for featired product list
         $num = mysqli_num_rows($getproducts);
         if($num <= 0){
             ?>
@@ -42,7 +43,7 @@ if($aid == ''){
         <div class="container">
             <div class="row" style="text-align: -webkit-center; text-transform: capitalize">
         <?php
-            while ($fetchdata = mysqli_fetch_array($getproducts)) {
+            while ($fetchdata = mysqli_fetch_array($getproducts)) {// list each featured produt
                 $number = $fetchdata[0];
                 $filename = $fetchdata[2];
                 if (($handle = fopen("../../../Category/FeaturedProduct/".$filename.".csv", "r")) !== false) {
@@ -59,6 +60,7 @@ if($aid == ''){
                             $row_arr = explode(",",$field);
                             $category = $row_arr[0];
                             $userID = $row_arr[1];
+                            // getting all data according to categories
                             if($category == 10001){
                                 $title = $row_arr[4];
                                 $da_te_ti_me = $row_arr[14];

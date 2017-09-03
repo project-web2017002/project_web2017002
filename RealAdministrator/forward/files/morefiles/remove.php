@@ -1,4 +1,5 @@
 <?php
+// this will create list of all users that can be removed
 error_reporting(0);
 ?>
 <table class="table table-striped table-hover">

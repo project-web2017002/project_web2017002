@@ -1,3 +1,8 @@
+<?php
+//this modal window will popup once admin clicks on add featurd product link
+// this will popup a dropdown on categories
+// admin select a category first, then admin will be able to access product list of that particular category
+?>
 <div id="newFPModal" class="modal fade" role="dialog">
     <div class="modal-dialog" id="moda">
         <!-- Modal content-->

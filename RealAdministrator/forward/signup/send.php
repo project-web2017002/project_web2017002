@@ -1,4 +1,5 @@
 <?php
+// this will create a new admin
 require("../../essential/db/db.php");
 $name=$_POST['adminname'];
 $user_login_id=$_POST['adminemail'];

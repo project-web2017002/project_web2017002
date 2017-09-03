@@ -1,5 +1,5 @@
 <?php
-
+// verifies admin info and logged admin in
 require("../../essential/db/db.php");
 require("../../essential/session/session.php");
 

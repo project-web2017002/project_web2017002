@@ -1,4 +1,5 @@
 <?php
+// this will create list of all active/online users
 error_reporting(0);
 ?>
 

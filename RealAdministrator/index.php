@@ -1,6 +1,7 @@
 <?php
-require("essential/db/db.php");
-require("essential/session/session.php");
+// without login nothing will be there
+require("essential/db/db.php"); // admin db connection
+require("essential/session/session.php"); // admin session info
 ?>
 <!DOCTYPE html>
 <html>

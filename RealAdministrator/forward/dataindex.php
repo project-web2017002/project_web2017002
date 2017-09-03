@@ -5,6 +5,7 @@
                 <img class="img-responsive circular" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQSgFnfrOSxkw1jGkL2CfyPm7ujOB62AxYAA8wqwK_7uDC7jfhzfLenSg">
             </div><br>
                 <?php
+                // displays useradmin info
                 require("other/profile.php");
                 ?>
         </div>
@@ -12,6 +13,7 @@
         <div class="well four">
             <div class="row" style="text-align: center; text-align: -webkit-center;">
                 <?php
+                // displays orders count and product count
                 require("other/other.php");
                 ?>
             </div>
@@ -44,16 +46,19 @@
             <div class="tab-content">
                 <div class="tab-pane fade in active" id="tab1">
                     <?php
+                    // users tabs, default
                     require("files/recentuser.php");
                     ?>
                 </div>
                 <div class="tab-pane fade in" id="tab2">
                     <?php
+                    // editor tab
                     require("files/productdetails.php");
                     ?>
                 </div>
                 <div class="tab-pane fade in" id="tab3">
                     <?php
+                    // admin tab
                     require("files/admins.php");
                     ?>
                 </div>

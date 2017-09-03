@@ -1,3 +1,4 @@
+// this will generate an ajax request to log in the admin
 $("#ad-login").click(function(){
 
     var ad_uname = $("#uname").val();
@@ -19,7 +20,7 @@ $("#ad-login").click(function(){
     });
 
 });
-
+// this will generate an ajax request to add a new admin
 $("#adminsignup").click(function() {
     var adminname= $("#adminname").val();
     var adminemail = $("#adminemail").val();
@@ -42,6 +43,7 @@ $("#adminsignup").click(function() {
 });
 
 $(function() {
+    // new admin create button visibility
     $('#newSignupform input').keyup(function() {
         var empty = false;
         $('#newSignupform input').each(function() {
@@ -58,7 +60,7 @@ $(function() {
         }
     });
 });
-
+// this will generate an ajax request to remove a user
 $("#remove").click(function(){
     var secretId = document.getElementById('user-id').innerHTML;
     $.ajax({
@@ -77,7 +79,7 @@ $("#remove").click(function(){
         }
     });
 });
-
+// this will generate an ajax request to remove an admin
 $("#removead").click(function(){
     var secretId = document.getElementById('admin-id').innerHTML;
     $.ajax({
@@ -96,7 +98,7 @@ $("#removead").click(function(){
         }
     });
 });
-
+// this will generate an ajax request to edit admin info
 $("#edit").click(function(){
     var ad_name=$("#usernam").val();
     var ad_email=$("#conten").val();

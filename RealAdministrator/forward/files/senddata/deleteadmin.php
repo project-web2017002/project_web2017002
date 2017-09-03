@@ -1,4 +1,5 @@
 <?php
+// this will remove an admin
 require("../../../essential/db/db.php");
 require("../../../essential/session/session.php");
 

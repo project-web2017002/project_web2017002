@@ -1,4 +1,4 @@
-<!-- Modal -->
+<!--remove admin confirmation Modal -->
 <div id="removeadminModal" class="modal fade" role="dialog">
     <div class="modal-dialog">
 

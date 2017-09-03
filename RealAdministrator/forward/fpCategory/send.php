@@ -1,4 +1,5 @@
 <?php
+// this will add product into featured product
 error_reporting(0);
 require("../../essential/db/db.php");
 require("../../essential/session/session.php");

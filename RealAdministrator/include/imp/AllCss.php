@@ -1,3 +1,6 @@
+<?php
+// link to all css files
+?>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <link rel="stylesheet" href="//localhost/optimus/RealAdministrator/include/css/index.css">
 <link rel="stylesheet" href="//localhost/optimus/RealAdministrator/include/css/animate.css">

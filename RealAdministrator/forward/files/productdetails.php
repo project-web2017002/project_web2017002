@@ -1,7 +1,12 @@
+<?php
+// this will display editor in admins main page
+?>
 <div class="row" id="mainWindow">
     <div class="col-md-12 col-sm-12">
         <form autocomplete="off" method="post">
-            <textarea name="editor" id="editor"></textarea>
+            <textarea name="editor" id="editor"></textarea> <?php
+            // worked throgh js
+            ?>
             <input type="text" id="filename" name="filename" placeholder="Enter File name" class="form-control">
             <select id="fileExt" name="fileExt" class="form-control">
                 <option value=".html">.html</option>
@@ -13,6 +18,7 @@
 </div>
 
 <?php
+//save a created file in editor
 if(isset($_POST['editor'])){
     $data=$_POST['editor'];
     $filename = $_POST['filename'];

@@ -1,4 +1,6 @@
 <?php
+// this file will display the list of files in particular category and provides option to add product to featured product list
+// only paid products can be added to featured
 error_reporting(0);
 require("../../essential/db/db.php");
 require("../../essential/session/session.php");
@@ -38,7 +40,7 @@ if($category == ''){
                     <th>Date</th><th>Time</th><th>Title</th><th>User Id</th><th>Action</th>
                 </tr>
             <?php
-            $files = glob("../../../Category/categoryID/".$category."/*.csv");
+            $files = glob("../../../Category/categoryID/".$category."/*.csv"); // list of products in particular demanded category
             $count = count($files);
             if($count <= 0){
                 echo "<script>alert('No products in this Category to Add into Featured Products');window.location.assign('../../');</script>";
@@ -56,6 +58,7 @@ if($category == ''){
                                 $field = implode(",", $data);
                                 $row_arr = explode(",",$field);
                                 $us_er_id = $row_arr[1];
+                                // product info
                                 if($category == 10001){
                                     $title = $row_arr[4];
                                     $da_te_ti_me = $row_arr[14];

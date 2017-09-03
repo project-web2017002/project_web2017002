@@ -1,4 +1,5 @@
 <?php
+// this will create list of all admins
 error_reporting(0);
 ?>
 

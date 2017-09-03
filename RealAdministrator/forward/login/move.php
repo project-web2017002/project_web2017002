@@ -1,3 +1,8 @@
+<?php
+
+// ask admin to login to access admin panel
+
+?>
 <div class="container" id="positioned">
     <div class="row">
         <div class="col-md-3 col-sm-12"></div>

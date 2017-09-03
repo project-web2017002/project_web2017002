@@ -1,4 +1,5 @@
 <?php
+// this modal will popup when admin wants to modify its own info
 error_reporting(0);
 $get_all_info=mysqli_query($con,"select * from realadmin where admin_id=$aid");
 $fetch_all_info=mysqli_fetch_array($get_all_info);

@@ -1,14 +1,14 @@
 var fpcategory = document.getElementById('fpcategory');
 $(function(){
-
+// change window location
     $("#goback").click(function(){
         window.location.assign("../../");
     });
-
+// change window location
     $("#goback2").click(function(){
         window.location.assign("../../../");
     });
-
+// create categories
     var j;
     var categories = ['services','homes','jobs','cars','bikes','education','mobiles & tablets',
         'furniture & decor','electronics and appliances','kids & toys','sports, hobbies & fashion',
@@ -19,6 +19,8 @@ $(function(){
         fpcategory.innerHTML += "<option value='"+ids[j]+"'>"+categories[j]+"</option>";
     }
 
+    // change window location if no product found in particular category while adding a product in featured
+
     $("#fpcategorysubmit").click(function(){
         var fpcategoryy = $('#fpcategory').val();
         if(fpcategoryy == ''){
@@ -27,17 +29,17 @@ $(function(){
             window.location.assign('forward/fpCategory/addFp.php?categoryID='+fpcategoryy);
         }
     });
-
+// change window location
     $("#removefp").click(function(){
         window.location.assign("forward/fpCategory/");
     });
-
+// change window location
     $("#viewfp").click(function(){
         window.location.assign("forward/fpCategory/view/");
     });
 
 });
-
+// request to add a product to featured category
 function addNow(file,category,pr_id){
     var xmlhttp = new XMLHttpRequest();
     xmlhttp.onreadystatechange = function() {
@@ -48,7 +50,7 @@ function addNow(file,category,pr_id){
     xmlhttp.open("GET", "send.php?file=" + file + "&categoryId="+ category + "&secret=" + pr_id, true);
     xmlhttp.send();
 }
-
+// ajax request to remove a product from featured products
 function remove(featpronum){
     $.ajax({
         type:"post",

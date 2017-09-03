@@ -1,4 +1,5 @@
 <?php
+// this will display admin info on main page sidebar
 error_reporting(0);
 
 $get_this_admin_data=mysqli_query($con,"select * from realadmin where admin_id=$aid");

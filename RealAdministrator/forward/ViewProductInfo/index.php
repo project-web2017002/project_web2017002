@@ -1,3 +1,6 @@
+<?php
+// this is a popup, that will display product info to admin
+?>
 <script src="//localhost/optimus/RealAdministrator/include/js/product.js"></script>
 <div class="modal" id="viewProduct">
     <div class="viewProductBody">

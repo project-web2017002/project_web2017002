@@ -1,4 +1,6 @@
 <?php
+// this page is called through ajax
+// this page will send all info of product to view product popup
 require('../../../essential/db/db.php');
 require('../../../essential/ses/session.php');
 

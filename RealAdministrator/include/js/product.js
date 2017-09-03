@@ -8,7 +8,7 @@ $(function(){
         document.body.style.removeProperty(paddingRight);
     });
 });
-
+// popup a window with product info, ajax request to get product info
 function ViewProduct(pr_id) {
     $("body").addClass("modal-open");
     document.body.style.paddingRight = "17px";
