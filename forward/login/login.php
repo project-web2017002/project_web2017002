@@ -1,10 +1,10 @@
 <?php
 // login modal
-
+$path = $_SERVER['DOCUMENT_ROOT'];
 if($_SESSION['userData'] == '' && $_SESSION['userDatafb'] == '' && $_SESSION['login_id'] == '') { // checks if any user is not logged in
 //Include GP config file && User class
-    include_once 'forward/login/GoogleLogin/gpConfig.php';
-    include_once 'forward/login/User.php';
+    include_once($path.'/optimus/forward/login/GoogleLogin/gpConfig.php');
+    include_once($path.'/optimus/forward/login/User.php');
 
     if (isset($_GET['code']) && !$_GET['state']) {
         $gClient->authenticate($_GET['code']);
@@ -53,7 +53,7 @@ if($_SESSION['userData'] == '' && $_SESSION['userDatafb'] == '' && $_SESSION['lo
     }
 
 // Include FB config file && User class
-    require_once 'forward/login/fbLogin/fbConfig.php';
+    require_once($path.'/optimus/forward/login/fbLogin/fbConfig.php');
     if (isset($accessToken)) {
         if (isset($_SESSION['facebook_access_token'])) {
             $fb->setDefaultAccessToken($_SESSION['facebook_access_token']);
