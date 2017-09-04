@@ -1,9 +1,12 @@
+// this file will get form data from users when user clicks on submit button
+
+
 var alert = document.getElementById('alert');
 
 $("#submitForm").click(function(){
-    var formCat = $('.postform').attr('name');
+    var formCat = $('.postform').attr('name'); // get form name
     if(formCat == '' || formCat == undefined){
-        alert.innerHTML = err[43];
+        alert.innerHTML = err[43]; // get error from errorlog.js
     }else{
         var usertype;
         var data;
@@ -49,6 +52,7 @@ $("#submitForm").click(function(){
                     var company_email=$("#company-email").val();
                     company_contact = $("#company-contact").val();
 
+                    //data to pass to php page
                     data = "categoryid="+ category_id +"&userid="+ user_id +"&servicetype="+ service_type +"&servicefees="+ service_fees +
                         "&servicename="+ service_name +"&city=" + post_city + "&username="+ user_name +"&useremail="+ user_email +"&usercontact="+ user_contact +
                         "&usertype="+ user_type +"&companyname="+ company_name +"&companyemail="+ company_email +"&companycontact="+
@@ -1004,6 +1008,8 @@ $("#submitForm").click(function(){
         }
     }
 });
+
+// following are the forms submit functions that will create an ajax request to submit user's advertisement or post
 
 function submitservices(data){
     $("#loading").show();

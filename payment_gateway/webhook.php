@@ -1,7 +1,7 @@
 <?php
 error_reporting(0);
 include("instamojo.php");
-
+// this should be like $api = new Instamojo\Instamojo('YOUR API', 'YOUR AUTH TOKEN'); in working environment
 $api = new Instamojo\Instamojo('10da1d38ede2ebb62c0ba3b0bbbc8879', '276e14557b76c0e503bd7ce4f3cc2c4f');
 
 $data = $_POST;

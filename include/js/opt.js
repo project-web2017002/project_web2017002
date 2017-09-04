@@ -1,3 +1,4 @@
+// to verify a user with otp
 $(function(){
     $("#formOTP").click(function(){
         $("#loading").show();

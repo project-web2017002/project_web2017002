@@ -1,31 +1,33 @@
 $(function(){
-
-    //prevent from entering characters and special characters
+    //only advertisement related
+    //prevent from entering characters and special characters in ad forms while entering amount/cost/fees
     $("#cost").keydown(function(e){
         if(!((e.which > 47 && e.which < 58) || (e.which > 95 && e.which < 106) || e.which == 9 || e.which == 8 || e.which == 46)){
             e.preventDefault();
         }
     });
 
+    //user can enter only characters in username field in ad forms
     $("#user-name").keydown(function(e){
         if((e.which > 47 && e.which < 58) || (e.which > 95 && e.which < 106)){
             e.preventDefault();
         }
     });
 
+    // users can only enter
     $("#user-contact").keydown(function(e){
         if(!((e.which > 47 && e.which < 58) || (e.which > 95 && e.which < 106) || e.which == 9 || e.which == 8 || e.which == 46)){
             e.preventDefault();
         }
     });
 
+    //foloowing are the animations to show/hide fields of forms
     $(':radio[id=company]').change(function(){
         $("#companytab").show();
     });
     $(':radio[id=individual]').change(function(){
         $("#companytab").hide();
     });
-
     $(':radio[id=free-adv]').change(function(){
         $("#paidadvtab").hide();
         $("#freeadvtab").show();
@@ -34,11 +36,9 @@ $(function(){
         $("#freeadvtab").hide();
         $("#paidadvtab").show();
     });
-
     $('#ser-type').change(function(){
         $("#servicetitletab").show();
     });
-
     $(':radio[id=Sell]').change(function(){
         $("#buyhometab").hide();
         $("#renthometab").hide();
@@ -49,27 +49,23 @@ $(function(){
         $("#sellhometab").hide();
         $("#buyhometab").show();
     });
-
     $(':radio[id=Rent]').change(function(){
         $("#buyhometab").hide();
         $("#sellhometab").hide();
         $("#renthometab").show();
     });
-
     $(':radio[id=car-sell]').change(function(){
         $("#sellcartab").show();
     });
     $(':radio[id=car-buy]').change(function(){
         $("#sellcartab").hide();
     });
-
     $(':radio[id=bike-sell]').change(function(){
         $("#sellbiketab").show();
     });
     $(':radio[id=bike-buy]').change(function(){
         $("#sellbiketab").hide();
     });
-
     $("#education-type").on('change',function(){
         if( this.value == "Other" ) {
             $("#otherEducationtab").show();
@@ -77,7 +73,6 @@ $(function(){
             $("#otherEducationtab").hide();
         }
     });
-
     $('#event-type').on('change', function () {
         if (this.value == 'Event Management') {
             $("#management-event-tab").show();
@@ -90,7 +85,6 @@ $(function(){
             $("#live-event-tab").hide();
         }
     });
-
     $("#management-event-ser-type").on('change',function(){
         if (this.value == "Other"){
             $("#OtherEventServiceTab").show();
@@ -98,7 +92,6 @@ $(function(){
             $("#OtherEventServiceTab").hide();
         }
     });
-
     $("#live-event-ser-type").on('change',function(){
         if (this.value == "Other"){
             $("#OtherEventServiceTab").show();
@@ -106,7 +99,6 @@ $(function(){
             $("#OtherEventServiceTab").hide();
         }
     });
-
     $("#mobiles-condition").on('change',function(){
         if (this.value == "Used"){
             $("#usedmobiletab").show();
@@ -114,7 +106,6 @@ $(function(){
             $("#usedmobiletab").hide();
         }
     });
-
     $("#electronics-subcategory").on('change',function(){
         if (this.value == "Other"){
             $("#electronicsothertab").show();
@@ -122,7 +113,6 @@ $(function(){
             $("#electronicsothertab").hide();
         }
     });
-
     $("#elect-condition").on('change',function(){
         if (this.value == "Used"){
             $("#usedelectronicstab").show();
@@ -130,7 +120,6 @@ $(function(){
             $("#usedelectronicstab").hide();
         }
     });
-
     $("#homelife-condition").on('change',function(){
         if (this.value == "Used"){
             $("#usedhomelifetab").show();
@@ -138,7 +127,6 @@ $(function(){
             $("#usedhomelifetab").hide();
         }
     });
-
     $("#home-cat").on('change',function(){
         if (this.value == "Furniture & Decoration"){
             $("#furnituretab").show();

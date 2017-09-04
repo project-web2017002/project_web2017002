@@ -1,3 +1,6 @@
+<?php
+// this will also create category menu after main category menu in forward/dataindex.php to display to user
+?>
 <script>
     var category = document.getElementById("CategoryMenu2");
     for(var i=0; i<1; i++){

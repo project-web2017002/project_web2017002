@@ -1,7 +1,8 @@
+// this will get file from user while posting an advertisement/post and verifies it
 var input = document.querySelector('#refimg');
 var preview = document.querySelector('.preview');
 input.style.opacity = 0;
-input.addEventListener('change', updateImageDisplay);
+input.addEventListener('change', updateImageDisplay); // on input change
 function updateImageDisplay() {
     while(preview.firstChild) {
         preview.removeChild(preview.firstChild);
@@ -15,11 +16,11 @@ function updateImageDisplay() {
     } else {
         var list = document.createElement('ol');
         preview.appendChild(list);
-        for(var i = 0; i < 1; i++) {
+        for(var i = 0; i < 1; i++) { // change this to your limit
             var listItem = document.createElement('li');
             para = document.createElement('p');
             if(validFileType(curFiles[i])) {
-                para.textContent = 'File size ' + returnFileSize(curFiles[i].size) + '.';
+                para.textContent = 'File size ' + returnFileSize(curFiles[i].size) + '.'; // file size
                 var image = document.createElement('img');
                 image.src = window.URL.createObjectURL(curFiles[i]);
 
@@ -39,7 +40,7 @@ var fileTypes = [
     'image/jpeg',
     'image/jpg',
     'image/png'
-];
+]; // valid file types
 
 function validFileType(file) {
     for(var i = 0; i < fileTypes.length; i++) {

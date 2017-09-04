@@ -1,4 +1,5 @@
 $(function(){
+    // this will clear product popup data
     $(".viewProductHeader").click(function () {
         $("#viewproductTitle").html(''); $("#img-tab").html(''); $("#cost").html('');
         $("#by").html(''); $("#em").html(''); $("#co").html('');
@@ -8,6 +9,7 @@ $(function(){
         document.body.style.removeProperty(paddingRight);
     });
 
+    // if user click on buy button in cart, this will forward user to payment gateway
     $("#buy").click(function(){
         var a = $("#pr_id").html();
         var b = $("#cos").html();
@@ -19,7 +21,7 @@ $(function(){
         }
     });
 });
-
+// this will add an item/product to cart
 function addtocart() {
     $("#_acpr").attr("disabled", "disabled");
     var a = $("#_jkpr").html();
@@ -42,7 +44,7 @@ function addtocart() {
         }
     });
 }
-
+// this function will popup product info
 function ViewProduct(pr_id) {
     $("body").addClass("modal-open");
     document.body.style.paddingRight = "17px";

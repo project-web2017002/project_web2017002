@@ -1,3 +1,4 @@
+// this function change/add name of city in url as a filter object
 function changename(data){
     var urlofpage = window.location.href;
     var sep;
@@ -63,35 +64,33 @@ $(function(){
         $('#oo').show();
     });
 
-    /*$(".seritem").click(function(){
-        $("#_srchitem").val($(this).text());
-        $("#serchresult").slideUp();
-    });*/
 
     $("#_srchitem").click(function(){
         var vval = new_ov();
-        if(vval.length >= 3)
+        if(vval.length >= 3) {
             new_data(vval);
-        else
+        }
+        else {
             new_check();
+        }
     });
     $("#_srchitem").keyup(function (e) {
         var vval = new_ov();
         if(vval.length >= 3) {
-            /*if(e.which == 40){
-                e.preventDefault();
-                console.log(e.which);
-            }*/
             new_data(vval);
         }
-        else
+        else {
             new_check();
+        }
     });
 
     $("#_srchitem").focusout(function () {
-        $("#serchresult").slideUp();
+        setTimeout(one_more, 500);
     });
 
+    var one_more = function(){
+        $("#serchresult").slideUp();
+    };
     var new_ov = function(){
         $("#serchresult").slideDown();
         var vll = $("#_srchitem").val();
@@ -115,7 +114,7 @@ $(".btn-pref .btn").click(function () {
     $(".btn-pref .btn").removeClass("btn-primary").addClass("btn-default");
     $(this).removeClass("btn-default").addClass("btn-primary");
 });
-
+// this function change/add category in url as a filter object
 function changecategory(dataa){
     var urlofpage = window.location.href;
     var sep;
@@ -144,7 +143,7 @@ function changecategory(dataa){
         }
     }
 }
-
+// this function change/add page number in url as a filter object
 function changepage(dataa){
     var urlofpage = window.location.href;
     var sep;

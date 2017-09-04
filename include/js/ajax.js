@@ -1,3 +1,4 @@
+// signup form submit function
 $("#signup").click(function() {
     var username= $("#username").val();
     var content = $("#content").val();
@@ -28,7 +29,7 @@ $("#signup").click(function() {
         }
     });
 });
-
+//login form submit function
 $("#login").click(function(){
     var login_id = $("#loginContent").val();
     var login_pass = $("#loginPass").val();
@@ -58,6 +59,7 @@ $("#login").click(function(){
 });
 
 $(function() {
+    // signup button visibility
     $('#Signupform input').keyup(function() {
         var empty = false;
         $('#Signupform input').each(function() {
@@ -76,6 +78,7 @@ $(function() {
 });
 
 $(function() {
+    // login button visibility
     $('#loginForm input').keyup(function() {
         var empty = false;
         $('#loginForm input').each(function() {
@@ -90,7 +93,7 @@ $(function() {
         }
     });
 });
-
+// if our user click on edit submit button from profile page
 $("#edit").click(function(){
     var u_name=$("#usernam").val();
     var u_email=$("#conten").val();
@@ -115,7 +118,7 @@ $("#edit").click(function(){
         }
     });
 });
-
+// if google/fb user click on edit submit button from profile page
 $("#edit2").click(function(){
     $("#edit").prop('disabled',true);
     var u_contact=$("#contan").val();

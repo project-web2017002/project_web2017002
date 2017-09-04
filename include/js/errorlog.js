@@ -1,3 +1,4 @@
+// contains errors
 var err = ['Failed To get Category Info!',
     'Failed To get User Info!',
     'Please Enter Location',

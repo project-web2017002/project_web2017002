@@ -1,3 +1,7 @@
+<?php
+// this will be display footer
+// mobile-app displays an image
+?>
 <div class="mobile-app">
     <div class="container">
         <div class="col-md-5 app-left">
@@ -19,7 +23,10 @@
         <div class="clearfix"></div>
     </div>
 </div>
-
+<?php
+//  localhost/optimus in href to replace with website url
+//e.g //localhost/optimus/More/AboutUs will be replaced with www.example.com/More/AboutUs
+?>
 <footer class="container">
 	<div class="row">
         <div class="col-md-12 inlinelist-parent">
@@ -47,6 +54,9 @@
                         <div class="col-md-6 col-sm-12">
                             <div class="inlinelistbottomone">
                                 <h5>Follow Us</h5>
+                                <?php
+                                // replace below href with original links
+                                ?>
                                 <a href="https://www.facebook.com/" target="_blank" title="Facebook"><i class="fa fa-facebook"></i></a>
                                 <a href="https://www.linkedin.com/" target="_blank" title="Linkedin"><i class="fa fa-linkedin"></i></a>
                                 <a href="https://www.plus.google.com/" target="_blank" title="Google+"><i class="fa fa-google-plus"></i></a>
@@ -66,6 +76,9 @@
                 </div>
             </div>
             <div class="row">
+                <?php
+                // Dummy data
+                ?>
                 <p class="footer-info">
                     Widely known as India’s no. 1 online classifieds platform, Quikr is all about you.
                     Our aim is to empower every person in the country to independently connect with buyers and sellers online.

@@ -6,6 +6,7 @@ if($id == ''){
 }else {
     include("instamojo.php");
     $po = $_GET['g'];
+    // this should be like $api = new Instamojo\Instamojo('YOUR API', 'YOUR AUTH TOKEN'); in working environment
     $api = new Instamojo\Instamojo('d883725d0649590e6b97f907ca8a861f', '1c79820a17606392de6b594eacef4cf7', 'https://test.instamojo.com/api/1.1/');
 
     $pay_req_id = $_GET['payment_request_id'];

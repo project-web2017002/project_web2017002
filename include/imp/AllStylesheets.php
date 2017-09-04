@@ -1,3 +1,7 @@
+<?php
+// contains all css files links
+// added in main index.php file
+?>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <link rel="stylesheet" href="//localhost/optimus/include/css/index.css">
 <link rel="stylesheet" href="//localhost/optimus/include/css/modal.css">

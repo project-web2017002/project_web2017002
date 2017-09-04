@@ -248,14 +248,6 @@ span.price{
     color:white;
 }
 @media (min-width:768px) {
-    #_srchitem {
-        width: 130px;
-        -webkit-transition: width 0.2s linear;
-        transition: width 0.2s linear;
-    }
-    #_srchitem:focus {
-        width: 400px;
-    }
     #_funcid{
         max-height: 600px;
         overflow-y: scroll;

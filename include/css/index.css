@@ -158,3 +158,7 @@ body{
 #test:hover, #tes2:hover, #tes3:hover, #tes4:hover{
     box-shadow: 3px 3px 15px black;
 }
+#tes2
+{
+    float: left; height:450px; padding: 10px
+}
