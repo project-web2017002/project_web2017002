@@ -1,3 +1,6 @@
+<?php
+//contains field to enter user email
+?>
 <td>
     <div class="input-group">
         <span class="input-group-addon"><i class="fa fa-at"></i></span>

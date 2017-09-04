@@ -1,6 +1,7 @@
 <?php
 
 error_reporting(0);
+
 include("login/login.php");//login modal
 include("signup/signup.php");//signup modal
 include("postFreeAD/adBlockModal.php"); // post free ad confirmation modal
@@ -63,5 +64,5 @@ function time_elapsed_string($datetime, $full = false) {
 </div>
 <!--Loader gif-->
 <div id="loading" style="display: none; top:0; left:0; position: fixed; text-align: -webkit-center; padding: 15% 0; background: transparent; width: 100%; z-index: 9999">
-    <img src="/optimus/include/media/images/loading.gif">
+    <img src="//localhost/optimus/include/media/images/loading.gif">
 </div>

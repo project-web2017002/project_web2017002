@@ -1,7 +1,11 @@
 <?php
+
+//file updates users data
+//called by ajax function
+
 require("../../essential/db/db.php");
 require("../../essential/ses/session.php");
-if($id != '') {
+if($id != '') { // for our user
     $u_name = $_POST['u_name'];
     $u_email = $_POST['u_email'];
     $u_contact = $_POST['u_contact'];
@@ -12,7 +16,7 @@ if($id != '') {
     } else {
         $err = "Some Error! " . mysqli_error($con);
     }
-}elseif($googleid != ''){
+}elseif($googleid != ''){ //for google user
     $u_contact = $_POST['u_contact'];
 
     $update_query = mysqli_query($con, "update users set contact='$u_contact' where id=$googleid and oauth_provider='google'");
@@ -21,7 +25,7 @@ if($id != '') {
     } else {
         $err = "Some Error! " . mysqli_error($con);
     }
-}else{
+}else{ //for fb user
     $u_contact = $_POST['u_contact'];
 
     $update_query = mysqli_query($con, "update users set contact='$u_contact' where id=$fbid and oauth_provider='facebook'");

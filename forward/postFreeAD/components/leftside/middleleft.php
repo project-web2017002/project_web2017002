@@ -1,3 +1,4 @@
+<!--after first seven, next Three categories-->
 <div id="middleadv">
 <script>
     var category = document.getElementById("middleadv");

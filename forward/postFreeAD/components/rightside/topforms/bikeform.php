@@ -3,9 +3,15 @@
 
     <div class="col-md-10 col-sm-12">
         <form class="postform" name="bikesForm" autocomplete="off" method="post">
+            <?php
+            //bike ad form starts
+            ?>
             <table class="table">
 
-                <?php require("components/rightside/elements/commontop.php"); ?>
+
+                <?php // include some hidden fields
+                 require("components/rightside/elements/commontop.php");
+                 ?>
 
                 <tr>
                     <td>I want To:</td>
@@ -31,12 +37,16 @@
                     <td>
                         <input type="text" name="bike-reg-year" id="bike-reg-year" placeholder="Enter bike/Scooter Registration Year" class="form-control">
                     </td>
-                    <?php require("components/rightside/elements/postcity.php"); ?>
+                    <?php
+                    // city field
+                    require("components/rightside/elements/postcity.php"); ?>
                 </tr>
 
                 <tr>
-                    <?php require("components/rightside/elements/username.php"); ?>
-                    <?php require("components/rightside/elements/useremail.php"); ?>
+                    <?php // user name and user email fields
+                    require("components/rightside/elements/username.php");
+                    require("components/rightside/elements/useremail.php");
+                    ?>
                 </tr>
 
                 <tr>
@@ -50,9 +60,13 @@
                 </tr>
 
                 <tr>
-                    <?php require("components/rightside/elements/usercontact.php"); ?>
+                    <?php // user contact field
+                    require("components/rightside/elements/usercontact.php"); ?>
 
                     <td id="sellbiketab">
+                        <?php
+                        // this will be displayed to user only if user wants to sell
+                        ?>
                         <input type="text" name="bike-driven" id="bike-driven" placeholder="Enter bike/Scooter Driven kms." class="form-control">
                     </td>
                 </tr>
@@ -63,8 +77,10 @@
                     </td>
                 </tr>
 
-                <?php require("components/rightside/elements/commonbtm.php"); ?>
-                <?php require("components/rightside/elements/btn.php"); ?>
+                <?php // advertisement type fields and submit button
+                    require("components/rightside/elements/commonbtm.php");
+                    require("components/rightside/elements/btn.php");
+                ?>
             </table>
         </form>
     </div>

@@ -51,6 +51,9 @@
                 </tr>
 
                 <tr id="usedmobiletab">
+                    <?php
+                    // this will be displayed to user if user selects Used option from mobilescondition dropdown
+                    ?>
                     <td>
                         <input type="text" name="used-mobile-months" id="used-mobile-months" class="form-control" placeholder="Used For (months)">
                     </td>

@@ -1,3 +1,6 @@
+<?php
+//contains field to get location of user, and it will automatically detect user location and store it in city field
+?>
 <td>
     <div class="input-group">
         <span class="input-group-addon"><i class="fa fa-map-marker"></i></span>

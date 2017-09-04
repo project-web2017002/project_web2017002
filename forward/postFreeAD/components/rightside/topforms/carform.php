@@ -53,6 +53,9 @@
                     <?php require("components/rightside/elements/usercontact.php"); ?>
 
                     <td id="sellcartab">
+                        <?php
+                        // this will be displayed to user only if user wants to sell
+                        ?>
                         <input type="text" name="car-driven" id="car-driven" placeholder="Enter Car Driven kms." class="form-control">
                     </td>
                 </tr>

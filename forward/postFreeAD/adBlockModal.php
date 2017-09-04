@@ -1,4 +1,4 @@
-<!-- Modal -->
+<!-- confirmation Modal for posting an ad -->
 <div id="postModal" class="modal fade" role="dialog">
     <div class="modal-dialog">
 

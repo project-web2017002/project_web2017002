@@ -1,3 +1,6 @@
+<?php
+//contains field to select advertisement type
+?>
 <tr>
     <td>
         <h4>Select Advertisement Type:</h4>

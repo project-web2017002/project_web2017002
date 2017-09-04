@@ -1,4 +1,7 @@
 <?php
+// edit modal that open when user click on edit info option in Profile
+
+//check for the user type and particular data
 if($id != '') {
     $name_fetch = mysqli_query($con, "select * from verified_user where user_id=$id");
     $name_array = mysqli_fetch_array($name_fetch);
@@ -30,7 +33,7 @@ if($id != '') {
             <div class="modal-body smalltext">
                 <form id="EditDataForm" method="post" autocomplete="off">
                     <?php
-                    if($googleid == '' && $fbid == '') {
+                    if($googleid == '' && $fbid == '') { // only for Our registered users
                         ?>
                         <div class="form-group">
                             <input type="text" name="usernam" id="usernam" class="form-control" pattern="[a-zA-Z]{3,}"
@@ -49,13 +52,13 @@ if($id != '') {
                                value="<?php echo $user_contact ?>" placeholder="Enter Contact Number">
                     </div>
                     <?php
-                    if($googleid == '' || $fbid == '') {
+                    if($googleid == '' || $fbid == '') { // only for google and fb user registered users
                         ?>
                         <button type="submit" name="edit" id="edit" class="btn btn-danger"
                                 style="width: 100%; background-color: #e40046; color: white;">Continue
                         </button>
                         <?php
-                    }else{
+                    }else{ // only for Our registered users
                         ?>
                         <button type="submit" name="edit2" id="edit2" class="btn btn-danger"
                                 style="width: 100%; background-color: #e40046; color: white;">Continue

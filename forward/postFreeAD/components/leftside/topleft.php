@@ -1,3 +1,4 @@
+<!--first seven categories-->
 <div id="topadv">
 <script>
     var category = document.getElementById("topadv");

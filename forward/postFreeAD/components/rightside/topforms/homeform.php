@@ -19,6 +19,9 @@
                 </tr>
 
                 <tr id="sellhometab">
+                    <?php
+                    // this will be displayed to user if user selects Sell option from hometodo radio buttons
+                    ?>
                     <td colspan="2">
                        <table class="table">
 
@@ -38,6 +41,9 @@
                 </tr>
 
                 <tr id="buyhometab">
+                    <?php
+                    // this will be displayed to user if user selects Buy option from hometodo radio buttons
+                    ?>
                     <td colspan="2">
                         <table class="table">
 
@@ -54,6 +60,9 @@
                 </tr>
 
                 <tr id="renthometab">
+                    <?php
+                    // this will be displayed to user if user selects rent option from hometodo radio buttons
+                    ?>
                     <td colspan="2">
                         <table class="table">
 
@@ -94,6 +103,9 @@
                 </tr>
 
                 <tr class="hidden">
+                    <?php
+                    // hidden field with user city
+                    ?>
                     <?php require("components/rightside/elements/postcity.php"); ?>
                 </tr>
 
@@ -106,6 +118,9 @@
                 </tr>
 
                 <tr id="companytab">
+                    <?php
+                    // this will be displayed to user if user selects Company option from usertype radio buttons
+                    ?>
                     <td>
                         <div class="input-group">
                             <span class="input-group-addon"><i class="fa fa-institution"></i></span>

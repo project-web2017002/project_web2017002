@@ -1,3 +1,6 @@
+<?php
+//contains hidden fields to store category id and user id
+?>
 <tr>
     <td>
         <input type="hidden" value="<?php echo $ctid ?>" name="adv_cat" id="adv_cat">

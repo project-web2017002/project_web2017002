@@ -1,3 +1,6 @@
+<?php
+// only user details asked in this, no info what to include in it
+?>
 <div class="row">
     <div class="col-md-1 col-sm-12"></div>
 

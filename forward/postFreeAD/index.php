@@ -1,12 +1,15 @@
 <?php
+//post ad index page
+
+
 error_reporting(0);
 require("../../essential/db/db.php");
 require("../../essential/ses/session.php");
-$categoryid = $_GET['categoryId'];
-$city = $_GET['city'];
-$ctid = $_GET['ctId'];
-$scripterr = $_GET['err'];
-$product_id = $_GET['aagvgfeenmb'];
+$categoryid = $_GET['categoryId']; // category id
+$city = $_GET['city']; // gets city
+$ctid = $_GET['ctId']; // gets category id for posting an ad
+$scripterr = $_GET['err']; // error
+$product_id = $_GET['aagvgfeenmb']; //product id
 ?>
 <!DOCTYPE html>
 <html>
@@ -21,7 +24,7 @@ $product_id = $_GET['aagvgfeenmb'];
 </head>
 <body style="background: #f3f3f3">
 <?php
-if($id != "" || $googleid != '' || $fbid != '') {
+if($id != "" || $googleid != '' || $fbid != '') { //load files only if user logged in
 //login/signup modal
     require("../../forward/modal.php");
 //header
@@ -31,7 +34,7 @@ if($id != "" || $googleid != '' || $fbid != '') {
 <div class="container">
     <!-- main Content -->
     <?php
-    if($id == "" && $googleid == '' && $fbid == ''){
+    if($id == "" && $googleid == '' && $fbid == ''){ // if user is not logged in
         ?>
         <div class="container">
             <div class="row">
@@ -44,7 +47,7 @@ if($id != "" || $googleid != '' || $fbid != '') {
             </div>
         </div>
         <?php
-    }else {
+    }else { //if user is logged in
         if($product_id == '') {
             ?>
             <div class="dataindex-main" style="text-align: center;">
@@ -57,7 +60,7 @@ if($id != "" || $googleid != '' || $fbid != '') {
                         <!--empty-->
                     </div>
                     <?php
-                    if($ctid == '') {
+                    if($ctid == '') { // if category id is empty
                         ?>
                         <div class="col-md-2 col-sm-12">
                             <?php
@@ -70,7 +73,7 @@ if($id != "" || $googleid != '' || $fbid != '') {
                             ?>
                         </div>
                         <?php
-                    }else{
+                    }else{ // if category is selected for posting an ad
                         ?>
                         <div class="col-md-10 col-sm-12">
                             <?php
@@ -87,14 +90,14 @@ if($id != "" || $googleid != '' || $fbid != '') {
                 </div>
             </div>
             <?php
-        }else{
+        }else{ //for uploading ref-image after posting an ad
             require("components/imageUpload.php");
         }
     }
     ?>
 </div>
 <?php
-if($id != "" || $googleid != '' || $fbid != '') {
+if($id != "" || $googleid != '' || $fbid != '') { //only show if user logged in
 //footer
     require("../../include/foot/footer.php");
 }

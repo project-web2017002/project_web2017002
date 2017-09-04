@@ -36,6 +36,9 @@
                 </tr>
 
                 <tr id="electronicsothertab">
+                    <?php
+                    // this will be displayed to user if user selects Other option from electronics subcategory dropdown
+                    ?>
                     <td colspan="2">
                         <input type="text" name="electronics-other" id="electronics-other" class="form-control" placeholder="Specify Other">
                     </td>
@@ -66,6 +69,9 @@
                 </tr>
 
                 <tr id="usedelectronicstab">
+                    <?php
+                    // this will be displayed to user if user selects Used option from electcondition dropdown
+                    ?>
                     <td>
                         <input type="text" name="used-elect-months" id="used-elect-months" class="form-control" placeholder="Used For (months)">
                     </td>

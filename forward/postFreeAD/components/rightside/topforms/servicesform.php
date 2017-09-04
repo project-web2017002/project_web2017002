@@ -50,6 +50,9 @@
                 </tr>
 
                 <tr id="companytab">
+                    <?php
+                    // this will be displayed to user if user selects company option from usertype radio buttons
+                    ?>
                     <td>
                         <div class="input-group">
                             <span class="input-group-addon"><i class="fa fa-institution"></i></span>

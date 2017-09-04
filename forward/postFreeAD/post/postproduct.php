@@ -1,11 +1,11 @@
 <?php
-
+//this file will post an product to database and create files of product uploaded
 require("../../../essential/db/db.php");
 require("../../../essential/ses/session.php");
-$posted_data = $_POST;
-$category_id = $_POST['categoryid'];
+$posted_data = $_POST;// fetch all global data
+$category_id = $_POST['categoryid']; //fetch category id
 
-switch($category_id){
+switch($category_id){ //switch to particular function for particular category id
     case 10001: one(); break;
     case 10002: two(); break;
     case 10012: two(); break;
@@ -29,15 +29,15 @@ switch($category_id){
     default: exit();
 }
 
-function mainn($one,$two,$three,$four){
-    $con = $GLOBALS['con'];
+function mainn($one,$two,$three,$four){ // this function upload data into db and mail to user
+    $con = $GLOBALS['con']; // database connection
     $insertQuery = mysqli_query($con,"insert into listed_products (product_title,pro_description_file,cost) values 
 ('$one','$two',$three)")or die("Error in uploading");
     if($insertQuery){
         $getprid = mysqli_query($con,"select * from listed_products where pro_description_file='$two'");
         $fetch = mysqli_fetch_array($getprid);
         $pr_id = $fetch[0];
-        $mailed = sendmail($four,"opadmin1@gmail.com");
+        $mailed = sendmail($four,"opadmin1@gmail.com"); //send mail function called
         if($mailed == 'send')
             echo $pr_id;
         else
@@ -48,6 +48,7 @@ function mainn($one,$two,$three,$four){
 }
 
 function one(){
+    //list of data received for uploading
     $posted_data = $GLOBALS['posted_data'];
     $category_id = $GLOBALS['category_id'];
     $user_id = $posted_data['userid'];
@@ -68,28 +69,32 @@ function one(){
 
     $name = $date."-".$user_id;
 
+    //create path
     $path = "../../../Category/categoryID/10001/";
     mkdir($path,0,true);
     $filename = $name.".csv";
-
+    //create a file
     $fileopen = fopen($path."/".$filename,"x");
+    //insert header array
     $fileheadings = array("Category ID","User ID","Service Type","Service Fees","Service Name","City","User Name","User Email","User Contact",
     "User Type","Company Name","Company Email","Company Contact","Advertisement Type","Date","UserType");
-    fputcsv($fileopen,$fileheadings);
-    fclose($fileopen);
+    fputcsv($fileopen,$fileheadings); //put data to file
+    fclose($fileopen); //close the file
 
-    $fileopen2=fopen($path."/".$filename,"a");
+    $fileopen2=fopen($path."/".$filename,"a"); //open file in append mode
     $fileheadings2 = array($category_id,$user_id,$service_type,$service_fees,$service_name,$city,$user_name,$user_email,$user_contact,
         $user_type,$company_name,$company_email,$company_contact,$advt_type,$date,$utype);
-    fputcsv($fileopen2,$fileheadings2);
-    fclose($fileopen2);
+    fputcsv($fileopen2,$fileheadings2); //insert ad data
+    fclose($fileopen2);//close the file
 
-    $url = "//localhost/optimus/Category/categoryId/10001/".$filename;
+    $url = "//localhost/optimus/Category/categoryId/10001/".$filename; //create a url of file
 
-    mainn($service_name,$url,$service_fees,$user_email);
+    mainn($service_name,$url,$service_fees,$user_email); //insert in db
+    //comments given in this functions are same for all functions
 
 }
 function two(){
+    //list of data received for uploading
     $con = $GLOBALS['con'];
     $posted_data = $GLOBALS['posted_data'];
     $category_id = $GLOBALS['category_id'];
@@ -134,6 +139,7 @@ function two(){
     mainn($home_todo,$url,$home_cost,$user_email);
 }
 function three(){
+    //list of data received for uploading
     $con = $GLOBALS['con'];
     $posted_data = $GLOBALS['posted_data'];
     $category_id = $GLOBALS['category_id'];
@@ -176,6 +182,7 @@ function three(){
 
 }
 function four(){
+    //list of data received for uploading
     $con = $GLOBALS['con'];
     $posted_data = $GLOBALS['posted_data'];
     $category_id = $GLOBALS['category_id'];
@@ -218,6 +225,7 @@ function four(){
 
 }
 function five(){
+    //list of data received for uploading
     $con = $GLOBALS['con'];
     $posted_data = $GLOBALS['posted_data'];
     $category_id = $GLOBALS['category_id'];
@@ -260,6 +268,7 @@ function five(){
 
 }
 function six(){
+    //list of data received for uploading
     $posted_data = $GLOBALS['posted_data'];
     $category_id = $GLOBALS['category_id'];
     $user_id = $posted_data['userid'];
@@ -302,6 +311,7 @@ function six(){
 
 }
 function seven(){
+    //list of data received for uploading
     $con = $GLOBALS['con'];
     $posted_data = $GLOBALS['posted_data'];
     $category_id = $GLOBALS['category_id'];
@@ -349,6 +359,7 @@ function seven(){
 
 }
 function eight(){
+    //list of data received for uploading
     $con = $GLOBALS['con'];
     $posted_data = $GLOBALS['posted_data'];
     $category_id = $GLOBALS['category_id'];
@@ -398,6 +409,7 @@ function eight(){
 
 }
 function nine(){
+    //list of data received for uploading
     $con = $GLOBALS['con'];
     $posted_data = $GLOBALS['posted_data'];
     $category_id = $GLOBALS['category_id'];
@@ -445,6 +457,7 @@ function nine(){
 
 }
 function ten(){
+    //list of data received for uploading
     $con = $GLOBALS['con'];
     $posted_data = $GLOBALS['posted_data'];
     $category_id = $GLOBALS['category_id'];
@@ -485,6 +498,7 @@ function ten(){
     }
 }
 function eleven(){
+    //list of data received for uploading
     $con = $GLOBALS['con'];
     $posted_data = $GLOBALS['posted_data'];
     $category_id = $GLOBALS['category_id'];
@@ -526,6 +540,7 @@ function eleven(){
 
 }
 function twelve(){
+    //list of data received for uploading
     $con = $GLOBALS['con'];
     $posted_data = $GLOBALS['posted_data'];
     $category_id = $GLOBALS['category_id'];
@@ -567,6 +582,7 @@ function twelve(){
 
 }
 function thirteen(){
+    //list of data received for uploading
     $con = $GLOBALS['con'];
     $posted_data = $GLOBALS['posted_data'];
     $category_id = $GLOBALS['category_id'];
@@ -607,6 +623,7 @@ function thirteen(){
     mainn($event_type,$url,$event_cost,$user_email);
 }
 function fourteen(){
+    //list of data received for uploading
     $con = $GLOBALS['con'];
     $posted_data = $GLOBALS['posted_data'];
     $category_id = $GLOBALS['category_id'];
@@ -647,14 +664,14 @@ function fourteen(){
     }
 }
 
-function sendmail($one,$two){
+function sendmail($one,$two){ //this function send mail to user and an admin
     require("../../../mail/PHPMailerAutoload.php");
     $mail  = new PHPMailer();
     $mail->Host = "smtp.gmail.com";
     $mail->isSMTP();
     $mail->SMTPAuth = true;
-    $mail->Username = "optimustechprojectweb201702@gmail.com";
-    $mail->Password = "Pass@1234";
+    $mail->Username = "optimustechprojectweb201702@gmail.com"; // gmail user name
+    $mail->Password = "Pass@1234"; //gmail password
     $mail->SMTPSecure = "tls"; //or ssl
     $mail->Port = 587;//465 for ssl
     $mail->Subject = "Your Product Has been Successfully Posted!";

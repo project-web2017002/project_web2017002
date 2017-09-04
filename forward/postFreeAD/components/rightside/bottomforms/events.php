@@ -16,6 +16,9 @@
                         </select>
                     </td>
                     <td id="management-event-tab">
+                        <?php
+                        // this will be displayed only if user selects Event management from eventtype dropdown
+                        ?>
                         <select name="management-event-ser-type" id="management-event-ser-type" class="form-control">
                             <option value="Catering">Catering</option>
                             <option value="Decoration">Decoration</option>
@@ -27,6 +30,9 @@
                         </select>
                     </td>
                     <td id="live-event-tab">
+                        <?php
+                        // this will be displayed only if user selects Live event from eventtype dropdown
+                        ?>
                         <select name="live-event-ser-type" id="live-event-ser-type" class="form-control">
                             <option value="Catering">Catering</option>
                             <option value="Decoration">Decoration</option>

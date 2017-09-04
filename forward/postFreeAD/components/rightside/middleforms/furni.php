@@ -20,6 +20,9 @@
                     </td>
 
                     <td id="furnituretab">
+                        <?php
+                        // this will be displayed to user if user selects Furniture & decoration option from homecat dropdown
+                        ?>
                         <select class="form-control" id="furni-subcategory" name="furni-subcategory">
                             <option value="Furniture for Home & Office">Furniture for Home & Office</option>
                             <option value="Home Decore - Furnishings">Home Decore - Furnishings</option>
@@ -31,6 +34,9 @@
                     </td>
 
                     <td id="kidstab">
+                        <?php
+                        // this will be displayed to user if user selects Kids & toys option from homecat dropdown
+                        ?>
                         <select class="form-control" id="kids-subcategory" name="kids-subcategory">
                             <option value="Toys - Games">Toys - Games</option>
                             <option value="Baby - Infant Products">Baby - Infant Products</option>
@@ -39,6 +45,9 @@
                     </td>
 
                     <td id="sportstab">
+                        <?php
+                        // this will be displayed to user if user selects sports, books & hobbies option from homecat dropdown
+                        ?>
                         <select class="form-control" id="sports-subcategory" name="sports-subcategory">
                             <option value="Sports - Fitness Equipments">Sports - Fitness Equipments</option>
                             <option value="Bicycle & Accessories">Bicycle & Accessories</option>
@@ -51,6 +60,9 @@
                     </td>
 
                     <td id="fashiontab">
+                        <?php
+                        // this will be displayed to user if user selects Fashion option from homecat dropdown
+                        ?>
                         <select class="form-control" id="fashion-subcategory" name="fashion-subcategory">
                             <option value="Clothing - Garments(Men)">Clothing - Garments(Men)</option>
                             <option value="Watches(Men)">Watches(Men)</option>
@@ -78,6 +90,9 @@
                     </td>
 
                     <td id="otherhomenlifetab">
+                        <?php
+                        // this will be displayed to user if user selects Other option from homecat dropdown
+                        ?>
                         <input type="text" class="form-control" name="otherlifehome" id="otherlifehome" placeholder="Please specify Other">
                     </td>
                 </tr>
@@ -106,6 +121,9 @@
                 </tr>
 
                 <tr id="usedhomelifetab">
+                    <?php
+                    // this will be displayed to user if user selects used option from homelife-condition dropdown
+                    ?>
                     <td>
                         <input type="text" name="used-homelife-months" id="used-homelife-months" class="form-control" placeholder="Used For (months)">
                     </td>

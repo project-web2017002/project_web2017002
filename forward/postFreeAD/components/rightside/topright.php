@@ -1,7 +1,8 @@
 <?php
-    if($ctid==''){
+// this file will show the forms of first seven categories if any of them is selected
+    if($ctid==''){ // if no category selected
         require("default.php");
-    }else{
+    }else{ //if any category is selected
         if($ctid==10001){
             ?>
             <div class="page-header">

@@ -1,3 +1,4 @@
+<!--after first 10 categories next categories-->
 <div id="bottomadv">
 <script>
     var category = document.getElementById("bottomadv");

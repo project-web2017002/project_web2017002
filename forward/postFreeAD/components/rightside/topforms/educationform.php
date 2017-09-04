@@ -9,19 +9,6 @@
 
                 <tr>
                     <td>
-                        <!--<input list="browsers" name="education-type" id="education-type" class="form-control" value="Please Select One">
-                        <datalist id="browsers">
-                            <option value="">--Please Select One--</option>
-                            <option value="Career Counseling">Career Counseling</option>
-                            <option value="Certification & Training">Certification & Training</option>
-                            <option value="Coaching">Coaching</option>
-                            <option value="Workshops">Workshops</option>
-                            <option value="Distance Learning">Distance Learning</option>
-                            <option value="Study Abroad Consultants">Study Abroad Consultants</option>
-                            <option value="Skill Training">Skill Training</option>
-                            <option value="Study Material">Study Material</option>
-                            <option value="Other">Other</option>
-                        </datalist>-->
                         <select class="form-control" name="education-type" id="education-type">
                             <option value="">--Please Select One--</option>
                             <option value="Career Counseling">Career Counseling</option>
@@ -36,6 +23,9 @@
                         </select>
                     </td>
                     <td id="otherEducationtab">
+                        <?php
+                        // this will be displayed to user only if user selects Other from above dropdown
+                        ?>
                         <input type="text" class="form-control" name="other-edu-val" id="other-edu-val" placeholder="Please Specify Other">
                     </td>
                 </tr>

@@ -1,3 +1,4 @@
+<!--If user didn't select a category from listed categories-->
 <div class="container">
     <div class="row">
         <div class="jumbotron">

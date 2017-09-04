@@ -1,4 +1,5 @@
 <?php
+// this file will show the forms of 3 categories after first seven categories if any of them is selected
 if($ctid==10008 || $ctid == 10017 || $ctid == 10010 || $ctid == 10011 || $ctid == 10013){
     ?>
     <div class="page-header">

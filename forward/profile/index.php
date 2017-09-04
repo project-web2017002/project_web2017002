@@ -1,10 +1,13 @@
 <?php
+//user profile page
+
+
 require("../../essential/db/db.php");
 require("../../essential/ses/session.php");
 require("../../forward/OtherFiles/viewProduct/index.php");
-if($id=='' && $googleid == '' && $fbid == ''){
+if($id=='' && $googleid == '' && $fbid == ''){ // without login, no access
     echo "<script>window.locatio.assign('../../');</script>";
-}elseif(($googleid == '' && $fbid == '') && $id != '') {
+}elseif(($googleid == '' && $fbid == '') && $id != '') { // for our user
     //login/signup modal
     require("../../forward/modal.php");
     //header
@@ -26,100 +29,20 @@ if($id=='' && $googleid == '' && $fbid == ''){
 
         <div class="row">
             <div class="col-md-12 col-sm-12">
-                <div class="card hovercard">
-                    <div class="card-background">
-                        <img class="card-bkimg" alt="" src="http://lorempixel.com/100/100/people/9/">
-                    </div>
-                    <div class="useravatar">
-                        <img alt="" src="http://zelfverbeteren.nl/wp-content/uploads/2016/12/abstract-user-flat-3.png">
-                    </div>
-                    <div class="card-info">
-                        <span class="card-title" style="text-transform: uppercase"><?php echo $user_name ?></span>
-                    </div>
-                </div>
-                <div class="btn-pref btn-group btn-group-justified btn-group-lg" role="group" aria-label="...">
-                    <div class="btn-group" role="group">
-                        <button type="button" id="stars" class="btn btn-primary" href="#tab1" data-toggle="tab">
-                            <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
-                            <div class="hidden-xs">About Me</div>
-                        </button>
-                    </div>
-                    <div class="btn-group" role="group">
-                        <button type="button" id="favorites" class="btn btn-default" href="#tab2" data-toggle="tab">
-                            <span class="glyphicon glyphicon-heart" aria-hidden="true"></span>
-                            <div class="hidden-xs">My Orders</div>
-                        </button>
-                    </div>
-                    <div class="btn-group" role="group">
-                        <button type="button" id="following" class="btn btn-default" href="#tab3" data-toggle="tab">
-                            <span class="fa fa-product-hunt" aria-hidden="true"></span>
-                            <div class="hidden-xs">Sold/Selling Products</div>
-                        </button>
-                    </div>
-                    <div class="btn-group" role="group">
-                        <button type="button" id="following" class="btn btn-default" href="#tab4" data-toggle="tab">
-                            <span class="fa fa-product-hunt" aria-hidden="true"></span>
-                            <div class="hidden-xs">Others</div>
-                        </button>
-                    </div>
-                </div>
+
+                <?php
+                require("tabs.php");
+                ?>
 
                 <div class="well">
                     <div class="tab-content">
-                        <div class="tab-pane fade in active" id="tab1">
-                            <div class="row">
-                                <div class="col-md-2 col-sm-12"></div>
-                                <div class="col-md-8 col-sm-12">
-                                    <div class="row">
-                                        <div class="col-md-12 col-sm-12 rgt-pull">
-                                            <h5>
-                                                <strong style="cursor: pointer" data-toggle="modal"
-                                                        data-target="#editModal">
-                                                    <i class="fa fa-edit"></i> Edit
-                                                </strong>
-                                            </h5>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-md-6 col-sm-12 pull-lft">
-                                            <h5>
-                                                <strong>User Name:</strong>
-                                            </h5>
-                                        </div>
-                                        <div class="col-md-6 col-sm-12 rgt-pull">
-                                            <h5 style="text-transform: capitalize">
-                                                <em><?php echo $user_name ?></em>
-                                            </h5>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-md-6 col-sm-12 pull-lft">
-                                            <h5>
-                                                <strong>Email Id:</strong>
-                                            </h5>
-                                        </div>
-                                        <div class="col-md-6 col-sm-12 rgt-pull">
-                                            <h5>
-                                                <em><?php echo $user_email ?></em>
-                                            </h5>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-md-6 col-sm-12 pull-lft">
-                                            <h5>
-                                                <strong>Contact Number:</strong>
-                                            </h5>
-                                        </div>
-                                        <div class="col-md-6 col-sm-12 rgt-pull">
-                                            <h5>
-                                                <em><?php echo $user_contact ?></em>
-                                            </h5>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-2 col-sm-12"></div>
-                            </div>
-                        </div>
+                        <!--User info tab-->
+                        <?php
+                        require("userinfo.php");
+                        ?>
+                        <!--User info tab ends-->
+
+                        <!--User orders tab-->
                         <div class="tab-pane fade in" id="tab2">
                             <div class="container">
                             <?php
@@ -193,6 +116,9 @@ if($id=='' && $googleid == '' && $fbid == ''){
                             ?>
                             </div>
                         </div>
+                        <!--User orders tab ends-->
+
+                        <!--User uploads tab-->
                         <div class="tab-pane fade in" id="tab3">
                             <div class="container">
                                 <div class="row">
@@ -255,6 +181,8 @@ if($id=='' && $googleid == '' && $fbid == ''){
                                 </div>
                             </div>
                         </div>
+                        <!--User uploads tab ends-->
+
                         <div class="tab-pane fade in" id="tab4">
                             <h3>This is tab 4</h3>
                         </div>
@@ -272,7 +200,7 @@ if($id=='' && $googleid == '' && $fbid == ''){
     </body>
     </html>
     <?php
-}elseif(($id == '' && $fbid == '') && $googleid != '') {
+}elseif(($id == '' && $fbid == '') && $googleid != '') { // for google users
     //login/signup modal
     require("../../forward/modal.php");
     //header
@@ -294,100 +222,18 @@ if($id=='' && $googleid == '' && $fbid == ''){
 
         <div class="row">
             <div class="col-md-12 col-sm-12">
-                <div class="card hovercard">
-                    <div class="card-background">
-                        <img class="card-bkimg" alt="" src="http://lorempixel.com/100/100/people/9/">
-                    </div>
-                    <div class="useravatar">
-                        <img alt="" src="http://zelfverbeteren.nl/wp-content/uploads/2016/12/abstract-user-flat-3.png">
-                    </div>
-                    <div class="card-info">
-                        <span class="card-title" style="text-transform: uppercase"><?php echo $user_name ?></span>
-                    </div>
-                </div>
-                <div class="btn-pref btn-group btn-group-justified btn-group-lg" role="group" aria-label="...">
-                    <div class="btn-group" role="group">
-                        <button type="button" id="stars" class="btn btn-primary" href="#tab1" data-toggle="tab">
-                            <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
-                            <div class="hidden-xs">About Me</div>
-                        </button>
-                    </div>
-                    <div class="btn-group" role="group">
-                        <button type="button" id="favorites" class="btn btn-default" href="#tab2" data-toggle="tab">
-                            <span class="glyphicon glyphicon-heart" aria-hidden="true"></span>
-                            <div class="hidden-xs">My Orders</div>
-                        </button>
-                    </div>
-                    <div class="btn-group" role="group">
-                        <button type="button" id="following" class="btn btn-default" href="#tab3" data-toggle="tab">
-                            <span class="fa fa-product-hunt" aria-hidden="true"></span>
-                            <div class="hidden-xs">Sold/Selling Products</div>
-                        </button>
-                    </div>
-                    <div class="btn-group" role="group">
-                        <button type="button" id="following" class="btn btn-default" href="#tab4" data-toggle="tab">
-                            <span class="fa fa-product-hunt" aria-hidden="true"></span>
-                            <div class="hidden-xs">Others</div>
-                        </button>
-                    </div>
-                </div>
+
+                <?php
+                require("tabs.php");
+                ?>
 
                 <div class="well">
                     <div class="tab-content">
-                        <div class="tab-pane fade in active" id="tab1">
-                            <div class="row">
-                                <div class="col-md-2 col-sm-12"></div>
-                                <div class="col-md-8 col-sm-12">
-                                    <div class="row">
-                                        <div class="col-md-12 col-sm-12 rgt-pull">
-                                            <h5>
-                                                <strong style="cursor: pointer" data-toggle="modal"
-                                                        data-target="#editModal">
-                                                    <i class="fa fa-edit"></i> Edit
-                                                </strong>
-                                            </h5>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-md-6 col-sm-12 pull-lft">
-                                            <h5>
-                                                <strong>User Name:</strong>
-                                            </h5>
-                                        </div>
-                                        <div class="col-md-6 col-sm-12 rgt-pull">
-                                            <h5 style="text-transform: capitalize">
-                                                <em><?php echo $user_name ?></em>
-                                            </h5>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-md-6 col-sm-12 pull-lft">
-                                            <h5>
-                                                <strong>Email Id:</strong>
-                                            </h5>
-                                        </div>
-                                        <div class="col-md-6 col-sm-12 rgt-pull">
-                                            <h5>
-                                                <em><?php echo $user_email ?></em>
-                                            </h5>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-md-6 col-sm-12 pull-lft">
-                                            <h5>
-                                                <strong>Contact Number:</strong>
-                                            </h5>
-                                        </div>
-                                        <div class="col-md-6 col-sm-12 rgt-pull">
-                                            <h5>
-                                                <em><?php echo $user_contact ?></em>
-                                            </h5>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-2 col-sm-12"></div>
-                            </div>
-                        </div>
+                        <!--User info tab-->
+                        <?php
+                        require("userinfo.php");
+                        ?>
+                        <!--User info tab ends-->
                         <div class="tab-pane fade in" id="tab2">
                             <div class="container">
                                 <?php
@@ -566,100 +412,18 @@ if($id=='' && $googleid == '' && $fbid == ''){
 
         <div class="row">
             <div class="col-md-12 col-sm-12">
-                <div class="card hovercard">
-                    <div class="card-background">
-                        <img class="card-bkimg" alt="" src="http://lorempixel.com/100/100/people/9/">
-                    </div>
-                    <div class="useravatar">
-                        <img alt="" src="http://zelfverbeteren.nl/wp-content/uploads/2016/12/abstract-user-flat-3.png">
-                    </div>
-                    <div class="card-info">
-                        <span class="card-title" style="text-transform: uppercase"><?php echo $user_name ?></span>
-                    </div>
-                </div>
-                <div class="btn-pref btn-group btn-group-justified btn-group-lg" role="group" aria-label="...">
-                    <div class="btn-group" role="group">
-                        <button type="button" id="stars" class="btn btn-primary" href="#tab1" data-toggle="tab">
-                            <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
-                            <div class="hidden-xs">About Me</div>
-                        </button>
-                    </div>
-                    <div class="btn-group" role="group">
-                        <button type="button" id="favorites" class="btn btn-default" href="#tab2" data-toggle="tab">
-                            <span class="glyphicon glyphicon-heart" aria-hidden="true"></span>
-                            <div class="hidden-xs">My Orders</div>
-                        </button>
-                    </div>
-                    <div class="btn-group" role="group">
-                        <button type="button" id="following" class="btn btn-default" href="#tab3" data-toggle="tab">
-                            <span class="fa fa-product-hunt" aria-hidden="true"></span>
-                            <div class="hidden-xs">Sold/Selling Products</div>
-                        </button>
-                    </div>
-                    <div class="btn-group" role="group">
-                        <button type="button" id="following" class="btn btn-default" href="#tab4" data-toggle="tab">
-                            <span class="fa fa-product-hunt" aria-hidden="true"></span>
-                            <div class="hidden-xs">Others</div>
-                        </button>
-                    </div>
-                </div>
+
+                <?php
+                require("tabs.php");
+                ?>
 
                 <div class="well">
                     <div class="tab-content">
-                        <div class="tab-pane fade in active" id="tab1">
-                            <div class="row">
-                                <div class="col-md-2 col-sm-12"></div>
-                                <div class="col-md-8 col-sm-12">
-                                    <div class="row">
-                                        <div class="col-md-12 col-sm-12 rgt-pull">
-                                            <h5>
-                                                <strong style="cursor: pointer" data-toggle="modal"
-                                                        data-target="#editModal">
-                                                    <i class="fa fa-edit"></i> Edit
-                                                </strong>
-                                            </h5>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-md-6 col-sm-12 pull-lft">
-                                            <h5>
-                                                <strong>User Name:</strong>
-                                            </h5>
-                                        </div>
-                                        <div class="col-md-6 col-sm-12 rgt-pull">
-                                            <h5 style="text-transform: capitalize">
-                                                <em><?php echo $user_name ?></em>
-                                            </h5>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-md-6 col-sm-12 pull-lft">
-                                            <h5>
-                                                <strong>Email Id:</strong>
-                                            </h5>
-                                        </div>
-                                        <div class="col-md-6 col-sm-12 rgt-pull">
-                                            <h5>
-                                                <em><?php echo $user_email ?></em>
-                                            </h5>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-md-6 col-sm-12 pull-lft">
-                                            <h5>
-                                                <strong>Contact Number:</strong>
-                                            </h5>
-                                        </div>
-                                        <div class="col-md-6 col-sm-12 rgt-pull">
-                                            <h5>
-                                                <em><?php echo $user_contact ?></em>
-                                            </h5>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-2 col-sm-12"></div>
-                            </div>
-                        </div>
+                        <!--User info tab-->
+                        <?php
+                        require("userinfo.php");
+                        ?>
+                        <!--User info tab ends-->
                         <div class="tab-pane fade in" id="tab2">
                             <div class="container">
                                 <?php

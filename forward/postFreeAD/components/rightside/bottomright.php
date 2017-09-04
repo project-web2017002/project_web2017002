@@ -1,4 +1,5 @@
 <?php
+// this file will show the forms of categories after first 10 categories if any of them is selected
 if ($ctid==10018){
     ?>
     <div class="page-header">

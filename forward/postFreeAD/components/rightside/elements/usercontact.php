@@ -1,3 +1,6 @@
+<?php
+//contains field to enter user contact
+?>
 <td>
     <div class="input-group">
         <span class="input-group-addon"><i class="glyphicon glyphicon-phone-alt"></i></span>
