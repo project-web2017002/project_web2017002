@@ -1,6 +1,52 @@
 # project_web2017002
 Web Project
 ==============================================
+14-9-2017
+
+* few more products listed
+* edited bugs and fixed them
+* location tracing problem fixed
+* user interface changed for viewing products
+* now original added details will be displayed in view product, no dummy data now (in users window)
+
+13-9-2017
+
+* new products listed
+
+12-9-2017
+
+* file structure changed for saving advertisement details
+* user can now ad multiple images for an ad
+* old products removed
+
+10-9-2017
+
+* Changed the form layouts
+* description field is added to all categories of ads
+* description field is ordered list editor
+
+8-9-2017
+
+* worked on creating possible workflow of quiz site
+
+7-9-2017
+
+* looked for possiblilies of other quiz site
+
+2-9-2017
+
+* leftovers of code removed
+* extra files removed
+* code rearranged
+
+31-8-2017
+
+* comments added to all sections
+
+30-8-2017
+
+* comments added
+
 29-8-2017
 
 * code comments added in many files
