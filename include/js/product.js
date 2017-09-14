@@ -20,6 +20,7 @@ $(function(){
             window.location.assign("../../payment_gateway/"+data);
         }
     });
+
 });
 // this will add an item/product to cart
 function addtocart() {
@@ -62,7 +63,7 @@ function ViewProduct(pr_id) {
                 $("#_prc").html(arr[7]); $("#cost").html(arr[3]);
                 $("#by").html(arr[4]); $("#em").html(arr[5]); $("#co").html(arr[6]);
                 $("#_jkpr").html(pr_id); $("#_lc").html(arr[8]); $("#_ad").html(arr[9]);
-                $("#pituresofproduct").html(arr[10]);
+                $("#pituresofproduct").html(arr[10]); $("#_descPro").html(arr[12]);
             } else { $(".errorViewProduct").html(arr[0]); }
         },
         error: function () { $("#viewProduct").hide(); }

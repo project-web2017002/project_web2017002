@@ -1,5 +1,6 @@
 <?php
 require("../../../essential/db/db.php");
+require("../../../essential/ses/session.php");
 ?>
 <!DOCTYPE html>
 <html>

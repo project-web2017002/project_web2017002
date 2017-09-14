@@ -19,6 +19,7 @@ $("#submitForm").click(function(){
         var pos_city=$("#pocity").val();
         var post_city = pos_city.replace(/,/gi,"-");
         var adv_type=$("input[name=adv-type]:checked").val();
+        var descc = editableDESC.document.body.innerHTML;
         var advt_type;
         if(adv_type=="Paid"){
             advt_type=$("input[name=paidser-type]:checked").val();
@@ -51,12 +52,12 @@ $("#submitForm").click(function(){
                     var company_name=$("#company-name").val();
                     var company_email=$("#company-email").val();
                     company_contact = $("#company-contact").val();
-
+                    var ser_desc = descc;
                     //data to pass to php page
                     data = "categoryid="+ category_id +"&userid="+ user_id +"&servicetype="+ service_type +"&servicefees="+ service_fees +
                         "&servicename="+ service_name +"&city=" + post_city + "&username="+ user_name +"&useremail="+ user_email +"&usercontact="+ user_contact +
                         "&usertype="+ user_type +"&companyname="+ company_name +"&companyemail="+ company_email +"&companycontact="+
-                        company_contact +"&advtype=" + advt_type + "&utype=" + usertype;
+                        company_contact +"&advtype=" + advt_type + "&utype=" + usertype + "&desc=" + ser_desc;
 
                     if(service_type == ''){
                         alert.innerHTML = err[6];
@@ -94,7 +95,7 @@ $("#submitForm").click(function(){
                     var bike_reg_year = $("#bike-reg-year").val();
                     var bike_user_type = $("input[name=bike-user-type]:checked").val();
                     var bike_kms_driven = $("#bike-driven").val();
-                    var bike_desc = $("#bike-desc").val();
+                    var bike_desc = descc;
 
                     data = "categoryid="+ category_id +"&userid="+ user_id +"&bikecattype="+ bike_cat_type +"&bikebrand="+ bike_brand +"&bikecost="+
                         bike_cost +"&bikeregyear="+ bike_reg_year +"&bikecity="+ post_city +"&username="+ user_name +"&useremail="+ user_email +
@@ -182,7 +183,7 @@ $("#submitForm").click(function(){
                     var car_reg_year = $("#car-reg-year").val();
                     var car_user_type = $("input[name=car-user-type]:checked").val();
                     var car_kms_driven = $("#car-driven").val();
-                    var car_desc = $("#car-desc").val();
+                    var car_desc = descc;
 
                     data = "categoryid="+ category_id +"&userid="+ user_id +"&carcattype="+ car_cat_type +"&carbrand="+ car_brand +"&carcost="+
                         car_cost +"&carregyear="+ car_reg_year +"&carcity="+ post_city +"&username="+ user_name +"&useremail="+ user_email +
@@ -273,7 +274,7 @@ $("#submitForm").click(function(){
                     var edu_insti_address = $("#edu-insti-address").val();
                     var edu_insti_contact = $("#edu-insti-contact").val();
                     var edu_insti_email = $("#edu-insti-email").val();
-                    var edu_desc = $("#edu-desc").val();
+                    var edu_desc = descc;
 
                     data = "categoryid="+ category_id +"&userid="+ user_id +"&edutype="+ education_type +"&otheredutype="+ other_education_type +
                         "&edutitle="+ edu_title +"&educity="+ post_city + "&edufees="+ edu_fees +"&edustream="+ edu_stream +"&eduinstiname="+
@@ -395,12 +396,13 @@ $("#submitForm").click(function(){
                     var home_company_name = $("#company-name").val();
                     var home_company_email = $("#company-email").val();
                     company_contact = $("#company-contact").val();
+                    var hme_des = descc;
 
                     data = "categoryid="+ category_id +"&userid="+ user_id +"&hometodo="+ home_todo +"&homeselltype="+ home_sell_type +
                         "&homebuytype="+ home_buy_type +"&homerenttype="+ home_rent_type +"&homesize="+ home_size +"&homecost="+ home_cost +
                         "&username="+ user_name +"&useremail="+ user_email +"&usertype="+ home_user_type +"&companyname="+ home_company_name +
                         "&city=" + post_city + "&companyemail="+ home_company_email +"&usercontact="+ user_contact
-                        +"&companycontact="+ company_contact +"&advtype="+advt_type+ "&utype=" + usertype;
+                        +"&companycontact="+ company_contact +"&advtype="+advt_type+ "&utype=" + usertype + "&desc=" + hme_des;
 
                     if(home_todo == ''){
                         alert.innerHTML = err[28];
@@ -480,7 +482,7 @@ $("#submitForm").click(function(){
                     var job_company_email = $("#job-company-email").val();
                     var job_experience = $("#job-exp").val();
                     var job_recruiter_number = $("#recruit-number").val();
-                    var job_desc = $("#job-desc").val();
+                    var job_desc = descc;
 
                     data = "categoryid="+ category_id +"&userid="+ user_id +"&jobtitle="+ job_title +"&jobtype="+ job_type +"&jobrole="+ job_role +
                         "&minsal="+ min_sal +"&maxsal="+ max_sal +"&companyname="+ job_company_name +"&companyemail="+ job_company_email +
@@ -555,7 +557,7 @@ $("#submitForm").click(function(){
                     var mob_brand = $("#Mobile-brand").val();
                     var mob_model = $("#mobile-model").val();
                     var mob_includes = $("#mobile-includes").val();
-                    var mob_desc = $("#Mobile-desc").val();
+                    var mob_desc = descc;
 
                     data= "categoryid="+ category_id +"&userid="+ user_id +"&mobwant="+ mobile_want +"&mobsubcategory="+ mobile_subcategory +
                         "&mobadtitle="+ mob_ad_title +"&city=" + post_city + "&mobcondition="+ mob_condition +"&mobcost="+ mobile_cost +"&mobused="+ mobile_used +
@@ -689,7 +691,7 @@ $("#submitForm").click(function(){
                     var elect_brand = $("#elect-brand").val();
                     var elect_model = $("#elect-model").val();
                     var elect_includes = $("#elect-includes").val();
-                    var elect_desc = $("#elect-desc").val();
+                    var elect_desc = descc;
 
                     data= "categoryid="+ category_id +"&userid="+ user_id +"&elecwant="+ elect_want +"&elecsubcat="+ elect_subcategory +
                         "&elecother="+ elect_other +"&elecadtitle="+ elect_ad_title +"&city="+post_city+"&eleccondition="+ elect_condition +"&eleccost="+ elect_cost +
@@ -824,7 +826,7 @@ $("#submitForm").click(function(){
                     var homelife_used = $("#used-homelife-months").val();
                     var homelife_bill = $("#homelife-bill").val();
                     var homelife_includes = $("#homelife-includes").val();
-                    var homelife_desc = $("#homelife-desc").val();
+                    var homelife_desc = descc;
 
                     data= "categoryid="+ category_id +"&userid="+ user_id +"&homecat="+ home_category +"&fursubcat="+ furn_subcategory +
                         "&kidsubcat="+ kids_subcategory +"&sportsubcat="+ sports_subcategory +"&fashionsubcat="+ fashion_subcategory +
@@ -933,7 +935,7 @@ $("#submitForm").click(function(){
                     var event_live_type = $("#live-event-ser-type").val();
                     var event_cost = $("#cost").val();
                     var event_ser_type = $("input[name=event-ser-type]:checked").val();
-                    var event_desc = $("#event-desc").val();
+                    var event_desc = descc;
 
                     data = "categoryid="+ category_id +"&userid="+ user_id +"&eventtype="+ event_type +"&eventmantype="+ event_manag_type +
                         "&eventlivetype="+ event_live_type +"&eventcity="+ post_city +"&eventcost="+ event_cost +
@@ -985,7 +987,7 @@ $("#submitForm").click(function(){
                     }
                 }
                 else if(formCat == 'petsForm' || formCat == 'communityForm' || formCat == 'entertainmentForm' || formCat == 'matrimonialForm'){
-                    data = "categoryid="+ category_id +"&userid="+ user_id +"&usercontact="+ user_contact +"&username="+ user_name +"&useremail="+ user_email;
+                    data = "categoryid="+ category_id +"&userid="+ user_id +"&usercontact="+ user_contact +"&username="+ user_name +"&useremail="+ user_email + "&desc=" + descc;
 
                     if(user_contact == "" || isNaN(user_contact) || !user_contact.match("[789][0-9]{9}") || user_contact.length != 10){
                         alert.innerHTML = err[5];
@@ -1293,7 +1295,7 @@ function submitothers(data){
         success: function(data) {
             if(data == 'Success'){
                 $("#loading").hide();
-                window.location.assign('../../');
+                window.location.assign('?aagvgfeenmb='+data);
             }else{
                 $("#loading").hide();
                 $("#submitForm").show();
