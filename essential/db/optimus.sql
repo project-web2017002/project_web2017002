@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 25, 2017 at 08:01 PM
+-- Generation Time: Sep 14, 2017 at 08:41 PM
 -- Server version: 5.7.14
 -- PHP Version: 5.6.25
 
@@ -58,10 +58,11 @@ CREATE TABLE `featpro` (
 --
 
 INSERT INTO `featpro` (`num`, `byAdmin`, `file`, `prod_id`) VALUES
-(2, 1, '2017-07-18-06-16-27am-1', 2),
-(4, 1, '2017-07-19-10-34-34am-1', 3),
-(5, 1, '2017-07-19-10-39-56am-1', 4),
-(6, 1, '2017-07-19-12-34-34pm-1', 9);
+(7, 1, '2017-09-14-08-04-05pm-1', 3),
+(8, 1, '2017-09-14-08-11-07pm-1', 6),
+(9, 1, '2017-09-14-08-16-25pm-1', 8),
+(10, 1, '2017-09-14-08-33-43pm-1', 12),
+(11, 1, '2017-09-12-08-52-00pm-1', 1);
 
 -- --------------------------------------------------------
 
@@ -74,23 +75,29 @@ CREATE TABLE `listed_products` (
   `product_title` varchar(300) NOT NULL,
   `pro_description_file` varchar(3000) NOT NULL,
   `ref_img` varchar(200) DEFAULT NULL,
-  `cost` int(15) DEFAULT NULL
+  `cost` int(15) DEFAULT NULL,
+  `ref_img2` varchar(200) DEFAULT NULL,
+  `ref_img3` varchar(200) DEFAULT NULL,
+  `ref-img4` varchar(200) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `listed_products`
 --
 
-INSERT INTO `listed_products` (`product_id`, `product_title`, `pro_description_file`, `ref_img`, `cost`) VALUES
-(1, 'Want to get my AC repaired', '//localhost/optimus/Category/categoryId/10001/2017-07-17-01-13-11pm-1.csv', NULL, 1600),
-(2, 'Work from Home for Housewifes', '//localhost/optimus/Category/categoryId/10003/2017-07-18-06-16-27am-1.csv', NULL, 12000),
-(3, 'Delhi to Agra with two-way', '//localhost/optimus/Category/categoryId/10001/2017-07-19-10-34-34am-1.csv', NULL, 4000),
-(4, 'Fixing wires issue at home', '//localhost/optimus/Category/categoryId/10001/2017-07-19-10-39-56am-1.csv', NULL, 2500),
-(5, 'Iphone 7 to sell', '//localhost/optimus/Category/categoryId/10007/2017-07-19-11-44-35am-1.csv', NULL, 35000),
-(9, 'Want an iPhone 7 jet Black', '//localhost/optimus/Category/categoryId/10007/2017-07-19-12-34-34pm-1.csv', '1500471990_iphone7-jetblack-select-2016.png', 32000),
-(10, 'Spa services', '//localhost/optimus/Category/categoryId/10001/2017-07-28-05-28-57pm-1.csv', NULL, 3000),
-(14, 'Sell A Car Renault', '//localhost/optimus/Category/categoryId/10004/2017-08-01-10-14-56pm-3.csv', '1501606280_Renault.jpg', 1100000),
-(16, 'Sell', '//localhost/optimus/Category/categoryId/10002/2017-08-25-07-04-00pm-11.csv', '1503668106_download.jpg', 600000);
+INSERT INTO `listed_products` (`product_id`, `product_title`, `pro_description_file`, `ref_img`, `cost`, `ref_img2`, `ref_img3`, `ref-img4`) VALUES
+(1, 'iphone 6s 32gb', '//localhost/optimus/Category/categoryId/10007/2017-09-12-08-52-00pm-1.csv', '1505229774_Apple-IPhone-PNG-Picture.png', 30000, '1505229774_large_thumb_iphone-6-black-blender-shot-base.jpg', '1505229774_apple-iphone 6s-rose gold-450x350.png', '1505229774_iphone6s-gray-select-2015_AV2.png'),
+(2, 'cleaning maid required', '//localhost/optimus/Category/categoryId/10001/2017-09-14-07-59-34pm-1.csv', '1505399403_77e57e5a09caf5d188cfbf02502154c6.jpg', 6000, '1505399403_House_Cleaning_Affordable_Tracy_Mountain-House_Lathrop_River-Islands_Banta_Manteca_Stockton_Ripon_Home-Cleaning-Service_Delsol-Clean1.jpg', '1505399403_men-woman-cleaning-apartment-women-wearing-uniforms-82939095.jpg', NULL),
+(3, 'We provide legal services', '//localhost/optimus/Category/categoryId/10001/2017-09-14-08-04-05pm-1.csv', '1505399668_abogado2--1500x630.jpg', 15000, '1505399669_legal-services.jpg', '1505399670_Professional-legal-services-in-Chennai--contact-SRIDHARAN-G-V-ak_WBP1895984332-1487766028_gv.jpeg', NULL),
+(4, 'Road Trip from Delhi to Shimla 3days', '//localhost/optimus/Category/categoryId/10001/2017-09-14-08-07-15pm-1.csv', '1505399861_traveling-services-250x250.jpg', 30000, NULL, NULL, NULL),
+(5, 'Sell', '//localhost/optimus/Category/categoryId/10002/2017-09-14-08-09-16pm-1.csv', '1505399988_house-for-sale-2.jpg', 600000, NULL, NULL, NULL),
+(6, 'Buy', '//localhost/optimus/Category/categoryId/10002/2017-09-14-08-11-07pm-1.csv', '1505400110_big-house.jpg', 350000, NULL, NULL, NULL),
+(7, 'Rent', '//localhost/optimus/Category/categoryId/10002/2017-09-14-08-13-47pm-1.csv', '1505400248_for_rent.jpg', 100000, NULL, NULL, NULL),
+(8, 'Typist Required', '//localhost/optimus/Category/categoryId/10003/2017-09-14-08-16-25pm-1.csv', '1505400426_download.jpg', 10000, '1505400426_Freelancetypingdataentryjobs.jpg', NULL, NULL),
+(9, 'Web Designer', '//localhost/optimus/Category/categoryId/10003/2017-09-14-08-23-35pm-1.csv', '1505400885_images.jpg', 45000, NULL, NULL, NULL),
+(10, 'Sell A Car Maruti Suzuki Vitara Brezza', '//localhost/optimus/Category/categoryId/10004/2017-09-14-08-26-11pm-1.csv', '1505401017_2016Mar11001720.jpg', 350000, '1505401017_honda-wr-v-vs-maruti-suzuki-vitara-brezza_827x510_61489766980.jpg', '1505401017_maruti-suzuki-vitara-brezza-rear-827-827x510-41457605078.jpg', NULL),
+(11, 'Royal Enfied Himalayan', '//localhost/optimus/Category/categoryId/10005/2017-09-14-08-29-55pm-1.csv', '1505401236_20160312_135639.jpg', 200000, '1505401237_royalenfield-himalayan-bike-1.jpg', '1505401237_royalenfield-himalayan-bike-6.jpg', NULL),
+(12, 'Industrial Training', '//localhost/optimus/Category/categoryId/10006/2017-09-14-08-33-43pm-1.csv', '1505401486_banner_flash_web_13711254.jpg', 11000, '1505401486_Industrial Training.jpg', '1505401486_industrial_training.jpg', NULL);
 
 -- --------------------------------------------------------
 
@@ -105,14 +112,6 @@ CREATE TABLE `orders` (
   `usertype` varchar(12) NOT NULL DEFAULT 'GENERAL'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Dumping data for table `orders`
---
-
-INSERT INTO `orders` (`order_counter`, `order_by`, `product_id`, `usertype`) VALUES
-(10, 1, 9, 'GENERAL'),
-(11, 3, 9, 'GENERAL');
-
 -- --------------------------------------------------------
 
 --
@@ -126,14 +125,6 @@ CREATE TABLE `order_status` (
   `payment_req_id_mojo` varchar(200) NOT NULL,
   `payment_id_mojo` varchar(200) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `order_status`
---
-
-INSERT INTO `order_status` (`counter`, `unique_order_number`, `status`, `payment_req_id_mojo`, `payment_id_mojo`) VALUES
-(2, 10, 'Order Placed', '6f7c06055dbf4260b54d23e9f3c1aee0', 'MOJO7725005A19693359'),
-(3, 11, 'Order Placed', '5b8566168b74436496c1df028ef0f03d', 'MOJO7814005A02467899');
 
 -- --------------------------------------------------------
 
@@ -251,7 +242,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `oauth_provider`, `oauth_uid`, `first_name`, `last_name`, `email`, `gender`, `locale`, `picture`, `link`, `created`, `modified`, `contact`) VALUES
-(11, 'google', '116269446106411150871', 'optimustechproject', 'web201702', 'optimustechprojectweb201702@gmail.com', '', 'en', 'https://lh3.googleusercontent.com/-XdUIqdMkCWA/AAAAAAAAAAI/AAAAAAAAAAA/4252rscbv5M/photo.jpg', '', '2017-07-30 19:25:56', '2017-08-25 18:40:22', '7896541230'),
+(11, 'google', '116269446106411150871', 'optimustechproject', 'web201702', 'optimustechprojectweb201702@gmail.com', '', 'en', 'https://lh3.googleusercontent.com/-XdUIqdMkCWA/AAAAAAAAAAI/AAAAAAAAAAA/4252rscbv5M/photo.jpg', '', '2017-07-30 19:25:56', '2017-09-07 22:25:46', '7896541230'),
 (14, 'facebook', '123243221630366', 'Srinivas', 'Shikhar', 'optimustechprojectweb201702@gmail.com', 'male', 'en_GB', 'https://scontent.xx.fbcdn.net/v/t1.0-1/c15.0.50.50/p50x50/10354686_10150004552801856_220367501106153455_n.jpg?oh=b0e4037a0b04d52224a51836c84c322d&oe=59FEA22F', 'https://www.facebook.com/app_scoped_user_id/123243221630366/', '2017-07-31 21:56:37', '2017-07-31 22:16:16', '7896541230');
 
 -- --------------------------------------------------------
@@ -378,22 +369,22 @@ ALTER TABLE `admin_status`
 -- AUTO_INCREMENT for table `featpro`
 --
 ALTER TABLE `featpro`
-  MODIFY `num` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `num` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 --
 -- AUTO_INCREMENT for table `listed_products`
 --
 ALTER TABLE `listed_products`
-  MODIFY `product_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `product_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 --
 -- AUTO_INCREMENT for table `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `order_counter` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `order_counter` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `order_status`
 --
 ALTER TABLE `order_status`
-  MODIFY `counter` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `counter` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `otp_signup`
 --

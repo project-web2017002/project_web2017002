@@ -156,10 +156,10 @@ error_reporting(0);
                                         <div class="col-lg-4 col-md-6 col-sm-12" id="tes2">
                                             <div class="row" style="cursor: pointer" onclick="ViewProduct(<?php echo $this_pro_id; ?>);">
                                                 <?php if ($image != NULL) { ?>
-                                                    <img class="img-responsive img-rounded"
+                                                    <img style="max-height: 250px;" class="img-responsive img-rounded"
                                                          src="<?php echo 'Category/images/' . $image; ?>"/>
                                                 <?php } else { ?>
-                                                    <img class="img-responsive img-rounded"
+                                                    <img style="max-height: 250px;" class="img-responsive img-rounded"
                                                          src="include/media/images/no-image-available.jpg"/>
                                                 <?php } ?>
                                             </div>
